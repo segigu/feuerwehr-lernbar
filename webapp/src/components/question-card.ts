@@ -5,9 +5,11 @@ import { hapticSelection } from '../utils/telegram';
 export function createQuestionCard(
   question: Question,
   selectedAnswer: 'a' | 'b' | 'c' | null,
-  onSelect: (answer: 'a' | 'b' | 'c') => void
+  onSelect: (answer: 'a' | 'b' | 'c') => void,
+  showFeedback: boolean = false
 ): HTMLElement {
   const card = h('div', { className: 'question-card' });
+  const locked = showFeedback && selectedAnswer !== null;
 
   const topicBadge = h('span', { className: 'topic-badge' }, question.topic);
   card.appendChild(topicBadge);
@@ -29,18 +31,38 @@ export function createQuestionCard(
   const keys: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
   for (const key of keys) {
     const isSelected = selectedAnswer === key;
+    const isCorrect = key === question.correct;
 
-    const letterBadge = h('span', { className: `option-letter${isSelected ? ' selected' : ''}` }, key.toUpperCase());
+    const classes: string[] = ['option-btn'];
+    const letterClasses: string[] = ['option-letter'];
+
+    if (locked) {
+      if (isCorrect) {
+        classes.push('correct');
+        letterClasses.push('correct');
+      }
+      if (isSelected && !isCorrect) {
+        classes.push('incorrect');
+        letterClasses.push('incorrect');
+      }
+    } else if (isSelected) {
+      classes.push('selected');
+      letterClasses.push('selected');
+    }
+
+    const letterBadge = h('span', { className: letterClasses.join(' ') }, key.toUpperCase());
     const optionText = h('span', { className: 'option-text' }, question.options[key]);
 
     const btn = h('button', {
-      className: `option-btn${isSelected ? ' selected' : ''}`,
+      className: classes.join(' '),
     }, letterBadge, optionText);
 
-    btn.addEventListener('click', () => {
-      hapticSelection();
-      onSelect(key);
-    });
+    if (!locked) {
+      btn.addEventListener('click', () => {
+        hapticSelection();
+        onSelect(key);
+      });
+    }
 
     optionsContainer.appendChild(btn);
   }

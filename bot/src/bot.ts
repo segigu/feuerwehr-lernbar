@@ -20,10 +20,12 @@ bot.command('start', async (ctx) => {
     .webApp('Prüfungstrainer öffnen', webAppUrl);
 
   await ctx.reply(
-    'Willkommen beim MTA Prüfungstrainer!\n\n' +
-    'Bereite dich auf die Zwischenprüfung des Basismoduls vor.\n' +
-    '214 Fragen aus 12 Themengebieten.\n\n' +
-    'Tippe auf den Button, um zu starten:',
+    '🚒 Willkommen beim MTA Prüfungstrainer!\n\n' +
+    '🎯 Bereite dich auf die Zwischenprüfung des Basismoduls vor.\n\n' +
+    '📋 214 Fragen aus 12 Themengebieten\n' +
+    '⏱ Prüfungssimulation mit Timer\n' +
+    '📊 Auswertung am Ende\n\n' +
+    '👇 Tippe auf den Button, um zu starten:',
     { reply_markup: keyboard }
   );
 });

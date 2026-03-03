@@ -57,23 +57,25 @@ export function renderQuiz(container: HTMLElement): () => void {
 
     clear(questionSlot);
     const selectedAnswer = session!.answers.get(question.id) ?? null;
+    const isTraining = session!.mode !== 'exam';
     const card = createQuestionCard(question, selectedAnswer, (answer) => {
       setAnswer(question.id, answer);
 
       const isLast = session!.currentIndex === session!.questions.length - 1;
 
-      // Re-render to show selected state
+      // Re-render to show selected/feedback state
       renderCurrentQuestion();
 
+      const delay = isTraining ? 1200 : 500;
       if (isLast) {
-        setTimeout(() => navigate('results'), 600);
+        setTimeout(() => navigate('results'), delay + 100);
       } else {
         setTimeout(() => {
           nextQuestion();
           renderCurrentQuestion();
-        }, 500);
+        }, delay);
       }
-    });
+    }, isTraining);
     questionSlot.appendChild(card);
 
     renderNavDots();

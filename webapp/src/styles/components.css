@@ -245,8 +245,8 @@
 }
 
 .option-btn.selected {
-  border-color: var(--color-primary);
-  background: var(--color-primary-light);
+  border-color: var(--color-text-secondary);
+  background: var(--color-selected);
 }
 
 .option-letter {
@@ -264,7 +264,7 @@
 }
 
 .option-letter.selected {
-  background: var(--color-primary);
+  background: var(--color-text-secondary);
   color: #fff;
 }
 

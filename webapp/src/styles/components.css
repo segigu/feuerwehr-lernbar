@@ -232,7 +232,7 @@
   padding: var(--space-md) var(--space-lg);
   min-height: 56px;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-size: var(--font-base);
   text-align: left;
@@ -240,12 +240,13 @@
 }
 
 .option-btn:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
+  background: var(--color-selected);
 }
 
 .option-btn.selected {
-  border-color: var(--color-selected-border);
-  background: var(--color-selected);
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
 }
 
 .option-letter {
@@ -263,7 +264,7 @@
 }
 
 .option-letter.selected {
-  background: var(--color-selected-border);
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -281,7 +282,7 @@
 }
 
 .nav-arrow {
-  font-size: 40px;
+  font-size: 28px;
   color: var(--color-text-muted);
   padding: var(--space-sm) var(--space-xs);
   flex-shrink: 0;

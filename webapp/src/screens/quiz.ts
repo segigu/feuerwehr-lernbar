@@ -62,15 +62,16 @@ export function renderQuiz(container: HTMLElement): () => void {
 
       const isLast = session!.currentIndex === session!.questions.length - 1;
 
+      // Re-render to show selected state
+      renderCurrentQuestion();
+
       if (isLast) {
-        // Last question answered — go to results after brief delay
-        setTimeout(() => navigate('results'), 400);
+        setTimeout(() => navigate('results'), 600);
       } else {
-        // Auto-advance to next question after brief delay
         setTimeout(() => {
           nextQuestion();
           renderCurrentQuestion();
-        }, 300);
+        }, 500);
       }
     });
     questionSlot.appendChild(card);

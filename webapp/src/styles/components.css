@@ -138,6 +138,37 @@
    QUIZ SCREEN
    ============================================ */
 
+.screen-quiz {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - var(--space-md) * 2);
+}
+
+.quiz-question-slot {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slide animations */
+@keyframes slide-in-up {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-down {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.quiz-question-slot.slide-up > .question-card {
+  animation: slide-in-up 250ms ease-out both;
+}
+
+.quiz-question-slot.slide-down > .question-card {
+  animation: slide-in-down 250ms ease-out both;
+}
+
 .quiz-close-btn {
   display: flex;
   align-items: center;
@@ -159,6 +190,7 @@
   align-items: center;
   gap: var(--space-md);
   margin-bottom: var(--space-lg);
+  flex-shrink: 0;
 }
 
 .quiz-progress-slot {
@@ -318,7 +350,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin: var(--space-lg) 0;
+  padding: var(--space-md) 0;
+  flex-shrink: 0;
 }
 
 .nav-arrow {

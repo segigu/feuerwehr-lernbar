@@ -23,6 +23,7 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   let timerInterval: ReturnType<typeof setInterval> | null = null;
   let cleanupBackBtn: (() => void) | null = null;
+  let slideDirection: 'up' | 'down' | null = null;
 
   // Close button in top bar
   const closeBtn = h('button', { className: 'quiz-close-btn' }, '\u2715');
@@ -46,6 +47,16 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   container.append(topBar, questionSlot, navRow);
 
+  function applySlideAnimation(): void {
+    questionSlot.classList.remove('slide-up', 'slide-down');
+    if (slideDirection) {
+      // Force reflow to restart animation
+      void questionSlot.offsetHeight;
+      questionSlot.classList.add(slideDirection === 'up' ? 'slide-up' : 'slide-down');
+    }
+    slideDirection = null;
+  }
+
   function renderCurrentQuestion(): void {
     const question = getCurrentQuestion();
     if (!question) return;
@@ -63,7 +74,8 @@ export function renderQuiz(container: HTMLElement): () => void {
 
       const isLast = session!.currentIndex === session!.questions.length - 1;
 
-      // Re-render to show selected/feedback state
+      // Re-render to show selected/feedback state (no slide)
+      slideDirection = null;
       renderCurrentQuestion();
 
       const delay = isTraining ? 1200 : 500;
@@ -71,6 +83,7 @@ export function renderQuiz(container: HTMLElement): () => void {
         setTimeout(() => navigate('results'), delay + 100);
       } else {
         setTimeout(() => {
+          slideDirection = 'up';
           nextQuestion();
           renderCurrentQuestion();
         }, delay);
@@ -78,6 +91,7 @@ export function renderQuiz(container: HTMLElement): () => void {
     }, isTraining);
     questionSlot.appendChild(card);
 
+    applySlideAnimation();
     renderNavDots();
     updateNavButtons();
   }
@@ -100,6 +114,9 @@ export function renderQuiz(container: HTMLElement): () => void {
       }
 
       dot.addEventListener('click', () => {
+        const currentIdx = session!.currentIndex;
+        if (i === currentIdx) return;
+        slideDirection = i > currentIdx ? 'up' : 'down';
         goToQuestion(i);
         renderCurrentQuestion();
       });
@@ -114,11 +131,13 @@ export function renderQuiz(container: HTMLElement): () => void {
   }
 
   prevBtn.addEventListener('click', () => {
+    slideDirection = 'down';
     prevQuestion();
     renderCurrentQuestion();
   });
 
   nextBtn.addEventListener('click', () => {
+    slideDirection = 'up';
     if (nextQuestion()) {
       renderCurrentQuestion();
     }

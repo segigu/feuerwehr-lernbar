@@ -17,13 +17,13 @@ export function renderHome(container: HTMLElement): () => void {
 
   const cards = h('div', { className: 'home-cards' });
 
-  // Card 1: All questions
+  // Card 1: All questions (shuffled)
   const cardAll = createCard(
     'Alle Fragen',
-    '214 Fragen der Reihe nach',
-    'Systematisch alle Fragen durchgehen',
+    '214 Fragen in zufälliger Reihenfolge',
+    'Alle Fragen durchgehen',
     () => {
-      createSession('all', [...questions]);
+      createSession('all', getRandomExamQuestions(questions.length));
       navigate('quiz');
     }
   );

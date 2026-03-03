@@ -11,7 +11,7 @@ import {
 } from '../state/quiz-state';
 import { createQuestionCard } from '../components/question-card';
 import { createProgressBar } from '../components/progress-bar';
-import { showMainButton, showBackButton } from '../utils/telegram';
+import { showBackButton } from '../utils/telegram';
 import { h, clear } from '../utils/dom';
 
 export function renderQuiz(container: HTMLElement): () => void {
@@ -22,13 +22,20 @@ export function renderQuiz(container: HTMLElement): () => void {
   }
 
   let timerInterval: ReturnType<typeof setInterval> | null = null;
-  let cleanupMainBtn: (() => void) | null = null;
   let cleanupBackBtn: (() => void) | null = null;
+
+  // Close button in top bar
+  const closeBtn = h('button', { className: 'quiz-close-btn' }, '\u2715');
+  closeBtn.addEventListener('click', () => {
+    if (confirm('Prüfung wirklich abbrechen?')) {
+      navigate('home');
+    }
+  });
 
   const topBar = h('div', { className: 'quiz-top-bar' });
   const progressSlot = h('div', { className: 'quiz-progress-slot' });
   const timerSlot = h('div', { className: 'quiz-timer-slot' });
-  topBar.append(progressSlot, timerSlot);
+  topBar.append(closeBtn, progressSlot, timerSlot);
 
   const questionSlot = h('div', { className: 'quiz-question-slot' });
 
@@ -53,20 +60,30 @@ export function renderQuiz(container: HTMLElement): () => void {
     const selectedAnswer = session!.answers.get(question.id) ?? null;
     const card = createQuestionCard(question, selectedAnswer, (answer) => {
       setAnswer(question.id, answer);
-      renderCurrentQuestion();
+
+      const isLast = session!.currentIndex === session!.questions.length - 1;
+
+      if (isLast) {
+        // Last question answered — go to results after brief delay
+        setTimeout(() => navigate('results'), 400);
+      } else {
+        // Auto-advance to next question after brief delay
+        setTimeout(() => {
+          nextQuestion();
+          renderCurrentQuestion();
+        }, 300);
+      }
     });
     questionSlot.appendChild(card);
 
     renderNavDots();
     updateNavButtons();
-    updateMainButton();
   }
 
   function renderNavDots(): void {
     clear(navDots);
     const total = session!.questions.length;
 
-    // Only show dots if 50 or fewer questions
     if (total > 50) return;
 
     for (let i = 0; i < total; i++) {
@@ -92,28 +109,6 @@ export function renderQuiz(container: HTMLElement): () => void {
   function updateNavButtons(): void {
     prevBtn.disabled = session!.currentIndex === 0;
     nextBtn.disabled = session!.currentIndex === session!.questions.length - 1;
-  }
-
-  function updateMainButton(): void {
-    if (cleanupMainBtn) {
-      cleanupMainBtn();
-      cleanupMainBtn = null;
-    }
-
-    const isLast = session!.currentIndex === session!.questions.length - 1;
-    const currentQ = getCurrentQuestion();
-    const hasAnswer = currentQ ? session!.answers.has(currentQ.id) : false;
-
-    if (isLast && hasAnswer) {
-      cleanupMainBtn = showMainButton('Ergebnis anzeigen', () => {
-        navigate('results');
-      });
-    } else if (hasAnswer) {
-      cleanupMainBtn = showMainButton('Nächste Frage', () => {
-        nextQuestion();
-        renderCurrentQuestion();
-      });
-    }
   }
 
   prevBtn.addEventListener('click', () => {
@@ -148,7 +143,7 @@ export function renderQuiz(container: HTMLElement): () => void {
     timerInterval = setInterval(updateTimer, 1000);
   }
 
-  // Back button — confirm before leaving
+  // Telegram Back button
   cleanupBackBtn = showBackButton(() => {
     if (confirm('Prüfung wirklich abbrechen?')) {
       navigate('home');
@@ -159,7 +154,6 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   return () => {
     if (timerInterval) clearInterval(timerInterval);
-    if (cleanupMainBtn) cleanupMainBtn();
     if (cleanupBackBtn) cleanupBackBtn();
   };
 }

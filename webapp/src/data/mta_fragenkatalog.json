@@ -1,0 +1,2594 @@
+{
+  "meta": {
+    "title": "MTA Basismodul - Zwischenprüfung Fragenkatalog",
+    "source": "Staatliche Feuerwehrschule Würzburg",
+    "version": "Basis 15.2",
+    "date": "04/2015",
+    "total_questions": 214,
+    "exam_format": "50 Fragen aus 214 werden ausgewählt, 3 Antwortmöglichkeiten, 1 richtig",
+    "topics": [
+      "Rechtsgrundlagen und Organisation",
+      "Brennen und Löschen",
+      "Fahrzeugkunde",
+      "Persönliche Ausrüstung und Löschgeräte",
+      "Geräte und Armaturen",
+      "Rettung, Leitern und Knoten",
+      "Erste Hilfe und Einsatzhygiene",
+      "Einsatzgrundsätze und Gefahren",
+      "Löscheinsatz (FwDV 3)",
+      "Sichern und Absturzsicherung",
+      "Technische Hilfeleistung und Gefahrgut",
+      "Sprechfunk"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Mit welchem Gesetz wird das Feuerwehrwesen in Bayern geregelt?",
+      "options": {
+        "a": "Bayerisches Katastrophenschutzgesetz",
+        "b": "Bayerisches Feuerwehrgesetz",
+        "c": "Schornsteinfegergesetz"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 2,
+      "question": "Was zählt zu den Pflichtaufgaben der Feuerwehr?",
+      "options": {
+        "a": "Anbringen von Dekorationen",
+        "b": "Brandbekämpfung und technische Hilfeleistung",
+        "c": "Auspumpen von Baugruben"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 3,
+      "question": "Wer darf Personen zur Hilfeleistung verpflichten?",
+      "options": {
+        "a": "Nur der Einsatzleiter",
+        "b": "Jeder Feuerwehrdienstleistende",
+        "c": "Nur der Kreisbrandrat"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 4,
+      "question": "Wer hat für die ordnungsgemäße Ausrüstung der Feuerwehr zu sorgen?",
+      "options": {
+        "a": "Gemeinde",
+        "b": "Landkreis",
+        "c": "Feuerwehrverein"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 5,
+      "question": "Ab wann dürfen Feuerwehranwärter an Einsätzen teilnehmen?",
+      "options": {
+        "a": "Truppführerausbildung muss abgeschlossen sein",
+        "b": "Basismodul muss abgeschlossen sein; Alter mindestens 16 Jahre; Kommandant muss zustimmen",
+        "c": "Gruppenführerlehrgang muss erfolgreich abgeschlossen sein"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 6,
+      "question": "Welche Pflicht besteht für Feuerwehrdienstleistende bei Alarm?",
+      "options": {
+        "a": "Unverzüglich am Gerätehaus einfinden",
+        "b": "Rückruf bei der Leitstelle",
+        "c": "Melden bei der Gemeindeverwaltung"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 7,
+      "question": "Wer übernimmt die Lohnfortzahlung eines Arbeitnehmers bei einem Feuerwehreinsatz während der Arbeitszeit?",
+      "options": {
+        "a": "Feuerwehr",
+        "b": "Landkreis",
+        "c": "Arbeitgeber"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 8,
+      "question": "Wer ist für die Ernennung von Dienstgraden in der Feuerwehr zuständig?",
+      "options": {
+        "a": "Bürgermeister",
+        "b": "Kommandant",
+        "c": "Vorstand der Freiwilligen Feuerwehr"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 9,
+      "question": "Wozu ist jeder Bürger bei Wahrnehmung eines Brandes verpflichtet?",
+      "options": {
+        "a": "Hat keine Verpflichtung",
+        "b": "Muss nur Löschversuche unternehmen",
+        "c": "Melden und Löschversuch unternehmen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 10,
+      "question": "Was ist bei Dienstverhinderung zu veranlassen?",
+      "options": {
+        "a": "Es ist nichts zu veranlassen",
+        "b": "Entschuldigung beim Kommandanten oder nächsten Vorgesetzten",
+        "c": "Kreisbrandrat ist zu verständigen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 11,
+      "question": "Das Mindestalter für die Aufnahme in die Freiwillige Feuerwehr als gemeindliche Einrichtung beträgt?",
+      "options": {
+        "a": "12 Jahre",
+        "b": "14 Jahre",
+        "c": "16 Jahre"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 12,
+      "question": "Bei welchem Versicherungsträger sind Feuerwehrdienstleistende gegen Körperschäden versichert?",
+      "options": {
+        "a": "Berufsgenossenschaft Glas- und Keramik",
+        "b": "Haftpflichtversicherung der Gemeinde",
+        "c": "Kommunale Unfallversicherung Bayern"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 13,
+      "question": "Wer ist bei der Wahl des Kommandanten wahlberechtigt?",
+      "options": {
+        "a": "Alle Feuerwehrdienstleistenden und Feuerwehranwärter ab 16 Jahre",
+        "b": "Alle Vereinsangehörigen",
+        "c": "Nur die Führungsdienstgrade"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 14,
+      "question": "Welche Arten von Feuerwehren nennt das Bayerische Feuerwehrgesetz?",
+      "options": {
+        "a": "Bundesbahnfeuerwehr, Freiwillige Feuerwehr, Berufsfeuerwehr",
+        "b": "Flughafenfeuerwehr, Betriebsfeuerwehr, Freiwillige Feuerwehr",
+        "c": "Freiwillige Feuerwehr, Pflichtfeuerwehr, Berufsfeuerwehr, Werkfeuerwehr"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 15,
+      "question": "Rechte des Feuerwehrdienstleistenden sind:",
+      "options": {
+        "a": "Lohnfortzahlung durch Arbeitgeber; Versicherungsschutz bei Personen- und Sachschäden; Freistellung bei Einsätzen",
+        "b": "Teilnahme am Dienst nur dann, wenn er Zeit hat",
+        "c": "Anspruch auf Platz im Feuerwehrerholungsheim"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 16,
+      "question": "Welche besonderen Aufgaben hat der Truppführer bei Anwendung der Unfallverhütungsvorschriften?",
+      "options": {
+        "a": "Der Truppführer muss prüfen, welche Bestimmungen der Unfallverhütungsvorschriften den Trupp betreffen",
+        "b": "Keine, jeder im Trupp achtet auf sich selbst",
+        "c": "Keine, weil beide im Trupp das Gleiche tun"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 17,
+      "question": "Die Unfallverhütungsvorschrift (UVV) - Feuerwehren hat Gültigkeit...",
+      "options": {
+        "a": "bei Einhaltung der Versicherungsbedingungen",
+        "b": "nur bei Einsätzen",
+        "c": "bei Einsätzen, Übungen und Ausbildung"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 18,
+      "question": "Sie bemerken als Truppführer, dass ihr Truppmann die B-Druckschläuche falsch auswirft. Bis jetzt hat er sich noch nicht verletzt. Wie handeln sie?",
+      "options": {
+        "a": "Ich muss ihn auf das fachgerechte Auswerfen hinweisen und überwachen",
+        "b": "Er hat das richtige Auswerfen in seiner Ausbildung gelernt und muss nun seine Erfahrungen machen",
+        "c": "Es ist ja noch nichts passiert, außerdem ist es Aufgabe des Einheitsführers etwas zu sagen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rechtsgrundlagen und Organisation"
+    },
+    {
+      "id": 19,
+      "question": "Ein brennbarer gasförmiger Stoff gehört zur Brandklasse…",
+      "options": {
+        "a": "A",
+        "b": "C",
+        "c": "B"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 20,
+      "question": "Welche Aussage über brennbare Flüssigkeiten ist richtig?",
+      "options": {
+        "a": "Es brennen die Dämpfe und die Flüssigkeit selbst",
+        "b": "Es brennen nur die Dämpfe einer Flüssigkeit",
+        "c": "Es brennt nur die Flüssigkeit"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 21,
+      "question": "Wie kann sich die Verbrennungswärme ausbreiten?",
+      "options": {
+        "a": "Durch Wärmestrahlung, Wärmedurchfluss, Wärmeströmung",
+        "b": "Durch Wärmestrahlung, Wärmeströmung, Wärmeleitung",
+        "c": "Durch Wärmeaustausch, Wärmeleitung, Wärmeübergang"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 22,
+      "question": "Welche Stoffe gehören zur Brandklasse F?",
+      "options": {
+        "a": "Feste Stoffe",
+        "b": "Speisefette und -öle",
+        "c": "Flüssige Stoffe"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 23,
+      "question": "Wodurch kann ein Feuer gelöscht werden?",
+      "options": {
+        "a": "Entzug von Stickstoff",
+        "b": "Entzug von Wärme (Abkühlen)",
+        "c": "Zuführung von Sauerstoff"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 24,
+      "question": "Welche Voraussetzungen sind für das Brennen notwendig?",
+      "options": {
+        "a": "Es muss nur ein brennbarer Stoff vorhanden sein",
+        "b": "Es müssen nur ein brennbarer Stoff und Sauerstoff vorhanden sein",
+        "c": "Es müssen brennbarer Stoff, Sauerstoff und Wärme vorhanden sein"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 25,
+      "question": "Welche Stoffe gehören zur Brandklasse B?",
+      "options": {
+        "a": "Benzin, Diesel, Petroleum",
+        "b": "Holz, Papier, Kohle",
+        "c": "Propan, Butan, Acetylen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 26,
+      "question": "Welche Stoffe gehören zur Brandklasse A?",
+      "options": {
+        "a": "Holz, Papier, Kohle",
+        "b": "Benzin, Diesel, Petroleum",
+        "c": "Propan, Butan, Acetylen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 27,
+      "question": "Welcher Feuerlöscher ist für Brände fester glutbildender Stoffe besonders geeignet?",
+      "options": {
+        "a": "Gaslöscher",
+        "b": "Pulverlöscher BC",
+        "c": "Wasserlöscher"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 28,
+      "question": "Wer ist für den feuerwehrtechnisch richtigen Einsatz des befohlenen Löschmittels verantwortlich?",
+      "options": {
+        "a": "Der Truppführer",
+        "b": "Der Truppmann",
+        "c": "Der Gruppenführer oder Staffelführer"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 29,
+      "question": "Wer ist für die Auswahl des einzusetzenden Löschmittels zuständig?",
+      "options": {
+        "a": "Gruppenführer oder Einheitsführer",
+        "b": "Truppführer",
+        "c": "Truppmann"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 30,
+      "question": "Wer ist für die Durchführung der Löschtechnik des Trupps verantwortlich?",
+      "options": {
+        "a": "Der Truppführer",
+        "b": "Der Truppmann",
+        "c": "Der Einheitsführer"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 31,
+      "question": "Kann es durch falschen Strahlrohreinsatz bei der Brandbekämpfung zu einer Vergrößerung der Gefahr kommen?",
+      "options": {
+        "a": "Ja, z. B. Fettexplosion oder Staubexplosion",
+        "b": "Kann nur bei unerfahrenen Feuerwehrdienstleistenden vorkommen",
+        "c": "Nein, Wasser ist immer das beste Löschmittel"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 32,
+      "question": "Wie verhält sich Wasser beim Verdampfen?",
+      "options": {
+        "a": "Sehr starke Volumenvergrößerung",
+        "b": "Geringe Volumenvergrößerung",
+        "c": "Wasser lässt sich nicht vollständig verdampfen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 33,
+      "question": "Untrügliches Zeichen dafür, dass das Löschmittel Wasser seine Wirkung getan hat, ist die Dampfbildung über dem Brandherd. Es gilt „Strahlrohr schließen”, wenn...",
+      "options": {
+        "a": "kein dunkler Rauch, sondern nur weißer Wasserdampf über dem Brandherd aufsteigt",
+        "b": "sich Rauch und Dampf über dem Brandherd bilden",
+        "c": "eine deutlich erkennbare Wasserschicht über dem brennbaren Material aufgebracht ist"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 34,
+      "question": "Welchen Nachteil hat der Sprühstrahl gegenüber dem Vollstrahl?",
+      "options": {
+        "a": "Der Sprühstrahl hat eine geringe Wurfweite und Wurfhöhe",
+        "b": "Das Wärmebindungsvermögen des Sprühstrahles ist geringer",
+        "c": "Der Druck am Strahlrohr ist höher als beim Vollstrahl"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Brennen und Löschen"
+    },
+    {
+      "id": 35,
+      "question": "Welches Feuerwehrfahrzeug hat eine Löschgruppe als Besatzung?",
+      "options": {
+        "a": "TSF",
+        "b": "TLF",
+        "c": "HLF"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 36,
+      "question": "Welche Steckleiter befindet sich in der Regel auf dem Dach eines TSF-W?",
+      "options": {
+        "a": "Einteilige Steckleiter",
+        "b": "Zweiteilige Steckleiter",
+        "c": "Vierteilige Steckleiter"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 37,
+      "question": "Welches Feuerlöschfahrzeug besitzt keinen Löschwassertank?",
+      "options": {
+        "a": "LF 20",
+        "b": "MLF",
+        "c": "TSF"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 38,
+      "question": "Auf welchem Feuerlöschfahrzeug ist die Ausstattung zur erweiterten technischen Hilfeleistung verladen?",
+      "options": {
+        "a": "LF",
+        "b": "TLF",
+        "c": "HLF"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 39,
+      "question": "Für wieviele Feuerwehrdienstleistende ist die Beladung von TSA, TSF und TSF-W ausgelegt?",
+      "options": {
+        "a": "Für einen Trupp 1/1",
+        "b": "Für eine Staffel 1/5",
+        "c": "Für eine Gruppe 1/8"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 40,
+      "question": "Wieviele Atemschutzgeräte werden üblicherweise auf Feuerlöschfahrzeugen (Tanklöschfahrzeuge ausgenommen) mit Atemschutzausstattung mitgeführt?",
+      "options": {
+        "a": "2",
+        "b": "6",
+        "c": "4"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 41,
+      "question": "Für wieviele Feuerwehrdienstleistende bietet die Atemschutzausstattung von Löschfahrzeugen (Tanklöschfahrzeuge ausgenommen) üblicherweise Schutz?",
+      "options": {
+        "a": "Für einen Trupp",
+        "b": "für drei Trupps",
+        "c": "Für zwei Trupps"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 42,
+      "question": "Was bedeutet die Bezeichnung LF10?",
+      "options": {
+        "a": "Löschgruppenfahrzeug mit einer zulässigen Gesamtmasse von 10 t",
+        "b": "Löschgruppenfahrzeug mit einem Mindesttankvolumen von 1.000 l",
+        "c": "Löschgruppenfahrzeug mit einer fest eingebauten Feuerlöschkreiselpumpe FPN 10-1000"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 43,
+      "question": "Was bedeutet die Bezeichnung FPN 10-1000?",
+      "options": {
+        "a": "Feuerlöschkreiselpumpe Normaldruck mit einer Nennförderstrecke von 1.000 m bei einem Nennförderdruck von 10 bar",
+        "b": "Feuerwehrpumpennorm 10, Blatt 100",
+        "c": "Feuerlöschkreiselpumpe Normaldruck mit einer Nennförderleistung von 1.000 l/min bei einem Nennförderdruck von 10 bar"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 44,
+      "question": "Wie wird die Tragkraftspritze TS (tragbare Feuerlöschkreiselpumpe) nach Norm bezeichnet?",
+      "options": {
+        "a": "FPN (Fire Pump Normal Pressure)",
+        "b": "TFPN (Tragbare Fire Pump Normal Pressure)",
+        "c": "PFPN (Portable Fire Pump Normal Pressure)"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 45,
+      "question": "Welches Feuerwehrfahrzeug hat eine Staffel als Besatzung?",
+      "options": {
+        "a": "HLF",
+        "b": "RW",
+        "c": "TSF"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 46,
+      "question": "Welches Feuerwehrfahrzeug hat einen Trupp als Besatzung?",
+      "options": {
+        "a": "TSF",
+        "b": "HLF",
+        "c": "RW"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 47,
+      "question": "Welche Aussage trifft auf ein MLF zu?",
+      "options": {
+        "a": "Besatzung für eine Gruppe; Beladung für eine Gruppe; 1200 l Löschwasserbehälter",
+        "b": "Das MLF führt auf dem Dach eine dreiteilige Schiebeleiter mit",
+        "c": "Besatzung für eine Staffel; Beladung für eine Gruppe"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 48,
+      "question": "Welche aktuellen Fahrzeugtypen gehören zur Gruppe der Feuerlöschfahrzeuge?",
+      "options": {
+        "a": "GW-L 1; TSF; RW",
+        "b": "DLK; WLF; ELW 1",
+        "c": "LF 10; HLF 10; LF 20"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 49,
+      "question": "Welche Verwendung hat das LF 20 KatS?",
+      "options": {
+        "a": "Rettung von Personen aus Höhen",
+        "b": "Technische Hilfeleistung großen Umfangs",
+        "c": "Brandbekämpfung, schnelle Wasserabgabe, Wasserförderung, technische Hilfeleistung"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 50,
+      "question": "Welche Besatzung hat ein TLF 3000?",
+      "options": {
+        "a": "Staffel 1/5",
+        "b": "Gruppe 1/8",
+        "c": "Trupp 1/2"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 51,
+      "question": "Wie viel Liter Löschwasser führt ein TLF 4000 mit?",
+      "options": {
+        "a": "400 l Löschwasser",
+        "b": "Führt kein Löschwasser mit",
+        "c": "4.000 l Löschwasser"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 52,
+      "question": "Wie viel Liter Löschwasser führt ein TSF mit?",
+      "options": {
+        "a": "500 l Löschwasser",
+        "b": "Führt kein Löschwasser mit",
+        "c": "600 l Löschwasser"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Fahrzeugkunde"
+    },
+    {
+      "id": 53,
+      "question": "Welche ergänzende Schutzausrüstung kann der Einheitsführer bei Einsätzen mit gefährlichen Stoffen anordnen?",
+      "options": {
+        "a": "Schutzanzug Bayern 2000",
+        "b": "Feuerwehrhelm",
+        "c": "Pressluftatmer"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Persönliche Ausrüstung und Löschgeräte"
+    },
+    {
+      "id": 54,
+      "question": "Welche Schutzhandschuhe sind bei der Behandlung von Verletzten zu verwenden?",
+      "options": {
+        "a": "Infektionsschutzhandschuhe",
+        "b": "5-Finger-Lederhandschuhe mit langen Stulpen und Verstärkungen",
+        "c": "Mineralölbeständige Schutzhandschuhe"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Persönliche Ausrüstung und Löschgeräte"
+    },
+    {
+      "id": 55,
+      "question": "Wozu dient die Kübelspritze?",
+      "options": {
+        "a": "Zum Löschen eines Großbrandes",
+        "b": "Zum Ablöschen von Brandnestern und Entstehungsbränden",
+        "c": "Zum Löschen von Benzinbränden"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Persönliche Ausrüstung und Löschgeräte"
+    },
+    {
+      "id": 56,
+      "question": "Welche Funktionsart kennt man bei tragbaren Feuerlöschern?",
+      "options": {
+        "a": "Durchladelöscher",
+        "b": "Dauerdrucklöscher",
+        "c": "Überdrucklöscher"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Persönliche Ausrüstung und Löschgeräte"
+    },
+    {
+      "id": 57,
+      "question": "Was ist nach Beendigung des Einsatzes bei tragbaren Feuerlöschern (Pulver) zu beachten?",
+      "options": {
+        "a": "Wenn der Feuerlöscher nur teilweise entleert wurde, kann er ohne weitere Überprüfung wieder für den nächsten Einsatz benutzt werden",
+        "b": "Feuerlöscher auf den Kopf stellen und drucklos machen",
+        "c": "Alle tragbaren Feuerlöscher sind Einweg-Geräte und müssen nach dem Einsatz fachgerecht entsorgt werden"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Persönliche Ausrüstung und Löschgeräte"
+    },
+    {
+      "id": 58,
+      "question": "Welche Schläuche werden bei der Wasserentnahme aus Hydranten verwendet?",
+      "options": {
+        "a": "Druckschläuche",
+        "b": "Saugschläuche",
+        "c": "Mineralölbeständige Schläuche"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 59,
+      "question": "Wozu findet das Standrohr Verwendung?",
+      "options": {
+        "a": "Zur Wasserentnahme aus Überflurhydranten",
+        "b": "Zur Wasserentnahme aus Löschwasserbehältern",
+        "c": "Zur Wasserentnahme aus Unterflurhydranten"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 60,
+      "question": "Armaturen zur Löschmittelfortleitung sind:",
+      "options": {
+        "a": "Strahlrohre",
+        "b": "Sammelstück, Verteiler, Stützkrümmer",
+        "c": "Saugkorb, Standrohr"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 61,
+      "question": "Welche Längen haben B-Druckschläuche nach gültiger Norm?",
+      "options": {
+        "a": "15, 20 und 30 m",
+        "b": "5, 15 und 35 m",
+        "c": "5, 20 und 35 m"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 62,
+      "question": "Warum sind Hohlstrahlrohre für den Innenangriff anstelle von Mehrzweckstrahlrohren zu bevorzugen?",
+      "options": {
+        "a": "Hohlstrahlrohre sind teurer",
+        "b": "Mit Hohlstrahlrohren lässt sich eine bessere Kühl- und Löschwirkung erzielen",
+        "c": "Hohlstrahlrohre besitzen keine Spülstellung"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 63,
+      "question": "Welche maximale Steighöhe kann in der Regel mit vier Steckleiterteilen erreicht werden?",
+      "options": {
+        "a": "2. Obergeschoss",
+        "b": "1. Obergeschoss",
+        "c": "3. Obergeschoss"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 64,
+      "question": "Wo darf eine Feuerwehrleine nicht eingesetzt werden?",
+      "options": {
+        "a": "Zum Hochziehen von Geräten",
+        "b": "Zum Einbinden von Verletzten auf einer Trage",
+        "c": "Zum Sichern gegen Absturz, wenn ein freier Fall nicht auszuschließen ist"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 65,
+      "question": "Wozu dient die Tauchpumpe?",
+      "options": {
+        "a": "Zur Luftversorgung für Taucher",
+        "b": "Zum Fördern von brennbaren Flüssigkeiten",
+        "c": "Zum Auspumpen überfluteter Keller, Schächte, Gruben und Behälter"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 66,
+      "question": "Worauf ist bei der Inbetriebnahme eines Unterflurhydranten zu achten?",
+      "options": {
+        "a": "Bei Frostgefahr die Straßenkappe mit Sand füllen",
+        "b": "Es ist immer eine Wasseruhr am Standrohr anzubringen",
+        "c": "Beim Setzen des Standrohres muss die Klauenmutter ganz nach unten geschraubt sein"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 67,
+      "question": "Wann ist Feuerwehrschutzschuhwerk zu tragen?",
+      "options": {
+        "a": "Beim Feuerwehrfest",
+        "b": "Im Unterricht",
+        "c": "Bei Einsätzen und Übungen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 68,
+      "question": "Welche Einsatzgrundsätze für tragbare Feuerlöscher sind richtig?",
+      "options": {
+        "a": "Nach Möglichkeit mehrere Löscher gleichzeitig einsetzen",
+        "b": "Alle Brände von oben nach unten löschen",
+        "c": "Feuer gegen die Windrichtung angreifen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 69,
+      "question": "Wie groß ist die Wasserabgabe bei CM-Strahlrohren mit Mundstück bei einem Strahlrohrdruck von ca. 5 bar?",
+      "options": {
+        "a": "ca. 200 l/min",
+        "b": "ca. 100 l/min",
+        "c": "ca. 400 l/min"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 70,
+      "question": "Welche Behandlung von Druckschläuchen nach dem Gebrauch (Einsatz) ist richtig?",
+      "options": {
+        "a": "Nach jedem Gebrauch reinigen und trocknen",
+        "b": "Nasse Schläuche doppelt rollen",
+        "c": "Schläuche zum Trocknen in die Sonne legen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 71,
+      "question": "Wie viele C-Schläuche befinden sich in der Regel in einem Schlauchtragekorb?",
+      "options": {
+        "a": "2",
+        "b": "3",
+        "c": "4"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Geräte und Armaturen"
+    },
+    {
+      "id": 72,
+      "question": "Wie ist eine Person, die über tragbare Leitern gerettet werden soll, zu sichern?",
+      "options": {
+        "a": "Mit Brustbund und Spierenstich als Knotensicherung",
+        "b": "Überhaupt nicht, weil das Anlegen von Knoten zu zeitaufwändig ist",
+        "c": "Mit doppeltem Ankerstich und Halbschlag zum Hintersichern"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 73,
+      "question": "Welche ergänzende persönliche Ausrüstung ist beim Hilfeleistungseinsatz erforderlich?",
+      "options": {
+        "a": "Vollschutzanzug, Gesichtsschutz",
+        "b": "Gesichtsschutz, Infektionsschutzhandschuhe",
+        "c": "Schnittschutz (Beinlinge), Infektionsschutzhandschuhe"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 74,
+      "question": "Wie groß muss der Abstand des Warndreieckes zur Unfallstelle sein, wenn sich der Unfall auf einer Straße mit Gegenverkehr außerhalb geschlossener Ortschaften ereignete?",
+      "options": {
+        "a": "ca. 50 m",
+        "b": "ca. 200 m",
+        "c": "ca. 100 m"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 75,
+      "question": "Warum wird beim Einsatz des B-Strahlrohres der Stützkrümmer verwendet?",
+      "options": {
+        "a": "Um den Wasserdurchfluss zu vergrößern",
+        "b": "Um den Schlauch mit dem Strahlrohr verbinden zu können",
+        "c": "Um den Trupp zu entlasten (Verringerung der Rückstoßkräfte)"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 76,
+      "question": "Wozu dient der Unterflurhydrantenschlüssel?",
+      "options": {
+        "a": "Öffnen der Hydrantenabdeckung und des Hydranten",
+        "b": "Öffnen des Feuerwehrhauses",
+        "c": "Öffnen des Fallmantels"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 77,
+      "question": "Wieviele Steckleiterteile dürfen höchstens zusammengesteckt werden?",
+      "options": {
+        "a": "Drei Leiterteile",
+        "b": "Vier Leiterteile",
+        "c": "Sechs Leiterteile"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 78,
+      "question": "Für welche Rettungshöhe ist ein Sprungpolster (SP16) maximal zugelassen?",
+      "options": {
+        "a": "max. 8 m",
+        "b": "max. 22 m",
+        "c": "max. 16 m"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 79,
+      "question": "Wer ordnet dem Truppführer die zu benutzende Schutzausrüstung an?",
+      "options": {
+        "a": "Truppführer entscheidet selbst",
+        "b": "Eine besondere Anordnung ist nicht notwendig. Jeder weiß selbst, was er tun muss",
+        "c": "Der Einheitsführer"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 80,
+      "question": "Auf was muss beim Aufstellen einer tragbaren Leiter u.a. geachtet werden?",
+      "options": {
+        "a": "Auf einen Anstellwinkel von 15°",
+        "b": "Dass sie so nahe wie möglich an das Gebäude gerückt wird",
+        "c": "Auf einen festen Standplatz"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 81,
+      "question": "In welchem Anstellwinkel soll eine tragbare Leiter aufgestellt werden?",
+      "options": {
+        "a": "45° - 65°",
+        "b": "Immer 90°",
+        "c": "65° - 75°"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 82,
+      "question": "Mit welchen Knoten soll eine Schlauchleitung mit Strahlrohr befestigt werden, um sie in ein Obergeschoss hochzuziehen?",
+      "options": {
+        "a": "Kreuzknoten",
+        "b": "Schotenstich mit Halbschlag",
+        "c": "Mastwurf und Halbschlag"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 83,
+      "question": "Was müssen sie als Truppführer beim Aufstellen einer tragbaren Leiter u. a. beachten?",
+      "options": {
+        "a": "Fußteil so nahe wie möglich an das Gebäude",
+        "b": "Leiterkopf darf nicht über den Einstieg (z. B. Fenster) hinausragen",
+        "c": "Leiter grundsätzlich immer sichern"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 84,
+      "question": "Wie viele Einsatzkräfte werden benötigt, um eine 4-teilige Steckleiter aufzustellen?",
+      "options": {
+        "a": "Zwei Personen",
+        "b": "Eine Staffelbesatzung",
+        "c": "Drei oder vier Personen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 85,
+      "question": "Der Einheitsführer befiehlt ihrem Trupp mit einem Pulverlöscher im Freien einen Brand zu löschen. Was ist zu beachten?",
+      "options": {
+        "a": "Feuer gegen die Windrichtung angreifen",
+        "b": "Feuer seitlich angreifen",
+        "c": "Feuer in Windrichtung angreifen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 86,
+      "question": "Zur Rettung und Sicherung wird ein Brustbund angelegt. Welche Knoten/Stiche werden zur Sicherung verwendet?",
+      "options": {
+        "a": "Zimmermannsschlag",
+        "b": "Doppelschlinge und Halbschlag",
+        "c": "Pfahlstich und Spierenstich bzw. Pfahlstich und Kreuzschlag"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 87,
+      "question": "Es wird die Rettung einer Person über die Steckleiter befohlen. Welche Leine darf zur Sicherung der Person verwendet werden?",
+      "options": {
+        "a": "Mehrzweckleine",
+        "b": "Alle Leinen",
+        "c": "Feuerwehrleine"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 88,
+      "question": "Für welche Einsatzmöglichkeiten findet die Brechstange Anwendung?",
+      "options": {
+        "a": "Um eine Kraft abzufedern",
+        "b": "Um Kraft und Weg zu sparen",
+        "c": "Verwendung als Hebel"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 89,
+      "question": "Mit welcher Gangart können tragbare Leitern nach FwDV 10 „Tragbare Leiter” bestiegen werden?",
+      "options": {
+        "a": "Erlaubt ist nur der Kreuzgang, wobei die Sprossen im Klammergriff zu umfassen sind",
+        "b": "Im Pass- oder Kreuzgang, wobei die Holme im Klammergriff zu umfassen sind",
+        "c": "Im Pass- oder Kreuzgang, wobei die Sprossen im Klammergriff zu umfassen sind"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 90,
+      "question": "Welche Schaltmöglichkeiten müssen bei einem genormten Hohlstrahlrohr gegeben sein?",
+      "options": {
+        "a": "Sprühstrahl und Vollstrahl, Einstellmöglichkeit der Wasserstrahlform",
+        "b": "Durchflussmengeneinstellung, Strahlrohr auf/zu",
+        "c": "Strahlrohr auf/zu, Einstellmöglichkeit der Wasserstrahlform und Durchflussmengeneinstellung"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 91,
+      "question": "Welche Schaltstellungen besitzt ein Mehrzweckstrahlrohr?",
+      "options": {
+        "a": "Mittelstrahl, Strahlrohr zu/auf",
+        "b": "Sprühstrahl, Strahlrohr auf/zu",
+        "c": "Strahlrohr zu, Sprühstrahl, Vollstrahl"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 92,
+      "question": "Sie haben als Trupp den Auftrag mit einem Pulverlöscher einen Flüssigkeitsbrand zu bekämpfen. Auf was haben sie zu achten?",
+      "options": {
+        "a": "Der Löschstrahl sollte direkt in die brennende Flüssigkeit geführt werden",
+        "b": "Sich möglichst nahe an den Brandherd annähern",
+        "c": "Den Löschstrahl nicht direkt in, sondern fächerförmig über die brennende Flüssigkeit verteilen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 93,
+      "question": "Darf der vorgehende Trupp die Steckleiter selbst sichern?",
+      "options": {
+        "a": "Nein, grundsätzlich nicht",
+        "b": "Nein, der Trupp wartet, bis der Melder oder ein Sicherungstrupp kommt",
+        "c": "Ja, der Truppmann sichert und der Truppführer steigt auf. Danach sichert der Truppführer und der Truppmann steigt auf"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Rettung, Leitern und Knoten"
+    },
+    {
+      "id": 94,
+      "question": "Wer kann eine Abweichung von der persönlichen Schutzausrüstung anordnen?",
+      "options": {
+        "a": "Der Truppführer",
+        "b": "Jeder im Trupp trifft seine eigene Entscheidung",
+        "c": "Nur der Einheitsführer"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 95,
+      "question": "Welche Lagerung für eine bewusstlose Person ist richtig?",
+      "options": {
+        "a": "Kopf tief lagern",
+        "b": "Flach auf den Rücken legen",
+        "c": "Stabile Seitenlage"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 96,
+      "question": "Welche Aussage zu verletzten Personen, die noch im Fahrzeug sitzen, ist richtig?",
+      "options": {
+        "a": "Verletzte müssen immer schnellstmöglich aus dem Fahrzeug geholt werden",
+        "b": "Eingeklemmte Personen müssen sofort befreit werden",
+        "c": "Sofern keine akute Gefahr durch Brand, Bewusstlosigkeit o. ä. besteht, sollen Verletzte im Fahrzeug verbleiben bis der Rettungsdienst die medizinische Lage beurteilt hat"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 97,
+      "question": "Was gehört zur Überprüfung der lebenswichtigen Körperfunktionen?",
+      "options": {
+        "a": "Ich sorge mit Rettungsdecke oder Krankenhausdecke für Wärmeerhalt",
+        "b": "Ich spreche ihn laut an. Ich schüttle an den Schultern, kontrolliere Mund und Rachenraum, stelle die Atmung fest",
+        "c": "Ich decke keimfrei die Brandwunden ab"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 98,
+      "question": "Wie betreue ich als Ersthelfer (Feuerwehrdienstleistender) eine verletzte Person?",
+      "options": {
+        "a": "Das ist nicht Aufgabe der Feuerwehr",
+        "b": "Ich leiste Erste Hilfe. Sage, dass ich für ihn da bin, dass der Rettungsdienst informiert ist. Ich spreche ihm gut zu und höre zu",
+        "c": "Ich warte bis der Rettungsdienst an der Einsatzstelle ist"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 99,
+      "question": "Wie erkenne ich die sichtbaren Schockanzeichen?",
+      "options": {
+        "a": "Schneller und gut tastbarer Puls",
+        "b": "Fahle Blässe, Frieren, kalter Schweiß auf der Stirn",
+        "c": "Ich messe den Blutdruck"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 100,
+      "question": "Was unternehmen Sie bei einer starken Blutung (Schnittwunde)?",
+      "options": {
+        "a": "Abbinden der Blutung, z. B. am Arm",
+        "b": "Druckverband anlegen",
+        "c": "Rettungsdienst nicht verständigen, wenn die Blutung gestoppt werden kann"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 101,
+      "question": "Wie gehen Sie beim Vorfinden einer bewusstlosen Person vor?",
+      "options": {
+        "a": "Den Verletzten in die stabile Seitenlage bringen",
+        "b": "Ich kontrolliere die Atmung und den Mundraum, dann bringe ich den Verletzten in die stabile Seitenlage und betreue ihn bis zum Eintreffen des Rettungsdienstes",
+        "c": "Die Polizei verständigen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 102,
+      "question": "Welche Einsatzgrundsätze gelten u. a. an der Einsatzstelle bezüglich der Einsatzhygiene?",
+      "options": {
+        "a": "Wird erst durch den Einheitsführer bestimmt",
+        "b": "Im Gefahrenbereich nicht essen, trinken und rauchen",
+        "c": "Die Einsatzhygiene ist erst im Feuerwehrhaus durchzuführen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 103,
+      "question": "Welche Hygienemaßnahme ist beim Umgang mit Verletzten zu beachten?",
+      "options": {
+        "a": "Es ist ausreichend, nach dem Einsatz sich gründlich die Hände zu waschen",
+        "b": "Beim Umgang mit Verletzten sind Infektionsschutzhandschuhe zu tragen",
+        "c": "Die Feuerwehrhandschuhe stellen einen genügenden Schutz dar"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 104,
+      "question": "Ein Feuerwehrangehöriger nimmt unter Medikamenteneinfluss an einem Einsatz teil. Welche Folgen kann dies haben?",
+      "options": {
+        "a": "Da die Krankheitssymptome ausgeschaltet sind, ist mit keinerlei Folgen zu rechnen",
+        "b": "Hohe körperliche Anforderungen können zu einer Überlastung führen",
+        "c": "Der Einsatzleiter ist zu informieren, damit er sich um einen eventuelle ärztliche Versorgung vor Ort kümmert"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 105,
+      "question": "Nach einem Feuerwehreinsatz ist Ihre Einsatzkleidung stark verschmutzt. Wie verhalten Sie sich vor dem Abrücken?",
+      "options": {
+        "a": "Es ist nichts besonderes zu beachten, lediglich die Fenster der Mannschaftskabine öffnen",
+        "b": "Stark verschmutzte Einsatzkleidung nicht in der Mannschaftskabine transportieren; gesondert in einem Behälter/Sack transportieren",
+        "c": "Es ist ausreichend, die Einsatzkleidung am Gerätehaus zu reinigen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 106,
+      "question": "Sie rücken nach einem Feuerwehreinsatz im Gerätehaus ein, wie verhalten Sie sich richtig?",
+      "options": {
+        "a": "Nach dem Einrücken ist die Verpflegung zu organisieren",
+        "b": "Im Gerätehaus Aufenthalts- und Sozialräume nicht mit verschmutzter Einsatzkleidung betreten; Schwarz/Weiß-Trennung beachten",
+        "c": "Getränke verteilen, verschmutzte Einsatzkleidung im Spind verstauen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 107,
+      "question": "Welche Faktoren können die persönliche Einsatzfähigkeit negativ beeinflussen?",
+      "options": {
+        "a": "Ausreichend Schlaf",
+        "b": "Krankheit, Alkohol, Rauschmittel",
+        "c": "Guter Gesundheitszustand"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Erste Hilfe und Einsatzhygiene"
+    },
+    {
+      "id": 108,
+      "question": "Worauf achten Sie bei Fahrzeugen, die zum Einsatz aus der Fahrzeughalle fahren?",
+      "options": {
+        "a": "Vollständige Besatzung",
+        "b": "Nicht auf bereits anfahrende Fahrzeuge aufspringen",
+        "c": "Atemschutzgeräte bereits in der Fahrzeughalle angelegt"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 109,
+      "question": "Warum müssen Sie ihrem Einheitsführer bei der Mannschaftseinteilung während der Anfahrt mitteilen, wenn ihre Einsatzbereitschaft z. B. durch eine Erkältung beeinträchtigt ist?",
+      "options": {
+        "a": "Ich muss es dem Einheitsführer nicht mitteilen, weil ich erwarten kann, dass er meine verminderte Einsatzfähigkeit selbst erkennt",
+        "b": "Nur so kann der Einheitsführer die Einsatzfähigkeit jedes Feuerwehrdienstleistenden bei der Einteilung berücksichtigent",
+        "c": "Damit er Sie nicht als Gruppenführer einteilt"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 110,
+      "question": "Zu welcher Fahrzeugseite hin wird die Mannschaft bei Eintreffen an der Einsatzstelle im Regelfall absitzen, wenn der Einheitsführer keine anderen Anweisungen gibt?",
+      "options": {
+        "a": "Zur verkehrszugewandten Seite",
+        "b": "Zur verkehrsabgewandten Seite",
+        "c": "Alle Feuerwehrdienstleistenden steigen auf der ihrem Sitzplatz nächstgelegenen Fahrzeugseite aus"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 111,
+      "question": "Wie verhalten Sie sich, wenn Sie den Einsatzbefehl des Einheitsführers nicht richtig verstanden haben?",
+      "options": {
+        "a": "Ich bestätige mit „Verstanden Ende!“",
+        "b": "Ich frage beim Einheitsführer nach",
+        "c": "Ich verzichte auf die Wiederholung des Einsatzbefehls"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 112,
+      "question": "Welche Einsatzgrundsätze gelten beim Vorgehen eines Angriffstrupps?",
+      "options": {
+        "a": "Trupp teilt sich immer auf und jeder führt seine Aufgaben eigenständig durch",
+        "b": "Trupp bleibt zusammen und beachtet die Eigensicherung",
+        "c": "Nur der Truppmann gibt Rückmeldung an den Einheitsführer"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 113,
+      "question": "Wie verhalten Sie sich als Truppführer, wenn Einsturzgefahr besteht?",
+      "options": {
+        "a": "Ein Hinweis an den Einheitsführer ist ausreichend",
+        "b": "Hinweis an den Truppmann geben, im Trupp Schutz unter besonders standfesten Gebäudeteilen suchen, Rückzugsweg sicherstellen, Meldung an den Einheitsführer",
+        "c": "Ein Hinweis an den Truppmann ist ausreichend"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 114,
+      "question": "An der Einsatzstelle ertönt das Signal „Gefahr – Alles zurück!“ Wie verhalten Sie sich?",
+      "options": {
+        "a": "Es reicht völlig aus, wenn ich nur das Signal wiederhole",
+        "b": "Signal wiederholen, Sammelplatz am Fahrzeug aufsuchen, Meldung beim Einheitsführer",
+        "c": "Ich gehe mit meinem Trupp zum Rettungswagen (RTW)"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 115,
+      "question": "Warum wird nach Einsätzen eine Einsatznachbesprechung durchgeführt?",
+      "options": {
+        "a": "Um Truppführer, die sich falsch verhalten haben, vor der gesamten Mannschaft zu tadeln",
+        "b": "Um Fremd- und Eigenfehler zu erkennen, das Einsatzgeschehen zu verbessern und belastende Situationen zu erkennen",
+        "c": "Um die Einsatzdauer zu erhöhen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 116,
+      "question": "Wie verhalten Sie sich als Wassertruppmann beim Eintreffen an der Einsatzstelle?",
+      "options": {
+        "a": "Ich springe sofort aus dem Fahrzeug und suche eine Wasserentnahmestelle, denn Wasser wird für den Feuerwehreinsatz immer dringend benötigt",
+        "b": "Auf den Einsatzbefehl des Einheitsführer warten, Ruhe bewahren und keine unüberlegten Aktionen durchführen",
+        "c": "Ich trete in jedem Fall hinter dem Fahrzeug an"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 117,
+      "question": "Was versteht man unter Kontamination?",
+      "options": {
+        "a": "Reinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen bei Verunreinigung mit ABC-Gefahrstoffen",
+        "b": "Verunreinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen mit ABC-Gefahrstoffen",
+        "c": "Aufnahme von Schadstoffen in den Körper, zum Beispiel über die Atemwege"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 118,
+      "question": "Was versteht man unter Inkorporation?",
+      "options": {
+        "a": "Reinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen bei Verunreinigung mit ABC-Gefahrstoffen",
+        "b": "Aufnahme von Schadstoffen in den Körper, zum Beispiel über die Atemwege oder bei der Nahrungsaufnahme",
+        "c": "Verunreinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen mit ABC-Gefahrstoffen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 119,
+      "question": "Wie erfolgt die Übertragung von Krankheitserregern bei einer Tröpfcheninfektion?",
+      "options": {
+        "a": "Durch den Kontakt mit Körperflüssigkeiten eines Verletzten (z. B. Blut, Erbrochenes)",
+        "b": "Durch Husten, Niesen oder Ansprechen",
+        "c": "Durch Tragen von Infektionsschutzhandschuhen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 120,
+      "question": "Wie werden Kanülen nach Gebrauch entsorgt?",
+      "options": {
+        "a": "Zusammen mit dem Schrott der Unfallfahrzeuge",
+        "b": "Entsorgung in speziellen Behältern (Spritzenabwurf)",
+        "c": "Die Entsorgung ist ausschließlich Aufgabe des Rettungsdienstes"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 121,
+      "question": "Warum wird der Einheitsführer versuchen, die Anzahl der Einsatzkräfte im Gefahrenbereich auf das erforderliche Mindestmaß reduzieren?",
+      "options": {
+        "a": "Damit alle gleichmäßig mit Arbeit belastet werden",
+        "b": "Um die Infektionsgefahr und Eigengefährdung der Einsatzkräfte zu verringern",
+        "c": "Um die notwendige Lohnfortzahlung im Einsatzfall möglichst gering zu halten"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 122,
+      "question": "Wie werden stark verschmutzte Geräte nach Einsatzende von der Einsatzstelle zum Feuerwehrhaus transportiert?",
+      "options": {
+        "a": "Im Mannschaftsraum des Löschfahrzeugs",
+        "b": "In einem Kunststoffsack oder einem dichtschließenden Behälter verpackt",
+        "c": "Durch Fahrzeuge des Rettungsdienstes, da diese regelmäßig desinfizieret werden"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 123,
+      "question": "Worauf ist bei Einsturzgefahr besonders zu achten?",
+      "options": {
+        "a": "Trümmerschatten beachten",
+        "b": "Ergänzende persönliche Schutzausrüstung tragen",
+        "c": "Windrichtung beachten"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 124,
+      "question": "Wie kann ich mich vor der Gefahr durch Erkrankung/ Ansteckung schützen?",
+      "options": {
+        "a": "Immer Atemschutz tragen",
+        "b": "Schnittschutzkleidung tragen",
+        "c": "Beim Umgang mit Verletzten Infektionsschutzhandschuhe tragen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 125,
+      "question": "Welche Abstände sind von Spannung führenden Teilen beim Einsatz von CM-Strahlrohren zu halten?",
+      "options": {
+        "a": "1 m für Sprühstrahl bei Niederspannung und 10 m für Vollstrahl bei Hochspannung",
+        "b": "Entsprechend der Wurfweite des Strahlrohres",
+        "c": "Wasser darf im Bereich der elektrischen Anlagen nicht eingesetzt werden"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 126,
+      "question": "Welche Gefahr fehlt im folgenden Merkschema für die Gefahren der Einsatzstelle? Atemgifte, Angstreaktionen, Atomare Gefahren, Ausbreitung, Chemische Stoffe, Erkrankung, Explosion, Einsturz",
+      "options": {
+        "a": "Elektrizität",
+        "b": "Ertrinken",
+        "c": "Absturz"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 127,
+      "question": "Wie lässt sich die Strahlenbelastung bei atomaren Gefahren verringern?",
+      "options": {
+        "a": "Abstand halten, Einsatzzeit begrenzen, Abschirmung nutzen",
+        "b": "An der Einsatzstelle trinken, essen und rauchen",
+        "c": "Mit Wasser-Sprühstrahl eine „Hydrowand” aufbauen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 128,
+      "question": "Wie kann sich der Angriffstrupp vor der Gefahr durch Brandausbreitung schützen?",
+      "options": {
+        "a": "Nur mit Wasser am Rohr vorgehen",
+        "b": "Schnell und ohne Sicherung der Rückzugswege zum Brandherd vordringen, um die Ausbreitungszeit zu begrenzen",
+        "c": "Nur unter umluftunabhängigem Atemschutz vorgehen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 129,
+      "question": "Welches Verhalten kann bei der Stressbewältigung hilfreich sein?",
+      "options": {
+        "a": "Pausen einlegen, sich ablösen lassen",
+        "b": "Aufgaben möglichst alleine durchführen",
+        "c": "Schneller arbeiten, um sich abzulenken"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 130,
+      "question": "Welche der folgenden Symptome sind üblicherweise anzutreffende negative Stressreaktionen?",
+      "options": {
+        "a": "Zittern, Schwitzen",
+        "b": "Konzentrationssteigerung",
+        "c": "Euphorie"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 131,
+      "question": "Was ist Stress?",
+      "options": {
+        "a": "Eine Reaktion des Körpers",
+        "b": "Eine Fastenspeise",
+        "c": "Ein gefährlicher Stoff"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 132,
+      "question": "Was hat der Truppführer beim Vorgehen des Trupps zu beachten?",
+      "options": {
+        "a": "Ständig auf mögliche Gefahrensituationen achten",
+        "b": "Dass immer Sichtkontakt zu seinem Einheitsführer besteht",
+        "c": "Keine weitere Verantwortung für den Trupp"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 133,
+      "question": "Welcher Sicherheitsabstand muss mindestens zu spannungsführenden Anlagen mit einer Spannung von 380 kV eingehalten werden?",
+      "options": {
+        "a": "5 m",
+        "b": "1 m",
+        "c": "1,5 m"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 134,
+      "question": "Was ist der Trümmerschatten?",
+      "options": {
+        "a": "Ein durch Einsturz bedrohter Bereich, nur im Innern eines Gebäudes",
+        "b": "Ein durch Trümmer schwer einsehbarer Bereich",
+        "c": "Ein durch Einsturz bedrohter Bereich"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 135,
+      "question": "Welche Schutzmaßnahmen beachten sie als Truppführer bei der Gefahr durch Elektrizität?",
+      "options": {
+        "a": "Die Einhaltung erforderlicher Mindestabstände",
+        "b": "Die Strahlrohreinstellung „Sprühstrahl”, durch die alle Risiken ausgeschlossen sind",
+        "c": "Durch die Erdung durch meine Schlauchleitung besteht keine Gefahr"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Einsatzgrundsätze und Gefahren"
+    },
+    {
+      "id": 136,
+      "question": "Welcher Trupp stellt in der Regel die Wasserversorgung zwischen Löschfahrzeug und Wasserentnahme her?",
+      "options": {
+        "a": "Wassertrupp",
+        "b": "Angriffstrupp",
+        "c": "Schlauchtrupp"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 137,
+      "question": "Mit welcher Ausrüstung geht der Angriffstrupp bei einem Brandeinsatz (Außenangriff) im Regelfall vor?",
+      "options": {
+        "a": "Pulverlöscher",
+        "b": "Kübelspritze und C-Schlauch",
+        "c": "Strahlrohr, Schlauchhalter, Beleuchtungsgerät"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 138,
+      "question": "Wo wird am Verteiler das 2. C-Rohr angeschlossen (in Fließrichtung des Wassers betrachtet)?",
+      "options": {
+        "a": "links",
+        "b": "rechts",
+        "c": "mittig"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 139,
+      "question": "Nach dem Kommando „Gefahr - Alle sofort zurück!“ sammeln sich die Einsatzkräfte…",
+      "options": {
+        "a": "am Verteiler",
+        "b": "bei der Einsatzleitung",
+        "c": "am Feuerwehrfahrzeug"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 140,
+      "question": "Welche Angaben sind auf dem Hinweisschild zu einem Unterflurhydranten enthalten?",
+      "options": {
+        "a": "Betriebsdruck und Wasserlieferung",
+        "b": "Position des Hydranten und Durchmesser der Wasserleitung",
+        "c": "Zuständiger Wasserwart und Position des Hydranten"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 141,
+      "question": "Wer kuppelt bei einer Gruppe, bei der Wasserentnahme aus offenen Gewässern, die Saugleitung?",
+      "options": {
+        "a": "Angriffstrupp, der Wassertrupp unterstützt",
+        "b": "Schlauchtrupp, der Wassertrupp unterstützt",
+        "c": "Wassertrupp, der Schlauchtrupp unterstützt"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 142,
+      "question": "In welcher Reihenfolge wird die Wasserversorgung bei Löschfahrzeugen mit Löschwasserbehälter (z. B. LF 20) verlegt?",
+      "options": {
+        "a": "Zuerst von der Wasserentnahmestelle zum Löschfahrzeug und danach zum Verteiler",
+        "b": "Keine Festlegung, da der Arbeitsaufwand gleich is",
+        "c": "Zuerst vom Löschfahrzeug zum Verteiler und danach zur Wasserentnahmestelle"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 143,
+      "question": "Der Gruppenführer verlangt, dass Sie seinen Befehl wiederholen. Warum?",
+      "options": {
+        "a": "Zeitersparnis",
+        "b": "Damit er weiß, ob Sie ihn verstanden haben",
+        "c": "Weil es zum Anstand gehört"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 144,
+      "question": "Welcher Trupp setzt im Brandeinsatz den Verteiler?",
+      "options": {
+        "a": "Wassertrupp",
+        "b": "Angriffstrupp",
+        "c": "Schlauchtrupp"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 145,
+      "question": "Welchen Vorteil hat die festgelegte Sitzordnung im Löschgruppenfahrzeug?",
+      "options": {
+        "a": "Keinen",
+        "b": "Dient dem militärischen Dienst",
+        "c": "Ermöglicht während der Anfahrt, sich auf die entsprechenden Funktionstätigkeiten vorzubereiten"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 146,
+      "question": "Eine angetretene Gruppe erhält den Einsatzbefehl: „Wasserentnahmestelle der Überflurhydrant - Verteiler neben Hauseingang - zum Einsatz fertig!”. Welche Aufgaben haben Sie als Angriffstruppführer?",
+      "options": {
+        "a": "Ausrüsten und bis zum Hauseingang vorgehen",
+        "b": "Verteiler und C-Schläuche zur befohlenen Stelle bringen",
+        "c": "B-Schlauchleitung zum Verteiler vorlegen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 147,
+      "question": "Welche Maßnahmen führt der Trupp aus auf den Befehl „...trupp mit C-Rohr zur/zum ... über ... vor!”?",
+      "options": {
+        "a": "C-Schlauchleitung wird an einem der drei Abgänge des Verteilers angeschlossen",
+        "b": "Schnellangriffseinrichtung des Löschfahrzeuges wird vorgenommen",
+        "c": "C-Schlauchleitung wird von der Feuerlöschkreiselpumpe direkt zur befohlenen Einsatzstelle verlegt"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 148,
+      "question": "Wer verlegt im Regelfall bei der Staffel im Löscheinsatz die B-Schlauchleitung zum Verteiler?",
+      "options": {
+        "a": "Angriffstrupp",
+        "b": "Maschinist",
+        "c": "Wassertrupp"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 149,
+      "question": "Wie verhalten Sie sich als Truppführer beim Erkennen einer Eigengefährdung des Trupps?",
+      "options": {
+        "a": "Der Trupp geht geschlossen zurück, Rückmeldung an den Einheitsführer",
+        "b": "Jeder im Trupp tritt für sich den Rückzug an",
+        "c": "Wartet die Situation ab"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 150,
+      "question": "Wer bestimmt bei einer Wasserentnahme aus offenem Gewässer die Anzahl der Saugschläuche?",
+      "options": {
+        "a": "Der Wassertruppführer",
+        "b": "Der Einheitsführer",
+        "c": "Der Schlauchtruppführer"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 151,
+      "question": "Welche Aufgabe hat der Angriffstrupp bei der Vornahme des Verteilers?",
+      "options": {
+        "a": "Er setzt den Verteiler; die genaue Lage wird durch den Einheitsführer vorgegeben",
+        "b": "Ist nicht seine Aufgabe als Angriffstrupp",
+        "c": "Er bestimmt, wo das erste Rohr angeschlossen wird"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 152,
+      "question": "Welchen Einsatz hat der Einheitsführer gewählt, wenn sein Befehl wie folgt lautet: „Wasserentnahme der Überflurhydrant, Verteiler 5 m neben die Eingangstür, zum Einsatz fertig!”?",
+      "options": {
+        "a": "Einen Einsatz mit Bereitstellung",
+        "b": "Einen Einsatz ohne Bereitstellung",
+        "c": "Einen Einsatz auf Vorbereitung"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 153,
+      "question": "Dürfen sie eigenverantwortlich während der Löscharbeiten das Mundstück ihres BM-Strahlrohres abschrauben?",
+      "options": {
+        "a": "Nein, der dadurch erhöhte Wasserdurchfluss muss vorher mit dem Einheitsführer abgesprochen werden",
+        "b": "Ja, wenn die Einsatzsituation es erfordert",
+        "c": "Liegt im Ermessen des Trupps"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 154,
+      "question": "Wie erkennen sie, dass der Einheitsführer einen Einsatz ohne Bereitstellung durchführen will?",
+      "options": {
+        "a": "Durch das Wort „vor”",
+        "b": "Durch Angabe der Wasserentnahmestelle",
+        "c": "An der Lage des Verteilers"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 155,
+      "question": "Die Schlauchreserve bei einem Angriff mit einem Strahlrohr muss berücksichtigt werden...",
+      "options": {
+        "a": "damit der vorgebende Trupp eine notwendige Beweglichkeit und Reichweite erhält",
+        "b": "damit die Schläuche besser in Buchten verlegt werden können",
+        "c": "damit der Trupp weiter vom Verteiler entfernt ist"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 156,
+      "question": "Als Angriffstrupp bekommen sie den Einsatzbefehl einen brennenden Palettenstapel abzulöschen. Welche Löschtaktik wenden sie an?",
+      "options": {
+        "a": "Mit Sprühstrahl, um das Brandobjekt bewegend",
+        "b": "Aus größerer Entfernung mit Vollstrahl",
+        "c": "Mit Sprühstrahl, von einem festen Punkt aus"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 157,
+      "question": "Die Schläuche für Sonderrohre werden am Verteiler (in Fließrichtung)...",
+      "options": {
+        "a": "in der Mitte angeschlossen",
+        "b": "links angeschlossen",
+        "c": "rechts angeschlossen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 158,
+      "question": "An welchen Abgang am Verteiler wird das erste Rohr angeschlossen?",
+      "options": {
+        "a": "Am linken Abgang",
+        "b": "Am rechten Abgang",
+        "c": "In der Mitte"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 159,
+      "question": "Welche Aussage zur Löschtaktik bei einem Feststoffbrand ist richtig?",
+      "options": {
+        "a": "Feuer muss von vorne nach hinten bekämpft werden",
+        "b": "Feuer muss von hinten nach vorne bekämpft werden",
+        "c": "Feuer muss von der Seite bekämpft werden"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 160,
+      "question": "Der Einheitsführer befiehlt: „Wasserentnahmestelle der Überflurhydrant am Bürgersteig, Verteiler zur Gartentür, zum Einsatz fertig!”. Sie sind Angriffstruppführer, wie platzieren sie den Verteiler?",
+      "options": {
+        "a": "Seitlich versetzt, damit der Zugang zum Gebäude nicht behindert wird",
+        "b": "Direkt in die offene Gartentür",
+        "c": "Mittig, unmittelbar hinter der Gartentür"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 161,
+      "question": "Gemäß FwDV 3 „Einheiten im Löscheinsatz” unterscheidet man die Einsatzformen...",
+      "options": {
+        "a": "Einsatz mit Bereitstellung und ohne Bereitstellung",
+        "b": "Einsätze neben- und hintereinander",
+        "c": "Einsätze getrennt und geschlossen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 162,
+      "question": "Der Strahlrohrführer öffnet das Strahlrohr zur Brandbekämpfung...",
+      "options": {
+        "a": "unter Beachtung von Weisungen des Truppführers",
+        "b": "an der Rauchgrenze",
+        "c": "sobald er Wasser am Strahlrohr hat"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Löscheinsatz (FwDV 3)"
+    },
+    {
+      "id": 163,
+      "question": "Welche Länge hat eine Feuerwehrleine?",
+      "options": {
+        "a": "30 Meter",
+        "b": "25 Meter",
+        "c": "15 Meter"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 164,
+      "question": "Welche Verwendung hat der Feuerwehr-Haltegurt?",
+      "options": {
+        "a": "Sichern der Gefahr des Stürzens durch Halten/Rückhalten",
+        "b": "Sichern der Einsatzkleidung gegen Abrutschen",
+        "c": "Sichern gegen Absturz an der Absturzkante"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 165,
+      "question": "Welche Sicherungsmethoden kennen Sie?",
+      "options": {
+        "a": "Halten/Rückhalten",
+        "b": "Sichern/Rücksichern",
+        "c": "Anleinen/Abseilen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 166,
+      "question": "Welchen Zweck hat die Feuerwehrleine?",
+      "options": {
+        "a": "Rettung; Selbstrettung; Sicherung/Aufziehen von Geräten",
+        "b": "Verwendung als Halte- und Ventilleine",
+        "c": "Absperren der Einsatzstelle"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 167,
+      "question": "Nennen Sie den Mindestabstand zur Absturzkante beim Rückhalten:",
+      "options": {
+        "a": "Zwei Meter",
+        "b": "Fünf Meter",
+        "c": "Einen halben Meter"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 168,
+      "question": "Was ist beim Sichern einer Person zu beachten?",
+      "options": {
+        "a": "Der Anschlagpunkt ist oberhalb der zu sichernden Person anzubringen",
+        "b": "Es ist genügend Schlaffseil vorzuhalten, damit der Gesicherte in seiner Bewegungsfreiheit nicht eingeschränkt wird",
+        "c": "Das Seil über scharfe Kanten führen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 169,
+      "question": "Wie weit darf man beim Rückhalten an die Absturzkante heran treten?",
+      "options": {
+        "a": "Ein Abstand von zwei Metern zur Absturzkante ist einzuhalten",
+        "b": "Es darf unmittelbar bis an die Absturzkante heran getreten werden",
+        "c": "Kurzzeitige Arbeiten an der Absturzkante sind erlaubt"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 170,
+      "question": "Wann darf eine Feuerwehrleine nicht eingesetzt werden?",
+      "options": {
+        "a": "Wenn ein Absturz nicht ausgeschlossen werden kann",
+        "b": "Zum Halten und Rückhalten",
+        "c": "Zum Selbstretten"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 171,
+      "question": "Darf der Feuerwehr-Haltegurt als Auffanggurt benutzt werden?",
+      "options": {
+        "a": "Nein, ein Feuerwehr-Haltegurt darf grundsätzlich nicht als Auffanggurt genutzt werden",
+        "b": "Ja, wenn dieser jünger als 10 Jahre ist und jährlich geprüft wird",
+        "c": "Ja, dafür ist dieser Gurt geeignet"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 172,
+      "question": "Kann das Halten mit Feuerwehr-Haltegurt und Feuerwehrleine durchgeführt werden?",
+      "options": {
+        "a": "Ja, es genügt eine Feuerwehrleine und der Feuerwehr-Haltegurt",
+        "b": "Nein, hierzu benötigt man einen Gerätesatz Absturzsicherung",
+        "c": "Nein, da die Feuerwehrleine das nicht aushält"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 173,
+      "question": "Was ist beim Rückhalten zu beachten?",
+      "options": {
+        "a": "Ein Absturz wird ausgeschlossen, weil die Absturzkante durch das Rückhalten nicht erreicht werden kann",
+        "b": "Rückhalten ist in der Feuerwehr nicht vorgesehen, wir gehen immer bis an die Grenze",
+        "c": "Wenn ich abstürzen sollte, hält mich der Feuerwehr- Haltegurt und die Feuerwehrleine"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sichern und Absturzsicherung"
+    },
+    {
+      "id": 174,
+      "question": "Wie schützt sich die Mannschaft bei technischen Hilfeleistungen auf öffentlichen Verkehrsflächen vor Gefahren durch den Verkehr?",
+      "options": {
+        "a": "Mannschaft bleibt im Löschfahrzeug",
+        "b": "Mannschaft steigt auf Befehl zur verkehrsabgewandten Seite aus",
+        "c": "Mannschaft tritt hinter dem Löschfahrzeug an"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 175,
+      "question": "Welcher Trupp ist im technischen Hilfeleistungseinsatz grundsätzlich erster Rettungstrupp?",
+      "options": {
+        "a": "Angriffstrupp",
+        "b": "Wassertrupp",
+        "c": "Schlauchtrupp"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 176,
+      "question": "Welcher Trupp ist bei der technischen Hilfeleistung für Sicherungsaufgaben zuständig?",
+      "options": {
+        "a": "Wassertrupp",
+        "b": "Angriffstrupp",
+        "c": "Schlauchtrupp"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 177,
+      "question": "Welche Aufgabe hat der Wassertrupp bei einem Hilfeleistungseinsatz?",
+      "options": {
+        "a": "Sichern der Einsatzstelle, z. B. gegen Brandgefahr",
+        "b": "Bereitstellen der Geräte",
+        "c": "Rettungsmaßnahmen durchführen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 178,
+      "question": "Sie erhalten als Angriffstrupp vom Einheitsführer den Befehl: „Angriffstrupp zur Versorgung der Person im PKW vor!”. Welche erste Maßnahme führen sie durch?",
+      "options": {
+        "a": "Überprüfen der Vitalfunktionen",
+        "b": "Sofortige Rettung der Person",
+        "c": "Versuchen die Person zu befreien"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 179,
+      "question": "Welche Aufgabe übernimmt der Schlauchtrupp bei einem Hilfeleistungseinsatz?",
+      "options": {
+        "a": "Die Gerätebereitstellung",
+        "b": "Die Sicherung",
+        "c": "Die Rettung"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 180,
+      "question": "Welche Aussage über den Angriffstrupp im Hilfeleistungseinsatz ist richtig?",
+      "options": {
+        "a": "Er rettet und leistet technische Hilfe",
+        "b": "Er sichert die Einsatzstelle und nimmt das dafür notwendige Gerät vor",
+        "c": "Er bereitet die befohlenen Geräte für den Einsatz vor"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 181,
+      "question": "Worauf achten Sie beim Absitzen an der Einsatzstelle?",
+      "options": {
+        "a": "Auf Gefahren durch den fließenden Verkehr",
+        "b": "Nur zur rechten Seite absitzen",
+        "c": "Nur zur linken Seite absitzen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 182,
+      "question": "Eine in einem PKW eingeklemmte Person soll durch ihren Trupp betreut werden. Das Fahrzeug ist noch nicht gesichert und könnte abrutschen. Wie verhalten sie sich?",
+      "options": {
+        "a": "Mit der Betreuung der Person wird unverzüglich von außerhalb begonnen",
+        "b": "Die Betreuung der Person erfolgt erst nachdem das Fahrzeug gesichert ist",
+        "c": "Ich steige sofort zur Betreuung der Person in das Fahrzeug"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 183,
+      "question": "Was wird mit orangefarbenen Warntafeln gekennzeichnet?",
+      "options": {
+        "a": "Straßen- und Schienenfahrzeuge, die gefährliche Stoffe ab bestimmten Mengen befördern",
+        "b": "Gebäude, in denen gefährliche Stoffe und Güter gelagert sind",
+        "c": "Nur Versandstücke"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 184,
+      "question": "Sie sehen auf einer Kiste der Ladung eines verunglückten LKW folgendes Schild. Was melden Sie Ihrem Gruppenführer?",
+      "options": {
+        "a": "Brandgefahr",
+        "b": "Vergiftungsgefahr",
+        "c": "Ansteckungsgefahr"
+      },
+      "image": "page14_img2.png",
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 185,
+      "question": "Sie sehen an der Tür eines Gebäudes folgendes Schild (schwarz auf gelbem Hintergrund). Womit müssen Sie rechnen?",
+      "options": {
+        "a": "Verätzungsgefahr",
+        "b": "Mit starkem Wind durch eine, sich hinter der Tür befindliche Lüftungsanlage",
+        "c": "Explosionsgefahr"
+      },
+      "image": "page14_img1.png",
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 186,
+      "question": "Welche Nummernsysteme befinden sich auf einer orangefarbenen Warntafel?",
+      "options": {
+        "a": "Gefährdungsnummer und Einsatznummer",
+        "b": "Transportkennzahl und Gefahrencode",
+        "c": "Stoffnummer und Nummer zur Kennzeichnung der Gefahr"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 187,
+      "question": "Sie sehen auf einem Fass in einem Lager folgendes Schild (schwarz auf weiß-rotem Hintergrund). Welche Gefahr kann von diesem Stoff ausgehen??",
+      "options": {
+        "a": "Vergiftungsgefahr",
+        "b": "Austritt von Gas",
+        "c": "Brandgefahr"
+      },
+      "image": "page15_img2.png",
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 188,
+      "question": "Eine Gefahrgutumschließung ist mit folgendem Symbol gekennzeichnet (schwarz auf rotem Hintergrund). Was enthält die Verpackung?",
+      "options": {
+        "a": "Einen festen brennbaren Stoff",
+        "b": "Einen gasförmigen brennbaren Stoff",
+        "c": "Einen flüssigen brennbaren Stoff"
+      },
+      "image": "page15_img3.png",
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 189,
+      "question": "Wie verhalten Sie sich, wenn Sie im Gefahrguteinsatz einen verletzten Menschen im Gefahrenbereich entdecken?",
+      "options": {
+        "a": "Ich retten den Menschen sofort aus dem Gefahrenbereich",
+        "b": "Ich melde es dem Einheitsführer",
+        "c": "Ich lasse mich zuerst dekontaminieren und rette dann den Menschen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 190,
+      "question": "Welche Einsatzmaßnahmen beschreibt die GAMS- Regel?",
+      "options": {
+        "a": "Gase Absorbieren, Mineralöle Separieren",
+        "b": "Gefahr erkennen, Absperren, Menschenrettung durchführen, Spezialkräfte alarmieren",
+        "c": "Gefahr beseitigen, Ausleuchten, Menschenrettung durchführen, Spezialfirma beauftragen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 191,
+      "question": "Was bedeutet folgende Kennzeichnung (schwarz-weiß)?",
+      "options": {
+        "a": "Tank enthält wassergefährdende Stoffe",
+        "b": "Karton enthält kein Gefahrgut",
+        "c": "Verpackung enthält kleinere Behälter, die Gefahrgut in begrenzten Mengen enthalten"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 192,
+      "question": "Welche Gefahr besteht bei folgender Kennzeichnung (schwarz-weiß)?",
+      "options": {
+        "a": "Gesundheitsgefahr",
+        "b": "Gefahr durch erwärmte Stoffe",
+        "c": "Verätzungsgefahr"
+      },
+      "image": "page15_img1.png",
+      "correct": "a",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 193,
+      "question": "Welche Erkennungsmöglichkeit von außen besteht bei einem Fahrzeug, das mit Flüssiggas betrieben wird?",
+      "options": {
+        "a": "Von außen nicht erkennbar",
+        "b": "Mögliche Fahrzeugbeschriftung, z. B. LPG, BiFuel, Flüssiggas, Autogas",
+        "c": "Durch rechteckigen Tankdeckel am Einfüllstutzen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 194,
+      "question": "Welche alternative Antriebe werden derzeit in der Fahrzeugtechnik verwendet?",
+      "options": {
+        "a": "Diesel; Benzin; Biodiesel",
+        "b": "Erdgas (CNG); Flüssiggas (LPG); Hybridantrieb",
+        "c": "Photovoltaik; Biogas"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 195,
+      "question": "Wo kann man Erkennungshinweise auf alternative Antriebstechnik an einem PKW finden?",
+      "options": {
+        "a": "Es gibt keine Erkennungshinweise auf alternative Antriebstechnik an einem PKW",
+        "b": "Rettungskarte (Sonnenblende); Tankdeckelinnenseite; im Motorraum",
+        "c": "Unter dem Fahrersitz"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 196,
+      "question": "Welche besonderen Maßnahmen sind an einem verunfallten gasbetriebenen PKW (LPG oder CNG) erforderlich?",
+      "options": {
+        "a": "Es sind keine besonderen Maßnahmen erforderlich",
+        "b": "Gefahrenbereich weiträumig sperren; Motor abstellen; Gasabsperrventil schließen",
+        "c": "PKW gegen Wegrollen sichern, Batterie abklemmen, Brandschutz mit Kübelspritze sicherstellen"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Technische Hilfeleistung und Gefahrgut"
+    },
+    {
+      "id": 197,
+      "question": "Wofür werden Handfunkgeräte in der Regel verwendet?",
+      "options": {
+        "a": "Funkverbindung von Feststation zu Fahrzeug",
+        "b": "Funkverbindung von Einsatzkraft zu Einsatzkraft an der Einsatzstelle",
+        "c": "Funkverbindung von Fahrzeug zu Fahrzeug"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 198,
+      "question": "Was ist zu tun, wenn im Sprechfunk eine Notfallmeldung abgesetzt wird?",
+      "options": {
+        "a": "Nichts, der normale Sprechfunkverkehr kann fortgesetzt werden",
+        "b": "Es antworten sofort alle auf die Notfallmeldung",
+        "c": "Der bestehende Sprechfunkverkehr ist zu unterbrechen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 199,
+      "question": "Bei welcher Aufzählung gehören sämtliche Behörden/ Organisationen zu den Behörden und Organisationen mit Sicherheitsaufgaben (BOS)?",
+      "options": {
+        "a": "Malteser-Hilfsdienst, ADAC, Luftrettungsstaffel Bayern",
+        "b": "Berufsfeuerwehr, Telekom, Bundespolizei",
+        "c": "Polizei, Bundeszollverwaltung, Freiwillige Feuerwehren"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 200,
+      "question": "Ein Anruf ist durch folgende Anrufantwort zu bestätigen...",
+      "options": {
+        "a": "„(Rufname) hört!”",
+        "b": "„(Rufname) absetzen!”",
+        "c": "„Hier (Rufname), kommen!”"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 201,
+      "question": "Wie wird ein Gespräch im Funkverkehr beendet?",
+      "options": {
+        "a": "„Ende mit Florian Würzburg”",
+        "b": "Mit „Ende” ohne weitere Zusätze",
+        "c": "Mit Wiederholung des Funkgespäches"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 202,
+      "question": "Von welchen Faktoren hängt die Reichweite einer Funkverbindung ab?",
+      "options": {
+        "a": "Gruppeneinteilung/Kanaleinteilung",
+        "b": "Akkuzustand",
+        "c": "Bebauung, Geländeform und ggf. Witterung"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 203,
+      "question": "Der Sprechfunkverkehr wird eröffnet durch...",
+      "options": {
+        "a": "die Gegenstelle",
+        "b": "den Anruf",
+        "c": "den Einsatzleiter"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 204,
+      "question": "Welcher Grundsatz ist unter anderem beim Sprechfunkverkehr zu beachten?",
+      "options": {
+        "a": "Schnell und deutlich sprechen",
+        "b": "Nicht zu laut sprechen",
+        "c": "Abkürzungen benutzen (Zeitersparnis)"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 205,
+      "question": "Am Einsatzort angekommen, stellen Sie fest, dass Sie eine schlechte Verbindung zur Leitstelle haben. Welche Maßnahme ist jetzt richtig?",
+      "options": {
+        "a": "Ausfall der Relaisfunkstelle/Basisstation über Telefon melden",
+        "b": "Standort verändern",
+        "c": "Umschalten auf Oberband-Gegenverkehr bzw. eine andere Gruppe"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 206,
+      "question": "Eine formlose Nachricht ist...",
+      "options": {
+        "a": "eine Meldung",
+        "b": "eine Durchsage",
+        "c": "ein Spruch"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 207,
+      "question": "Eine Lagemeldung enthält in der Regel folgende Angaben:",
+      "options": {
+        "a": "Einsatzort, Lage, Schadenshöhe",
+        "b": "Lage, Maßnahmen, Uhrzeit",
+        "c": "Einsatzort, Lage, Maßnahmen, Zeit-/Kräftebedarf"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 208,
+      "question": "Bei der Durchgabe einer Nachricht hat sich der Sprechfunker versprochen und will den Fehler richtig stellen. Welche Formulierung ist richtig?",
+      "options": {
+        "a": "Die Verpflegung trifft in einer Stunde - ich berichtige - in einer halben Stunde ein, kommen",
+        "b": "Die Verpflegung trifft in einer Stunde - ich verbessere - in einer halben Stunde ein, kommen",
+        "c": "Wiederhole - in einer halben Stunde ein, kommen"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 209,
+      "question": "Wann ist eine Lagemeldung erforderlich?",
+      "options": {
+        "a": "Wenn die Lage festgestellt (erkundet) wurde oder sich wesentlich verändert hat",
+        "b": "Gleich nach dem Ausrücken",
+        "c": "Wenn der Einsatzbefehl hierfür Zeit lässt"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 210,
+      "question": "Die Funkalarmierung ist ein Verfahren zum...",
+      "options": {
+        "a": "Übermittlen von Nachrichtentexten",
+        "b": "Alarmieren von Fahrzeugen an der Einsatzstelle",
+        "c": "Alarmieren von Führungs- und Einsatzkräften"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 211,
+      "question": "Welches ist die richtige Buchstabierweise des Wortes „Duplex”?",
+      "options": {
+        "a": "Dora-Ulrich-Paula-Ludwig-Emil-Xantippe",
+        "b": "Delta-Ulrich-Paula-Ludwig-Erich-Xantippe",
+        "c": "Dora-Ulrich-Paul-Ludwig-Emil-Xantippe"
+      },
+      "image": null,
+      "correct": "a",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 212,
+      "question": "Welche Vorschrift regelt die Durchführung des Sprechfunkverkehrs?",
+      "options": {
+        "a": "BOS-Funkrichtlinie",
+        "b": "FwDV 800 / 810",
+        "c": "Vollzugsbekanntmachung BayFwG"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 213,
+      "question": "Nach welchen Gesetzmäßigkeiten breiten sich UKW-Funkwellen aus?",
+      "options": {
+        "a": "Sie folgen dem Verlauf der Erdkrümmung",
+        "b": "Sie breiten sich mit Schallgeschwindigkeit aus",
+        "c": "Sie breiten sich fast genauso aus wie Lichtstrahlen"
+      },
+      "image": null,
+      "correct": "c",
+      "topic": "Sprechfunk"
+    },
+    {
+      "id": 214,
+      "question": "Eigenhändiges Ändern einer Nachricht ist dem Betriebspersonal...",
+      "options": {
+        "a": "in Einzelfällen erlaubt",
+        "b": "verboten",
+        "c": "freigestellt"
+      },
+      "image": null,
+      "correct": "b",
+      "topic": "Sprechfunk"
+    }
+  ]
+}

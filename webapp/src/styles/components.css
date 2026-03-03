@@ -276,15 +276,14 @@
 .quiz-nav-row {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   margin: var(--space-lg) 0;
 }
 
 .nav-arrow {
-  font-size: var(--font-2xl);
-  font-weight: var(--weight-normal);
+  font-size: 40px;
   color: var(--color-text-muted);
-  padding: var(--space-xs);
+  padding: var(--space-sm) var(--space-xs);
   flex-shrink: 0;
   transition: color var(--transition-fast);
   line-height: 1;

@@ -133,10 +133,27 @@ npm install
 npm start
 ```
 
-## Datenquelle
+## Quellenangabe und Hinweise
 
-Fragenkatalog der **Staatlichen Feuerwehrschule Würzburg**, Version Basis 15.2 (04/2015). Format: 214 Multiple-Choice-Fragen mit je 3 Antwortmöglichkeiten, davon 1 richtig. 5 Fragen enthalten Gefahrzeichen-Abbildungen.
+### Datenquelle
+
+Die Prüfungsfragen stammen aus dem **Fragenkatalog der Staatlichen Feuerwehrschule Würzburg** (Version Basis 15.2, 04/2015). Der Fragenkatalog ist öffentlich zugänglich über:
+
+- **Prüfungsgenerator**: [fra-gen.sfs-bayern.de](https://fra-gen.sfs-bayern.de)
+- **Lernportal**: [feuerwehr-lernbar.bayern](https://www.feuerwehr-lernbar.bayern)
+
+Format: 214 Multiple-Choice-Fragen mit je 3 Antwortmöglichkeiten (1 richtig), 5 davon mit Gefahrzeichen-Abbildungen.
+
+### Rechtlicher Hinweis
+
+Dies ist ein **privates, nicht-kommerzielles Projekt** zur persönlichen Prüfungsvorbereitung. Es besteht **keine Verbindung** zur Staatlichen Feuerwehrschule Würzburg oder zum Bayerischen Staatsministerium des Innern.
+
+Die Fragen wurden **unverändert** aus dem öffentlich zugänglichen Fragenkatalog übernommen. Die Veröffentlichung erfolgt unter Berufung auf [§ 5 Abs. 2 UrhG](https://dejure.org/gesetze/UrhG/5.html) (amtliche Werke, die im öffentlichen Interesse zur allgemeinen Kenntnisnahme veröffentlicht worden sind) mit vollständiger Quellenangabe.
+
+Bei Fragen oder Beanstandungen wenden Sie sich bitte an die Staatliche Feuerwehrschule Würzburg: **lehrmittel@sfs-w.bayern.de**
 
 ## Lizenz
 
-MIT
+Der **Quellcode** dieses Projekts steht unter der [MIT-Lizenz](LICENSE).
+
+Die **Prüfungsfragen und Abbildungen** sind Eigentum der Staatlichen Feuerwehrschule Würzburg und unterliegen deren Nutzungsbedingungen.

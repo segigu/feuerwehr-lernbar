@@ -73,6 +73,25 @@
   color: var(--color-text-secondary);
 }
 
+.home-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: var(--space-xl);
+  padding: var(--space-md) 0;
+  font-size: var(--font-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.home-footer-link {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ============================================
    TOPIC SELECT
    ============================================ */

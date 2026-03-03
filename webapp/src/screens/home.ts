@@ -55,6 +55,19 @@ export function renderHome(container: HTMLElement): () => void {
   cards.append(cardAll, cardExam, cardTopic);
   container.appendChild(cards);
 
+  // Source attribution
+  const footer = h('div', { className: 'home-footer' });
+  const footerLine1 = h('span', {}, 'Quelle: Fragenkatalog Basis 15.2');
+  const footerLine2 = h('a', {
+    href: 'https://fra-gen.sfs-bayern.de',
+    target: '_blank',
+    rel: 'noopener',
+    className: 'home-footer-link',
+  }, 'Staatliche Feuerwehrschule Würzburg');
+  const footerLine3 = h('span', {}, 'Kein offizielles Angebot der SFS');
+  footer.append(footerLine1, footerLine2, footerLine3);
+  container.appendChild(footer);
+
   return () => {};
 }
 

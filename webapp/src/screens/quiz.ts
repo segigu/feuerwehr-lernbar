@@ -39,8 +39,8 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   const questionSlot = h('div', { className: 'quiz-question-slot' });
 
-  const prevBtn = h('button', { className: 'nav-arrow nav-prev' }, '\u2039');
-  const nextBtn = h('button', { className: 'nav-arrow nav-next' }, '\u203A');
+  const prevBtn = h('button', { className: 'nav-arrow nav-prev' }, '\u007C\u2039');
+  const nextBtn = h('button', { className: 'nav-arrow nav-next' }, '\u203A\u007C');
   const navDots = h('div', { className: 'quiz-nav-dots' });
   const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navDots, nextBtn);
 

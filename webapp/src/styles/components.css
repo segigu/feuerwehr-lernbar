@@ -123,9 +123,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  font-size: var(--font-lg);
+  width: 44px;
+  height: 44px;
+  font-size: var(--font-xl);
   color: var(--color-text-muted);
   flex-shrink: 0;
   transition: color var(--transition-fast);

@@ -39,13 +39,12 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   const questionSlot = h('div', { className: 'quiz-question-slot' });
 
+  const prevBtn = h('button', { className: 'nav-arrow nav-prev' }, '\u2039');
+  const nextBtn = h('button', { className: 'nav-arrow nav-next' }, '\u203A');
   const navDots = h('div', { className: 'quiz-nav-dots' });
+  const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navDots, nextBtn);
 
-  const prevBtn = h('button', { className: 'nav-btn nav-prev' }, '\u2190');
-  const nextBtn = h('button', { className: 'nav-btn nav-next' }, '\u2192');
-  const navButtons = h('div', { className: 'quiz-nav-buttons' }, prevBtn, nextBtn);
-
-  container.append(topBar, questionSlot, navDots, navButtons);
+  container.append(topBar, questionSlot, navRow);
 
   function renderCurrentQuestion(): void {
     const question = getCurrentQuestion();

@@ -51,17 +51,19 @@ export function renderQuiz(container: HTMLElement): () => void {
   const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navDots, nextBtn);
 
   // Auto-advance toggle
-  const checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
-  checkbox.checked = autoAdvance;
-  checkbox.addEventListener('change', () => {
-    autoAdvance = checkbox.checked;
-    setAutoAdvancePref(autoAdvance);
+  const toggleBtn = h('button', {
+    className: `auto-advance-toggle${autoAdvance ? ' active' : ''}`,
   });
-  const toggleLabel = h('label', { className: 'auto-advance-toggle' });
-  toggleLabel.append(checkbox, ' Automatisch weiter');
+  const toggleTrack = h('span', { className: 'toggle-track' });
+  const toggleText = h('span', { className: 'toggle-text' }, 'Automatisch weiter');
+  toggleBtn.append(toggleTrack, toggleText);
+  toggleBtn.addEventListener('click', () => {
+    autoAdvance = !autoAdvance;
+    setAutoAdvancePref(autoAdvance);
+    toggleBtn.classList.toggle('active', autoAdvance);
+  });
 
-  container.append(topBar, questionSlot, navRow, toggleLabel);
+  container.append(topBar, questionSlot, navRow, toggleBtn);
 
   function applySlideAnimation(): void {
     questionSlot.classList.remove('slide-up', 'slide-down');

@@ -1,6 +1,88 @@
 import type { Question } from '../data/questions';
+import { questions as allQuestions } from '../data/questions';
 
 export type QuizMode = 'exam' | 'all' | 'topic';
+
+// ---- localStorage: progress persistence ----
+
+const PROGRESS_KEY = 'mta-progress-all';
+const AUTO_ADVANCE_KEY = 'mta-auto-advance';
+
+interface SavedProgress {
+  questionIds: number[];
+  currentIndex: number;
+  answers: Record<number, 'a' | 'b' | 'c'>;
+}
+
+export function saveProgress(): void {
+  if (!session || session.mode !== 'all') return;
+  const data: SavedProgress = {
+    questionIds: session.questions.map(q => q.id),
+    currentIndex: session.currentIndex,
+    answers: Object.fromEntries(session.answers),
+  };
+  try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch {}
+}
+
+export function loadSavedProgress(): SavedProgress | null {
+  try {
+    const raw = localStorage.getItem(PROGRESS_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as SavedProgress;
+  } catch { return null; }
+}
+
+export function hasSavedProgress(): boolean {
+  return loadSavedProgress() !== null;
+}
+
+export function clearSavedProgress(): void {
+  try { localStorage.removeItem(PROGRESS_KEY); } catch {}
+}
+
+export function restoreSession(): QuizSession | null {
+  const saved = loadSavedProgress();
+  if (!saved) return null;
+
+  const questionsMap = new Map(allQuestions.map(q => [q.id, q]));
+  const questions = saved.questionIds
+    .map(id => questionsMap.get(id))
+    .filter((q): q is Question => q !== undefined);
+
+  if (questions.length === 0) {
+    clearSavedProgress();
+    return null;
+  }
+
+  const answers = new Map<number, 'a' | 'b' | 'c'>();
+  for (const [k, v] of Object.entries(saved.answers)) {
+    answers.set(Number(k), v as 'a' | 'b' | 'c');
+  }
+
+  session = {
+    mode: 'all',
+    questions,
+    currentIndex: Math.min(saved.currentIndex, questions.length - 1),
+    answers,
+    startTime: Date.now(),
+    timerEnabled: false,
+    timerSeconds: 0,
+  };
+  return session;
+}
+
+export function getAutoAdvance(): boolean {
+  try {
+    const val = localStorage.getItem(AUTO_ADVANCE_KEY);
+    return val === null ? true : val === 'true';
+  } catch { return true; }
+}
+
+export function setAutoAdvancePref(value: boolean): void {
+  try { localStorage.setItem(AUTO_ADVANCE_KEY, String(value)); } catch {}
+}
+
+// ---- Session management ----
 
 export interface QuizSession {
   mode: QuizMode;
@@ -44,6 +126,7 @@ export function clearSession(): void {
 export function setAnswer(questionId: number, answer: 'a' | 'b' | 'c'): void {
   if (session) {
     session.answers.set(questionId, answer);
+    saveProgress();
   }
 }
 

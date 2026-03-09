@@ -1,6 +1,6 @@
 import { navigate } from '../app';
 import { questions } from '../data/questions';
-import { createSession } from '../state/quiz-state';
+import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } from '../state/quiz-state';
 import { getRandomExamQuestions } from '../data/questions';
 import { h } from '../utils/dom';
 
@@ -17,16 +17,45 @@ export function renderHome(container: HTMLElement): () => void {
 
   const cards = h('div', { className: 'home-cards' });
 
-  // Card 1: All questions (shuffled)
-  const cardAll = createCard(
-    'Alle Fragen',
-    '214 Fragen in zufälliger Reihenfolge',
-    'Alle Fragen durchgehen',
-    () => {
+  // Card 1: All questions — check for saved progress
+  const saved = loadSavedProgress();
+  let cardAll: HTMLElement;
+
+  if (saved) {
+    const answered = Object.keys(saved.answers).length;
+    const cardEl = h('div', { className: 'home-card-wrap' });
+
+    const resumeBtn = createCard(
+      'Alle Fragen',
+      `Fortsetzen \u2014 ${answered} von ${saved.questionIds.length} beantwortet`,
+      'Weiter wo du aufgehört hast',
+      () => {
+        restoreSession();
+        navigate('quiz');
+      }
+    );
+
+    const resetBtn = h('button', { className: 'home-card-reset' }, 'Neu starten');
+    resetBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearSavedProgress();
       createSession('all', getRandomExamQuestions(questions.length));
       navigate('quiz');
-    }
-  );
+    });
+
+    cardEl.append(resumeBtn, resetBtn);
+    cardAll = cardEl;
+  } else {
+    cardAll = createCard(
+      'Alle Fragen',
+      '214 Fragen in zufälliger Reihenfolge',
+      'Alle Fragen durchgehen',
+      () => {
+        createSession('all', getRandomExamQuestions(questions.length));
+        navigate('quiz');
+      }
+    );
+  }
 
   // Card 2: Exam simulation
   const cardExam = createCard(

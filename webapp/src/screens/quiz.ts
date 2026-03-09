@@ -8,6 +8,10 @@ import {
   goToQuestion,
   getRemainingSeconds,
   isTimeUp,
+  saveProgress,
+  getAutoAdvance,
+  setAutoAdvancePref,
+  clearSavedProgress,
 } from '../state/quiz-state';
 import { createQuestionCard } from '../components/question-card';
 import { createProgressBar } from '../components/progress-bar';
@@ -24,6 +28,7 @@ export function renderQuiz(container: HTMLElement): () => void {
   let timerInterval: ReturnType<typeof setInterval> | null = null;
   let cleanupBackBtn: (() => void) | null = null;
   let slideDirection: 'up' | 'down' | null = null;
+  let autoAdvance = getAutoAdvance();
 
   // Close button in top bar
   const closeBtn = h('button', { className: 'quiz-close-btn' }, '\u2715');
@@ -45,7 +50,18 @@ export function renderQuiz(container: HTMLElement): () => void {
   const navDots = h('div', { className: 'quiz-nav-dots' });
   const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navDots, nextBtn);
 
-  container.append(topBar, questionSlot, navRow);
+  // Auto-advance toggle
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = autoAdvance;
+  checkbox.addEventListener('change', () => {
+    autoAdvance = checkbox.checked;
+    setAutoAdvancePref(autoAdvance);
+  });
+  const toggleLabel = h('label', { className: 'auto-advance-toggle' });
+  toggleLabel.append(checkbox, ' Automatisch weiter');
+
+  container.append(topBar, questionSlot, navRow, toggleLabel);
 
   function applySlideAnimation(): void {
     questionSlot.classList.remove('slide-up', 'slide-down');
@@ -78,13 +94,19 @@ export function renderQuiz(container: HTMLElement): () => void {
       slideDirection = null;
       renderCurrentQuestion();
 
-      const delay = isTraining ? 1200 : 500;
+      if (!autoAdvance) return;
+
+      const delay = isTraining ? 2200 : 1500;
       if (isLast) {
-        setTimeout(() => navigate('results'), delay + 100);
+        setTimeout(() => {
+          clearSavedProgress();
+          navigate('results');
+        }, delay + 100);
       } else {
         setTimeout(() => {
           slideDirection = 'up';
           nextQuestion();
+          saveProgress();
           renderCurrentQuestion();
         }, delay);
       }
@@ -118,6 +140,7 @@ export function renderQuiz(container: HTMLElement): () => void {
         if (i === currentIdx) return;
         slideDirection = i > currentIdx ? 'up' : 'down';
         goToQuestion(i);
+        saveProgress();
         renderCurrentQuestion();
       });
 
@@ -133,12 +156,14 @@ export function renderQuiz(container: HTMLElement): () => void {
   prevBtn.addEventListener('click', () => {
     slideDirection = 'down';
     prevQuestion();
+    saveProgress();
     renderCurrentQuestion();
   });
 
   nextBtn.addEventListener('click', () => {
     slideDirection = 'up';
     if (nextQuestion()) {
+      saveProgress();
       renderCurrentQuestion();
     }
   });

@@ -12,7 +12,9 @@ import {
   getAutoAdvance,
   setAutoAdvancePref,
   clearSavedProgress,
+  createSession,
 } from '../state/quiz-state';
+import { questions, getRandomExamQuestions } from '../data/questions';
 import { createQuestionCard } from '../components/question-card';
 import { createProgressBar } from '../components/progress-bar';
 import { showBackButton } from '../utils/telegram';
@@ -48,14 +50,16 @@ export function renderQuiz(container: HTMLElement): () => void {
   const prevBtn = h('button', { className: 'nav-arrow nav-prev' }, '\u2190');
   const nextBtn = h('button', { className: 'nav-arrow nav-next' }, '\u2192');
   const navDots = h('div', { className: 'quiz-nav-dots' });
-  const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navDots, nextBtn);
+
+  // Nav center: dots (if ≤50) or controls (toggle + reset)
+  const navCenter = h('div', { className: 'quiz-nav-center' });
 
   // Auto-advance toggle
   const toggleBtn = h('button', {
     className: `auto-advance-toggle${autoAdvance ? ' active' : ''}`,
   });
   const toggleTrack = h('span', { className: 'toggle-track' });
-  const toggleText = h('span', { className: 'toggle-text' }, 'Automatisch weiter');
+  const toggleText = h('span', { className: 'toggle-text' }, 'Auto');
   toggleBtn.append(toggleTrack, toggleText);
   toggleBtn.addEventListener('click', () => {
     autoAdvance = !autoAdvance;
@@ -63,7 +67,27 @@ export function renderQuiz(container: HTMLElement): () => void {
     toggleBtn.classList.toggle('active', autoAdvance);
   });
 
-  container.append(topBar, questionSlot, navRow, toggleBtn);
+  navCenter.appendChild(navDots);
+
+  const navControls = h('div', { className: 'nav-controls' });
+  navControls.appendChild(toggleBtn);
+
+  if (session.mode === 'all') {
+    const resetBtn = h('button', { className: 'quiz-reset-btn' }, 'Neu starten');
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Fortschritt zurücksetzen und neu starten?')) {
+        clearSavedProgress();
+        createSession('all', getRandomExamQuestions(questions.length));
+        navigate('quiz');
+      }
+    });
+    navControls.appendChild(resetBtn);
+  }
+
+  navCenter.appendChild(navControls);
+
+  const navRow = h('div', { className: 'quiz-nav-row' }, prevBtn, navCenter, nextBtn);
+  container.append(topBar, questionSlot, navRow);
 
   function applySlideAnimation(): void {
     questionSlot.classList.remove('slide-up', 'slide-down');

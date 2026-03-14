@@ -21,10 +21,14 @@ bot.command('start', async (ctx) => {
 
   await ctx.reply(
     '🚒 Willkommen beim MTA Prüfungstrainer!\n\n' +
-    '🎯 Bereite dich auf die Zwischenprüfung des Basismoduls vor.\n\n' +
-    '📋 214 Fragen aus 12 Themengebieten\n' +
-    '⏱ Prüfungssimulation mit Timer\n' +
-    '📊 Auswertung am Ende\n\n' +
+    '🎯 Bereite dich auf die Zwischenprüfung des Basismoduls vor\n' +
+    '(Staatliche Feuerwehrschule Würzburg)\n\n' +
+    '📚 Unterricht\n' +
+    '12 Themen mit Lerninhalt, Quiz und Vokabeln\n\n' +
+    '❓ Fragen & Prüfung\n' +
+    '• Nach Thema — gezielt einzelne Gebiete üben\n' +
+    '• Alle Fragen — 214 Fragen, Fortschritt wird gespeichert\n' +
+    '• Prüfung — 50 zufällige Fragen mit 45-Minuten-Timer\n\n' +
     '👇 Tippe auf den Button, um zu starten:',
     { reply_markup: keyboard }
   );

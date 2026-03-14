@@ -171,6 +171,8 @@ export function renderQuiz(container: HTMLElement): () => void {
 
       if (explanation) {
         const explBlock = h('div', { className: 'quiz-explanation' });
+        const explTitle = h('p', { className: 'quiz-explanation-title' }, '\u2727 Theorie');
+        explBlock.appendChild(explTitle);
         const explDe = h('p', { className: 'quiz-explanation-de' });
         explDe.textContent = explanation;
         explBlock.appendChild(explDe);

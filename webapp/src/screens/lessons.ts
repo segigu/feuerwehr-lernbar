@@ -28,8 +28,7 @@ export function renderLessons(container: HTMLElement): () => void {
 
   const header = h('div', { className: 'home-header' });
   const title = h('h1', { className: 'home-title' }, 'Unterricht');
-  const subtitle = h('p', { className: 'home-subtitle' }, 'MTA Basismodul \u2014 12 Themen');
-  header.append(title, subtitle);
+  header.append(title);
   container.appendChild(header);
 
   const grid = h('div', { className: 'topic-grid' });

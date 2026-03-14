@@ -10,15 +10,13 @@ const BASE = import.meta.env.BASE_URL;
 export function renderHome(container: HTMLElement): () => void {
   const header = h('div', { className: 'home-header' });
 
-  const iconWrap = h('div', { className: 'home-icon-wrap' });
+  const iconWrap = h('div', { className: 'home-icon-wrap home-icon-animated' });
   const icon = h('img', { className: 'home-icon', src: `${BASE}images/HauptAuto.png`, alt: '' });
   const flashRed = h('span', { className: 'home-icon-flash' });
   iconWrap.append(icon, flashRed);
   const title = h('h1', { className: 'home-title' }, 'MTA Prüfungstrainer');
-  const subtitle = h('p', { className: 'home-subtitle' }, 'Basismodul \u2014 Staatliche Feuerwehrschule Würzburg');
-  const info = h('p', { className: 'home-info' }, `214 Fragen \u00B7 12 Themen`);
 
-  header.append(iconWrap, title, subtitle, info);
+  header.append(iconWrap, title);
   container.appendChild(header);
 
   // ── Section 1: Unterricht ──────────────────────────────────

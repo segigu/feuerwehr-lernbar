@@ -2,15 +2,30 @@ import { navigate } from '../app';
 import { questions } from '../data/questions';
 import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } from '../state/quiz-state';
 import { getRandomExamQuestions } from '../data/questions';
+import { getLanguage, toggleLanguage } from '../state/app-state';
 import { h } from '../utils/dom';
 
 export function renderHome(container: HTMLElement): () => void {
   const header = h('div', { className: 'home-header' });
 
-  const icon = h('div', { className: 'home-icon' }, '\u{1F692}');
+  const icon = h('img', { className: 'home-icon', src: `${import.meta.env.BASE_URL}images/FWAuto.png`, alt: '' });
   const title = h('h1', { className: 'home-title' }, 'MTA Prüfungstrainer');
   const subtitle = h('p', { className: 'home-subtitle' }, 'Basismodul \u2014 Staatliche Feuerwehrschule Würzburg');
   const info = h('p', { className: 'home-info' }, `214 Fragen \u00B7 12 Themen`);
+
+  // Secret 5-tap language toggle
+  let tapCount = 0;
+  let tapTimer: ReturnType<typeof setTimeout> | null = null;
+  title.addEventListener('click', () => {
+    tapCount++;
+    if (tapTimer) clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { tapCount = 0; }, 2000);
+    if (tapCount >= 5) {
+      tapCount = 0;
+      const newLang = toggleLanguage();
+      showToast(newLang === 'de+ru' ? 'DE + RU aktiviert' : 'Nur Deutsch');
+    }
+  });
 
   header.append(icon, title, subtitle, info);
   container.appendChild(header);
@@ -81,7 +96,21 @@ export function renderHome(container: HTMLElement): () => void {
     }
   );
 
-  cards.append(cardAll, cardExam, cardTopic);
+  // Card 4: Unterricht
+  const lang = getLanguage();
+  const unterrichtBadge = lang === 'de+ru'
+    ? '12 Themen \u00B7 Lernen \u00B7 Quiz \u00B7 Vokabeln'
+    : '12 Themen \u00B7 Lernen \u00B7 Quiz';
+  const cardUnterricht = createCard(
+    'Unterricht',
+    unterrichtBadge,
+    'Unterrichtsmaterial durcharbeiten',
+    () => {
+      navigate('lessons');
+    }
+  );
+
+  cards.append(cardAll, cardExam, cardTopic, cardUnterricht);
   container.appendChild(cards);
 
   // Source attribution
@@ -111,4 +140,19 @@ function createCard(title: string, badge: string, description: string, onClick: 
   card.addEventListener('click', onClick);
 
   return card;
+}
+
+function showToast(message: string): void {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+
+  const toast = h('div', { className: 'toast' }, message);
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => {
+    toast.classList.add('show');
+  });
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 2000);
 }

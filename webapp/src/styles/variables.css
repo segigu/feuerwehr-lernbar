@@ -16,6 +16,11 @@
   --color-incorrect: #C8102E;
   --color-incorrect-bg: #FDE8EC;
 
+  --color-warn: #D4890A;
+  --color-warn-bg: #FEF3CD;
+  --color-key: #0F7B3F;
+  --color-key-bg: #E6F4EA;
+
   --color-selected: #E3E8F0;
   --color-selected-border: #6B7B8D;
 
@@ -29,7 +34,7 @@
   --space-xl: 32px;
   --space-2xl: 48px;
 
-  --radius-sm: 6px;
+  --radius-sm: 18px;
   --radius-full: 9999px;
 
   --font-family: -apple-system, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
@@ -66,6 +71,11 @@
   --color-correct-bg: #1A2E1A;
   --color-incorrect: #E8364D;
   --color-incorrect-bg: #3D1520;
+
+  --color-warn: #E8A830;
+  --color-warn-bg: #3D3015;
+  --color-key: #40C057;
+  --color-key-bg: #1A2E1A;
 
   --color-selected: #2A2B3D;
   --color-selected-border: #7C8DB5;

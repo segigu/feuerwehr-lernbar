@@ -15,6 +15,8 @@ import {
   createSession,
 } from '../state/quiz-state';
 import { questions, getRandomExamQuestions } from '../data/questions';
+import { getLessonById, getLessonByTopic } from '../data/lessons';
+import { getLanguage } from '../state/app-state';
 import { createQuestionCard } from '../components/question-card';
 import { createProgressBar } from '../components/progress-bar';
 import { showBackButton } from '../utils/telegram';
@@ -32,12 +34,21 @@ export function renderQuiz(container: HTMLElement): () => void {
   let slideDirection: 'up' | 'down' | null = null;
   let autoAdvance = getAutoAdvance();
 
+  // Lesson-aware exit
+  const isLesson = session.mode === 'lesson';
+  const confirmText = isLesson ? 'Quiz wirklich abbrechen?' : 'Prüfung wirklich abbrechen?';
+  function exitQuiz(): void {
+    if (isLesson && session!.lessonId) {
+      navigate('lesson-detail', { lessonId: session!.lessonId });
+    } else {
+      navigate('home');
+    }
+  }
+
   // Close button in top bar
   const closeBtn = h('button', { className: 'quiz-close-btn' }, '\u2715');
   closeBtn.addEventListener('click', () => {
-    if (confirm('Prüfung wirklich abbrechen?')) {
-      navigate('home');
-    }
+    if (confirm(confirmText)) exitQuiz();
   });
 
   const topBar = h('div', { className: 'quiz-top-bar' });
@@ -139,6 +150,42 @@ export function renderQuiz(container: HTMLElement): () => void {
     }, isTraining);
     questionSlot.appendChild(card);
 
+    // Explanation block + lesson link — show after answer in training mode
+    if (selectedAnswer !== null && isTraining) {
+      const lesson = isLesson && session!.lessonId
+        ? getLessonById(session!.lessonId)
+        : getLessonByTopic(question.topic);
+
+      if (question.explanation) {
+        const explBlock = h('div', { className: 'quiz-explanation' });
+        const explDe = h('p', { className: 'quiz-explanation-de' });
+        explDe.textContent = question.explanation;
+        explBlock.appendChild(explDe);
+
+        if (getLanguage() === 'de+ru' && question.explanationRu) {
+          const explRu = h('p', { className: 'quiz-explanation-ru' });
+          explRu.textContent = question.explanationRu;
+          explBlock.appendChild(explRu);
+        }
+
+        if (lesson && lesson.ready) {
+          const lessonLink = h('button', { className: 'quiz-explanation-link' }, 'Zur Lektion \u2192');
+          lessonLink.addEventListener('click', () => {
+            navigate('learn', { lessonId: lesson.id, sectionId: question.sectionId });
+          });
+          explBlock.appendChild(lessonLink);
+        }
+
+        card.appendChild(explBlock);
+      } else if (lesson && lesson.ready) {
+        const theoryBtn = h('button', { className: 'theory-btn' }, 'Theorie');
+        theoryBtn.addEventListener('click', () => {
+          navigate('learn', { lessonId: lesson.id });
+        });
+        card.appendChild(theoryBtn);
+      }
+    }
+
     applySlideAnimation();
     renderNavDots();
     updateNavButtons();
@@ -217,9 +264,7 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   // Telegram Back button
   cleanupBackBtn = showBackButton(() => {
-    if (confirm('Prüfung wirklich abbrechen?')) {
-      navigate('home');
-    }
+    if (confirm(confirmText)) exitQuiz();
   });
 
   renderCurrentQuestion();

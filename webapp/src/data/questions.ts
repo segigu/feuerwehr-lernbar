@@ -7,6 +7,9 @@ export interface Question {
   image: string | null;
   correct: 'a' | 'b' | 'c';
   topic: string;
+  sectionId?: string;
+  explanation?: string;
+  explanationRu?: string;
 }
 
 export interface QuestionCatalog {

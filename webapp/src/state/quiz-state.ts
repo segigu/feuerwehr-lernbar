@@ -1,7 +1,7 @@
 import type { Question } from '../data/questions';
 import { questions as allQuestions } from '../data/questions';
 
-export type QuizMode = 'exam' | 'all' | 'topic';
+export type QuizMode = 'exam' | 'all' | 'topic' | 'lesson';
 
 // ---- localStorage: progress persistence ----
 
@@ -15,7 +15,7 @@ interface SavedProgress {
 }
 
 export function saveProgress(): void {
-  if (!session || session.mode !== 'all') return;
+  if (!session || (session.mode !== 'all')) return;
   const data: SavedProgress = {
     questionIds: session.questions.map(q => q.id),
     currentIndex: session.currentIndex,
@@ -87,6 +87,7 @@ export function setAutoAdvancePref(value: boolean): void {
 export interface QuizSession {
   mode: QuizMode;
   topicName?: string;
+  lessonId?: string;
   questions: Question[];
   currentIndex: number;
   answers: Map<number, 'a' | 'b' | 'c'>;
@@ -100,11 +101,12 @@ let session: QuizSession | null = null;
 export function createSession(
   mode: QuizMode,
   questions: Question[],
-  options?: { topicName?: string; timerEnabled?: boolean; timerSeconds?: number }
+  options?: { topicName?: string; lessonId?: string; timerEnabled?: boolean; timerSeconds?: number }
 ): QuizSession {
   session = {
     mode,
     topicName: options?.topicName,
+    lessonId: options?.lessonId,
     questions,
     currentIndex: 0,
     answers: new Map(),

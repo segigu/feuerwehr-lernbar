@@ -1,5 +1,6 @@
 import { navigate } from '../app';
 import { getSession, calculateResults } from '../state/quiz-state';
+import { saveLessonQuizStats } from '../state/lesson-state';
 import { showBackButton } from '../utils/telegram';
 import { hapticSuccess, hapticError } from '../utils/telegram';
 import { h } from '../utils/dom';
@@ -19,6 +20,18 @@ export function renderResults(container: HTMLElement): () => void {
     } else {
       hapticError();
     }
+  }
+
+  // Save lesson quiz stats
+  if (session.mode === 'lesson' && session.lessonId) {
+    const wrongIds = results.details
+      .filter(d => !d.isCorrect && d.selected !== null)
+      .map(d => d.question.id);
+    saveLessonQuizStats(session.lessonId, {
+      correct: results.correct,
+      wrong: results.incorrect,
+      wrongIds,
+    });
   }
 
   // Score circle
@@ -73,9 +86,23 @@ export function renderResults(container: HTMLElement): () => void {
   retryBtn.addEventListener('click', () => navigate('home'));
 
   actions.append(reviewBtn, retryBtn);
+
+  // Lesson mode: add "Zurück zur Lektion" button
+  if (session.mode === 'lesson' && session.lessonId) {
+    const lessonId = session.lessonId;
+    const backToLessonBtn = h('button', { className: 'action-btn action-secondary' }, 'Zurück zur Lektion');
+    backToLessonBtn.addEventListener('click', () => {
+      navigate('lesson-detail', { lessonId });
+    });
+    actions.appendChild(backToLessonBtn);
+  }
+
   container.appendChild(actions);
 
-  const cleanupBack = showBackButton(() => navigate('home'));
+  const backTarget = session.mode === 'lesson' && session.lessonId
+    ? () => navigate('lesson-detail', { lessonId: session!.lessonId! })
+    : () => navigate('home');
+  const cleanupBack = showBackButton(backTarget);
 
   return () => {
     cleanupBack();

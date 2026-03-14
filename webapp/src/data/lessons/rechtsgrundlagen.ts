@@ -34,8 +34,25 @@ export const lesson: Lesson = {
         },
         {
           type: 'key',
-          de: 'Die wichtigsten Rechtsgrundlagen für die Feuerwehr in Bayern sind: BayFwG mit AVBayFwG und VollzBekBayFwG, Feuerwehr-Dienstvorschriften (FwDV), Bayerisches Katastrophenschutzgesetz (BayKSG), Sozialgesetzbuch VII (gesetzliche Unfallversicherung) und Unfallverhütungsvorschriften (UVV "Feuerwehren" / DGUV Vorschrift 49).',
-          ru: 'Важнейшие правовые основы пожарной охраны в Баварии: BayFwG с AVBayFwG и VollzBekBayFwG, пожарные служебные предписания (FwDV), Баварский закон о защите от катастроф (BayKSG), Социальный кодекс VII (обязательное страхование от несчастных случаев) и Правила предотвращения несчастных случаев (UVV / DGUV Vorschrift 49).',
+          de: 'Die wichtigsten Rechtsgrundlagen für die Feuerwehr in Bayern:',
+          ru: 'Важнейшие правовые основы пожарной охраны в Баварии:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>BayFwG</strong> mit AVBayFwG und VollzBekBayFwG',
+            '<strong>Feuerwehr-Dienstvorschriften (FwDV)</strong>',
+            '<strong>Bayerisches Katastrophenschutzgesetz (BayKSG)</strong>',
+            '<strong>Sozialgesetzbuch VII (SGB VII)</strong> — gesetzliche Unfallversicherung',
+            '<strong>Unfallverhütungsvorschriften (UVV "Feuerwehren")</strong> / DGUV Vorschrift 49',
+          ],
+          itemsRu: [
+            '<strong>BayFwG</strong> с AVBayFwG и VollzBekBayFwG',
+            '<strong>Пожарные служебные предписания (FwDV)</strong>',
+            '<strong>Баварский закон о защите от катастроф (BayKSG)</strong>',
+            '<strong>Социальный кодекс VII (SGB VII)</strong> — обязательное страхование от несчастных случаев',
+            '<strong>Правила предотвращения несчастных случаев (UVV)</strong> / DGUV Vorschrift 49',
+          ],
         },
       ],
     },
@@ -83,8 +100,23 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'text',
-          de: 'Das Bayerische Feuerwehrgesetz kennt <strong>vier Arten von Feuerwehren</strong>: Freiwillige Feuerwehr, Pflichtfeuerwehr, Berufsfeuerwehr und Werkfeuerwehr. Diese Unterscheidung ist wichtig, weil jede Art unterschiedlich organisiert ist und unterschiedliche rechtliche Grundlagen hat.',
-          ru: 'Баварский закон о пожарной охране различает <strong>четыре вида пожарных команд</strong>: добровольную пожарную команду, обязательную пожарную команду, профессиональную пожарную команду и заводскую пожарную команду. Это различие важно, потому что каждый вид организован по-разному и имеет разные правовые основы.',
+          de: 'Das Bayerische Feuerwehrgesetz kennt <strong>vier Arten von Feuerwehren</strong>. Diese Unterscheidung ist wichtig, weil jede Art unterschiedlich organisiert ist und unterschiedliche rechtliche Grundlagen hat.',
+          ru: 'Баварский закон о пожарной охране различает <strong>четыре вида пожарных команд</strong>. Это различие важно, потому что каждый вид организован по-разному и имеет разные правовые основы.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Freiwillige Feuerwehr (FF)</strong>',
+            '<strong>Pflichtfeuerwehr</strong>',
+            '<strong>Berufsfeuerwehr (BF)</strong>',
+            '<strong>Werkfeuerwehr (WF)</strong>',
+          ],
+          itemsRu: [
+            '<strong>Добровольная пожарная команда (FF)</strong>',
+            '<strong>Обязательная пожарная команда</strong>',
+            '<strong>Профессиональная пожарная команда (BF)</strong>',
+            '<strong>Заводская пожарная команда (WF)</strong>',
+          ],
         },
         {
           type: 'text',
@@ -125,13 +157,45 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die <strong>Mannschaftsdienstgrade</strong> richten sich nach dem Dienstalter und dem Ausbildungsstand. Sie beginnen beim <strong>Feuerwehrmann/Feuerwehrfrau</strong> und steigen über <strong>Oberfeuerwehrmann</strong> zum <strong>Hauptfeuerwehrmann</strong>. Diese Dienstgrade werden nach einer bestimmten Anzahl von Dienstjahren verliehen und setzen keine Führungsausbildung voraus.',
-          ru: '<strong>Рядовые звания</strong> зависят от выслуги лет и уровня подготовки. Они начинаются с <strong>пожарного (Feuerwehrmann)</strong> и повышаются через <strong>старшего пожарного (Oberfeuerwehrmann)</strong> до <strong>главного пожарного (Hauptfeuerwehrmann)</strong>. Эти звания присваиваются после определённого количества лет службы и не требуют командирской подготовки.',
+          de: 'Die <strong>Mannschaftsdienstgrade</strong> richten sich nach dem Dienstalter und dem Ausbildungsstand. Sie werden nach einer bestimmten Anzahl von Dienstjahren verliehen und setzen keine Führungsausbildung voraus.',
+          ru: '<strong>Рядовые звания</strong> зависят от выслуги лет и уровня подготовки. Они присваиваются после определённого количества лет службы и не требуют командирской подготовки.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Feuerwehrmann / Feuerwehrfrau</strong>',
+            '<strong>Oberfeuerwehrmann</strong>',
+            '<strong>Hauptfeuerwehrmann</strong>',
+          ],
+          itemsRu: [
+            '<strong>Feuerwehrmann / Feuerwehrfrau</strong> (пожарный)',
+            '<strong>Oberfeuerwehrmann</strong> (старший пожарный)',
+            '<strong>Hauptfeuerwehrmann</strong> (главный пожарный)',
+          ],
         },
         {
           type: 'text',
-          de: 'Die <strong>Führungsdienstgrade</strong> beginnen ab dem <strong>Löschmeister</strong> und setzen eine Führungsqualifikation voraus -- mindestens die Gruppenführer-Ausbildung. Die Reihenfolge ist: Löschmeister, <strong>Oberlöschmeister</strong>, <strong>Hauptlöschmeister</strong>, dann <strong>Brandmeister</strong>, <strong>Oberbrandmeister</strong> und <strong>Hauptbrandmeister</strong>. Für die höheren Führungsdienstgrade ist zusätzlich eine Zugführer-Ausbildung erforderlich.',
-          ru: '<strong>Командные звания</strong> начинаются с <strong>мастера по тушению (Löschmeister)</strong> и требуют командирской квалификации -- как минимум подготовки группового командира. Порядок таков: Löschmeister, <strong>Oberlöschmeister</strong>, <strong>Hauptlöschmeister</strong>, затем <strong>Brandmeister</strong>, <strong>Oberbrandmeister</strong> и <strong>Hauptbrandmeister</strong>. Для более высоких званий дополнительно требуется подготовка командира взвода.',
+          de: 'Die <strong>Führungsdienstgrade</strong> beginnen ab dem <strong>Löschmeister</strong> und setzen eine Führungsqualifikation voraus — mindestens die Gruppenführer-Ausbildung. Für die höheren Führungsdienstgrade ist zusätzlich eine Zugführer-Ausbildung erforderlich.',
+          ru: '<strong>Командные звания</strong> начинаются с <strong>Löschmeister</strong> и требуют командирской квалификации — как минимум подготовки группового командира. Для более высоких званий дополнительно требуется подготовка командира взвода.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Löschmeister</strong>',
+            '<strong>Oberlöschmeister</strong>',
+            '<strong>Hauptlöschmeister</strong>',
+            '<strong>Brandmeister</strong>',
+            '<strong>Oberbrandmeister</strong>',
+            '<strong>Hauptbrandmeister</strong>',
+          ],
+          itemsRu: [
+            '<strong>Löschmeister</strong>',
+            '<strong>Oberlöschmeister</strong>',
+            '<strong>Hauptlöschmeister</strong>',
+            '<strong>Brandmeister</strong>',
+            '<strong>Oberbrandmeister</strong>',
+            '<strong>Hauptbrandmeister</strong>',
+          ],
         },
         {
           type: 'text',
@@ -177,8 +241,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Zu den wichtigsten <strong>Rechten</strong> der Feuerwehrdienstleistenden gehören drei Punkte: Erstens die <strong>Lohnfortzahlung durch den Arbeitgeber</strong> während eines Einsatzes -- der Feuerwehrmann darf keinen finanziellen Nachteil erleiden. Zweitens der <strong>Versicherungsschutz bei Personen- und Sachschäden</strong> durch die gesetzliche Unfallversicherung. Drittens die <strong>Freistellung bei Einsätzen</strong> -- der Arbeitgeber muss den Feuerwehrangehörigen für Einsätze, Übungen und Ausbildung freistellen. Private Arbeitgeber können sich die fortgezahlten Löhne von der Gemeinde erstatten lassen.',
-          ru: 'К важнейшим <strong>правам</strong> пожарных-добровольцев относятся три пункта: во-первых, <strong>продолжение выплаты зарплаты работодателем</strong> во время выезда -- пожарный не должен нести финансовых потерь. Во-вторых, <strong>страховая защита при причинении вреда здоровью и имуществу</strong> через обязательное страхование от несчастных случаев. В-третьих, <strong>освобождение от работы для выездов</strong> -- работодатель обязан отпускать пожарного на выезды, учения и обучение. Частные работодатели могут потребовать возмещения выплаченной зарплаты от общины.',
+          de: 'Zu den wichtigsten <strong>Rechten</strong> der Feuerwehrdienstleistenden gehören drei Punkte:',
+          ru: 'К важнейшим <strong>правам</strong> пожарных-добровольцев относятся три пункта:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Lohnfortzahlung durch den Arbeitgeber</strong> während eines Einsatzes — der Feuerwehrmann darf keinen finanziellen Nachteil erleiden',
+            '<strong>Versicherungsschutz bei Personen- und Sachschäden</strong> durch die gesetzliche Unfallversicherung',
+            '<strong>Freistellung bei Einsätzen</strong> — der Arbeitgeber muss den Feuerwehrangehörigen für Einsätze, Übungen und Ausbildung freistellen',
+          ],
+          itemsRu: [
+            '<strong>Продолжение выплаты зарплаты работодателем</strong> во время выезда — пожарный не должен нести финансовых потерь',
+            '<strong>Страховая защита при причинении вреда здоровью и имуществу</strong> через обязательное страхование от несчастных случаев',
+            '<strong>Освобождение от работы для выездов</strong> — работодатель обязан отпускать пожарного на выезды, учения и обучение',
+          ],
         },
         {
           type: 'text',

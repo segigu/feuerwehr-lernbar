@@ -19,8 +19,23 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die <strong>Mindestschutzausrüstung nach UVV-Feuerwehr</strong> besteht aus vier Bestandteilen: dem <strong>Feuerwehrschutzanzug</strong>, dem <strong>Feuerwehrhelm mit Nackenschutz</strong>, dem <strong>Feuerwehrschutzschuhwerk</strong> und den <strong>Feuerwehrschutzhandschuhen</strong>. Diese vier Teile zusammen bilden den Grundschutz für die Brandbekämpfung. Für die technische Hilfeleistung (THL) können optional andere Schutzhandschuhe getragen werden.',
-          ru: '<strong>Минимальная экипировка по UVV-Feuerwehr</strong> состоит из четырёх элементов: <strong>защитный костюм пожарного</strong>, <strong>пожарная каска с защитой шеи</strong>, <strong>защитная обувь пожарного</strong> и <strong>защитные перчатки пожарного</strong>. Эти четыре предмета вместе образуют базовую защиту для тушения пожаров. Для технической помощи (THL) могут надеваться другие защитные перчатки.',
+          de: 'Die <strong>Mindestschutzausrüstung nach UVV-Feuerwehr</strong> besteht aus vier Bestandteilen, die zusammen den Grundschutz für die Brandbekämpfung bilden:',
+          ru: '<strong>Минимальная экипировка по UVV-Feuerwehr</strong> состоит из четырёх элементов, образующих базовую защиту для тушения пожаров:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Feuerwehrschutzanzug</strong>',
+            '<strong>Feuerwehrhelm mit Nackenschutz</strong>',
+            '<strong>Feuerwehrschutzschuhwerk</strong>',
+            '<strong>Feuerwehrschutzhandschuhe</strong> (bei THL optional andere Schutzhandschuhe)',
+          ],
+          itemsRu: [
+            '<strong>Защитный костюм пожарного</strong>',
+            '<strong>Пожарная каска с защитой шеи</strong>',
+            '<strong>Защитная обувь пожарного</strong>',
+            '<strong>Защитные перчатки пожарного</strong> (при THL — опционально другие перчатки)',
+          ],
         },
         {
           type: 'key',
@@ -61,8 +76,25 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Bei <strong>Hilfeleistungseinsätzen</strong> (technische Hilfe) ordnet der Einheitsführer je nach Gefahrenlage zusätzliche Schutzausrüstung an. Dazu gehören: <strong>Gesichtsschutz</strong> (Visier am Helm), <strong>Augenschutz</strong> (Schutzbrille), <strong>Gehörschutz</strong> (Gehörschutzstöpsel oder Kapselgehörschutz), <strong>Warnkleidung</strong> (reflektierende Weste für Einsätze im Straßenverkehr) und <strong>Infektionsschutzhandschuhe</strong> (Einweghandschuhe zum Schutz vor Körperflüssigkeiten bei der Versorgung von Verletzten).',
-          ru: 'При <strong>операциях по оказанию помощи</strong> (техническая помощь) командир подразделения назначает дополнительную защиту в зависимости от ситуации. К ней относятся: <strong>защита лица</strong> (визор на каске), <strong>защита глаз</strong> (защитные очки), <strong>защита слуха</strong> (беруши или наушники), <strong>предупредительная одежда</strong> (светоотражающий жилет при работе на дорогах) и <strong>перчатки для защиты от инфекций</strong> (одноразовые перчатки для защиты от биологических жидкостей при помощи пострадавшим).',
+          de: 'Bei <strong>Hilfeleistungseinsätzen</strong> (technische Hilfe) ordnet der Einheitsführer je nach Gefahrenlage zusätzliche Schutzausrüstung an:',
+          ru: 'При <strong>операциях по оказанию помощи</strong> (техническая помощь) командир подразделения назначает дополнительную защиту в зависимости от ситуации:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Gesichtsschutz</strong> — Visier am Helm',
+            '<strong>Augenschutz</strong> — Schutzbrille',
+            '<strong>Gehörschutz</strong> — Gehörschutzstöpsel oder Kapselgehörschutz',
+            '<strong>Warnkleidung</strong> — reflektierende Weste für Einsätze im Straßenverkehr',
+            '<strong>Infektionsschutzhandschuhe</strong> — Einweghandschuhe zum Schutz vor Körperflüssigkeiten bei der Verletztenversorgung',
+          ],
+          itemsRu: [
+            '<strong>Защита лица</strong> — визор на каске',
+            '<strong>Защита глаз</strong> — защитные очки',
+            '<strong>Защита слуха</strong> — беруши или наушники',
+            '<strong>Предупредительная одежда</strong> — светоотражающий жилет при работе на дорогах',
+            '<strong>Перчатки для защиты от инфекций</strong> — одноразовые перчатки для защиты от биологических жидкостей',
+          ],
         },
         {
           type: 'key',
@@ -103,8 +135,17 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die <strong>Hitzeschutzkleidung</strong> gibt es in drei Formen. <strong>Form I</strong> besteht aus Kopfhaube und Handschuhen — sie bietet den leichtesten Hitzeschutz. <strong>Form II</strong> umfasst einen Mantel und eine Kopfhaube und schützt stärker gegen Strahlungshitze. <strong>Form III</strong> ist ein Vollschutzanzug, der den gesamten Körper umschließt und den höchsten Hitzeschutz bietet.',
-          ru: '<strong>Теплозащитная одежда</strong> бывает трёх форм. <strong>Форма I</strong> — капюшон и перчатки, минимальная теплозащита. <strong>Форма II</strong> — шинель и капюшон, более сильная защита от теплового излучения. <strong>Форма III</strong> — полный защитный костюм, закрывающий всё тело и обеспечивающий максимальную теплозащиту.',
+          de: 'Die <strong>Hitzeschutzkleidung</strong> gibt es in drei Formen:',
+          ru: '<strong>Теплозащитная одежда</strong> бывает трёх форм:',
+        },
+        {
+          type: 'table',
+          headers: ['Form', 'Bestandteile', 'Schutzgrad'],
+          rows: [
+            ['Form I', 'Kopfhaube + Handschuhe', 'Leichtester Hitzeschutz'],
+            ['Form II', 'Mantel + Kopfhaube', 'Stärker gegen Strahlungshitze'],
+            ['Form III', 'Vollschutzanzug', 'Höchster Hitzeschutz'],
+          ],
         },
         {
           type: 'text',
@@ -113,8 +154,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Bei Einsätzen mit <strong>radioaktiven Stoffen</strong> wird ein Kontaminationsschutzhaube oder Kontaminationsschutzanzug getragen — immer zusammen mit dem Pressluftatmer. Beim Arbeiten mit der <strong>Motorsäge</strong> ist folgende Schutzausrüstung erforderlich: Schnittschutzhose, Augen- und Gesichtsschutz, Schnittschutzstiefel und Forstarbeiterhelm. Zur <strong>Insektenbekämpfung</strong> werden ein spezieller Schutzanzug, eine Kopfhaube und Handschuhe getragen.',
-          ru: 'При работе с <strong>радиоактивными веществами</strong> надевается противозагрязняющий капюшон или костюм — всегда вместе с дыхательным аппаратом. При работе с <strong>бензопилой</strong> обязательны: защитные штаны от порезов, защита глаз и лица, защитные ботинки от порезов и лесной шлем. Для <strong>борьбы с насекомыми</strong> надевается специальный защитный костюм, капюшон и перчатки.',
+          de: 'Für besondere Einsatzarten gelten spezifische Ausrüstungsvorschriften:',
+          ru: 'Для особых видов операций действуют специальные требования к экипировке:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Radioaktive Stoffe:</strong> Kontaminationsschutzhaube oder -anzug — immer mit Pressluftatmer',
+            '<strong>Motorsäge:</strong> Schnittschutzhose, Augen- und Gesichtsschutz, Schnittschutzstiefel, Forstarbeiterhelm',
+            '<strong>Insektenbekämpfung:</strong> Spezieller Schutzanzug, Kopfhaube und Handschuhe',
+          ],
+          itemsRu: [
+            '<strong>Радиоактивные вещества:</strong> противозагрязняющий капюшон или костюм — всегда с дыхательным аппаратом',
+            '<strong>Бензопила:</strong> защитные штаны от порезов, защита глаз и лица, ботинки с защитой от порезов, лесной шлем',
+            '<strong>Борьба с насекомыми:</strong> специальный защитный костюм, капюшон и перчатки',
+          ],
         },
         {
           type: 'warn',
@@ -201,14 +255,12 @@ export const lesson: Lesson = {
           ru: 'Для <strong>курсантов пожарной охраны</strong> (молодёжная пожарная команда) действуют особые правила экипировки. Снаряжение разделено по возрастным группам, так как младшие курсанты участвуют только в учениях и не допускаются к реальным вызовам.',
         },
         {
-          type: 'text',
-          de: 'Anwärter im Alter von <strong>12 bis 16 Jahren</strong> tragen: einen <strong>Übungsanzug</strong>, einen <strong>Helm in der Farbe Orange</strong>, <strong>festes Schuhwerk</strong> und <strong>Schutzhandschuhe</strong>. Der orangefarbene Helm kennzeichnet sie deutlich als Jugendfeuerwehr und unterscheidet sie optisch von den aktiven Einsatzkräften.',
-          ru: 'Курсанты в возрасте <strong>от 12 до 16 лет</strong> носят: <strong>тренировочный костюм</strong>, <strong>каску оранжевого цвета</strong>, <strong>прочную обувь</strong> и <strong>защитные перчатки</strong>. Оранжевая каска чётко обозначает их как молодёжную команду и визуально отличает от действующих пожарных.',
-        },
-        {
-          type: 'text',
-          de: 'Anwärter im Alter von <strong>16 bis 18 Jahren</strong> tragen: einen <strong>Übungsanzug</strong>, einen <strong>Helm mit Nackenschutz</strong>, <strong>Schutzschuhwerk</strong> und <strong>Schutzhandschuhe</strong>. Im Vergleich zur jüngeren Gruppe haben sie bereits einen Helm mit Nackenschutz (wie die aktiven Kräfte) und richtiges Schutzschuhwerk statt nur festem Schuhwerk. Damit nähert sich ihre Ausrüstung der Mindestschutzausrüstung der aktiven Feuerwehrangehörigen an.',
-          ru: 'Курсанты в возрасте <strong>от 16 до 18 лет</strong> носят: <strong>тренировочный костюм</strong>, <strong>каску с защитой шеи</strong>, <strong>защитную обувь</strong> и <strong>защитные перчатки</strong>. По сравнению с младшей группой у них уже каска с защитой шеи (как у действующих пожарных) и настоящая защитная обувь вместо просто прочной. Таким образом, их экипировка приближается к минимальной экипировке действующих пожарных.',
+          type: 'table',
+          headers: ['Altersgruppe', 'Anzug', 'Helm', 'Schuhwerk', 'Handschuhe'],
+          rows: [
+            ['12–16 Jahre', 'Übungsanzug', 'Orange (ohne Nackenschutz)', 'Festes Schuhwerk', 'Schutzhandschuhe'],
+            ['16–18 Jahre', 'Übungsanzug', 'Mit Nackenschutz', 'Schutzschuhwerk', 'Schutzhandschuhe'],
+          ],
         },
         {
           type: 'key',

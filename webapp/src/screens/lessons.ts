@@ -4,6 +4,23 @@ import { getLessonLearnProgress, getLessonQuizStats } from '../state/lesson-stat
 import { showBackButton } from '../utils/telegram';
 import { h } from '../utils/dom';
 
+const BASE = import.meta.env.BASE_URL;
+
+const lessonImages: Record<string, string> = {
+  'rechtsgrundlagen': 'Rechtsgrundlagen.png',
+  'brennen-loeschen': 'Brennen und L\u00F6schen.png',
+  'fahrzeugkunde': 'Fahrzeugkunde.png',
+  'persoenliche-ausruestung': 'Pers\u00F6nliche Ausr\u00FCstung.png',
+  'geraete-armaturen': 'Ger\u00E4te und Armaturen.png',
+  'rettung-leitern-knoten': 'Rettung, Leitern und Knoten.png',
+  'erste-hilfe': 'Erste Hilfe.png',
+  'einsatzgrundsaetze': 'Einsatzgrunds\u00E4tze.png',
+  'loescheinsatz': 'L\u00F6scheinsatz FwDV3.png',
+  'absturzsicherung': 'Absturzsicherung.png',
+  'technische-hilfeleistung': 'Technische Hilfeleistung.png',
+  'sprechfunk': 'Sprechfunk.png',
+};
+
 export function renderLessons(container: HTMLElement): () => void {
   const backLink = h('button', { className: 'back-link' }, '\u2190 Startseite');
   backLink.addEventListener('click', () => navigate('home'));
@@ -19,6 +36,13 @@ export function renderLessons(container: HTMLElement): () => void {
 
   for (const lesson of lessons) {
     const card = h('button', { className: 'topic-card' });
+
+    // Thumbnail image
+    const imgFile = lessonImages[lesson.id];
+    if (imgFile) {
+      const thumb = h('img', { className: 'lesson-thumb', src: `${BASE}images/${imgFile}`, alt: '' });
+      card.appendChild(thumb);
+    }
 
     const left = h('div', { className: 'lesson-card-left' });
     const name = h('span', { className: 'topic-name' }, lesson.title);

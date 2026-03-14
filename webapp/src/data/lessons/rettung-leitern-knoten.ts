@@ -29,8 +29,20 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Bei der Feuerwehr kommen verschiedene Arten tragbarer Leitern zum Einsatz. Die wichtigsten sind die <strong>Steckleiter</strong> (Steckleiterteil), die <strong>Schiebleiter</strong> (3-teilig, mit Seilzug) und die <strong>Multifunktionsleiter</strong>. Daneben gibt es noch die Klappleiter und die Hakenleiter, die in der Praxis seltener verwendet werden. Jeder Leitertyp hat seine eigenen Stärken und Einsatzgebiete, die wir in den folgenden Abschnitten genauer betrachten.',
-          ru: 'В пожарной охране применяются различные виды переносных лестниц. Важнейшие из них — <strong>штекерная лестница</strong> (из вставных секций), <strong>выдвижная лестница</strong> (трёхсекционная, с тросом) и <strong>многофункциональная лестница</strong>. Кроме них есть складная и крюковая лестницы, которые на практике используются реже. У каждого типа свои преимущества и области применения, которые мы подробно рассмотрим в следующих разделах.',
+          de: 'Bei der Feuerwehr kommen verschiedene Arten tragbarer Leitern zum Einsatz. Die wichtigsten sind Steckleiter, Schiebleiter und Multifunktionsleiter — ein kurzer Überblick:',
+          ru: 'В пожарной охране применяются различные виды переносных лестниц. Важнейшие из них — штекерная, выдвижная и многофункциональная лестница. Краткий обзор:',
+        },
+        {
+          type: 'table',
+          headers: ['Leitertyp', 'Aufbau', 'Rettungshöhe', 'Russisch'],
+          bilingualCols: [3],
+          rows: [
+            ['Steckleiter', 'Teile (A+B) stecken zusammen, max. 4 Teile', 'ca. 8 m (2. OG)', 'Штекерная лестница'],
+            ['Schiebleiter', '3-teilig, Seilzug, über 80 kg', 'ca. 12 m (3.–4. OG)', 'Выдвижная лестница'],
+            ['Multifunktionsleiter', 'Variabel einsetzbar', 'je nach Aufbau', 'Многофункциональная лестница'],
+            ['Klappleiter', 'Klappbar, kompakt', 'kurze Höhen', 'Складная лестница'],
+            ['Hakenleiter', 'Mit Haken zum Einhängen', 'kurze Höhen', 'Крюковая лестница'],
+          ],
         },
         {
           type: 'key',
@@ -68,7 +80,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der vorgehende Trupp (двое пожарных — Truppführer und Truppmann) darf die Steckleiter selbst sichern. Dabei gilt folgende Reihenfolge: Zuerst sichert der <strong>Truppmann</strong> die Leiter am Fuß, während der <strong>Truppführer</strong> aufsteigt. Wenn der Truppführer oben angekommen ist und sich gesichert hat, sichert er die Leiter von oben, und der Truppmann steigt nach. So ist die Leiter zu jedem Zeitpunkt gesichert.',
+          de: 'Der vorgehende Trupp (Truppführer und Truppmann) darf die Steckleiter selbst sichern. Dabei gilt folgende Reihenfolge: Zuerst sichert der <strong>Truppmann</strong> die Leiter am Fuß, während der <strong>Truppführer</strong> aufsteigt. Wenn der Truppführer oben angekommen ist und sich gesichert hat, sichert er die Leiter von oben, und der Truppmann steigt nach. So ist die Leiter zu jedem Zeitpunkt gesichert.',
           ru: 'Наступающее звено (двое пожарных — командир звена и пожарный) может само страховать штекерную лестницу. При этом соблюдается следующий порядок: сначала <strong>пожарный</strong> страхует лестницу у основания, пока <strong>командир звена</strong> поднимается. Когда командир добрался наверх и закрепился, он страхует лестницу сверху, и пожарный поднимается следом. Таким образом лестница застрахована в любой момент.',
         },
         { type: 'term', de: 'Steckleiter', ru: 'Штекерная лестница' },
@@ -174,18 +186,25 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der <strong>Zimmermannsschlag</strong> wird verwendet, um Gegenstände wie Balken oder Stangen zu befestigen und zu transportieren. Er hält unter Zug fest, lässt sich aber leicht wieder lösen, wenn die Last abgesetzt ist. Der <strong>Kreuzknoten</strong> verbindet zwei gleich starke Leinen miteinander — zum Beispiel, wenn eine Leine nicht lang genug ist.',
-          ru: '<strong>Плотницкий узел</strong> используется для крепления и транспортировки таких предметов, как балки или штанги. Он крепко держит под нагрузкой, но легко развязывается, когда груз снят. <strong>Прямой узел</strong> соединяет две верёвки одинаковой толщины — например, когда одной верёвки не хватает по длине.',
+          de: 'Weitere wichtige Knoten und ihre Verwendung im Überblick:',
+          ru: 'Другие важные узлы и их применение:',
         },
         {
-          type: 'text',
-          de: 'Für die <strong>Rettung von Personen</strong> wird der <strong>Brustbund</strong> angelegt — eine Oberkörpersicherung, die aus einer Feuerwehrleine geknüpft wird. Zur Sicherung verwendet man dabei den <strong>Pfahlstich</strong> (ein Knoten, der eine feste Schlinge bildet) zusammen mit dem <strong>Spierenstich</strong> als Knotensicherung (alternativ kann auch ein <strong>Kreuzschlag</strong> zur Sicherung verwendet werden). Diese Kombination verhindert, dass sich die Schlinge unter Belastung zusammenzieht und die Person einschnürt.',
-          ru: 'Для <strong>спасения людей</strong> накладывается <strong>грудная обвязка</strong> — страховка для верхней части тела, которая вяжется из пожарной верёвки. Для фиксации используют <strong>палевой узел</strong> (узел, образующий фиксированную петлю) вместе с <strong>клеверным узлом</strong> для страховки (альтернативно можно использовать <strong>крестовую вязку</strong>). Эта комбинация не даёт петле затянуться под нагрузкой и передавить человека.',
-        },
-        {
-          type: 'text',
-          de: 'Der <strong>Ankerstich</strong> (auch „Kuhstich" genannt) ist ein vielseitiger Knoten, der um einen Gegenstand oder Körperteil gelegt wird. Er zieht sich unter Belastung fest, hält aber zuverlässig. Der <strong>doppelte Ankerstich mit Halbschlag</strong> wird speziell zur schnellen Sicherung von Personen auf der Leiter eingesetzt — er wird um den Körper der zu rettenden Person gelegt und bietet eine schnelle, zuverlässige Sicherung.',
-          ru: '<strong>Коровий узел</strong> (Ankerstich) — это универсальный узел, который накладывается вокруг предмета или части тела. Под нагрузкой он затягивается, но держит надёжно. <strong>Двойной коровий узел с полуштыком</strong> используется специально для быстрой страховки людей на лестнице — он накладывается вокруг тела спасаемого и обеспечивает быструю, надёжную фиксацию.',
+          type: 'list',
+          items: [
+            '<strong>Zimmermannsschlag</strong> — Gegenstände (Balken, Stangen) befestigen und transportieren; hält unter Zug, lässt sich nach Entlasten leicht lösen',
+            '<strong>Kreuzknoten</strong> — zwei gleich starke Leinen verbinden, wenn eine Leine nicht lang genug ist',
+            '<strong>Brustbund</strong> (Pfahlstich + Spierenstich) — Oberkörpersicherung zur Personenrettung; verhindert, dass sich die Schlinge unter Belastung zusammenzieht',
+            '<strong>Ankerstich</strong> (Kuhstich) — vielseitiger Knoten um Gegenstände oder Körperteile; zieht sich unter Belastung fest',
+            '<strong>Doppelter Ankerstich mit Halbschlag</strong> — schnelle Sicherung von Personen auf der Leiter; wird um den Körper der zu rettenden Person gelegt',
+          ],
+          itemsRu: [
+            '<strong>Плотницкий узел</strong> (Zimmermannsschlag) — крепление и транспортировка предметов (балки, штанги); держит под нагрузкой, легко снимается после разгрузки',
+            '<strong>Прямой узел</strong> (Kreuzknoten) — соединение двух верёвок одинаковой толщины, когда одной не хватает',
+            '<strong>Грудная обвязка</strong> (Pfahlstich + Spierenstich) — страховка верхней части тела при спасении; не затягивается под нагрузкой',
+            '<strong>Коровий узел</strong> (Ankerstich) — универсальный узел вокруг предметов или частей тела; затягивается под нагрузкой, держит надёжно',
+            '<strong>Двойной коровий узел с полуштыком</strong> — быстрая страховка человека на лестнице; накладывается вокруг тела спасаемого',
+          ],
         },
         { type: 'term', de: 'Mastwurf', ru: 'Выбленочный узел' },
         { type: 'term', de: 'Brustbund', ru: 'Грудная обвязка' },

@@ -103,8 +103,33 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Das Schema besteht aus neun Gefahrengruppen: <strong>A</strong> — Atemgifte, <strong>A</strong> — Angstreaktionen, <strong>A</strong> — Ausbreitung, <strong>A</strong> — Atomare Gefahren, <strong>C</strong> — Chemische Stoffe, <strong>E</strong> — Erkrankung, <strong>E</strong> — Explosion, <strong>E</strong> — Einsturz, <strong>E</strong> — Elektrizität. Die Reihenfolge hilft beim systematischen Durchdenken aller Gefahren an der Einsatzstelle — Punkt für Punkt.',
-          ru: 'Схема состоит из девяти групп опасностей: <strong>A</strong> — ядовитые газы, <strong>A</strong> — паника, <strong>A</strong> — распространение, <strong>A</strong> — атомные угрозы, <strong>C</strong> — химические вещества, <strong>E</strong> — заболевание, <strong>E</strong> — взрыв, <strong>E</strong> — обрушение, <strong>E</strong> — электричество. Порядок помогает систематически продумать все опасности на месте вызова — пункт за пунктом.',
+          de: 'Das Schema besteht aus neun Gefahrengruppen — in fester Reihenfolge:',
+          ru: 'Схема состоит из девяти групп опасностей — в строгом порядке:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>A</strong> — Atemgifte',
+            '<strong>A</strong> — Angstreaktionen',
+            '<strong>A</strong> — Ausbreitung',
+            '<strong>A</strong> — Atomare Gefahren',
+            '<strong>C</strong> — Chemische Stoffe',
+            '<strong>E</strong> — Erkrankung',
+            '<strong>E</strong> — Explosion',
+            '<strong>E</strong> — Einsturz',
+            '<strong>E</strong> — Elektrizität',
+          ],
+          itemsRu: [
+            '<strong>A</strong> — ядовитые газы (Atemgifte)',
+            '<strong>A</strong> — паника (Angstreaktionen)',
+            '<strong>A</strong> — распространение (Ausbreitung)',
+            '<strong>A</strong> — атомные угрозы (Atomare Gefahren)',
+            '<strong>C</strong> — химические вещества (Chemische Stoffe)',
+            '<strong>E</strong> — заболевание (Erkrankung)',
+            '<strong>E</strong> — взрыв (Explosion)',
+            '<strong>E</strong> — обрушение (Einsturz)',
+            '<strong>E</strong> — электричество (Elektrizität)',
+          ],
         },
         {
           type: 'text',
@@ -125,8 +150,21 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'text',
-          de: '<strong>Atemgifte</strong> gehören zu den häufigsten und gefährlichsten Risiken im Feuerwehreinsatz. Sie werden in drei Gruppen eingeteilt. <strong>Gruppe I</strong> umfasst erstickend wirkende Gase — sie verdrängen den Sauerstoff aus der Atemluft, ohne selbst giftig zu sein (z. B. Stickstoff, Kohlendioxid in hohen Konzentrationen). <strong>Gruppe II</strong> sind Gase mit Reiz- und Ätzwirkung — sie schädigen die Atemwege und Schleimhäute (z. B. Chlor, Ammoniak). <strong>Gruppe III</strong> enthält Gase, die auf Blut, Nerven oder Zellen wirken — besonders heimtückisch ist hier Kohlenmonoxid (CO), das geruchlos ist und unbemerkt zu Bewusstlosigkeit und Tod führen kann.',
-          ru: '<strong>Ядовитые газы</strong> — одна из самых частых и опасных угроз при пожарно-спасательных работах. Они делятся на три группы. <strong>Группа I</strong> — удушающие газы: они вытесняют кислород из воздуха, не являясь при этом ядовитыми (например, азот, углекислый газ в высокой концентрации). <strong>Группа II</strong> — газы с раздражающим и разъедающим действием: повреждают дыхательные пути и слизистые (например, хлор, аммиак). <strong>Группа III</strong> — газы, действующие на кровь, нервную систему или клетки. Особенно коварен угарный газ (CO) — он не имеет запаха и незаметно приводит к потере сознания и гибели.',
+          de: '<strong>Atemgifte</strong> gehören zu den häufigsten und gefährlichsten Risiken im Feuerwehreinsatz. Sie werden in drei Gruppen eingeteilt:',
+          ru: '<strong>Ядовитые газы</strong> — одна из самых частых и опасных угроз при пожарно-спасательных работах. Они делятся на три группы:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Gruppe I</strong> — erstickend wirkende Gase: verdrängen den Sauerstoff aus der Atemluft, ohne selbst giftig zu sein (z. B. Stickstoff, Kohlendioxid in hohen Konzentrationen)',
+            '<strong>Gruppe II</strong> — Reiz- und Ätzwirkung: schädigen Atemwege und Schleimhäute (z. B. Chlor, Ammoniak)',
+            '<strong>Gruppe III</strong> — Wirkung auf Blut, Nerven oder Zellen; besonders heimtückisch ist Kohlenmonoxid (CO) — geruchlos, führt unbemerkt zu Bewusstlosigkeit und Tod',
+          ],
+          itemsRu: [
+            '<strong>Группа I</strong> — удушающие газы: вытесняют кислород из воздуха, не являясь ядовитыми (например, азот, углекислый газ)',
+            '<strong>Группа II</strong> — раздражающее и разъедающее действие: повреждают дыхательные пути и слизистые (например, хлор, аммиак)',
+            '<strong>Группа III</strong> — действие на кровь, нервную систему или клетки; особенно коварен угарный газ (CO) — без запаха, незаметно приводит к потере сознания и гибели',
+          ],
         },
         {
           type: 'text',
@@ -209,13 +247,41 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'text',
-          de: '<strong>Atomare Gefahren</strong> (radioaktive Strahlung) können bei Unfällen mit radioaktivem Material auftreten — zum Beispiel bei Transportbehältern, medizinischen Geräten oder industriellen Strahlenquellen. Für Feuerwehrleute gilt hier ein einfaches Schutzprinzip mit drei Regeln: <strong>Abstand halten</strong> (je weiter weg, desto geringer die Dosis), <strong>Aufenthaltsdauer begrenzen</strong> (so kurz wie möglich im Gefahrenbereich bleiben) und <strong>Abschirmung nutzen</strong> (Mauern, Fahrzeuge oder spezielle Schutzschilde zwischen sich und die Strahlenquelle bringen).',
-          ru: '<strong>Атомные угрозы</strong> (радиоактивное излучение) могут возникнуть при авариях с радиоактивными материалами — например, при транспортных контейнерах, медицинских приборах или промышленных источниках излучения. Для пожарных действует простой принцип защиты из трёх правил: <strong>соблюдать дистанцию</strong> (чем дальше — тем меньше доза), <strong>ограничивать время пребывания</strong> (находиться в зоне опасности как можно меньше) и <strong>использовать экранирование</strong> (ставить стены, технику или специальные щиты между собой и источником).',
+          de: '<strong>Atomare Gefahren</strong> (radioaktive Strahlung) können bei Unfällen mit radioaktivem Material auftreten. Für Feuerwehrleute gilt ein einfaches Schutzprinzip mit drei Regeln:',
+          ru: '<strong>Атомные угрозы</strong> (радиоактивное излучение) могут возникнуть при авариях с радиоактивными материалами. Для пожарных действует принцип защиты из трёх правил:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Abstand halten</strong> — je weiter weg, desto geringer die Dosis',
+            '<strong>Aufenthaltsdauer begrenzen</strong> — so kurz wie möglich im Gefahrenbereich bleiben',
+            '<strong>Abschirmung nutzen</strong> — Mauern, Fahrzeuge oder Schutzschilde zwischen sich und die Strahlenquelle bringen',
+          ],
+          itemsRu: [
+            '<strong>Соблюдать дистанцию</strong> — чем дальше, тем меньше доза',
+            '<strong>Ограничивать время пребывания</strong> — находиться в зоне опасности как можно меньше',
+            '<strong>Использовать экранирование</strong> — стены, технику или щиты между собой и источником',
+          ],
         },
         {
           type: 'text',
-          de: 'Bei <strong>Chemischen Gefahren</strong> — zum Beispiel bei Unfällen mit Gefahrguttransportern oder Leckagen in Betrieben — kommt die <strong>GAMS-Regel</strong> zum Einsatz. GAMS steht für: <strong>G</strong> — Gefahr erkennen (Warntafeln, Gefahrzettel beachten), <strong>A</strong> — Absperren (Gefahrenbereich großzügig absperren, Windrichtung beachten), <strong>M</strong> — Menschenrettung (Personen aus dem Gefahrenbereich retten, aber nur mit geeignetem Schutz), <strong>S</strong> — Spezialkräfte anfordern (ABC-Zug, Umweltschutzbehörde, Werkfeuerwehr). Die Grundregel lautet: Ohne Spezialkräfte keine eigenen Maßnahmen an den Gefahrstoffen.',
-          ru: 'При <strong>химических угрозах</strong> — например, при авариях с грузовиками опасных грузов или утечках на предприятиях — применяется <strong>правило GAMS</strong>. GAMS расшифровывается так: <strong>G</strong> — распознать опасность (обращать внимание на предупредительные таблички и знаки опасности), <strong>A</strong> — оцепить (щедро оцепить зону опасности, учитывая направление ветра), <strong>M</strong> — спасение людей (эвакуировать пострадавших, но только с подходящей защитой), <strong>S</strong> — вызвать спецподразделения (ABC-группу, экологическую службу, пожарную охрану предприятия). Главное правило: без спецподразделений — никаких действий с опасными веществами.',
+          de: 'Bei <strong>Chemischen Gefahren</strong> — zum Beispiel bei Unfällen mit Gefahrguttransportern oder Leckagen in Betrieben — kommt die <strong>GAMS-Regel</strong> zum Einsatz. Die Grundregel: Ohne Spezialkräfte keine eigenen Maßnahmen an den Gefahrstoffen.',
+          ru: 'При <strong>химических угрозах</strong> — например, при авариях с грузовиками опасных грузов или утечках на предприятиях — применяется <strong>правило GAMS</strong>. Главное: без спецподразделений никаких действий с опасными веществами.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>G</strong> — Gefahr erkennen: Warntafeln und Gefahrzettel beachten',
+            '<strong>A</strong> — Absperren: Gefahrenbereich großzügig absperren, Windrichtung beachten',
+            '<strong>M</strong> — Menschenrettung: Personen retten, aber nur mit geeignetem Schutz',
+            '<strong>S</strong> — Spezialkräfte anfordern: ABC-Zug, Umweltschutzbehörde, Werkfeuerwehr',
+          ],
+          itemsRu: [
+            '<strong>G</strong> — распознать опасность: обращать внимание на таблички и знаки',
+            '<strong>A</strong> — оцепить: зону опасности, учитывая направление ветра',
+            '<strong>M</strong> — спасение людей: эвакуировать пострадавших только с подходящей защитой',
+            '<strong>S</strong> — вызвать спецподразделения: ABC-группу, экологическую службу, пожарную охрану предприятия',
+          ],
         },
         {
           type: 'text',

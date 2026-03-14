@@ -19,8 +19,19 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Druckschläuche sind falt- und rollbar und dienen zum Transport von Löschmitteln unter Druck. Sie werden nach Innendurchmesser eingeteilt: A-Schläuche (110 mm) gibt es in 5 m und 20 m Länge, B-Schläuche (75 mm) in 5 m, 20 m und 35 m, C52-Schläuche (52 mm) in 15 m, C42-Schläuche (42 mm) in 15 m und 30 m sowie D-Schläuche (25 mm) in 5 m und 15 m. Bei der Wasserentnahme aus Hydranten kommen ausschließlich Druckschläuche zum Einsatz — niemals Saugschläuche.',
-          ru: 'Напорные рукава складные и сворачиваемые, служат для транспортировки огнетушащих средств под давлением. Они классифицируются по внутреннему диаметру: A-рукава (110 мм) длиной 5 и 20 м, B-рукава (75 мм) — 5, 20 и 35 м, C52-рукава (52 мм) — 15 м, C42-рукава (42 мм) — 15 и 30 м, D-рукава (25 мм) — 5 и 15 м. При заборе воды из гидрантов используются только напорные рукава — никогда всасывающие.',
+          de: 'Druckschläuche sind falt- und rollbar und dienen zum Transport von Löschmitteln unter Druck. Sie werden nach Innendurchmesser eingeteilt. Bei der Wasserentnahme aus Hydranten kommen ausschließlich Druckschläuche zum Einsatz — niemals Saugschläuche.',
+          ru: 'Напорные рукава складные и сворачиваемые, служат для транспортировки огнетушащих средств под давлением. Они классифицируются по внутреннему диаметру. При заборе воды из гидрантов используются только напорные рукава — никогда всасывающие.',
+        },
+        {
+          type: 'table',
+          headers: ['Typ', 'Ø (mm)', 'Längen'],
+          rows: [
+            ['A', '110', '5 m, 20 m'],
+            ['B', '75', '5 m, 20 m, 35 m'],
+            ['C52', '52', '15 m'],
+            ['C42', '42', '15 m, 30 m'],
+            ['D', '25', '5 m, 15 m'],
+          ],
         },
         {
           type: 'text',
@@ -61,8 +72,23 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Es gibt mehrere Kupplungsarten. Die Schlauchkupplung sitzt drehbar am Schlauchende und ermöglicht das schnelle Verbinden zweier Schläuche. Die Festkupplung ist fest mit einem Gerät verbunden und dreht sich nicht. Die Blindkupplung verschließt offene Kupplungsanschlüsse, wenn kein Schlauch angeschlossen ist. Übergangsstücke verbinden verschiedene Größen miteinander: A-B, B-C und C-D. Die Abdichtung zwischen zwei Kupplungen erfolgt durch Dicht- oder Saugringe.',
-          ru: 'Существует несколько типов головок. Рукавная головка установлена с возможностью вращения на конце рукава и позволяет быстро соединять два рукава. Неподвижная головка жёстко закреплена на устройстве. Заглушка закрывает открытые соединения, когда рукав не подключён. Переходники соединяют разные размеры: A-B, B-C и C-D. Герметичность обеспечивается уплотнительными или всасывающими кольцами.',
+          de: 'Es gibt mehrere Kupplungsarten. Die Abdichtung zwischen zwei Kupplungen erfolgt durch Dicht- oder Saugringe.',
+          ru: 'Существует несколько типов головок. Герметичность обеспечивается уплотнительными или всасывающими кольцами.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Schlauchkupplung</strong> — sitzt drehbar am Schlauchende, ermöglicht schnelles Verbinden zweier Schläuche',
+            '<strong>Festkupplung</strong> — fest mit einem Gerät verbunden, dreht sich nicht',
+            '<strong>Blindkupplung</strong> — verschließt offene Kupplungsanschlüsse, wenn kein Schlauch angeschlossen ist',
+            '<strong>Übergangsstück</strong> — verbindet verschiedene Größen: A-B, B-C und C-D',
+          ],
+          itemsRu: [
+            '<strong>Рукавная головка</strong> — вращающаяся, на конце рукава; позволяет быстро соединять два рукава',
+            '<strong>Неподвижная головка</strong> — жёстко закреплена на устройстве, не вращается',
+            '<strong>Заглушка</strong> — закрывает открытые соединения, когда рукав не подключён',
+            '<strong>Переходник</strong> — соединяет разные размеры: A-B, B-C и C-D',
+          ],
         },
         {
           type: 'term',
@@ -172,8 +198,17 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Mehrzweckstrahlrohre haben drei Stellungen: Vollstrahl, geschlossen und Sprühstrahl. Die Wasserabgabe bei 5 bar Strahlrohrdruck beträgt: BM-Strahlrohr 400 l/min (ohne Mundstück 800 l/min), CM-Strahlrohr 100 l/min (ohne Mundstück 200 l/min) und DM-Strahlrohr 25 l/min (ohne Mundstück 50 l/min). Die Angabe „mit Mundstück" bedeutet den eingeschraubten Düseneinsatz, der die Wassermenge reduziert und die Wurfweite erhöht.',
-          ru: 'Комбинированные стволы имеют три положения: компактная струя, закрыто и распылённая струя. Расход воды при 5 бар: BM-ствол 400 л/мин (без насадка 800 л/мин), CM-ствол 100 л/мин (без насадка 200 л/мин) и DM-ствол 25 л/мин (без насадка 50 л/мин). «С насадком» означает ввинченную насадку, уменьшающую объём воды и увеличивающую дальность.',
+          de: 'Mehrzweckstrahlrohre haben drei Stellungen: Vollstrahl, geschlossen und Sprühstrahl. Die Wasserabgabe bei 5 bar Strahlrohrdruck (mit Mundstück / без насадка):',
+          ru: 'Комбинированные стволы имеют три положения: компактная струя, закрыто и распылённая струя. Расход воды при 5 бар (с насадком / без насадка):',
+        },
+        {
+          type: 'table',
+          headers: ['Strahlrohr', 'mit Mundstück', 'ohne Mundstück'],
+          rows: [
+            ['BM', '400 l/min', '800 l/min'],
+            ['CM', '100 l/min', '200 l/min'],
+            ['DM', '25 l/min', '50 l/min'],
+          ],
         },
         {
           type: 'text',
@@ -219,8 +254,23 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Bei der Brandbekämpfung mit tragbaren Feuerlöschern gelten besondere Einsatzgrundsätze. Nach Möglichkeit sollten mehrere Feuerlöscher gleichzeitig eingesetzt werden, nicht nacheinander — das erhöht die Löschwirkung erheblich. Außerdem ist zu beachten: Das Feuer wird in Windrichtung angegriffen, Flächenbrände von vorn nach hinten gelöscht und Tropf- oder Fließbrände von oben nach unten bekämpft.',
-          ru: 'При тушении переносными огнетушителями действуют особые принципы. По возможности следует задействовать несколько огнетушителей одновременно, а не последовательно — это значительно повышает эффективность тушения. Также важно: огонь атакуют по ветру, площадные возгорания тушат спереди назад, а капельные или текучие — сверху вниз.',
+          de: 'Bei der Brandbekämpfung mit tragbaren Feuerlöschern gelten besondere Einsatzgrundsätze:',
+          ru: 'При тушении переносными огнетушителями действуют особые принципы:',
+        },
+        {
+          type: 'list',
+          items: [
+            'Nach Möglichkeit <strong>mehrere Feuerlöscher gleichzeitig</strong> einsetzen — nicht nacheinander',
+            'Feuer <strong>in Windrichtung</strong> angreifen',
+            '<strong>Flächenbrände</strong> von vorn nach hinten löschen',
+            '<strong>Tropf- oder Fließbrände</strong> von oben nach unten bekämpfen',
+          ],
+          itemsRu: [
+            'По возможности <strong>несколько огнетушителей одновременно</strong> — не последовательно',
+            'Атаковать огонь <strong>по ветру</strong>',
+            '<strong>Площадные возгорания</strong> тушить спереди назад',
+            '<strong>Капельные или текучие пожары</strong> тушить сверху вниз',
+          ],
         },
         {
           type: 'term',

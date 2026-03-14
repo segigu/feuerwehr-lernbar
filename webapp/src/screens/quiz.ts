@@ -156,31 +156,46 @@ export function renderQuiz(container: HTMLElement): () => void {
         ? getLessonById(session!.lessonId)
         : getLessonByTopic(question.topic);
 
-      if (question.explanation) {
+      // Look up explanation from lesson if the question itself doesn't have one
+      let explanation = question.explanation;
+      let explanationRu = question.explanationRu;
+      let sectionId = question.sectionId;
+      if (!explanation && lesson) {
+        const lessonQ = lesson.questions.find(lq => lq.question === question.question);
+        if (lessonQ) {
+          explanation = lessonQ.explanation;
+          explanationRu = lessonQ.explanationRu;
+          sectionId = lessonQ.sectionId;
+        }
+      }
+
+      if (explanation) {
         const explBlock = h('div', { className: 'quiz-explanation' });
         const explDe = h('p', { className: 'quiz-explanation-de' });
-        explDe.textContent = question.explanation;
+        explDe.textContent = explanation;
         explBlock.appendChild(explDe);
 
-        if (getLanguage() === 'de+ru' && question.explanationRu) {
+        if (getLanguage() === 'de+ru' && explanationRu) {
           const explRu = h('p', { className: 'quiz-explanation-ru' });
-          explRu.textContent = question.explanationRu;
+          explRu.textContent = explanationRu;
           explBlock.appendChild(explRu);
         }
 
         if (lesson && lesson.ready) {
           const lessonLink = h('button', { className: 'quiz-explanation-link' }, 'Zur Lektion \u2192');
           lessonLink.addEventListener('click', () => {
-            navigate('learn', { lessonId: lesson.id, sectionId: question.sectionId });
+            navigate('learn', { lessonId: lesson.id, sectionId, fromQuiz: true });
           });
-          explBlock.appendChild(lessonLink);
+          const linkRow = h('div', { className: 'quiz-explanation-link-row' });
+          linkRow.appendChild(lessonLink);
+          explBlock.appendChild(linkRow);
         }
 
         card.appendChild(explBlock);
       } else if (lesson && lesson.ready) {
         const theoryBtn = h('button', { className: 'theory-btn' }, 'Theorie');
         theoryBtn.addEventListener('click', () => {
-          navigate('learn', { lessonId: lesson.id });
+          navigate('learn', { lessonId: lesson.id, fromQuiz: true });
         });
         card.appendChild(theoryBtn);
       }

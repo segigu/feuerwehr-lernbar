@@ -6,6 +6,23 @@ import { createSession } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
 import { h } from '../utils/dom';
 
+const BASE = import.meta.env.BASE_URL;
+
+const lessonImages: Record<string, string> = {
+  'rechtsgrundlagen': 'Rechtsgrundlagen.png',
+  'brennen-loeschen': 'Brennen und L\u00F6schen.png',
+  'fahrzeugkunde': 'Fahrzeugkunde.png',
+  'persoenliche-ausruestung': 'Pers\u00F6nliche Ausr\u00FCstung.png',
+  'geraete-armaturen': 'Ger\u00E4te und Armaturen.png',
+  'rettung-leitern-knoten': 'Rettung, Leitern und Knoten.png',
+  'erste-hilfe': 'Erste Hilfe.png',
+  'einsatzgrundsaetze': 'Einsatzgrunds\u00E4tze.png',
+  'loescheinsatz': 'L\u00F6scheinsatz FwDV3.png',
+  'absturzsicherung': 'Absturzsicherung.png',
+  'technische-hilfeleistung': 'Technische Hilfeleistung.png',
+  'sprechfunk': 'Sprechfunk.png',
+};
+
 export function renderLessonDetail(container: HTMLElement): () => void {
   const params = getNavigationParams();
   const lesson = params?.lessonId ? getLessonById(params.lessonId) : undefined;
@@ -22,8 +39,21 @@ export function renderLessonDetail(container: HTMLElement): () => void {
   backLink.addEventListener('click', () => navigate('lessons'));
   container.appendChild(backLink);
 
-  // Header
+  // Header with lesson image
   const header = h('div', { className: 'home-header' });
+
+  const imgFile = lessonImages[lesson.id];
+  if (imgFile) {
+    const iconWrap = h('div', { className: 'home-icon-wrap' });
+    const img = h('img', {
+      className: 'home-icon',
+      src: `${BASE}images/${imgFile}`,
+      alt: '',
+    });
+    iconWrap.appendChild(img);
+    header.appendChild(iconWrap);
+  }
+
   const title = h('h1', { className: 'home-title' }, lesson.title);
   if (lang === 'de+ru') {
     const titleRu = h('p', { className: 'home-subtitle' }, lesson.titleRu);
@@ -153,11 +183,13 @@ export function renderLessonDetail(container: HTMLElement): () => void {
 
 function createMenuCard(title: string, badge: string, desc: string, onClick: () => void): HTMLElement {
   const card = h('button', { className: 'home-card' });
-  card.append(
+  const left = h('div', { className: 'home-card-text' });
+  left.append(
     h('h2', { className: 'home-card-title' }, title),
-    h('span', { className: 'home-card-badge' }, badge),
-    h('p', { className: 'home-card-desc' }, desc)
+    h('span', { className: 'home-card-badge' }, badge)
   );
+  const right = h('p', { className: 'home-card-desc home-card-desc-right' }, desc);
+  card.append(left, right);
   card.addEventListener('click', onClick);
   return card;
 }

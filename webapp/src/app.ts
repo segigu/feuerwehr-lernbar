@@ -8,6 +8,8 @@ import { renderLessonDetail } from './screens/lesson-detail';
 import { renderLearn } from './screens/learn';
 import { renderVocab } from './screens/vocab';
 import { hideMainButton, hideBackButton } from './utils/telegram';
+import { toggleLanguage } from './state/app-state';
+import { showToast } from './utils/toast';
 
 export type Screen =
   | 'home'
@@ -24,6 +26,7 @@ export interface NavigationParams {
   lessonId?: string;
   vocabDirection?: 'de-ru' | 'ru-de' | 'mix';
   sectionId?: string;
+  fromQuiz?: boolean;
 }
 
 type CleanupFn = () => void;
@@ -38,6 +41,21 @@ export function getNavigationParams(): NavigationParams | null {
 
 export function initApp(root: HTMLElement): void {
   container = root;
+
+  // Secret 7-tap language toggle (works anywhere on any page)
+  let tapCount = 0;
+  let tapTimer: ReturnType<typeof setTimeout> | null = null;
+  document.addEventListener('click', () => {
+    tapCount++;
+    if (tapTimer) clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { tapCount = 0; }, 2000);
+    if (tapCount >= 7) {
+      tapCount = 0;
+      const newLang = toggleLanguage();
+      showToast(newLang === 'de+ru' ? 'DE + RU aktiviert' : 'Nur Deutsch');
+    }
+  });
+
   navigate('home');
 }
 

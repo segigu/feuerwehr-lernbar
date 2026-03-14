@@ -1,8 +1,10 @@
-export interface Block {
-  type: 'text' | 'term' | 'key' | 'warn';
-  de: string;
-  ru: string;
-}
+export type Block =
+  | { type: 'text'; de: string; ru: string }
+  | { type: 'term'; de: string; ru: string }
+  | { type: 'key'; de: string; ru: string }
+  | { type: 'warn'; de: string; ru: string }
+  | { type: 'list'; items: string[]; itemsRu?: string[] }
+  | { type: 'table'; headers: string[]; rows: string[][]; bilingualCols?: number[] };
 
 export interface Section {
   id: string;

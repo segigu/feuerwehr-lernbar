@@ -25,8 +25,11 @@ export function renderLearn(container: HTMLElement): () => void {
     if (idx >= 0) currentSectionIdx = idx;
   }
 
-  const backLink = h('button', { className: 'back-link' }, '\u2190 ' + lesson.title);
-  backLink.addEventListener('click', () => navigate('lesson-detail', { lessonId: lesson.id }));
+  const fromQuiz = params?.fromQuiz === true;
+  const goBack = () => fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
+
+  const backLink = h('button', { className: 'back-link' }, fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
+  backLink.addEventListener('click', goBack);
   container.appendChild(backLink);
 
   // Section chips
@@ -146,7 +149,7 @@ export function renderLearn(container: HTMLElement): () => void {
   renderChips();
   renderSection();
 
-  const cleanupBack = showBackButton(() => navigate('lesson-detail', { lessonId: lesson!.id }));
+  const cleanupBack = showBackButton(goBack);
   return () => { cleanupBack(); };
 }
 
@@ -166,14 +169,15 @@ function renderBlock(block: Block, lang: string): HTMLElement {
       break;
     }
     case 'term': {
-      // Inline definition: "Term — перевод"
-      const termDe = h('strong', { className: 'block-term-de' }, block.de);
-      wrapper.appendChild(termDe);
-      if (lang === 'de+ru') {
-        const sep = document.createTextNode(' \u2014 ');
-        const termRu = h('span', { className: 'block-term-ru' }, block.ru);
-        wrapper.append(sep, termRu);
+      // Only show term blocks in bilingual mode (they feed the vocab flashcards)
+      if (lang !== 'de+ru') {
+        wrapper.style.display = 'none';
+        break;
       }
+      const termDe = h('strong', { className: 'block-term-de' }, block.de);
+      const sep = document.createTextNode(' \u2014 ');
+      const termRu = h('span', { className: 'block-term-ru' }, block.ru);
+      wrapper.append(termDe, sep, termRu);
       break;
     }
     case 'key': {
@@ -198,6 +202,57 @@ function renderBlock(block: Block, lang: string): HTMLElement {
         textRu.innerHTML = block.ru;
         wrapper.appendChild(textRu);
       }
+      break;
+    }
+    case 'list': {
+      const ul = h('ul', { className: 'block-list' });
+      block.items.forEach((item, i) => {
+        const li = h('li', { className: 'block-list-item' });
+        const de = h('span', { className: 'block-list-de' });
+        de.innerHTML = item;
+        li.appendChild(de);
+        if (lang === 'de+ru' && block.itemsRu?.[i]) {
+          const ru = h('span', { className: 'block-list-ru' });
+          ru.innerHTML = block.itemsRu[i];
+          li.appendChild(ru);
+        }
+        ul.appendChild(li);
+      });
+      wrapper.appendChild(ul);
+      break;
+    }
+    case 'table': {
+      const bilingualCols = block.bilingualCols ?? [];
+      const skipCols = (lang !== 'de+ru') ? new Set(bilingualCols) : new Set<number>();
+      const tableEl = h('div', { className: 'block-table-wrap' });
+      const table = document.createElement('table');
+      table.className = 'block-table';
+      if (block.headers.length > 0) {
+        const thead = document.createElement('thead');
+        const tr = document.createElement('tr');
+        block.headers.forEach((h2, i) => {
+          if (skipCols.has(i)) return;
+          const th = document.createElement('th');
+          th.textContent = h2;
+          tr.appendChild(th);
+        });
+        thead.appendChild(tr);
+        table.appendChild(thead);
+      }
+      const tbody = document.createElement('tbody');
+      block.rows.forEach(row => {
+        const tr = document.createElement('tr');
+        row.forEach((cell, i) => {
+          if (skipCols.has(i)) return;
+          const td = document.createElement('td');
+          td.innerHTML = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      tableEl.appendChild(table);
+      wrapper.appendChild(tableEl);
       break;
     }
   }

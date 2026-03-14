@@ -24,8 +24,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die Feuerwehrleine hat drei Hauptaufgaben: <strong>Rettung</strong> von Personen (z. B. über den Brustbund), <strong>Selbstrettung</strong> des Feuerwehrangehörigen in Notsituationen und den <strong>Transport bzw. das Sichern von Geräten</strong> (z. B. Hochziehen einer Schlauchleitung mit Strahlrohr). Darüber hinaus wird sie beim Halten und Rückhalten als Sicherungsleine verwendet.',
-          ru: 'У пожарной верёвки три основных назначения: <strong>спасение</strong> людей (например, через грудную обвязку), <strong>самоспасение</strong> пожарного в аварийных ситуациях и <strong>транспортировка или страховка оборудования</strong> (например, подъём рукавной линии со стволом). Кроме того, она используется при «удержании» и «обратном удержании» в качестве страховочной верёвки.',
+          de: 'Die Feuerwehrleine hat drei Hauptaufgaben:',
+          ru: 'У пожарной верёвки три основных назначения:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Rettung</strong> von Personen (z. B. über den Brustbund)',
+            '<strong>Selbstrettung</strong> des Feuerwehrangehörigen in Notsituationen',
+            '<strong>Transport bzw. Sichern von Geräten</strong> (z. B. Hochziehen einer Schlauchleitung mit Strahlrohr)',
+          ],
+          itemsRu: [
+            '<strong>Спасение</strong> людей (например, через грудную обвязку)',
+            '<strong>Самоспасение</strong> пожарного в аварийных ситуациях',
+            '<strong>Транспортировка или страховка оборудования</strong> (например, подъём рукавной линии со стволом)',
+          ],
         },
         {
           type: 'warn',
@@ -61,8 +74,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der Haltegurt besteht aus mehreren wichtigen Komponenten. Das <strong>Gurtband</strong> ist ein 85 mm breites Band aus Polyester — schwer entflammbar und reißfest. Zur Größenanpassung dient die <strong>Zweidornschnalle</strong>: eine Metallschnalle mit zwei Dornen, die das Gurtband sicher fixiert. An der Seite des Gurts befinden sich <strong>Halteösen</strong>, an denen die Sicherungsleine befestigt werden kann. Diese Ösen werden auch als <strong>D-Ösen</strong> bezeichnet, weil sie die Form eines „D" haben.',
-          ru: 'Удерживающий пояс состоит из нескольких важных компонентов. <strong>Ленточная основа</strong> — это полиэстеровая лента шириной 85 мм, трудновоспламеняемая и устойчивая к разрыву. Для регулировки размера служит <strong>двухшпеньковая пряжка</strong> (Zweidornschnalle): металлическая пряжка с двумя шипами, которая надёжно фиксирует ленту. Сбоку на поясе расположены <strong>удерживающие проушины</strong>, к которым крепится страховочная верёвка. Эти проушины также называют <strong>D-образными проушинами</strong>, потому что они имеют форму буквы «D».',
+          de: 'Der Haltegurt besteht aus mehreren wichtigen Komponenten:',
+          ru: 'Удерживающий пояс состоит из нескольких важных компонентов:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Gurtband</strong> — 85 mm breites Polyesterband, schwer entflammbar und reißfest',
+            '<strong>Zweidornschnalle</strong> — Metallschnalle mit zwei Dornen zur Größenanpassung, fixiert das Gurtband sicher',
+            '<strong>D-Ösen</strong> (Halteösen) — seitliche Ösen in D-Form, an denen die Sicherungsleine befestigt wird',
+          ],
+          itemsRu: [
+            '<strong>Ленточная основа</strong> — полиэстеровая лента шириной 85 мм, трудновоспламеняемая и прочная',
+            '<strong>Двухшпеньковая пряжка</strong> (Zweidornschnalle) — металлическая пряжка с двумя шипами для регулировки размера',
+            '<strong>D-образные проушины</strong> (D-Ösen) — боковые проушины формы «D», к которым крепится страховочная верёвка',
+          ],
         },
         {
           type: 'text',

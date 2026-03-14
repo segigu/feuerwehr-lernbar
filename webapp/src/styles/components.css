@@ -8,12 +8,49 @@
 }
 
 .home-icon {
-  width: 120px;
+  width: 100%;
   height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: var(--space-sm);
+}
+
+.home-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.home-icon-wrap::before,
+.home-icon-wrap::after,
+.home-icon-flash {
+  content: '';
+  position: absolute;
+  top: 18%;
+  width: 20%;
+  height: 18%;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-icon-wrap::before {
+  left: 18%;
+  background: radial-gradient(ellipse, rgba(30, 120, 255, 0.85) 0%, transparent 70%);
+  animation: flash-left 60s ease-in-out infinite;
+}
+
+.home-icon-wrap::after {
+  left: 38%;
+  background: radial-gradient(ellipse, rgba(50, 140, 255, 0.85) 0%, transparent 70%);
+  animation: flash-right 60s ease-in-out infinite;
+}
+
+.home-icon-flash {
+  left: 28%;
+  background: radial-gradient(ellipse, rgba(255, 40, 40, 0.9) 0%, transparent 70%);
+  animation: flash-center 60s ease-in-out infinite;
 }
 
 .home-title {
@@ -43,9 +80,9 @@
 
 .home-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   width: 100%;
   padding: var(--space-lg);
   background: var(--color-surface);
@@ -60,10 +97,44 @@
   background: var(--color-selected);
 }
 
+@media (hover: hover) {
+  .home-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: var(--color-selected);
+  }
+}
+
+.home-card-img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.home-section-label {
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.home-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
 .home-card-title {
   font-size: var(--font-xl);
   font-weight: var(--weight-bold);
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 .home-card-badge {
@@ -75,6 +146,13 @@
 .home-card-desc {
   font-size: var(--font-base);
   color: var(--color-text-secondary);
+}
+
+.home-card-desc-right {
+  margin-left: auto;
+  flex-shrink: 0;
+  text-align: right;
+  max-width: 45%;
 }
 
 .home-card-wrap {
@@ -563,6 +641,57 @@
   color: var(--color-text-secondary);
 }
 
+@keyframes flash-left {
+  0%, 4% { opacity: 0; }
+  4.3% { opacity: 0.9; }
+  4.8% { opacity: 0; }
+  5.3% { opacity: 1; }
+  5.8% { opacity: 0; }
+  6.3% { opacity: 0.8; }
+  7%, 95% { opacity: 0; }
+  95.3% { opacity: 0.9; }
+  95.8% { opacity: 0; }
+  96.3% { opacity: 1; }
+  96.8% { opacity: 0; }
+  97.3% { opacity: 0.8; }
+  98% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes flash-right {
+  0%, 4.5% { opacity: 0; }
+  4.8% { opacity: 1; }
+  5.3% { opacity: 0; }
+  5.8% { opacity: 0.9; }
+  6.3% { opacity: 0; }
+  6.8% { opacity: 0.7; }
+  7.5%, 95.5% { opacity: 0; }
+  95.8% { opacity: 1; }
+  96.3% { opacity: 0; }
+  96.8% { opacity: 0.9; }
+  97.3% { opacity: 0; }
+  97.8% { opacity: 0.7; }
+  98.5% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes flash-center {
+  0%, 4.4% { opacity: 0; }
+  4.6% { opacity: 0.9; }
+  5.1% { opacity: 0; }
+  5.6% { opacity: 1; }
+  6.1% { opacity: 0; }
+  6.6% { opacity: 0.8; }
+  7.2%, 95.4% { opacity: 0; }
+  95.6% { opacity: 0.9; }
+  96.1% { opacity: 0; }
+  96.6% { opacity: 1; }
+  97.1% { opacity: 0; }
+  97.6% { opacity: 0.8; }
+  98.2% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
 .stat-correct .stat-value { color: var(--color-correct); }
 .stat-incorrect .stat-value { color: var(--color-incorrect); }
 .stat-unanswered .stat-value { color: var(--color-text-muted); }
@@ -749,6 +878,15 @@
 /* ============================================
    LESSON LIST
    ============================================ */
+
+.lesson-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
 
 .lesson-card-left {
   display: flex;
@@ -980,6 +1118,78 @@
   font-weight: var(--weight-semibold);
 }
 
+/* List block */
+ul.block-list {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.block-list-item {
+  display: list-item;
+  padding: 0;
+}
+
+.block-list-de {
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.block-list-ru {
+  display: block;
+  font-size: var(--font-base);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+/* Table block */
+.block-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.block-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-base);
+  min-width: 280px;
+}
+
+.block-table th {
+  background: var(--color-selected);
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-semibold);
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.block-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.block-table tr:last-child td {
+  border-bottom: none;
+}
+
+.block-table tbody tr:nth-child(even) td {
+  background: var(--color-bg-secondary, rgba(0,0,0,0.02));
+}
+
 /* Learn complete button */
 .learn-complete-btn {
   margin-top: var(--space-lg);
@@ -1208,13 +1418,20 @@
   font-style: italic;
 }
 
+.quiz-explanation-link-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-sm);
+}
+
 .quiz-explanation-link {
   display: inline-block;
-  margin-top: var(--space-sm);
-  padding: 0;
-  font-size: var(--font-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-base);
   font-weight: var(--weight-medium);
-  color: var(--color-primary);
-  background: none;
-  border: none;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
 }

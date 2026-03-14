@@ -205,8 +205,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die Anschlussreihenfolge am Verteiler ist festgelegt und wird <strong>in Fließrichtung des Wassers</strong> betrachtet — also aus der Perspektive, wie das Wasser vom Löschfahrzeug durch die B-Leitung zum Verteiler fließt. Das <strong>erste Rohr</strong> wird am <strong>linken</strong> Abgang angeschlossen. Das <strong>zweite Rohr</strong> wird ebenfalls am <strong>linken</strong> Abgang angeschlossen (bei einem weiteren linken Abgang oder je nach Verteilerbauart). <strong>Sonderrohre</strong> (z. B. Schaumrohre oder Wenderohr) werden in der <strong>Mitte</strong> angeschlossen.',
-          ru: 'Порядок подключения к разветвлению фиксирован и рассматривается <strong>по направлению потока воды</strong> — с позиции, как вода течёт от пожарного автомобиля по линии B к разветвлению. <strong>Первый ствол</strong> подключается к <strong>левому</strong> отводу. <strong>Второй ствол</strong> также подключается к <strong>левому</strong> отводу (ко второму левому отводу или в зависимости от конструкции разветвления). <strong>Специальные стволы</strong> (например, пенные или поворотные) подключаются <strong>посередине</strong>.',
+          de: 'Die Anschlussreihenfolge am Verteiler ist festgelegt und wird <strong>in Fließrichtung des Wassers</strong> betrachtet — also aus der Perspektive, wie das Wasser vom Löschfahrzeug durch die B-Leitung zum Verteiler fließt:',
+          ru: 'Порядок подключения к разветвлению фиксирован и рассматривается <strong>по направлению потока воды</strong> — с позиции, как вода течёт от пожарного автомобиля по линии B к разветвлению:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>1. Rohr</strong> — linker Abgang',
+            '<strong>2. Rohr</strong> — linker Abgang (zweiter linker Abgang oder je nach Verteilerbauart)',
+            '<strong>Sonderrohre</strong> (z. B. Schaumrohre, Wenderohr) — Mitte',
+          ],
+          itemsRu: [
+            '<strong>1-й ствол</strong> — левый отвод',
+            '<strong>2-й ствол</strong> — левый отвод (второй левый или в зависимости от конструкции)',
+            '<strong>Специальные стволы</strong> (пенные, поворотные) — посередине',
+          ],
         },
         {
           type: 'text',
@@ -262,8 +275,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die <strong>Feuerwiderstandsdauer</strong> beschreibt, wie lange ein Bauteil einem Feuer standhält, ohne seine Funktion zu verlieren. Es gibt drei Klassen: <strong>feuerhemmend</strong> (F 30 — hält mindestens 30 Minuten stand), <strong>hochfeuerhemmend</strong> (F 60 — 60 Minuten) und <strong>feuerbeständig</strong> (F 90 — 90 Minuten). Diese Angaben sind für die Einsatzplanung wichtig: Sie geben dem Einheitsführer eine Orientierung, wie viel Zeit für den Innenangriff zur Verfügung steht, bevor eine Einsturzgefahr besteht.',
-          ru: '<strong>Огнестойкость</strong> описывает, как долго строительный элемент выдерживает огонь, не теряя своей функции. Существуют три класса: <strong>огнезадерживающий</strong> (F 30 — выдерживает минимум 30 минут), <strong>высоко-огнезадерживающий</strong> (F 60 — 60 минут) и <strong>огнестойкий</strong> (F 90 — 90 минут). Эти данные важны для планирования операции: они ориентируют руководителя, сколько времени есть для внутренней атаки до возникновения угрозы обрушения.',
+          de: 'Die <strong>Feuerwiderstandsdauer</strong> beschreibt, wie lange ein Bauteil einem Feuer standhält, ohne seine Funktion zu verlieren. Diese Angaben sind für die Einsatzplanung wichtig — sie geben dem Einheitsführer eine Orientierung, wie viel Zeit für den Innenangriff zur Verfügung steht. Es gibt drei Klassen:',
+          ru: '<strong>Огнестойкость</strong> описывает, как долго строительный элемент выдерживает огонь, не теряя своей функции. Эти данные важны для планирования операции. Существуют три класса:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>feuerhemmend</strong> — F 30: hält mindestens 30 Minuten stand',
+            '<strong>hochfeuerhemmend</strong> — F 60: hält mindestens 60 Minuten stand',
+            '<strong>feuerbeständig</strong> — F 90: hält mindestens 90 Minuten stand',
+          ],
+          itemsRu: [
+            '<strong>огнезадерживающий</strong> — F 30: выдерживает минимум 30 минут',
+            '<strong>высоко-огнезадерживающий</strong> — F 60: выдерживает минимум 60 минут',
+            '<strong>огнестойкий</strong> — F 90: выдерживает минимум 90 минут',
+          ],
         },
         {
           type: 'term',

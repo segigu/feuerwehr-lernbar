@@ -19,8 +19,23 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der erste Schritt bei jeder verletzten oder bewusstlosen Person ist die <strong>Überprüfung der lebenswichtigen Körperfunktionen</strong> (Vitalfunktionen). Das geschieht in einer festen Reihenfolge: Zunächst wird die Person <strong>laut angesprochen</strong> — „Hallo, können Sie mich hören?" Reagiert sie nicht, werden die <strong>Schultern vorsichtig geschüttelt</strong>. Bleibt auch darauf keine Reaktion, wird der <strong>Mund- und Rachenraum kontrolliert</strong> — Fremdkörper, Erbrochenes oder die Zunge könnten die Atemwege blockieren. Zuletzt wird die <strong>Atmung festgestellt</strong>: Kopf überstrecken, Kinn anheben und maximal 10 Sekunden lang hören, sehen und fühlen, ob die Person atmet.',
-          ru: 'Первый шаг при обнаружении пострадавшего — <strong>проверка жизненно важных функций</strong> (витальных функций). Это происходит в определённой последовательности: сначала человека <strong>громко окликают</strong> — «Вы меня слышите?» Если реакции нет, <strong>осторожно встряхивают за плечи</strong>. Если и на это реакции нет, <strong>проверяют ротовую полость</strong> — инородные тела, рвотные массы или язык могут блокировать дыхательные пути. В конце <strong>определяют наличие дыхания</strong>: запрокинуть голову, приподнять подбородок и в течение максимум 10 секунд слушать, смотреть и ощущать, дышит ли человек.',
+          de: 'Der erste Schritt bei jeder verletzten oder bewusstlosen Person ist die <strong>Überprüfung der lebenswichtigen Körperfunktionen</strong> (Vitalfunktionen) — in fester Reihenfolge:',
+          ru: 'Первый шаг при обнаружении пострадавшего — <strong>проверка жизненно важных функций</strong> (витальных функций) — в определённой последовательности:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Laut ansprechen</strong> — „Hallo, können Sie mich hören?"',
+            '<strong>Schultern vorsichtig schütteln</strong> — bei fehlender Reaktion auf Ansprechen',
+            '<strong>Mund- und Rachenraum kontrollieren</strong> — Fremdkörper, Erbrochenes oder Zunge können Atemwege blockieren',
+            '<strong>Atmung feststellen</strong> — Kopf überstrecken, Kinn anheben, max. 10 Sekunden hören, sehen und fühlen',
+          ],
+          itemsRu: [
+            '<strong>Громко окликнуть</strong> — «Вы меня слышите?»',
+            '<strong>Осторожно встряхнуть за плечи</strong> — при отсутствии реакции на оклик',
+            '<strong>Проверить ротовую полость</strong> — инородные тела, рвотные массы или язык могут блокировать дыхательные пути',
+            '<strong>Определить дыхание</strong> — запрокинуть голову, приподнять подбородок, max. 10 секунд слушать, смотреть и ощущать',
+          ],
         },
         {
           type: 'text',
@@ -61,8 +76,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Beim Vorfinden einer bewusstlosen Person geht man in folgender Reihenfolge vor: Zuerst <strong>Atmung und Mundraum kontrollieren</strong> — Fremdkörper oder Erbrochenes entfernen, Kopf überstrecken. Dann die Person in die <strong>stabile Seitenlage</strong> bringen. Anschließend <strong>betreuen</strong>: Bewusstsein und Atmung regelmäßig überprüfen, bis der Rettungsdienst eintrifft. Diese drei Schritte — kontrollieren, lagern, betreuen — retten Leben.',
-          ru: 'При обнаружении человека без сознания действуют по порядку: сначала <strong>проверить дыхание и ротовую полость</strong> — убрать инородные тела или рвотные массы, запрокинуть голову. Затем уложить в <strong>устойчивое боковое положение</strong>. После этого <strong>наблюдать</strong>: регулярно проверять сознание и дыхание, пока не прибудет скорая. Эти три шага — проверить, уложить, наблюдать — спасают жизни.',
+          de: 'Beim Vorfinden einer bewusstlosen Person geht man in drei Schritten vor:',
+          ru: 'При обнаружении человека без сознания действуют в три шага:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Kontrollieren</strong> — Atmung und Mundraum prüfen, Fremdkörper oder Erbrochenes entfernen, Kopf überstrecken',
+            '<strong>Lagern</strong> — Person in die stabile Seitenlage bringen',
+            '<strong>Betreuen</strong> — Bewusstsein und Atmung regelmäßig überprüfen, bis der Rettungsdienst eintrifft',
+          ],
+          itemsRu: [
+            '<strong>Проверить</strong> — оценить дыхание и ротовую полость, убрать инородные тела или рвотные массы, запрокинуть голову',
+            '<strong>Уложить</strong> — перевести человека в устойчивое боковое положение',
+            '<strong>Наблюдать</strong> — регулярно проверять сознание и дыхание, пока не прибудет скорая',
+          ],
         },
         {
           type: 'term',
@@ -93,8 +121,26 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Ein <strong>Schock</strong> ist ein lebensbedrohlicher Zustand, bei dem die Organe nicht mehr ausreichend mit Sauerstoff versorgt werden. Er kann durch starken Blutverlust, Schmerzen, allergische Reaktionen oder seelische Belastung ausgelöst werden. Die sichtbaren Schockanzeichen sind eindeutig: <strong>fahle Blässe</strong> im Gesicht, <strong>Frieren</strong> (die Person zittert) und <strong>kalter Schweiß</strong> auf der Stirn. Der Puls wird schneller, aber schwächer. Erkennt man diese Zeichen, muss sofort gehandelt werden: Die Person hinlegen, Beine erhöhen (Schocklage), zudecken und beruhigen.',
-          ru: '<strong>Шок</strong> — это угрожающее жизни состояние, при котором органы перестают получать достаточно кислорода. Его могут вызвать сильная кровопотеря, боль, аллергическая реакция или психическая нагрузка. Видимые признаки шока однозначны: <strong>мертвенная бледность</strong> лица, <strong>озноб</strong> (человек дрожит) и <strong>холодный пот</strong> на лбу. Пульс учащается, но становится слабее. При обнаружении этих признаков нужно действовать немедленно: уложить человека, приподнять ноги (противошоковое положение), укрыть и успокоить.',
+          de: 'Ein <strong>Schock</strong> ist ein lebensbedrohlicher Zustand, bei dem die Organe nicht mehr ausreichend mit Sauerstoff versorgt werden. Er kann durch starken Blutverlust, Schmerzen, allergische Reaktionen oder seelische Belastung ausgelöst werden. Der Puls wird schneller, aber schwächer. Die sichtbaren Schockanzeichen sind:',
+          ru: '<strong>Шок</strong> — это угрожающее жизни состояние, при котором органы перестают получать достаточно кислорода. Его могут вызвать сильная кровопотеря, боль, аллергическая реакция или психическая нагрузка. Пульс учащается, но становится слабее. Видимые признаки шока:',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Fahle Blässe</strong> im Gesicht',
+            '<strong>Frieren</strong> — die Person zittert',
+            '<strong>Kalter Schweiß</strong> auf der Stirn',
+          ],
+          itemsRu: [
+            '<strong>Мертвенная бледность</strong> лица',
+            '<strong>Озноб</strong> — человек дрожит',
+            '<strong>Холодный пот</strong> на лбу',
+          ],
+        },
+        {
+          type: 'text',
+          de: 'Erkennt man diese Zeichen, muss sofort gehandelt werden: Die Person hinlegen, Beine erhöhen (Schocklage), zudecken und beruhigen.',
+          ru: 'При обнаружении этих признаков нужно действовать немедленно: уложить человека, приподнять ноги (противошоковое положение), укрыть и успокоить.',
         },
         {
           type: 'text',

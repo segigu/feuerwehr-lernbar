@@ -2,37 +2,60 @@ import { navigate } from '../app';
 import { questions } from '../data/questions';
 import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } from '../state/quiz-state';
 import { getRandomExamQuestions } from '../data/questions';
-import { getLanguage, toggleLanguage } from '../state/app-state';
+import { getLanguage } from '../state/app-state';
 import { h } from '../utils/dom';
+
+const BASE = import.meta.env.BASE_URL;
 
 export function renderHome(container: HTMLElement): () => void {
   const header = h('div', { className: 'home-header' });
 
-  const icon = h('img', { className: 'home-icon', src: `${import.meta.env.BASE_URL}images/FWAuto.png`, alt: '' });
+  const iconWrap = h('div', { className: 'home-icon-wrap' });
+  const icon = h('img', { className: 'home-icon', src: `${BASE}images/HauptAuto.png`, alt: '' });
+  const flashRed = h('span', { className: 'home-icon-flash' });
+  iconWrap.append(icon, flashRed);
   const title = h('h1', { className: 'home-title' }, 'MTA Prüfungstrainer');
   const subtitle = h('p', { className: 'home-subtitle' }, 'Basismodul \u2014 Staatliche Feuerwehrschule Würzburg');
   const info = h('p', { className: 'home-info' }, `214 Fragen \u00B7 12 Themen`);
 
-  // Secret 5-tap language toggle
-  let tapCount = 0;
-  let tapTimer: ReturnType<typeof setTimeout> | null = null;
-  title.addEventListener('click', () => {
-    tapCount++;
-    if (tapTimer) clearTimeout(tapTimer);
-    tapTimer = setTimeout(() => { tapCount = 0; }, 2000);
-    if (tapCount >= 5) {
-      tapCount = 0;
-      const newLang = toggleLanguage();
-      showToast(newLang === 'de+ru' ? 'DE + RU aktiviert' : 'Nur Deutsch');
-    }
-  });
-
-  header.append(icon, title, subtitle, info);
+  header.append(iconWrap, title, subtitle, info);
   container.appendChild(header);
 
-  const cards = h('div', { className: 'home-cards' });
+  // ── Section 1: Unterricht ──────────────────────────────────
+  container.appendChild(sectionLabel('Unterricht'));
 
-  // Card 1: All questions — check for saved progress
+  const cardsUnterricht = h('div', { className: 'home-cards' });
+
+  const lang = getLanguage();
+  const unterrichtBadge = lang === 'de+ru'
+    ? '12 Themen \u00B7 Lernen \u00B7 Quiz \u00B7 Vokabeln'
+    : '12 Themen \u00B7 Lernen \u00B7 Quiz';
+  const cardUnterricht = createCard(
+    `${BASE}images/Unterricht.png`,
+    'Unterricht',
+    unterrichtBadge,
+    'Unterrichtsmaterial durcharbeiten',
+    () => { navigate('lessons'); }
+  );
+
+  cardsUnterricht.appendChild(cardUnterricht);
+  container.appendChild(cardsUnterricht);
+
+  // ── Section 2: Fragen & Prüfung ───────────────────────────
+  container.appendChild(sectionLabel('Fragen & Prüfung'));
+
+  const cardsFragen = h('div', { className: 'home-cards' });
+
+  // Card: By topic
+  const cardTopic = createCard(
+    `${BASE}images/Nach Thema.png`,
+    'Nach Thema',
+    '12 Themengebiete',
+    'Gezielt einzelne Themen üben',
+    () => { navigate('topic-select'); }
+  );
+
+  // Card: All questions — check for saved progress
   const saved = loadSavedProgress();
   let cardAll: HTMLElement;
 
@@ -41,6 +64,7 @@ export function renderHome(container: HTMLElement): () => void {
     const cardEl = h('div', { className: 'home-card-wrap' });
 
     const resumeBtn = createCard(
+      `${BASE}images/Alle Fragen.png`,
       'Alle Fragen',
       `Fortsetzen \u2014 ${answered} von ${saved.questionIds.length} beantwortet`,
       'Weiter wo du aufgehört hast',
@@ -62,6 +86,7 @@ export function renderHome(container: HTMLElement): () => void {
     cardAll = cardEl;
   } else {
     cardAll = createCard(
+      `${BASE}images/Alle Fragen.png`,
       'Alle Fragen',
       '214 Fragen in zufälliger Reihenfolge',
       'Alle Fragen durchgehen',
@@ -72,8 +97,9 @@ export function renderHome(container: HTMLElement): () => void {
     );
   }
 
-  // Card 2: Exam simulation
+  // Card: Exam simulation
   const cardExam = createCard(
+    `${BASE}images/Prüfung.png`,
     'Prüfung',
     '50 zufällige Fragen',
     'Simuliere die Zwischenprüfung',
@@ -86,32 +112,8 @@ export function renderHome(container: HTMLElement): () => void {
     }
   );
 
-  // Card 3: By topic
-  const cardTopic = createCard(
-    'Nach Thema',
-    '12 Themengebiete',
-    'Gezielt einzelne Themen üben',
-    () => {
-      navigate('topic-select');
-    }
-  );
-
-  // Card 4: Unterricht
-  const lang = getLanguage();
-  const unterrichtBadge = lang === 'de+ru'
-    ? '12 Themen \u00B7 Lernen \u00B7 Quiz \u00B7 Vokabeln'
-    : '12 Themen \u00B7 Lernen \u00B7 Quiz';
-  const cardUnterricht = createCard(
-    'Unterricht',
-    unterrichtBadge,
-    'Unterrichtsmaterial durcharbeiten',
-    () => {
-      navigate('lessons');
-    }
-  );
-
-  cards.append(cardAll, cardExam, cardTopic, cardUnterricht);
-  container.appendChild(cards);
+  cardsFragen.append(cardTopic, cardAll, cardExam);
+  container.appendChild(cardsFragen);
 
   // Source attribution
   const footer = h('div', { className: 'home-footer' });
@@ -129,30 +131,24 @@ export function renderHome(container: HTMLElement): () => void {
   return () => {};
 }
 
-function createCard(title: string, badge: string, description: string, onClick: () => void): HTMLElement {
+function sectionLabel(text: string): HTMLElement {
+  return h('p', { className: 'home-section-label' }, text);
+}
+
+function createCard(imgSrc: string, title: string, badge: string, description: string, onClick: () => void): HTMLElement {
   const card = h('button', { className: 'home-card' });
 
+  const imgEl = h('img', { className: 'home-card-img', src: imgSrc, alt: '' });
+
+  const textCol = h('div', { className: 'home-card-text' });
   const cardTitle = h('h2', { className: 'home-card-title' }, title);
   const cardBadge = h('span', { className: 'home-card-badge' }, badge);
   const cardDesc = h('p', { className: 'home-card-desc' }, description);
+  textCol.append(cardTitle, cardBadge, cardDesc);
 
-  card.append(cardTitle, cardBadge, cardDesc);
+  card.append(imgEl, textCol);
   card.addEventListener('click', onClick);
 
   return card;
 }
 
-function showToast(message: string): void {
-  const existing = document.querySelector('.toast');
-  if (existing) existing.remove();
-
-  const toast = h('div', { className: 'toast' }, message);
-  document.body.appendChild(toast);
-  requestAnimationFrame(() => {
-    toast.classList.add('show');
-  });
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 300);
-  }, 2000);
-}

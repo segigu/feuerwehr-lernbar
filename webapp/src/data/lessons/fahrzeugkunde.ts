@@ -19,8 +19,31 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Die Feuerwehrfahrzeuge werden nach ihrer Verwendung in mehrere Gruppen eingeteilt. Diese Einteilung hilft dabei, schnell zu verstehen, welche Aufgaben ein Fahrzeug erfüllen kann. Die wichtigsten Gruppen sind: <strong>Einsatzleitfahrzeuge</strong> (ELW) zur Führung und Koordination, <strong>Feuerlöschfahrzeuge</strong> (dazu gehören Löschfahrzeuge und Sonderlöschfahrzeuge), <strong>Hubrettungsfahrzeuge</strong> (Drehleitern und Hubarbeitsbühnen), <strong>Rüst- und Gerätefahrzeuge</strong>, <strong>Gerätefahrzeuge Gefahrgut</strong>, <strong>Nachschubfahrzeuge</strong>, <strong>Krankenkraftwagen</strong> und <strong>Mannschaftstransportfahrzeuge</strong>.',
-          ru: 'Пожарные автомобили делятся по назначению на несколько групп. Эта классификация помогает быстро понять, какие задачи может выполнять конкретная машина. Основные группы: <strong>автомобили управления</strong> (ELW) для руководства и координации, <strong>пожарные автоцистерны и насосные машины</strong> (включая обычные и специальные), <strong>автолестницы и подъёмники</strong> (поворотные лестницы и коленчатые подъёмники), <strong>аварийно-спасательные автомобили</strong>, <strong>автомобили для работы с опасными веществами</strong>, <strong>автомобили снабжения</strong>, <strong>санитарные автомобили</strong> и <strong>автомобили для перевозки личного состава</strong>.',
+          de: 'Die Feuerwehrfahrzeuge werden nach ihrer Verwendung in mehrere Gruppen eingeteilt. Diese Einteilung hilft dabei, schnell zu verstehen, welche Aufgaben ein Fahrzeug erfüllen kann.',
+          ru: 'Пожарные автомобили делятся по назначению на несколько групп. Эта классификация помогает быстро понять, какие задачи может выполнять конкретная машина.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Einsatzleitfahrzeuge (ELW)</strong> — Führung und Koordination',
+            '<strong>Feuerlöschfahrzeuge</strong> — Löschfahrzeuge und Sonderlöschfahrzeuge',
+            '<strong>Hubrettungsfahrzeuge</strong> — Drehleitern und Hubarbeitsbühnen',
+            '<strong>Rüst- und Gerätefahrzeuge</strong>',
+            '<strong>Gerätefahrzeuge Gefahrgut</strong>',
+            '<strong>Nachschubfahrzeuge</strong>',
+            '<strong>Krankenkraftwagen</strong>',
+            '<strong>Mannschaftstransportfahrzeuge</strong>',
+          ],
+          itemsRu: [
+            '<strong>Автомобили управления (ELW)</strong> — руководство и координация',
+            '<strong>Пожарные автомобили тушения</strong> — обычные и специальные',
+            '<strong>Автолестницы и подъёмники</strong> — поворотные лестницы и коленчатые подъёмники',
+            '<strong>Аварийно-спасательные автомобили</strong>',
+            '<strong>Автомобили для работы с опасными веществами</strong>',
+            '<strong>Автомобили снабжения</strong>',
+            '<strong>Санитарные автомобили</strong>',
+            '<strong>Автомобили для перевозки личного состава</strong>',
+          ],
         },
         {
           type: 'text',
@@ -73,6 +96,15 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Die <strong>Gruppe (1/8)</strong> ist die stärkste Besatzung mit 9 Personen: einem Gruppenführer und acht Feuerwehrangehörigen. Sie ist die Standardbesatzung auf Löschgruppenfahrzeugen (LF) und Hilfeleistungslöschfahrzeugen (HLF). Die Gruppe besteht aus dem Gruppenführer, dem Maschinisten, dem Melder, dem Angriffstrupp, dem Wassertrupp und dem Schlauchtrupp. Mit dieser Besatzung kann eine vollständige Brandbekämpfung durchgeführt werden.',
           ru: '<strong>Группа (1/8)</strong> — самый крупный расчёт из 9 человек: командир группы и восемь пожарных. Это стандартный экипаж насосных автомобилей (LF) и универсальных пожарных автомобилей (HLF). Группа состоит из командира, водителя-моториста, связного, штурмового звена, водяного звена и рукавного звена. С таким расчётом можно провести полноценное тушение пожара.',
+        },
+        {
+          type: 'table',
+          headers: ['Besatzungsart', 'Stärke', 'Fahrzeuge'],
+          rows: [
+            ['Trupp (1/2)', '3 Personen', 'TLF 2000, TLF 3000, TLF 4000, RW'],
+            ['Staffel (1/5)', '6 Personen', 'TSF, TSF-W, MLF'],
+            ['Gruppe (1/8)', '9 Personen', 'LF 10, LF 20, HLF 10, HLF 20, LF 20 KatS'],
+          ],
         },
         {
           type: 'term',
@@ -169,6 +201,15 @@ export const lesson: Lesson = {
           ru: '<strong>LF 20</strong> — более мощная версия. Обозначение «20» указывает на насос <strong>FPN 10-2000</strong>, подающий при 10 бар уже 2 000 литров в минуту — вдвое больше, чем у LF 10. Бак тоже значительно больше — <strong>2 000 литров</strong>. Дополнительные особенности: LF 20 вместо штекерной лестницы несёт <strong>3-секционную выдвижную лестницу</strong>, оснащён <strong>катушкой на корме</strong> для быстрой прокладки рукавов и <strong>спасательным прыжковым устройством</strong> для спасения людей с высоты. Экипаж — тоже группа (1/8).',
         },
         {
+          type: 'table',
+          headers: ['Fahrzeug', 'Besatzung', 'Tank', 'Pumpe', 'PA', 'Besonderheiten'],
+          rows: [
+            ['<strong>MLF</strong>', 'Staffel 1/5', '600–1000 l', 'FPN 10-1000', '4', 'Steckleiter 4-teilig'],
+            ['<strong>LF 10</strong>', 'Gruppe 1/8', '1200 l', 'FPN 10-1000', '4', 'Schnellangriff, Schaum'],
+            ['<strong>LF 20</strong>', 'Gruppe 1/8', '2000 l', 'FPN 10-2000', '4', 'Schiebleiter 3-teilig, Haspel, Sprungrettung'],
+          ],
+        },
+        {
           type: 'term',
           de: 'MLF — Mittleres Löschfahrzeug',
           ru: 'MLF — среднее пожарное авто',
@@ -204,6 +245,17 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Das <strong>LF 20 KatS (Katastrophenschutz)</strong> ist ein besonderes Löschfahrzeug, das vom Bund für den Katastrophenschutz beschafft wird. Es hat eine <strong>Gruppe (1/8)</strong> als Besatzung und ist vielseitig einsetzbar: für <strong>Brandbekämpfung, schnelle Wasserabgabe, Wasserförderung über lange Strecken</strong> und <strong>technische Hilfeleistung</strong>. Besondere Merkmale sind die zwei Pumpen — eine fest eingebaute <strong>FPN 10-2000</strong> und eine tragbare <strong>PFPN 10-2000</strong> —, ein <strong>Stromerzeuger</strong>, ein <strong>Lichtmast</strong> und <strong>300 Meter B-Schläuche</strong>, die während der Fahrt verlegt werden können. Der Löschwassertank fasst <strong>1.000 Liter</strong>.',
           ru: '<strong>LF 20 KatS (Katastrophenschutz — гражданская оборона)</strong> — особый пожарный автомобиль, закупаемый федеральным правительством для целей гражданской защиты. Экипаж — <strong>группа (1/8)</strong>, назначение универсальное: <strong>тушение пожаров, быстрая подача воды, перекачка на большие расстояния</strong> и <strong>технические спасательные работы</strong>. Особенности: два насоса — стационарный <strong>FPN 10-2000</strong> и переносной <strong>PFPN 10-2000</strong>, <strong>генератор</strong>, <strong>осветительная мачта</strong> и <strong>300 метров рукавов B</strong>, которые можно прокладывать прямо на ходу. Бак для воды — <strong>1 000 литров</strong>.',
+        },
+        {
+          type: 'table',
+          headers: ['Fahrzeug', 'Tank', 'Pumpe', 'THL-Ausrüstung'],
+          rows: [
+            ['<strong>LF 10</strong>', '1200 l', 'FPN 10-1000', '—'],
+            ['<strong>HLF 10</strong>', '1000 l', 'FPN 10-1000', 'Hyd. Rettungssatz, Mehrzweckzug'],
+            ['<strong>LF 20</strong>', '2000 l', 'FPN 10-2000', '—'],
+            ['<strong>HLF 20</strong>', '1600 l', 'FPN 10-2000', 'Hyd. Rettungssatz, Mehrzweckzug'],
+            ['<strong>LF 20 KatS</strong>', '1000 l', 'FPN 10-2000 + PFPN 10-2000', 'Stromerzeuger, Lichtmast, 300 m B-Schläuche'],
+          ],
         },
         {
           type: 'term',
@@ -251,6 +303,15 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Das <strong>TLF 4000</strong> ist das größte Tanklöschfahrzeug. Es führt <strong>4.000 Liter Löschwasser</strong> mit, hat eine Pumpe <strong>FPN 10-2000</strong>, 2 PA, einen Vorrat an <strong>Schaummittel</strong> und einen <strong>Schaum-Wasserwerfer</strong>. Der Schaum-Wasserwerfer ist ein auf dem Fahrzeugdach montierter Werfer, der Wasser oder Schaum unter hohem Druck abgeben kann — besonders nützlich bei Flächenbränden oder Industriebränden, wo große Mengen Löschmittel auf einmal benötigt werden.',
           ru: '<strong>TLF 4000</strong> — крупнейшая автоцистерна. Бак вмещает <strong>4 000 литров воды</strong>, насос — <strong>FPN 10-2000</strong>, 2 дыхательных аппарата, запас <strong>пенообразователя</strong> и <strong>пенно-водяной лафетный ствол</strong>. Лафетный ствол монтируется на крыше и подаёт воду или пену под высоким давлением — особенно полезен при ландшафтных или промышленных пожарах, где нужны большие объёмы огнетушащего вещества за короткое время.',
+        },
+        {
+          type: 'table',
+          headers: ['Fahrzeug', 'Tank', 'Pumpe', 'PA', 'Besonderheiten'],
+          rows: [
+            ['<strong>TLF 2000</strong>', '2000 l', 'FPN 10-1000', '2', 'Schnellangriff'],
+            ['<strong>TLF 3000</strong>', '3000 l', 'FPN 10-2000', '2', '—'],
+            ['<strong>TLF 4000</strong>', '4000 l', 'FPN 10-2000', '2', 'Schaummittel + Schaum-Wasserwerfer'],
+          ],
         },
         {
           type: 'term',

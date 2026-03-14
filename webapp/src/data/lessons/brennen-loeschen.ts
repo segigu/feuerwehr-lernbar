@@ -19,8 +19,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Damit eine Verbrennung überhaupt stattfinden kann, müssen drei Voraussetzungen gleichzeitig erfüllt sein: Es braucht einen <strong>brennbaren Stoff</strong>, <strong>Sauerstoff</strong> und ausreichend <strong>Wärme</strong> (Zündenergie). Diese drei Faktoren bilden das sogenannte <strong>Verbrennungsdreieck</strong>. Fehlt auch nur einer dieser drei Faktoren, kann kein Feuer entstehen — und genau darauf basieren alle Löschverfahren der Feuerwehr.',
-          ru: 'Для горения необходимо одновременное наличие трёх условий: <strong>горючее вещество</strong>, <strong>кислород</strong> и достаточное количество <strong>тепла</strong> (энергия воспламенения). Эти три фактора образуют так называемый <strong>треугольник горения</strong>. Если отсутствует хотя бы один из них, огонь не возникнет — и именно на этом основаны все способы тушения.',
+          de: 'Damit eine Verbrennung überhaupt stattfinden kann, müssen drei Voraussetzungen gleichzeitig erfüllt sein. Diese drei Faktoren bilden das sogenannte <strong>Verbrennungsdreieck</strong>. Fehlt auch nur einer dieser drei Faktoren, kann kein Feuer entstehen — und genau darauf basieren alle Löschverfahren der Feuerwehr.',
+          ru: 'Для горения необходимо одновременное наличие трёх условий. Эти три фактора образуют так называемый <strong>треугольник горения</strong>. Если отсутствует хотя бы один из них, огонь не возникнет — и именно на этом основаны все способы тушения.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Brennbarer Stoff</strong>',
+            '<strong>Sauerstoff</strong>',
+            '<strong>Wärme</strong> (Zündenergie)',
+          ],
+          itemsRu: [
+            '<strong>Горючее вещество</strong>',
+            '<strong>Кислород</strong>',
+            '<strong>Тепло</strong> (энергия воспламенения)',
+          ],
         },
         {
           type: 'text',
@@ -60,29 +73,15 @@ export const lesson: Lesson = {
           ru: 'Не каждый пожар одинаков — в зависимости от горящего материала огонь ведёт себя совершенно по-разному и требует разных средств тушения. Поэтому пожары классифицируются по <strong>классам</strong>. Правильное определение класса пожара — ключевой момент, ведь неподходящее средство тушения может оказаться бесполезным или даже усилить опасность.',
         },
         {
-          type: 'text',
-          de: '<strong>Brandklasse A</strong> umfasst Brände von festen, glutbildenden Stoffen. Typische Beispiele sind <strong>Holz, Papier und Kohle</strong>. Diese Materialien bilden beim Brennen Glut — das heißt, sie glühen nach und können sich erneut entzünden, auch wenn die Flammen schon erloschen sind. Deshalb ist es bei Brandklasse A besonders wichtig, den Stoff unter die Mindestverbrennungstemperatur abzukühlen. Wasser eignet sich hier hervorragend als Löschmittel.',
-          ru: '<strong>Класс A</strong> — пожары твёрдых веществ, образующих тлеющие угли. Типичные примеры: <strong>дерево, бумага и уголь</strong>. Эти материалы при горении образуют тлеющие угли — то есть продолжают тлеть и могут повторно воспламениться, даже если пламя уже погасло. Поэтому при классе A особенно важно охладить вещество ниже температуры горения. Вода отлично подходит в качестве средства тушения.',
-        },
-        {
-          type: 'text',
-          de: '<strong>Brandklasse B</strong> betrifft Brände von flüssigen oder flüssig werdenden Stoffen. Hierzu gehören zum Beispiel <strong>Benzin, Diesel und Petroleum</strong>, aber auch Kunststoffe wie Wachs oder Paraffin, die beim Erhitzen schmelzen. Wie bereits beschrieben, brennen bei diesen Stoffen die Dämpfe — deshalb verbreiten sich solche Brände oft schnell über große Flächen, weil die Dämpfe sich ausbreiten.',
-          ru: '<strong>Класс B</strong> — пожары жидких или плавящихся веществ. Сюда относятся, например, <strong>бензин, дизель и керосин</strong>, а также пластики вроде воска или парафина, которые плавятся при нагревании. Как уже говорилось, у этих веществ горят пары — поэтому такие пожары часто быстро распространяются на большие площади вслед за парами.',
-        },
-        {
-          type: 'text',
-          de: '<strong>Brandklasse C</strong> steht für Brände von gasförmigen Stoffen wie <strong>Propan, Butan und Acetylen</strong>. Gasbrände sind besonders gefährlich, weil sich Gase schnell ausbreiten und mit Luft explosive Gemische bilden können. Eine wichtige Regel: Einen Gasbrand löscht man nur, wenn man gleichzeitig die Gaszufuhr absperren kann. Sonst strömt das Gas weiter aus und bildet ein unsichtbares, explosionsfähiges Gemisch.',
-          ru: '<strong>Класс C</strong> — пожары газообразных веществ, таких как <strong>пропан, бутан и ацетилен</strong>. Газовые пожары особенно опасны, потому что газы быстро распространяются и могут образовывать с воздухом взрывоопасные смеси. Важное правило: газовый пожар тушат только тогда, когда можно одновременно перекрыть подачу газа. Иначе газ продолжит выходить и образует невидимую взрывоопасную смесь.',
-        },
-        {
-          type: 'text',
-          de: '<strong>Brandklasse D</strong> bezeichnet <strong>Metallbrände</strong> — zum Beispiel Aluminium, Magnesium oder Natrium. Solche Brände sind selten, aber extrem heiß und schwer zu löschen. Wasser darf hier auf keinen Fall verwendet werden, da es bei Kontakt mit brennendem Metall explosionsartig zerlegt wird. Für Metallbrände gibt es spezielles Metallbrandpulver oder Sand.',
-          ru: '<strong>Класс D</strong> — <strong>пожары металлов</strong>, например алюминия, магния или натрия. Такие пожары редки, но чрезвычайно горячи и трудно поддаются тушению. Воду здесь применять категорически нельзя — при контакте с горящим металлом она взрывообразно разлагается. Для тушения металлов используют специальный порошок для металлов или песок.',
-        },
-        {
-          type: 'text',
-          de: '<strong>Brandklasse F</strong> umfasst Brände von <strong>Speisefetten und -ölen</strong> in Frittier- und Fettbackgeräten. Diese Klasse wurde eingeführt, weil brennendes Fett besonders heimtückisch ist: Es erreicht extrem hohe Temperaturen und reagiert mit Wasser explosionsartig. Wenn man Wasser auf brennendes Fett schüttet, verdampft es schlagartig — das Volumen vergrößert sich um das Tausendfache, und das brennende Fett wird herausgeschleudert. Das nennt man eine <strong>Fettexplosion</strong>. Für Brandklasse F gibt es spezielle Fettbrandlöscher.',
-          ru: '<strong>Класс F</strong> — пожары <strong>пищевых жиров и масел</strong> во фритюрницах и жаровнях. Этот класс был введён, потому что горящий жир особенно коварен: он достигает экстремально высоких температур и взрывообразно реагирует с водой. Если плеснуть воду на горящий жир, она мгновенно испаряется — объём увеличивается в тысячу раз, и горящий жир выбрасывается наружу. Это называется <strong>жировой взрыв</strong>. Для класса F существуют специальные огнетушители для жиров.',
+          type: 'table',
+          headers: ['Klasse', 'Stoffe', 'Beispiele', 'Löschmittel'],
+          rows: [
+            ['<strong>A</strong>', 'Feste, glutbildende Stoffe', 'Holz, Papier, Kohle', 'Wasser'],
+            ['<strong>B</strong>', 'Flüssige / flüssig werdende Stoffe', 'Benzin, Diesel, Wachs', 'Schaum, Pulver'],
+            ['<strong>C</strong>', 'Gasförmige Stoffe', 'Propan, Butan, Acetylen', 'Pulver (+ Gaszufuhr sperren!)'],
+            ['<strong>D</strong>', 'Metallbrände', 'Aluminium, Magnesium, Natrium', 'Metallbrandpulver, Sand'],
+            ['<strong>F</strong>', 'Speisefette und -öle', 'Frittierfett, Pflanzenöl', 'Fettbrandlöscher'],
+          ],
         },
         {
           type: 'term',
@@ -128,8 +127,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Es gibt drei Arten der Wärmeausbreitung: <strong>Wärmestrahlung</strong>, <strong>Wärmeströmung</strong> (Konvektion) und <strong>Wärmeleitung</strong>. Bei jedem Brand wirken alle drei Mechanismen gleichzeitig, aber je nach Situation überwiegt einer davon. Die Kenntnis dieser Mechanismen hilft dem Einsatzleiter, die Ausbreitungsrichtung vorherzusagen und Maßnahmen zu treffen.',
-          ru: 'Существуют три способа распространения тепла: <strong>тепловое излучение</strong>, <strong>тепловая конвекция</strong> (поток) и <strong>теплопроводность</strong>. При каждом пожаре все три механизма действуют одновременно, но в зависимости от ситуации один из них преобладает. Знание этих механизмов помогает руководителю тушения предвидеть направление распространения и принять меры.',
+          de: 'Es gibt drei Arten der Wärmeausbreitung. Bei jedem Brand wirken alle drei Mechanismen gleichzeitig, aber je nach Situation überwiegt einer davon. Die Kenntnis dieser Mechanismen hilft dem Einsatzleiter, die Ausbreitungsrichtung vorherzusagen und Maßnahmen zu treffen.',
+          ru: 'Существуют три способа распространения тепла. При каждом пожаре все три механизма действуют одновременно, но в зависимости от ситуации один из них преобладает. Знание этих механизмов помогает руководителю тушения предвидеть направление распространения и принять меры.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Wärmestrahlung</strong> — elektromagnetische Wellen (wie Sonnenlicht); erfasst benachbarte Gebäude ohne direkten Kontakt',
+            '<strong>Wärmeströmung (Konvektion)</strong> — heiße Gase steigen auf; Brände breiten sich in Gebäuden nach oben aus',
+            '<strong>Wärmeleitung</strong> — Wärme durch feste Materialien (z. B. Metallträger, Rohre)',
+          ],
+          itemsRu: [
+            '<strong>Тепловое излучение</strong> — электромагнитные волны (подобно солнечному свету); достигает соседних зданий без прямого контакта',
+            '<strong>Тепловая конвекция</strong> — горячие газы поднимаются вверх; пожары в зданиях распространяются вверх по этажам',
+            '<strong>Теплопроводность</strong> — тепло через твёрдые материалы (например, металлические балки, трубы)',
+          ],
         },
         {
           type: 'text',
@@ -175,8 +187,21 @@ export const lesson: Lesson = {
       blocks: [
         {
           type: 'text',
-          de: 'Jedes Löschverfahren basiert auf dem Prinzip des Verbrennungsdreiecks: Man nimmt dem Feuer einen der drei notwendigen Faktoren weg. Es gibt drei grundlegende Löschverfahren: <strong>Abkühlen</strong>, <strong>Ersticken</strong> und <strong>Beseitigen</strong> des brennbaren Stoffes. In der Praxis kommen oft mehrere Verfahren gleichzeitig zum Einsatz.',
-          ru: 'Каждый способ тушения основан на принципе треугольника горения: у огня отнимают один из трёх необходимых факторов. Существуют три основных способа тушения: <strong>охлаждение</strong>, <strong>перекрытие кислорода</strong> (удушение) и <strong>удаление</strong> горючего вещества. На практике часто применяют несколько способов одновременно.',
+          de: 'Jedes Löschverfahren basiert auf dem Prinzip des Verbrennungsdreiecks: Man nimmt dem Feuer einen der drei notwendigen Faktoren weg. Es gibt drei grundlegende Löschverfahren. In der Praxis kommen oft mehrere Verfahren gleichzeitig zum Einsatz.',
+          ru: 'Каждый способ тушения основан на принципе треугольника горения: у огня отнимают один из трёх необходимых факторов. Существуют три основных способа тушения. На практике часто применяют несколько способов одновременно.',
+        },
+        {
+          type: 'list',
+          items: [
+            '<strong>Abkühlen</strong> — brennenden Stoff unter die Mindestverbrennungstemperatur bringen (Wärme entziehen)',
+            '<strong>Ersticken</strong> — Sauerstoffzutritt zum Brand stören oder unterbinden',
+            '<strong>Beseitigen</strong> — brennbaren Stoff entfernen',
+          ],
+          itemsRu: [
+            '<strong>Охлаждение</strong> — снизить температуру горящего вещества ниже минимальной (отвод тепла)',
+            '<strong>Удушение</strong> — нарушить или перекрыть доступ кислорода к очагу',
+            '<strong>Удаление</strong> — убрать горючее вещество',
+          ],
         },
         {
           type: 'text',

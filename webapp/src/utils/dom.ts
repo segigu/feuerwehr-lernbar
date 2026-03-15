@@ -24,16 +24,25 @@ export function h<K extends keyof HTMLElementTagNameMap>(
 }
 
 export function createImg(attrs: Record<string, string>): HTMLImageElement {
-  const cls = attrs.className ? `${attrs.className} img-loading` : 'img-loading';
-  const img = h('img', { ...attrs, className: cls });
+  const { src, className, ...rest } = attrs;
+  const cls = className ? `${className} img-loading` : 'img-loading';
+  const img = h('img', { ...rest, className: cls });
 
-  const onReady = () => img.classList.remove('img-loading');
+  const preload = new Image();
 
-  if (img.complete && img.naturalWidth > 0) {
-    onReady();
-  } else {
-    img.addEventListener('load', onReady, { once: true });
-    img.addEventListener('error', onReady, { once: true });
+  const reveal = () => {
+    img.src = src;
+    img.classList.remove('img-loading');
+    img.classList.add('img-reveal');
+  };
+
+  preload.addEventListener('load', reveal, { once: true });
+  preload.addEventListener('error', () => img.classList.remove('img-loading'), { once: true });
+  preload.src = src;
+
+  if (preload.complete && preload.naturalWidth > 0) {
+    img.src = src;
+    img.classList.remove('img-loading');
   }
 
   return img;

@@ -23,6 +23,22 @@ export function h<K extends keyof HTMLElementTagNameMap>(
   return el;
 }
 
+export function createImg(attrs: Record<string, string>): HTMLImageElement {
+  const cls = attrs.className ? `${attrs.className} img-loading` : 'img-loading';
+  const img = h('img', { ...attrs, className: cls });
+
+  const onReady = () => img.classList.remove('img-loading');
+
+  if (img.complete && img.naturalWidth > 0) {
+    onReady();
+  } else {
+    img.addEventListener('load', onReady, { once: true });
+    img.addEventListener('error', onReady, { once: true });
+  }
+
+  return img;
+}
+
 export function clear(el: HTMLElement): void {
   el.innerHTML = '';
 }

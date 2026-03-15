@@ -4,7 +4,7 @@ import type { Block } from '../data/lessons';
 import { getLessonLearnProgress, markSectionComplete } from '../state/lesson-state';
 import { getLanguage } from '../state/app-state';
 import { showBackButton } from '../utils/telegram';
-import { h, clear } from '../utils/dom';
+import { h, clear, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -258,7 +258,7 @@ function renderBlock(block: Block, lang: string): HTMLElement {
       break;
     }
     case 'image': {
-      const img = h('img', {
+      const img = createImg({
         className: 'block-img',
         src: `${BASE}images/lessons/${block.src}`,
         alt: block.alt ?? '',

@@ -2,7 +2,7 @@ import { navigate } from '../app';
 import { lessons, extractVocab } from '../data/lessons';
 import { getLessonLearnProgress, getLessonQuizStats } from '../state/lesson-state';
 import { showBackButton } from '../utils/telegram';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -44,7 +44,7 @@ export function renderLessons(container: HTMLElement): () => void {
     // Thumbnail image
     const imgFile = lessonImages[lesson.id];
     if (imgFile) {
-      const thumb = h('img', { className: 'lesson-thumb', src: `${BASE}images/${imgFile}`, alt: '' });
+      const thumb = createImg({ className: 'lesson-thumb', src: `${BASE}images/${imgFile}`, alt: '' });
       card.appendChild(thumb);
     }
 

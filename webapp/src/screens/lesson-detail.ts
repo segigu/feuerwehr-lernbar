@@ -4,7 +4,7 @@ import { getLessonLearnProgress, getLessonQuizStats, getLessonVocabStats, resetL
 import { getLanguage } from '../state/app-state';
 import { createSession } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -50,7 +50,7 @@ export function renderLessonDetail(container: HTMLElement): () => void {
   const imgFile = lessonImages[lesson.id];
   if (imgFile) {
     const iconWrap = h('div', { className: 'home-icon-wrap' });
-    const img = h('img', {
+    const img = createImg({
       className: 'home-icon',
       src: `${BASE}images/${imgFile}`,
       alt: '',

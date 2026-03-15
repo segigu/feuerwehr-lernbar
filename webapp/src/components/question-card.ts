@@ -1,5 +1,5 @@
 import type { Question } from '../data/questions';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 import { hapticSelection } from '../utils/telegram';
 
 export function createQuestionCard(
@@ -18,7 +18,7 @@ export function createQuestionCard(
   card.appendChild(questionText);
 
   if (question.image) {
-    const img = h('img', {
+    const img = createImg({
       className: 'question-image',
       src: `${import.meta.env.BASE_URL}images/${question.image}`,
       alt: 'Gefahrzeichen',

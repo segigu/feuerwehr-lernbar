@@ -3,7 +3,7 @@ import { topics, getQuestionsByTopic } from '../data/questions';
 import { createSession } from '../state/quiz-state';
 import { getLessonByTopic } from '../data/lessons';
 import { showBackButton } from '../utils/telegram';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -48,7 +48,7 @@ export function renderTopicSelect(container: HTMLElement): () => void {
     if (lesson) {
       const imgFile = lessonImages[lesson.id];
       if (imgFile) {
-        const thumb = h('img', { className: 'lesson-thumb', src: `${BASE}images/${imgFile}`, alt: '' });
+        const thumb = createImg({ className: 'lesson-thumb', src: `${BASE}images/${imgFile}`, alt: '' });
         card.appendChild(thumb);
       }
     }

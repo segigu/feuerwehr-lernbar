@@ -3,7 +3,7 @@ import { questions } from '../data/questions';
 import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } from '../state/quiz-state';
 import { getRandomExamQuestions } from '../data/questions';
 import { getLanguage } from '../state/app-state';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -11,7 +11,7 @@ export function renderHome(container: HTMLElement): () => void {
   const header = h('div', { className: 'home-header' });
 
   const iconWrap = h('div', { className: 'home-icon-wrap home-icon-animated' });
-  const icon = h('img', { className: 'home-icon', src: `${BASE}images/Fahrzeugkunde.png`, alt: '' });
+  const icon = createImg({ className: 'home-icon', src: `${BASE}images/Fahrzeugkunde.png`, alt: '' });
   const flashRed = h('span', { className: 'home-icon-flash' });
   iconWrap.append(icon, flashRed);
   const title = h('h1', { className: 'home-title' }, 'MTA Prüfungstrainer');
@@ -136,7 +136,7 @@ function sectionLabel(text: string): HTMLElement {
 function createCard(imgSrc: string, title: string, badge: string, description: string, onClick: () => void): HTMLElement {
   const card = h('button', { className: 'home-card' });
 
-  const imgEl = h('img', { className: 'home-card-img', src: imgSrc, alt: '' });
+  const imgEl = createImg({ className: 'home-card-img', src: imgSrc, alt: '' });
 
   const textCol = h('div', { className: 'home-card-text' });
   const cardTitle = h('h2', { className: 'home-card-title' }, title);

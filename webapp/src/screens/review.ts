@@ -1,7 +1,7 @@
 import { navigate } from '../app';
 import { calculateResults } from '../state/quiz-state';
 import { showBackButton, showMainButton } from '../utils/telegram';
-import { h } from '../utils/dom';
+import { h, createImg } from '../utils/dom';
 
 type Filter = 'all' | 'correct' | 'incorrect';
 
@@ -64,7 +64,7 @@ export function renderReview(container: HTMLElement): () => void {
       body.appendChild(qText);
 
       if (detail.question.image) {
-        const img = h('img', {
+        const img = createImg({
           className: 'review-image',
           src: `${import.meta.env.BASE_URL}images/${detail.question.image}`,
           alt: 'Gefahrzeichen',

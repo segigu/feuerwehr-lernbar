@@ -44,13 +44,14 @@ export function initApp(root: HTMLElement): void {
   container = root;
   migrateProgressV2();
 
-  // Secret 7-tap language toggle (works anywhere on any page)
+  // Secret 7-tap language toggle — each tap must be within 400ms of the previous
   let tapCount = 0;
-  let tapTimer: ReturnType<typeof setTimeout> | null = null;
+  let lastTapTime = 0;
   document.addEventListener('click', () => {
+    const now = Date.now();
+    if (now - lastTapTime > 400) tapCount = 0;
+    lastTapTime = now;
     tapCount++;
-    if (tapTimer) clearTimeout(tapTimer);
-    tapTimer = setTimeout(() => { tapCount = 0; }, 2000);
     if (tapCount >= 7) {
       tapCount = 0;
       const newLang = toggleLanguage();

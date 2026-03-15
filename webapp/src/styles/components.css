@@ -361,6 +361,7 @@
 .question-image {
   max-width: 200px;
   margin: 0 auto var(--space-lg);
+  border-radius: var(--radius-md);
 }
 
 .options-container {
@@ -814,6 +815,7 @@
 .review-image {
   max-width: 160px;
   margin: 0 auto var(--space-md);
+  border-radius: var(--radius-md);
 }
 
 .review-option {
@@ -1474,11 +1476,13 @@ ul.block-list {
 .img-loading.question-image {
   min-height: 100px;
   width: 200px;
+  border-radius: var(--radius-md);
 }
 
 .img-loading.review-image {
   min-height: 80px;
   width: 160px;
+  border-radius: var(--radius-md);
 }
 
 @keyframes skeleton-shimmer {

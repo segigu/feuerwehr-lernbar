@@ -31,9 +31,12 @@ export function createImg(attrs: Record<string, string>): HTMLImageElement {
   const preload = new Image();
 
   const reveal = () => {
-    img.src = src;
     img.classList.remove('img-loading');
     img.classList.add('img-reveal');
+    img.src = src;
+    // Force browser to paint the hidden state, then trigger transition
+    void img.offsetHeight;
+    img.classList.add('img-visible');
   };
 
   preload.addEventListener('load', reveal, { once: true });

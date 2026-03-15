@@ -1459,7 +1459,11 @@ ul.block-list {
 }
 
 .img-loading.home-icon {
-  min-height: 120px;
+  width: 100px;
+  height: 100px;
+  min-height: auto;
+  border-radius: 50%;
+  margin: 10px auto;
 }
 
 .img-loading.block-img {

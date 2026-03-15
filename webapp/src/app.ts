@@ -10,6 +10,7 @@ import { renderVocab } from './screens/vocab';
 import { hideMainButton, hideBackButton } from './utils/telegram';
 import { toggleLanguage } from './state/app-state';
 import { showToast } from './utils/toast';
+import { migrateProgressV2 } from './state/lesson-state';
 
 export type Screen =
   | 'home'
@@ -41,6 +42,7 @@ export function getNavigationParams(): NavigationParams | null {
 
 export function initApp(root: HTMLElement): void {
   container = root;
+  migrateProgressV2();
 
   // Secret 7-tap language toggle (works anywhere on any page)
   let tapCount = 0;

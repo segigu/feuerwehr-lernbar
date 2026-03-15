@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Sichern und Absturzsicherung',
   title: 'Sichern und Absturzsicherung',
   titleRu: 'Страховка и защита от падения',
+  chapters: ['10.1'],
   ready: true,
   sections: [
     {

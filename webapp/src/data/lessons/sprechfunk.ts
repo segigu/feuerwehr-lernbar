@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Sprechfunk',
   title: 'Sprechfunk',
   titleRu: 'Радиосвязь',
+  chapters: ['E'],
   ready: true,
   sections: [
     // ── Section 1: Rechtsgrundlagen ──

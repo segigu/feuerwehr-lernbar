@@ -4,7 +4,8 @@ export type Block =
   | { type: 'key'; de: string; ru: string }
   | { type: 'warn'; de: string; ru: string }
   | { type: 'list'; items: string[]; itemsRu?: string[] }
-  | { type: 'table'; headers: string[]; rows: string[][]; bilingualCols?: number[] };
+  | { type: 'table'; headers: string[]; rows: string[][]; bilingualCols?: number[] }
+  | { type: 'image'; src: string; alt?: string; altRu?: string; caption?: string; captionRu?: string };
 
 export interface Section {
   id: string;
@@ -30,6 +31,7 @@ export interface Lesson {
   topic: string;
   title: string;
   titleRu: string;
+  chapters: string[];
   sections: Section[];
   questions: LessonQuestion[];
   ready: boolean;

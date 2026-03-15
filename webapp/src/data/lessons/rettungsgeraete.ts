@@ -1,10 +1,11 @@
 import type { Lesson } from './types';
 
 export const lesson: Lesson = {
-  id: 'rettung-leitern-knoten',
+  id: 'rettungsgeraete',
   topic: 'Rettung, Leitern und Knoten',
   title: 'Rettung, Leitern und Knoten',
   titleRu: 'Спасение, лестницы и узлы',
+  chapters: ['5.9', '5.10'],
   ready: true,
   sections: [
     {

@@ -1,10 +1,11 @@
 import type { Lesson } from './types';
 
 export const lesson: Lesson = {
-  id: 'geraete-armaturen',
+  id: 'schlaeuche-armaturen',
   topic: 'Geräte und Armaturen',
   title: 'Geräte und Armaturen',
   titleRu: 'Оборудование и арматура',
+  chapters: ['5.5'],
   ready: true,
   sections: [
     {

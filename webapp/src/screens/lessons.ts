@@ -11,13 +11,18 @@ const lessonImages: Record<string, string> = {
   'brennen-loeschen': 'Brennen und L\u00F6schen.png',
   'fahrzeugkunde': 'Fahrzeugkunde.png',
   'persoenliche-ausruestung': 'Pers\u00F6nliche Ausr\u00FCstung.png',
-  'geraete-armaturen': 'Ger\u00E4te und Armaturen.png',
-  'rettung-leitern-knoten': 'Rettung, Leitern und Knoten.png',
-  'erste-hilfe': 'Erste Hilfe.png',
-  'einsatzgrundsaetze': 'Einsatzgrunds\u00E4tze.png',
+  'schlaeuche-armaturen': 'Ger\u00E4te und Armaturen.png',
+  'hilfeleistungsgeraete': 'Technische Hilfeleistung.png',
+  'rettungsgeraete': 'Rettung, Leitern und Knoten.png',
+  'belastungen': 'Einsatzgrunds\u00E4tze.png',
+  'verhalten-einsatz': 'Einsatzgrunds\u00E4tze.png',
+  'hygiene': 'Erste Hilfe.png',
+  'verhalten-gefahr': 'Einsatzgrunds\u00E4tze.png',
   'loescheinsatz': 'L\u00F6scheinsatz FwDV3.png',
   'absturzsicherung': 'Absturzsicherung.png',
-  'technische-hilfeleistung': 'Technische Hilfeleistung.png',
+  'hilfeleistungseinsatz': 'Technische Hilfeleistung.png',
+  'abc-gefahrstoffe': 'Technische Hilfeleistung.png',
+  'erste-hilfe': 'Erste Hilfe.png',
   'sprechfunk': 'Sprechfunk.png',
 };
 
@@ -46,6 +51,18 @@ export function renderLessons(container: HTMLElement): () => void {
     const left = h('div', { className: 'lesson-card-left' });
     const name = h('span', { className: 'topic-name' }, lesson.title);
     left.appendChild(name);
+
+    // Chapter number
+    if (lesson.chapters.length > 0) {
+      const chapText = lesson.chapters[0] === 'E'
+        ? 'Ergänzungsmodul'
+        : `Kap. ${lesson.chapters.join(' / ')}`;
+      const chap = h('span', { className: 'lesson-card-chapter' }, chapText);
+      left.appendChild(chap);
+    } else if (lesson.id === 'erste-hilfe') {
+      const chap = h('span', { className: 'lesson-card-chapter' }, 'Zusatzthema');
+      left.appendChild(chap);
+    }
 
     // Progress info
     const stats = getLessonQuizStats(lesson.id);

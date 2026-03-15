@@ -1166,6 +1166,36 @@ ul.block-list {
   background: var(--color-bg-secondary, rgba(0,0,0,0.02));
 }
 
+/* Chapter badge */
+.lesson-card-chapter {
+  font-size: var(--font-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-semibold);
+}
+
+.lesson-detail-chapter {
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+  font-weight: var(--weight-semibold);
+}
+
+/* Image block */
+.block-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-xs) 0;
+}
+
+.block-img-caption {
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
 /* Learn complete button */
 .learn-complete-btn {
   margin-top: var(--space-lg);

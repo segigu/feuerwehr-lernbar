@@ -1,0 +1,449 @@
+import type { Lesson } from './types';
+
+export const lesson: Lesson = {
+  id: 'hilfeleistungsgeraete',
+  topic: 'Geräte für Hilfeleistung',
+  title: 'Geräte für einfache und erweiterte Hilfeleistung',
+  titleRu: 'Оборудование для технической помощи',
+  chapters: ['5.7', '5.8'],
+  ready: true,
+  sections: [
+    // ── Section 1: Einfache Hilfeleistungsgeräte ──
+    {
+      id: 'einfache-geraete',
+      title: 'Einfache Hilfeleistungsgeräte',
+      titleRu: 'Простые инструменты для технической помощи',
+      blocks: [
+        {
+          type: 'text',
+          de: 'Neben den großen hydraulischen Rettungsgeräten verfügt die Feuerwehr über eine Reihe einfacher Handwerkzeuge für die technische Hilfeleistung. Diese Geräte sind auf nahezu jedem Feuerwehrfahrzeug verladen und kommen bei kleineren Einsätzen häufig zum Einsatz — oft sogar schneller und praktischer als die schwere Technik. Wer die einfachen Geräte sicher beherrscht, kann im Einsatz wertvolle Zeit sparen.',
+          ru: 'Помимо крупного гидравлического спасательного оборудования, пожарная охрана располагает рядом простых ручных инструментов для технической помощи. Эти инструменты есть практически на каждом пожарном автомобиле и часто используются при небольших операциях — нередко быстрее и удобнее, чем тяжёлая техника. Тот, кто уверенно владеет простыми инструментами, может сэкономить ценное время на выезде.',
+        },
+        {
+          type: 'text',
+          de: 'Die <strong>Brechstange</strong> (auch Nageleisen oder Brecheisen genannt) ist eines der ältesten Werkzeuge der Feuerwehr. Sie dient zum Hebeln, Aufbrechen und Lösen von verklemmten Türen, Fenstern oder Abdeckungen. In der Praxis wird sie häufig genutzt, um Zugang zu verschlossenen Räumen zu schaffen — etwa bei einem Wohnungsbrand, wenn die Tür nicht anders geöffnet werden kann. Die typische Brechstange bei der Feuerwehr hat eine Länge von etwa 50 bis 75 cm und einen abgeflachten, leicht gebogenen Kopf zum Ansetzen.',
+          ru: '<strong>Лом</strong> (также называется монтировка) — один из старейших инструментов пожарной охраны. Он служит для поддевания, взлома и высвобождения заклинивших дверей, окон или крышек. На практике его часто используют для получения доступа в закрытые помещения — например, при пожаре в квартире, когда дверь невозможно открыть иначе. Типичный лом у пожарных имеет длину около 50–75 см и плоский, слегка изогнутый наконечник для установки в щель.',
+        },
+        {
+          type: 'text',
+          de: 'Der <strong>Bolzenschneider</strong> ist ein handgeführtes Schneidwerkzeug mit langen Griffen und kurzen, gehärteten Schneiden. Durch die große Hebelübersetzung kann er mit vergleichsweise wenig Kraft Metallstäbe, Ketten, Vorhängeschlösser und Draht durchtrennen. Der maximale Schneiddurchmesser liegt bei den meisten Modellen bei ca. <strong>12 mm</strong> Vollmaterial. Typische Einsatzfälle sind das Aufschneiden von Zäunen, das Entfernen von Ketten oder das Durchtrennen von Schlössern bei Türöffnungen.',
+          ru: '<strong>Болторез</strong> — ручной режущий инструмент с длинными рукоятками и короткими закалёнными лезвиями. Благодаря большому передаточному отношению рычага он может с относительно небольшим усилием перерезать металлические прутки, цепи, навесные замки и проволоку. Максимальный диаметр резки у большинства моделей составляет около <strong>12 мм</strong> сплошного материала. Типичные ситуации применения — перерезание заборов, удаление цепей или перекусывание замков при вскрытии дверей.',
+        },
+        {
+          type: 'text',
+          de: 'Die <strong>Bügelsäge</strong> (auch Metallsäge) dient zum manuellen Durchtrennen von Metallteilen — zum Beispiel Rohre, Profile oder dünne Stahlstangen. Sie wird dort eingesetzt, wo der Bolzenschneider an seine Grenzen kommt oder wo ein präziserer Schnitt notwendig ist. Auf den Löschfahrzeugen befindet sich außerdem ein <strong>Werkzeugkasten</strong> mit Grundausstattung: Schraubenschlüssel, Zangen, Schraubendreher, Hammer und weiteres Handwerkszeug. Damit können kleinere Reparaturen und improvisierte Maßnahmen direkt an der Einsatzstelle durchgeführt werden.',
+          ru: '<strong>Ножовка по металлу</strong> служит для ручного перерезания металлических деталей — например, труб, профилей или тонких стальных прутков. Её используют там, где болторез не справляется или где нужен более точный разрез. На пожарных автомобилях также имеется <strong>ящик с инструментами</strong> с базовым набором: гаечные ключи, плоскогубцы, отвёртки, молоток и прочий ручной инструмент. С его помощью можно выполнять мелкий ремонт и импровизированные меры прямо на месте.',
+        },
+        { type: 'term', de: 'Brechstange', ru: 'Лом (монтировка)' },
+        { type: 'term', de: 'Bolzenschneider', ru: 'Болторез' },
+        { type: 'term', de: 'Bügelsäge', ru: 'Ножовка по металлу' },
+        {
+          type: 'key',
+          de: 'Die einfachen Hilfeleistungsgeräte erfordern keine Energiequelle — sie werden rein mit Muskelkraft bedient. Dadurch sind sie sofort einsatzbereit und unabhängig von Stromversorgung oder Hydraulikaggregat.',
+          ru: 'Простые инструменты для технической помощи не требуют источника энергии — они работают исключительно за счёт мускульной силы. Благодаря этому они сразу готовы к применению и не зависят от электропитания или гидравлического агрегата.',
+        },
+      ],
+    },
+
+    // ── Section 2: Hebekissen ──
+    {
+      id: 'hebekissen',
+      title: 'Hebekissen und Hebebaum',
+      titleRu: 'Пневматические подушки и рычажные домкраты',
+      blocks: [
+        {
+          type: 'text',
+          de: '<strong>Pneumatische Hebekissen</strong> gehören zu den wichtigsten Geräten der technischen Hilfeleistung. Ihr Prinzip ist einfach: Ein flaches Kissen aus verstärktem Gummi wird mit Druckluft befüllt und hebt dadurch schwere Lasten an. Der große Vorteil: Hebekissen sind im leeren Zustand nur etwa 2 bis 3 cm dick und lassen sich dadurch in engste Spalten schieben — zum Beispiel unter ein auf einer Person liegendes Fahrzeugteil oder zwischen eingeklemmte Maschinenteile.',
+          ru: '<strong>Пневматические подъёмные подушки</strong> — одни из важнейших средств технической помощи. Их принцип прост: плоская подушка из армированной резины наполняется сжатым воздухом и поднимает тяжёлые грузы. Главное преимущество: в сдутом состоянии подушки имеют толщину всего около 2–3 см и могут быть вставлены в самые узкие щели — например, под деталь автомобиля, лежащую на человеке, или между зажатыми частями машины.',
+        },
+        {
+          type: 'text',
+          de: 'Es gibt zwei grundlegende Typen: <strong>Hochdruck-Hebekissen</strong> arbeiten mit einem Betriebsdruck von ca. <strong>8 bar</strong> und erreichen eine Hubkraft von <strong>9 bis 67 Tonnen</strong> je nach Kissengröße, haben aber nur eine geringe Hubhöhe von ca. 5 bis 30 cm. <strong>Niederdruck-Luftheber</strong> arbeiten mit nur ca. <strong>0,5 bar</strong> und heben Lasten bis etwa <strong>5 Tonnen</strong>, erreichen dafür aber eine deutlich größere Hubhöhe. Die Druckluft wird aus Pressluftflaschen oder vom Kompressor des Fahrzeugs geliefert.',
+          ru: 'Существуют два основных типа: <strong>подушки высокого давления</strong> работают при рабочем давлении около <strong>8 бар</strong> и развивают подъёмную силу от <strong>9 до 67 тонн</strong> в зависимости от размера подушки, но имеют небольшую высоту подъёма — около 5–30 см. <strong>Подъёмники низкого давления</strong> работают при давлении всего около <strong>0,5 бар</strong> и поднимают грузы до <strong>5 тонн</strong>, зато достигают значительно большей высоты подъёма. Сжатый воздух поступает из баллонов или от компрессора автомобиля.',
+        },
+        {
+          type: 'text',
+          de: 'Beim Einsatz von Hebekissen muss die Last gleichzeitig mit <strong>Unterbaumaterial</strong> (Kreuzholzstapel oder Keile) gesichert werden. Der Grund: Wenn die Druckluft ausfällt oder das Kissen beschädigt wird, darf die Last nicht wieder zurückfallen. In der Praxis arbeitet man in kleinen Schritten: Leicht anheben — Unterkeilen — weiter anheben — wieder unterkeilen. Dabei ist die Regel für Kreuzholzstapel mit quadratischem Querschnitt wichtig: Die maximale Stapelhöhe darf das <strong>Dreifache der Grundlänge</strong> nicht überschreiten, um ein Umkippen zu vermeiden.',
+          ru: 'При использовании подъёмных подушек груз одновременно необходимо фиксировать <strong>подкладочным материалом</strong> (штабелем из перекрёстно уложенных брусьев или клиньями). Причина: если давление воздуха упадёт или подушка будет повреждена, груз не должен упасть обратно. На практике работают небольшими шагами: слегка приподнять — подклинить — приподнять ещё — снова подклинить. При этом важно правило для штабелей с квадратным сечением: максимальная высота штабеля не должна превышать <strong>трёхкратную длину основания</strong>, чтобы избежать опрокидывания.',
+        },
+        { type: 'term', de: 'Hebekissen', ru: 'Подъёмная подушка (пневматическая)' },
+        { type: 'term', de: 'Unterbaumaterial', ru: 'Подкладочный материал (клинья, брусья)' },
+        {
+          type: 'warn',
+          de: 'Niemals unter einer nur durch Hebekissen gehaltenen Last arbeiten oder sich aufhalten! Die Last muss immer zusätzlich mit Unterbaumaterial gesichert sein, bevor man darunter greift. Hebekissen können platzen oder verrutschen.',
+          ru: 'Никогда не работать и не находиться под грузом, удерживаемым только подъёмной подушкой! Груз всегда должен быть дополнительно зафиксирован подкладочным материалом, прежде чем подходить к нему снизу. Подушки могут лопнуть или сместиться.',
+        },
+      ],
+    },
+
+    // ── Section 3: Hydraulische Rettungsgeräte ──
+    {
+      id: 'hydraulische-rettungsgeraete',
+      title: 'Hydraulische Rettungsgeräte',
+      titleRu: 'Гидравлическое спасательное оборудование',
+      blocks: [
+        {
+          type: 'text',
+          de: 'Der <strong>hydraulische Rettungssatz</strong> ist das zentrale Gerätesystem für die erweiterte technische Hilfeleistung. Er besteht aus einem Hydraulikaggregat (der Pumpe) und den daran über Hochdruckschläuche angeschlossenen Rettungsgeräten: Spreizer, Rettungsschere und Rettungszylinder. Das Aggregat erzeugt einen Betriebsdruck von ca. <strong>630 bar</strong> — ein enormer Druck, der die Geräte in die Lage versetzt, selbst massivste Metallteile zu verformen und zu durchtrennen.',
+          ru: '<strong>Гидравлический спасательный комплект</strong> — центральная система оборудования для расширенной технической помощи. Он состоит из гидравлического агрегата (насоса) и подключённых к нему через шланги высокого давления спасательных инструментов: разжим, ножницы и цилиндр. Агрегат создаёт рабочее давление около <strong>630 бар</strong> — огромное давление, позволяющее инструментам деформировать и перерезать даже самые массивные металлические детали.',
+        },
+        {
+          type: 'text',
+          de: 'Das <strong>Hydraulikaggregat</strong> wird in der Regel von einem Verbrennungsmotor oder einem Elektromotor angetrieben. Es komprimiert Hydrauliköl auf etwa 630 bar und leitet es über <strong>20 Meter lange Hochdruckschläuche</strong> zu den Rettungsgeräten. Die Hochdruckschläuche sind mit Schnellkupplungen versehen, sodass die Geräte rasch gewechselt werden können. Moderne Rettungssätze gibt es auch mit Akku-Antrieb — diese batteriebetriebenen Geräte benötigen kein Aggregat und keine Schläuche, was den Einsatz deutlich flexibler macht.',
+          ru: '<strong>Гидравлический агрегат</strong> приводится в действие, как правило, двигателем внутреннего сгорания или электромотором. Он сжимает гидравлическое масло до примерно 630 бар и подаёт его по <strong>20-метровым шлангам высокого давления</strong> к спасательным инструментам. Шланги оснащены быстроразъёмными муфтами, позволяющими оперативно менять инструменты. Современные комплекты бывают и с аккумуляторным приводом — такие устройства не нуждаются в агрегате и шлангах, что делает работу значительно гибче.',
+        },
+        {
+          type: 'text',
+          de: 'Der <strong>Spreizer</strong> (auch Rettungsspreizer) hat zwei bewegliche Arme, die auseinander gedrückt oder zusammengedrückt werden können. Er wird eingesetzt, um verklemmte Fahrzeugtüren aufzuspreizen, Karosserieteile auseinanderzudrücken oder eingeklemmte Personen zu befreien. Die Spreizkraft kann je nach Modell bis zu <strong>130 kN</strong> (ca. 13 Tonnen) erreichen, bei einer Öffnungsweite von ca. <strong>710 bis 720 mm</strong>. Wichtig zu wissen: Die Bewegung der Spreizerarme ist bogenförmig — das muss bei der Positionierung berücksichtigt werden.',
+          ru: '<strong>Разжим</strong> (гидравлический расширитель) имеет два подвижных рычага, которые можно раздвигать или сдвигать. Он применяется для разжатия заклинивших дверей автомобилей, раздвигания частей кузова или освобождения зажатых людей. Усилие разжатия может достигать до <strong>130 кН</strong> (около 13 тонн) в зависимости от модели, при раскрытии около <strong>710–720 мм</strong>. Важно знать: движение рычагов разжима дугообразное — это необходимо учитывать при позиционировании.',
+        },
+        {
+          type: 'text',
+          de: 'Die <strong>Rettungsschere</strong> (hydraulische Schneidgerät) kann massive Metallteile durchtrennen — Fahrzeugrahmen, Türpfosten, Lenkstangen und Dachsäulen. Die Schneidkraft beträgt je nach Modell bis zu <strong>200 kN</strong> bei einem Betriebsdruck von 630 bar, und Vollmaterial bis zu <strong>36 mm</strong> Stärke kann zerschnitten werden. Die Öffnungsweite der Schneiden liegt bei ca. 270 mm. Im Gegensatz zum Spreizer schneidet die Schere — sie verformt das Material nicht, sondern trennt es durch.',
+          ru: '<strong>Спасательные ножницы</strong> (гидравлический резак) могут перерезать массивные металлические детали — рамы автомобилей, дверные стойки, рулевые колонки и стойки крыши. Усилие резки достигает до <strong>200 кН</strong> при рабочем давлении 630 бар, а сплошной материал толщиной до <strong>36 мм</strong> может быть перерезан. Ширина раскрытия лезвий составляет около 270 мм. В отличие от разжима, ножницы именно режут — не деформируют материал, а разделяют его.',
+        },
+        {
+          type: 'text',
+          de: 'Der <strong>Rettungszylinder</strong> (auch Hydraulikzylinder) wird eingesetzt, wenn eine größere Spreizweite benötigt wird als der Spreizer bieten kann. Er besteht aus einem oder mehreren teleskopierbaren Kolben und kann Hubhöhen von <strong>53 bis 160 cm</strong> erreichen. Die Druckkraft beträgt typischerweise ca. <strong>13 Tonnen</strong>, bei Teleskop-Zylindern in der ersten Stufe bis zu <strong>19 Tonnen</strong>. Der Zylinder wird zum Beispiel eingesetzt, um die A-Säule eines Fahrzeugs nach vorne wegzudrücken und so den Fußraum freizulegen (sogenannter „Dash-Roll").',
+          ru: '<strong>Спасательный цилиндр</strong> (гидравлический цилиндр) применяется, когда требуется большее расстояние разжима, чем может обеспечить разжим. Он состоит из одного или нескольких телескопических поршней и может достигать высоты хода от <strong>53 до 160 см</strong>. Давящая сила обычно составляет около <strong>13 тонн</strong>, у телескопических цилиндров на первой ступени — до <strong>19 тонн</strong>. Цилиндр используется, например, чтобы отжать переднюю стойку автомобиля вперёд и тем самым освободить пространство для ног (так называемый «Dash-Roll»).',
+        },
+        { type: 'term', de: 'Hydraulischer Rettungssatz', ru: 'Гидравлический спасательный комплект' },
+        { type: 'term', de: 'Spreizer', ru: 'Разжим (гидравлический расширитель)' },
+        { type: 'term', de: 'Rettungsschere', ru: 'Спасательные ножницы (резак)' },
+        { type: 'term', de: 'Rettungszylinder', ru: 'Спасательный цилиндр' },
+        {
+          type: 'key',
+          de: 'Der hydraulische Rettungssatz arbeitet mit einem Betriebsdruck von ca. 630 bar. Die Hochdruckschläuche sind ca. 20 m lang. Der Rettungszylinder-Satz besteht typischerweise aus 3 Zylindern verschiedener Größe mit Hubhöhen von 53 bis 160 cm und einer Hubkraft von bis zu 19 Tonnen.',
+          ru: 'Гидравлический спасательный комплект работает при давлении около 630 бар. Шланги высокого давления имеют длину около 20 м. Набор спасательных цилиндров обычно состоит из 3 цилиндров разного размера с высотой хода от 53 до 160 см и подъёмной силой до 19 тонн.',
+        },
+      ],
+    },
+
+    // ── Section 4: Stromerzeuger und Beleuchtung ──
+    {
+      id: 'stromerzeuger-beleuchtung',
+      title: 'Stromerzeuger und Beleuchtung',
+      titleRu: 'Генераторы и освещение',
+      blocks: [
+        {
+          type: 'text',
+          de: 'Viele Einsatzstellen haben keinen Stromanschluss oder die Stromversorgung ist ausgefallen. Dann braucht die Feuerwehr eigene Energie — und dafür gibt es den <strong>tragbaren Stromerzeuger</strong>. Er ist ein benzinbetriebener Generator, der Wechselstrom erzeugt und damit elektrische Verbraucher wie Beleuchtungsgeräte, Tauchpumpen, Trennschleifer oder den Hydraulikantrieb des Rettungssatzes versorgt.',
+          ru: 'На многих местах проведения операций нет электрического подключения или электроснабжение вышло из строя. Тогда пожарной охране нужна собственная энергия — для этого существует <strong>переносной генератор</strong>. Это бензиновый генератор, вырабатывающий переменный ток и питающий потребители: осветительные приборы, погружные насосы, отрезные машины или гидравлический привод спасательного комплекта.',
+        },
+        {
+          type: 'text',
+          de: 'Die Norm <strong>DIN 14685</strong> regelt die Anforderungen an Feuerwehr-Stromerzeuger. Sie unterscheidet drei Leistungsklassen: Generatorsätze mit mindestens <strong>5 kVA</strong> (Teil 1), unter <strong>5 kVA</strong> (Teil 2) und Invertergeneratoren bis <strong>2 kVA</strong> (Teil 3). Auf Löschgruppenfahrzeugen (LF) und Hilfeleistungsfahrzeugen (HLF) findet man typischerweise Geräte mit 5 bis 8 kVA. Auf Rüstwagen (RW) sind Aggregate mit mindestens 11 kVA vorgeschrieben. Eine einfache Faustregel: Wer vier 1.000-Watt-Flutlichtstrahler betreiben will, braucht mindestens ein 5-kVA-Aggregat.',
+          ru: 'Стандарт <strong>DIN 14685</strong> регулирует требования к генераторам для пожарной охраны. Он различает три класса мощности: генераторные установки от <strong>5 кВА</strong> (часть 1), менее <strong>5 кВА</strong> (часть 2) и инверторные генераторы до <strong>2 кВА</strong> (часть 3). На автоцистернах (LF) и аварийно-спасательных автомобилях (HLF) обычно стоят агрегаты на 5–8 кВА. На автомобилях техпомощи (RW) требуются агрегаты мощностью не менее 11 кВА. Простое правило: для четырёх прожекторов по 1000 Вт нужен генератор минимум на 5 кВА.',
+        },
+        {
+          type: 'text',
+          de: 'Zur <strong>Einsatzstellenbeleuchtung</strong> verwendet die Feuerwehr Flutlichtstrahler (meist 1.000 Watt), die auf Stativen oder einem ausfahrbaren <strong>Lichtmast</strong> am Fahrzeug montiert sind. Der Lichtmast kann pneumatisch oder elektrisch ausgefahren werden und erreicht Höhen von 4 bis 6 Metern — so wird eine große Fläche gleichmäßig ausgeleuchtet. Gute Beleuchtung ist kein Luxus, sondern eine Sicherheitsfrage: Nur wer die Einsatzstelle richtig sehen kann, arbeitet sicher und effektiv.',
+          ru: 'Для <strong>освещения места операции</strong> пожарная охрана использует прожекторы (обычно 1000 Вт), устанавливаемые на штативах или выдвижной <strong>световой мачте</strong> на автомобиле. Мачта выдвигается пневматически или электрически на высоту 4–6 метров, обеспечивая равномерное освещение большой площади. Хорошее освещение — не роскошь, а вопрос безопасности: только тот, кто хорошо видит место операции, работает безопасно и эффективно.',
+        },
+        {
+          type: 'text',
+          de: 'Bei der Bedienung des Stromerzeugers sind einige Regeln zu beachten. Der Generator muss auf ebenem, trockenem Untergrund aufgestellt werden und darf nicht in geschlossenen Räumen betrieben werden — die Abgase enthalten tödliches Kohlenmonoxid. Vor dem Anschließen elektrischer Verbraucher muss der <strong>Fehlerstromschutzschalter</strong> (FI-Schalter) geprüft werden. Der Stromerzeuger verfügt über 230-Volt-Schuko-Steckdosen und teilweise über 400-Volt-CEE-Steckdosen für stärkere Verbraucher.',
+          ru: 'При работе с генератором необходимо соблюдать ряд правил. Генератор должен стоять на ровной сухой поверхности, и его нельзя эксплуатировать в закрытых помещениях — выхлопные газы содержат смертельно опасный угарный газ. Перед подключением электроприборов необходимо проверить <strong>устройство защитного отключения</strong> (УЗО). Генератор оснащён розетками 230 В (Schuko) и частично розетками 400 В (CEE) для более мощных потребителей.',
+        },
+        { type: 'term', de: 'Tragbarer Stromerzeuger', ru: 'Переносной генератор' },
+        { type: 'term', de: 'Lichtmast', ru: 'Световая мачта' },
+        {
+          type: 'warn',
+          de: 'Stromerzeuger niemals in geschlossenen Räumen oder Gruben betreiben — akute Vergiftungsgefahr durch Kohlenmonoxid (CO)! Außerdem: Vor dem Anschließen oder Umstecken von Verbrauchern Motor abstellen, um Lichtbögen und Kurzschlüsse zu vermeiden.',
+          ru: 'Никогда не эксплуатировать генератор в закрытых помещениях или ямах — острая опасность отравления угарным газом (CO)! Кроме того: перед подключением или переключением потребителей выключить двигатель, чтобы избежать искрения и коротких замыканий.',
+        },
+      ],
+    },
+
+    // ── Section 5: Sonstige Geräte ──
+    {
+      id: 'sonstige-geraete',
+      title: 'Motorsäge, Trennschleifer und Mehrzweckzug',
+      titleRu: 'Бензопила, отрезная машина и многоцелевая лебёдка',
+      blocks: [
+        {
+          type: 'text',
+          de: 'Die <strong>Motorsäge</strong> (Kettensäge) gehört zur Beladung vieler Lösch- und Hilfeleistungsfahrzeuge. Sie wird bei Sturmschäden zum Beseitigen umgestürzter Bäume eingesetzt, aber auch bei der technischen Hilfeleistung zum Durchtrennen von Holzkonstruktionen. Der Umgang mit der Motorsäge erfordert eine spezielle Ausbildung und besondere persönliche Schutzausrüstung: <strong>Schnittschutzhose</strong>, <strong>Schnittschutzstiefel</strong>, <strong>Augen-/Gesichtsschutz</strong> und bei Bedarf ein <strong>Forstarbeiterhelm</strong> als Ersatz für den Feuerwehrhelm.',
+          ru: '<strong>Бензопила</strong> (цепная пила) входит в комплектацию многих пожарных и аварийно-спасательных автомобилей. Она используется при ликвидации последствий бури для уборки поваленных деревьев, а также при технической помощи для перепиливания деревянных конструкций. Работа с бензопилой требует специального обучения и особых средств защиты: <strong>штаны с защитой от пореза</strong>, <strong>ботинки с защитой от пореза</strong>, <strong>защита глаз/лица</strong> и при необходимости <strong>каска лесоруба</strong> вместо пожарного шлема.',
+        },
+        {
+          type: 'text',
+          de: 'Der <strong>Trennschleifer</strong> (auch Winkelschleifer oder Motorflex genannt) ist ein motorgetriebenes Schneidgerät mit einer rotierenden Trennscheibe. Er kann Metall, Beton, Stein und Mauerwerk durchtrennen und wird dort eingesetzt, wo die hydraulische Schere nicht ausreicht — etwa beim Durchschneiden von Bewehrungsstahl, Rohren oder Geländern. Beim Einsatz entstehen Funkenflug und Staub, daher ist ein <strong>Augen- und Gehörschutz</strong> zwingend erforderlich. In der Nähe brennbarer Materialien muss ein Löschmittel bereitgestellt werden.',
+          ru: '<strong>Отрезная машина</strong> (также угловая шлифмашина или «болгарка») — моторизованный режущий инструмент с вращающимся отрезным диском. Она может резать металл, бетон, камень и кирпичную кладку и применяется там, где гидравлических ножниц недостаточно — например, при перерезании арматурной стали, труб или ограждений. При работе образуются искры и пыль, поэтому <strong>защита глаз и органов слуха</strong> обязательна. Вблизи горючих материалов должно быть наготове средство тушения.',
+        },
+        {
+          type: 'text',
+          de: 'Der <strong>Mehrzweckzug</strong> (auch bekannt unter dem Markennamen Greifzug) ist ein tragbares, handbetriebenes Zuggerät. Er ermöglicht das kontrollierte Ziehen, Heben und Ablassen von Lasten mittels eines Drahtseils. Die gängigsten Baugrößen bei der Feuerwehr sind der <strong>MZ 16</strong> (Zugkraft 16 kN, ca. 1,6 Tonnen) und der <strong>MZ 32</strong> (Zugkraft 32 kN, ca. 3,2 Tonnen) nach <strong>DIN 14800-5</strong>. Mit einer Umlenkrolle lässt sich die Zugkraft verdoppeln — ein MZ 16 mit Umlenkrolle zieht dann mit bis zu 32 kN.',
+          ru: '<strong>Многоцелевая лебёдка</strong> (известная также под маркой Greifzug) — это переносное ручное тяговое устройство. Оно позволяет контролируемо тянуть, поднимать и опускать грузы с помощью стального троса. Наиболее распространённые размеры в пожарной охране — <strong>MZ 16</strong> (тяговое усилие 16 кН, около 1,6 тонны) и <strong>MZ 32</strong> (тяговое усилие 32 кН, около 3,2 тонны) по стандарту <strong>DIN 14800-5</strong>. С помощью отводного блока тяговое усилие удваивается — MZ 16 с блоком развивает до 32 кН.',
+        },
+        {
+          type: 'text',
+          de: 'Der Mehrzweckzug verfügt über eine eingebaute <strong>Sicherheitseinrichtung</strong>: Wenn die aufgebrachte Kraft die Nennzugkraft um ca. 25 % überschreitet, wird ein Scherstift im Bedienhebel zerstört. Dadurch wird verhindert, dass das Seil oder die Verankerung überlastet wird und unkontrolliert bricht. Nach dem Auslösen muss der Scherstift ersetzt werden, bevor das Gerät wieder einsatzfähig ist. Außerdem gilt ein <strong>Sicherheitsabstand</strong> von mindestens 1,5 Seillängen zum gespannten Seil — ein reißendes Drahtseil ist lebensgefährlich.',
+          ru: 'Многоцелевая лебёдка оснащена встроенным <strong>предохранительным механизмом</strong>: если приложенная сила превышает номинальное тяговое усилие примерно на 25 %, срезной штифт в рабочем рычаге разрушается. Это предотвращает перегрузку троса или точки крепления и неконтролируемый обрыв. После срабатывания штифт необходимо заменить, прежде чем устройство снова будет готово к работе. Кроме того, необходимо соблюдать <strong>безопасное расстояние</strong> не менее 1,5 длин троса от натянутого троса — обрыв стального троса смертельно опасен.',
+        },
+        { type: 'term', de: 'Motorsäge', ru: 'Бензопила (цепная пила)' },
+        { type: 'term', de: 'Trennschleifer', ru: 'Отрезная машина (болгарка)' },
+        { type: 'term', de: 'Mehrzweckzug (Greifzug)', ru: 'Многоцелевая лебёдка (Greifzug)' },
+        {
+          type: 'key',
+          de: 'Der Mehrzweckzug MZ 16 hat eine Nennzugkraft von 16 kN (ca. 1,6 Tonnen). Mit einer Umlenkrolle verdoppelt sich die Zugkraft auf 32 kN. Bei Überlastung (ca. 125 % der Nennzugkraft) wird ein Scherstift als Sollbruchstelle zerstört.',
+          ru: 'Многоцелевая лебёдка MZ 16 имеет номинальное тяговое усилие 16 кН (около 1,6 тонны). С отводным блоком тяговое усилие удваивается до 32 кН. При перегрузке (около 125 % номинального усилия) срезной штифт разрушается как запланированное слабое звено.',
+        },
+      ],
+    },
+
+    // ── Section 6: Sicherheit beim Geräteeinsatz ──
+    {
+      id: 'sicherheit',
+      title: 'Sicherheit beim Geräteeinsatz',
+      titleRu: 'Безопасность при работе с оборудованием',
+      blocks: [
+        {
+          type: 'text',
+          de: 'Beim Einsatz von Geräten zur technischen Hilfeleistung gelten besondere Sicherheitsregeln, die über die normale persönliche Schutzausrüstung (PSA) hinausgehen. Die <strong>Unfallverhütungsvorschriften (UVV) „Feuerwehren"</strong> (GUV-V C 53) legen fest, welche zusätzliche Schutzausrüstung bei bestimmten Tätigkeiten getragen werden muss. Diese Vorschriften haben den gleichen Stellenwert wie ein Gesetz — Verstöße können zu schweren Verletzungen und zu rechtlichen Konsequenzen führen.',
+          ru: 'При использовании оборудования для технической помощи действуют особые правила безопасности, выходящие за рамки обычных средств индивидуальной защиты (СИЗ). <strong>Правила предотвращения несчастных случаев (UVV) «Пожарная охрана»</strong> (GUV-V C 53) определяют, какие дополнительные средства защиты необходимо носить при определённых видах работ. Эти предписания имеют силу закона — нарушения могут привести к тяжёлым травмам и юридическим последствиям.',
+        },
+        {
+          type: 'text',
+          de: 'Für den <strong>Hilfeleistungseinsatz</strong> wird die Mindestschutzausrüstung der PSA je nach Tätigkeit ergänzt durch: <strong>Gesichtsschutz</strong> (Visier oder Schutzbrille) gegen Splitter und Funken, <strong>Gehörschutz</strong> bei lautem Gerät wie Trennschleifer oder Motorsäge, <strong>Schutzhandschuhe für technische Hilfeleistung</strong> (robuster als die Standard-Brandschutzhandschuhe) und bei Bedarf <strong>Warnkleidung</strong> für den Einsatz im Straßenverkehr.',
+          ru: 'При <strong>аварийно-спасательных работах</strong> минимальный комплект СИЗ дополняется в зависимости от вида работ: <strong>защита лица</strong> (визор или защитные очки) от осколков и искр, <strong>защита слуха</strong> при работе с шумным оборудованием (отрезная машина, бензопила), <strong>перчатки для технической помощи</strong> (более прочные, чем стандартные противопожарные) и при необходимости <strong>сигнальная одежда</strong> для работы на дорогах.',
+        },
+        {
+          type: 'text',
+          de: 'Besonders wichtig ist die Sicherheit beim Arbeiten mit dem <strong>hydraulischen Rettungssatz</strong>. Die Einsatzkräfte müssen die korrekten Ansatzpunkte am Fahrzeug kennen — falsches Ansetzen kann dazu führen, dass Teile unkontrolliert wegspringen. Der Bereich um das Arbeitsgerät muss freigehalten werden. Zudem muss bei Verkehrsunfällen immer an die <strong>Batterie</strong> gedacht werden: Vor dem Einsatz hydraulischer Geräte muss die Fahrzeugbatterie abgeklemmt werden, um Kurzschlüsse und Funkenbildung zu vermeiden — besonders wichtig bei Fahrzeugen mit Airbags, die durch Kurzschlüsse unbeabsichtigt auslösen können.',
+          ru: 'Особенно важна безопасность при работе с <strong>гидравлическим спасательным комплектом</strong>. Спасатели должны знать правильные точки приложения на автомобиле — неправильная установка может привести к неконтролируемому отлёту деталей. Зона вокруг рабочего инструмента должна быть свободна. При ДТП всегда нужно помнить о <strong>аккумуляторе</strong>: перед применением гидравлического оборудования необходимо отключить батарею автомобиля, чтобы избежать коротких замыканий и искрообразования — особенно важно для автомобилей с подушками безопасности, которые могут сработать при коротком замыкании.',
+        },
+        {
+          type: 'text',
+          de: 'Für den Einsatz der <strong>Motorsäge</strong> schreibt die UVV besonders umfangreiche Schutzausrüstung vor: Schnittschutzhose oder -überhose, Schnittschutzstiefel, Augen- und Gesichtsschutz sowie einen Forstarbeiterhelm (wenn vorhanden, als Ersatz für den Feuerwehrhelm). Bei allen motorbetriebenen Geräten gilt außerdem: Im Umkreis des Arbeitsbereichs sollten sich nur die unmittelbar beteiligten Einsatzkräfte aufhalten. Die Anzahl der Personen im direkten Gefahrenbereich ist auf das Minimum zu beschränken.',
+          ru: 'Для работы с <strong>бензопилой</strong> правила UVV предписывают особенно обширную защитную экипировку: штаны или накладки с защитой от пореза, ботинки с защитой от пореза, защиту глаз и лица, а также каску лесоруба (при наличии, как замена пожарного шлема). Для всех моторизованных инструментов также действует правило: в зоне работы должны находиться только непосредственно задействованные спасатели. Число людей в зоне опасности должно быть сведено к минимуму.',
+        },
+        { type: 'term', de: 'UVV (Unfallverhütungsvorschriften)', ru: 'Правила предотвращения несчастных случаев (UVV)' },
+        {
+          type: 'key',
+          de: 'Zusätzliche PSA beim Hilfeleistungseinsatz: Gesichtsschutz, Gehörschutz, Schutzhandschuhe für technische Hilfeleistung und ggf. Warnkleidung. Beim Motorsägeneinsatz: Schnittschutzhose, Schnittschutzstiefel, Augen-/Gesichtsschutz und Forstarbeiterhelm.',
+          ru: 'Дополнительные СИЗ при технической помощи: защита лица, защита слуха, перчатки для технической помощи и при необходимости сигнальная одежда. При работе с бензопилой: штаны с защитой от пореза, ботинки с защитой от пореза, защита глаз/лица и каска лесоруба.',
+        },
+        {
+          type: 'warn',
+          de: 'Beim Einsatz des Mehrzweckzugs Sicherheitsabstand von mindestens 1,5 Seillängen zum gespannten Drahtseil einhalten! Ein reißendes Seil kann mit tödlicher Wucht zurückschlagen. Das Zugseil darf nicht als Anschlagmittel verwendet werden, und beim Arbeiten mit Seilen sind immer Schutzhandschuhe zu tragen.',
+          ru: 'При работе с многоцелевой лебёдкой соблюдать безопасное расстояние не менее 1,5 длин троса от натянутого стального троса! Оборвавшийся трос может отскочить со смертельной силой. Тяговый трос нельзя использовать как средство крепления, и при работе с тросами всегда носить защитные перчатки.',
+        },
+      ],
+    },
+  ],
+
+  // ── Questions ──
+  questions: [
+    {
+      id: 1,
+      question: 'Welches Gerät dient zum Durchtrennen von Metallstäben, Ketten und Schlössern mit reiner Muskelkraft?',
+      options: {
+        a: 'Brechstange',
+        b: 'Bolzenschneider',
+        c: 'Rettungsschere',
+      },
+      correct: 'b',
+      topic: 'Einfache Geräte',
+      sectionId: 'einfache-geraete',
+      explanation: 'Der Bolzenschneider ist ein handgeführtes Schneidwerkzeug mit großer Hebelübersetzung, das Metallstäbe, Ketten und Schlösser bis ca. 12 mm Vollmaterial durchtrennen kann — ganz ohne Energiequelle.',
+      explanationRu: 'Болторез — ручной режущий инструмент с большим передаточным отношением, способный перерезать металлические прутки, цепи и замки толщиной до 12 мм сплошного материала — без какого-либо источника энергии.',
+    },
+    {
+      id: 2,
+      question: 'Mit welchem Betriebsdruck arbeiten pneumatische Hochdruck-Hebekissen?',
+      options: {
+        a: 'Ca. 0,5 bar',
+        b: 'Ca. 8 bar',
+        c: 'Ca. 630 bar',
+      },
+      correct: 'b',
+      topic: 'Hebekissen',
+      sectionId: 'hebekissen',
+      explanation: 'Hochdruck-Hebekissen arbeiten mit ca. 8 bar Betriebsdruck und erreichen eine Hubkraft von 9 bis 67 Tonnen. Niederdruck-Luftheber dagegen arbeiten mit nur ca. 0,5 bar.',
+      explanationRu: 'Подушки высокого давления работают при давлении около 8 бар и развивают подъёмную силу от 9 до 67 тонн. Подъёмники низкого давления работают при давлении всего около 0,5 бар.',
+    },
+    {
+      id: 3,
+      question: 'Warum muss beim Einsatz von Hebekissen immer Unterbaumaterial bereitliegen?',
+      options: {
+        a: 'Um die Hebekissen vor Beschädigung zu schützen',
+        b: 'Um die gehobene Last zu sichern, falls das Kissen ausfällt',
+        c: 'Um die Hubhöhe des Kissens zu vergrößern',
+      },
+      correct: 'b',
+      topic: 'Hebekissen',
+      sectionId: 'hebekissen',
+      explanation: 'Das Unterbaumaterial (Kreuzholzstapel, Keile) sichert die Last für den Fall, dass das Hebekissen beschädigt wird oder die Druckluft ausfällt. Die Last darf nicht unkontrolliert zurückfallen.',
+      explanationRu: 'Подкладочный материал (штабель, клинья) фиксирует груз на случай повреждения подушки или потери давления воздуха. Груз не должен неконтролируемо упасть обратно.',
+    },
+    {
+      id: 4,
+      question: 'Wie hoch ist der Betriebsdruck des hydraulischen Rettungssatzes?',
+      options: {
+        a: 'Ca. 100 bar',
+        b: 'Ca. 350 bar',
+        c: 'Ca. 630 bar',
+      },
+      correct: 'c',
+      topic: 'Hydraulische Rettungsgeräte',
+      sectionId: 'hydraulische-rettungsgeraete',
+      explanation: 'Der hydraulische Rettungssatz arbeitet mit einem Betriebsdruck von ca. 630 bar. Dieser enorme Druck wird durch das Hydraulikaggregat erzeugt und über 20 m lange Hochdruckschläuche zu den Geräten geleitet.',
+      explanationRu: 'Гидравлический спасательный комплект работает при давлении около 630 бар. Это огромное давление создаётся гидравлическим агрегатом и передаётся по 20-метровым шлангам высокого давления к инструментам.',
+    },
+    {
+      id: 5,
+      question: 'Welches hydraulische Rettungsgerät wird eingesetzt, wenn eine größere Spreizweite als beim Spreizer benötigt wird?',
+      options: {
+        a: 'Rettungsschere',
+        b: 'Rettungszylinder',
+        c: 'Hebekissen',
+      },
+      correct: 'b',
+      topic: 'Hydraulische Rettungsgeräte',
+      sectionId: 'hydraulische-rettungsgeraete',
+      explanation: 'Der Rettungszylinder erreicht Hubhöhen von 53 bis 160 cm — deutlich mehr als der Spreizer mit ca. 710–720 mm Öffnungsweite. Er wird z. B. zum Wegdrücken der A-Säule eines Fahrzeugs eingesetzt.',
+      explanationRu: 'Спасательный цилиндр достигает высоты хода от 53 до 160 см — значительно больше, чем разжим с раскрытием около 710–720 мм. Он используется, например, для отжатия передней стойки автомобиля.',
+    },
+    {
+      id: 6,
+      question: 'Was ist der Unterschied zwischen Spreizer und Rettungsschere?',
+      options: {
+        a: 'Der Spreizer schneidet, die Schere spreizt',
+        b: 'Der Spreizer drückt auseinander, die Schere schneidet durch',
+        c: 'Beide Geräte haben die gleiche Funktion',
+      },
+      correct: 'b',
+      topic: 'Hydraulische Rettungsgeräte',
+      sectionId: 'hydraulische-rettungsgeraete',
+      explanation: 'Der Spreizer hat zwei Arme, die Teile auseinander- oder zusammendrücken. Die Rettungsschere dagegen trennt Material durch — sie schneidet z. B. Fahrzeugrahmen, Türpfosten oder Dachsäulen.',
+      explanationRu: 'Разжим имеет два рычага, которые раздвигают или сдвигают детали. Спасательные ножницы же разрезают материал — например, рамы автомобилей, дверные стойки или стойки крыши.',
+    },
+    {
+      id: 7,
+      question: 'Welche Norm regelt die Anforderungen an Feuerwehr-Stromerzeuger?',
+      options: {
+        a: 'DIN 14685',
+        b: 'FwDV 10',
+        c: 'DIN 14800',
+      },
+      correct: 'a',
+      topic: 'Stromerzeuger',
+      sectionId: 'stromerzeuger-beleuchtung',
+      explanation: 'DIN 14685 „Tragbarer Stromerzeuger" regelt die Anforderungen an Feuerwehr-Stromerzeuger in drei Teilen: ab 5 kVA, unter 5 kVA und Invertergeneratoren bis 2 kVA.',
+      explanationRu: 'DIN 14685 «Переносной генератор» регулирует требования к генераторам для пожарной охраны в трёх частях: от 5 кВА, менее 5 кВА и инверторные генераторы до 2 кВА.',
+    },
+    {
+      id: 8,
+      question: 'Warum darf ein Stromerzeuger nicht in geschlossenen Räumen betrieben werden?',
+      options: {
+        a: 'Wegen der Brandgefahr durch den heißen Motor',
+        b: 'Wegen der Vergiftungsgefahr durch Kohlenmonoxid (CO)',
+        c: 'Weil der Stromerzeuger zu laut ist',
+      },
+      correct: 'b',
+      topic: 'Stromerzeuger',
+      sectionId: 'stromerzeuger-beleuchtung',
+      explanation: 'Die Abgase des Stromerzeugers enthalten tödliches Kohlenmonoxid (CO). In geschlossenen Räumen kann sich CO schnell auf gefährliche Konzentrationen anreichern — daher muss der Generator immer im Freien aufgestellt werden.',
+      explanationRu: 'Выхлопные газы генератора содержат смертельно опасный угарный газ (CO). В закрытых помещениях концентрация CO может быстро достичь опасного уровня — поэтому генератор всегда должен стоять на открытом воздухе.',
+    },
+    {
+      id: 9,
+      question: 'Welche Zugkraft hat der Mehrzweckzug MZ 16?',
+      options: {
+        a: '8 kN (ca. 0,8 Tonnen)',
+        b: '16 kN (ca. 1,6 Tonnen)',
+        c: '32 kN (ca. 3,2 Tonnen)',
+      },
+      correct: 'b',
+      topic: 'Mehrzweckzug',
+      sectionId: 'sonstige-geraete',
+      explanation: 'Der MZ 16 hat eine Nennzugkraft von 16 kN (ca. 1,6 Tonnen). Mit einer Umlenkrolle verdoppelt sich die Kraft auf 32 kN. Die Zahl im Namen entspricht der Zugkraft in kN.',
+      explanationRu: 'MZ 16 имеет номинальное тяговое усилие 16 кН (около 1,6 тонны). С отводным блоком усилие удваивается до 32 кН. Число в названии соответствует тяговому усилию в кН.',
+    },
+    {
+      id: 10,
+      question: 'Was passiert beim Mehrzweckzug, wenn die Nennzugkraft um ca. 25 % überschritten wird?',
+      options: {
+        a: 'Das Zugseil reißt automatisch',
+        b: 'Ein Scherstift im Bedienhebel wird zerstört',
+        c: 'Die Seilbremse löst sich',
+      },
+      correct: 'b',
+      topic: 'Mehrzweckzug',
+      sectionId: 'sonstige-geraete',
+      explanation: 'Bei Überlastung (ca. 125 % der Nennzugkraft) wird ein Scherstift als Sollbruchstelle im Bedienhebel zerstört. Das verhindert eine Überlastung von Seil und Verankerung. Erst nach Austausch des Stifts ist das Gerät wieder einsatzbereit.',
+      explanationRu: 'При перегрузке (около 125 % номинального усилия) срезной штифт в рабочем рычаге разрушается как запланированное слабое звено. Это предотвращает перегрузку троса и крепления. Устройство снова готово к работе только после замены штифта.',
+    },
+    {
+      id: 11,
+      question: 'Welche zusätzliche Schutzausrüstung ist beim Einsatz der Motorsäge vorgeschrieben?',
+      options: {
+        a: 'Nur Schutzbrille',
+        b: 'Schnittschutzhose, Schnittschutzstiefel, Augen-/Gesichtsschutz',
+        c: 'Hitzeschutzkleidung Form II',
+      },
+      correct: 'b',
+      topic: 'Sicherheit',
+      sectionId: 'sicherheit',
+      explanation: 'Beim Motorsägeneinsatz schreibt die UVV umfangreiche Schutzausrüstung vor: Schnittschutzhose/-überhose, Schnittschutzstiefel, Augen-/Gesichtsschutz und ggf. einen Forstarbeiterhelm als Ersatz für den Feuerwehrhelm.',
+      explanationRu: 'При работе с бензопилой правила UVV предписывают обширную защитную экипировку: штаны с защитой от пореза, ботинки с защитой от пореза, защиту глаз/лица и при необходимости каску лесоруба вместо пожарного шлема.',
+    },
+    {
+      id: 12,
+      question: 'Welcher Sicherheitsabstand muss beim Einsatz des Mehrzweckzugs zum gespannten Drahtseil eingehalten werden?',
+      options: {
+        a: '1 Meter',
+        b: '1,5 Seillängen',
+        c: '5 Meter',
+      },
+      correct: 'b',
+      topic: 'Sicherheit',
+      sectionId: 'sicherheit',
+      explanation: 'Beim Mehrzweckzug gilt ein Sicherheitsabstand von mindestens 1,5 Seillängen zum gespannten Drahtseil. Ein reißendes Seil kann mit tödlicher Wucht zurückschlagen.',
+      explanationRu: 'При работе с многоцелевой лебёдкой необходимо соблюдать безопасное расстояние не менее 1,5 длин троса от натянутого стального троса. Оборвавшийся трос может отскочить со смертельной силой.',
+    },
+    {
+      id: 13,
+      question: 'Wie lang sind die Hochdruckschläuche des hydraulischen Rettungssatzes typischerweise?',
+      options: {
+        a: 'Ca. 5 Meter',
+        b: 'Ca. 10 Meter',
+        c: 'Ca. 20 Meter',
+      },
+      correct: 'c',
+      topic: 'Hydraulische Rettungsgeräte',
+      sectionId: 'hydraulische-rettungsgeraete',
+      explanation: 'Die Hochdruckschläuche des hydraulischen Rettungssatzes sind ca. 20 Meter lang. Sie verbinden das Hydraulikaggregat mit den Rettungsgeräten (Spreizer, Schere, Zylinder) und sind mit Schnellkupplungen versehen.',
+      explanationRu: 'Шланги высокого давления гидравлического спасательного комплекта имеют длину около 20 метров. Они соединяют агрегат со спасательными инструментами (разжим, ножницы, цилиндр) и оснащены быстроразъёмными муфтами.',
+    },
+    {
+      id: 14,
+      question: 'Was muss vor dem Einsatz hydraulischer Rettungsgeräte an einem Unfallfahrzeug geschehen?',
+      options: {
+        a: 'Die Reifen müssen abgelassen werden',
+        b: 'Die Fahrzeugbatterie muss abgeklemmt werden',
+        c: 'Das Fahrzeug muss aufgebockt werden',
+      },
+      correct: 'b',
+      topic: 'Sicherheit',
+      sectionId: 'sicherheit',
+      explanation: 'Vor dem Einsatz hydraulischer Geräte muss die Batterie abgeklemmt werden, um Kurzschlüsse und Funkenbildung zu vermeiden. Besonders bei Fahrzeugen mit Airbags ist dies wichtig, da Airbags durch Kurzschlüsse unbeabsichtigt auslösen können.',
+      explanationRu: 'Перед применением гидравлического оборудования необходимо отключить аккумулятор автомобиля, чтобы избежать коротких замыканий и искрообразования. Особенно важно для автомобилей с подушками безопасности, которые могут сработать при коротком замыкании.',
+    },
+    {
+      id: 15,
+      question: 'Welches einfache Hilfeleistungsgerät hat einen maximalen Schneiddurchmesser von ca. 12 mm?',
+      options: {
+        a: 'Bügelsäge',
+        b: 'Brechstange',
+        c: 'Bolzenschneider',
+      },
+      correct: 'c',
+      topic: 'Einfache Geräte',
+      sectionId: 'einfache-geraete',
+      explanation: 'Der Bolzenschneider kann mit seiner großen Hebelübersetzung Vollmaterial bis ca. 12 mm Durchmesser durchtrennen. Die Brechstange dient zum Hebeln, nicht zum Schneiden. Die Bügelsäge kann zwar Metall sägen, hat aber keinen definierten maximalen Schneiddurchmesser.',
+      explanationRu: 'Болторез с его большим передаточным отношением может перерезать сплошной материал диаметром до 12 мм. Лом служит для поддевания, а не для резки. Ножовка по металлу может пилить металл, но не имеет определённого максимального диаметра резки.',
+    },
+  ],
+};

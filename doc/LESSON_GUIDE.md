@@ -12,11 +12,14 @@
 ```typescript
 // webapp/src/data/lessons/types.ts
 
-interface Block {
-  type: 'text' | 'term' | 'key' | 'warn';
-  de: string;  // немецкий текст (обязательно)
-  ru: string;  // русский перевод (обязательно)
-}
+type Block =
+  | { type: 'text'; de: string; ru: string }
+  | { type: 'term'; de: string; ru: string }
+  | { type: 'key'; de: string; ru: string }
+  | { type: 'warn'; de: string; ru: string }
+  | { type: 'list'; items: string[]; itemsRu?: string[] }
+  | { type: 'table'; headers: string[]; rows: string[][]; bilingualCols?: number[] }
+  | { type: 'image'; src: string; alt?: string; altRu?: string; caption?: string; captionRu?: string };
 
 interface Section {
   id: string;       // kebab-case, уникальный в рамках урока
@@ -42,6 +45,7 @@ interface Lesson {
   topic: string;      // тема из каталога вопросов
   title: string;      // заголовок на немецком
   titleRu: string;    // заголовок на русском
+  chapters: string[]; // номера глав Basismodul, напр. ['2.1', '2.2']
   sections: Section[];
   questions: LessonQuestion[];
   ready: boolean;     // true когда контент готов
@@ -310,24 +314,31 @@ cd webapp && npm run build
 
 ## 7. Список уроков
 
-| # | Файл | Тема | Статус |
-|---|------|------|--------|
-| 1 | `rechtsgrundlagen.ts` | Rechtsgrundlagen | не готов |
-| 2 | `brennen-loeschen.ts` | Brennen und Löschen | не готов |
-| 3 | `fahrzeugkunde.ts` | Fahrzeugkunde | не готов |
-| 4 | `persoenliche-ausruestung.ts` | Persönliche Ausrüstung | не готов |
-| 5 | `geraete-armaturen.ts` | Geräte und Armaturen | не готов |
-| 6 | `rettung-leitern-knoten.ts` | Rettung, Leitern und Knoten | **ГОТОВ** (эталон) |
-| 7 | `erste-hilfe.ts` | Erste Hilfe | не готов |
-| 8 | `einsatzgrundsaetze.ts` | Einsatzgrundsätze | не готов |
-| 9 | `loescheinsatz.ts` | Löscheinsatz | не готов |
-| 10 | `absturzsicherung.ts` | Absturzsicherung | не готов |
-| 11 | `technische-hilfeleistung.ts` | Technische Hilfeleistung | не готов |
-| 12 | `sprechfunk.ts` | Sprechfunk | не готов |
+Уроки упорядочены по номерам глав Basismodul (Kap).
+
+| # | Файл | Kap | Тема | Статус |
+|---|------|-----|------|--------|
+| 1 | `rechtsgrundlagen.ts` | 2.1, 2.2 | Rechtsgrundlagen und Organisation | готов |
+| 2 | `brennen-loeschen.ts` | 3 | Brennen und Löschen | готов |
+| 3 | `fahrzeugkunde.ts` | 4.1, 13 | Fahrzeugkunde und Fahrzeugtechnik | готов |
+| 4 | `persoenliche-ausruestung.ts` | 5.1, 5.2, 5.3 | Schutzausrüstung und Löschgeräte | готов |
+| 5 | `schlaeuche-armaturen.ts` | 5.5 | Schläuche und Armaturen | готов |
+| 6 | `hilfeleistungsgeraete.ts` | 5.7, 5.8 | Geräte für Hilfeleistung | готов |
+| 7 | `rettungsgeraete.ts` | 5.9, 5.10 | Rettungsgeräte, Leitern und Knoten | **ГОТОВ** (эталон) |
+| 8 | `belastungen.ts` | 6.2 | Physische und psychische Belastungen | готов |
+| 9 | `verhalten-einsatz.ts` | 7.1 | Verhalten im Einsatz | готов |
+| 10 | `hygiene.ts` | 7.2 | Hygiene im Einsatz | готов |
+| 11 | `verhalten-gefahr.ts` | 8 | Verhalten bei Gefahr | готов |
+| 12 | `loescheinsatz.ts` | 9.1, 9.3, 9.5 | Löscheinsatz (FwDV 3) | готов |
+| 13 | `absturzsicherung.ts` | 10.1 | Sichern gegen Absturz | готов |
+| 14 | `hilfeleistungseinsatz.ts` | 11.1 | Einheiten im Hilfeleistungseinsatz | готов |
+| 15 | `abc-gefahrstoffe.ts` | 12.1, 12.2 | ABC-Gefahrstoffe | готов |
+| 16 | `erste-hilfe.ts` | — | Erste Hilfe (Zusatzthema) | готов |
+| 17 | `sprechfunk.ts` | E | Sprechfunk (Ergänzungsmodul) | готов |
 
 ## 8. Эталонный урок
 
-Файл: `webapp/src/data/lessons/rettung-leitern-knoten.ts`
+Файл: `webapp/src/data/lessons/rettungsgeraete.ts`
 
 Этот урок — образец для всех остальных. Обрати внимание на:
 - Повествовательный стиль текстовых блоков (3-5 предложений на блок)
@@ -349,7 +360,7 @@ cd webapp && npm run build
 
 Требования:
 - Следуй правилам из doc/LESSON_GUIDE.md
-- Эталон: webapp/src/data/lessons/rettung-leitern-knoten.ts
+- Эталон: webapp/src/data/lessons/rettungsgeraete.ts
 - Повествовательный стиль, не конспект
 - Объясняй ЗАЧЕМ, раскрывай стандарты, давай практические примеры
 - Русский перевод — осмысленный, не подстрочник

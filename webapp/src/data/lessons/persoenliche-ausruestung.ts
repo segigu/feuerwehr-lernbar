@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Persönliche Ausrüstung und Löschgeräte',
   title: 'Persönliche Ausrüstung und Löschgeräte',
   titleRu: 'Личное снаряжение и средства тушения',
+  chapters: ['5.1', '5.2', '5.3'],
   ready: true,
   sections: [
     {

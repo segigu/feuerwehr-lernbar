@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Löscheinsatz (FwDV 3)',
   title: 'Löscheinsatz (FwDV 3)',
   titleRu: 'Тушение пожара (FwDV 3)',
+  chapters: ['9.1', '9.3', '9.5'],
   ready: true,
   sections: [
     {

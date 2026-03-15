@@ -6,6 +6,8 @@ import { getLanguage } from '../state/app-state';
 import { showBackButton } from '../utils/telegram';
 import { h, clear } from '../utils/dom';
 
+const BASE = import.meta.env.BASE_URL;
+
 export function renderLearn(container: HTMLElement): () => void {
   const params = getNavigationParams();
   const lesson = params?.lessonId ? getLessonById(params.lessonId) : undefined;
@@ -253,6 +255,25 @@ function renderBlock(block: Block, lang: string): HTMLElement {
       table.appendChild(tbody);
       tableEl.appendChild(table);
       wrapper.appendChild(tableEl);
+      break;
+    }
+    case 'image': {
+      const img = h('img', {
+        className: 'block-img',
+        src: `${BASE}images/lessons/${block.src}`,
+        alt: block.alt ?? '',
+      });
+      wrapper.appendChild(img);
+      if (block.caption) {
+        const cap = h('p', { className: 'block-img-caption' });
+        cap.innerHTML = block.caption;
+        wrapper.appendChild(cap);
+        if (lang === 'de+ru' && block.captionRu) {
+          const capRu = h('p', { className: 'block-img-caption block-ru' });
+          capRu.innerHTML = block.captionRu;
+          wrapper.appendChild(capRu);
+        }
+      }
       break;
     }
   }

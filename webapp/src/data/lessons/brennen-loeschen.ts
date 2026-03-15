@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Brennen und Löschen',
   title: 'Brennen und Löschen',
   titleRu: 'Горение и тушение',
+  chapters: ['3'],
   ready: true,
   sections: [
     {

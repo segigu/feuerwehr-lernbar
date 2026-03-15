@@ -5,6 +5,7 @@ export const lesson: Lesson = {
   topic: 'Rechtsgrundlagen und Organisation',
   title: 'Rechtsgrundlagen und Organisation',
   titleRu: 'Правовые основы и организация',
+  chapters: ['2.1', '2.2'],
   ready: true,
   sections: [
     {

@@ -49,6 +49,22 @@ export const lesson: Lesson = {
           ],
         },
         {
+          type: 'image',
+          src: 'gefahrenschema-top.png',
+          alt: 'Obere Hälfte des AAAA C EEEE Dreiecks: Atemgifte, Angstreaktionen, Erkrankung, Explosion',
+          altRu: 'Верхняя половина треугольника AAAA C EEEE: ядовитые газы, паника, заболевание, взрыв',
+          caption: 'Gefahrenschema AAAA C EEEE — obere Hälfte (Atemgifte, Angstreaktionen, Erkrankung, Explosion)',
+          captionRu: 'Схема опасностей AAAA C EEEE — верхняя половина (ядовитые газы, паника, заболевание, взрыв)',
+        },
+        {
+          type: 'image',
+          src: 'gefahrenschema-bottom.png',
+          alt: 'Untere Hälfte des AAAA C EEEE Dreiecks: Ausbreitung, Atomare Gefahren, Chemische Stoffe, Einsturz, Elektrizität',
+          altRu: 'Нижняя половина треугольника AAAA C EEEE: распространение, атомные угрозы, химические вещества, обрушение, электричество',
+          caption: 'Gefahrenschema AAAA C EEEE — untere Hälfte (Ausbreitung, Atomare Gefahren, Chemische Stoffe, Einsturz, Elektrizität)',
+          captionRu: 'Схема опасностей AAAA C EEEE — нижняя половина (распространение, атомные угрозы, химические вещества, обрушение, электричество)',
+        },
+        {
           type: 'text',
           de: 'Der <strong>Truppführer</strong> hat beim Vorgehen des Trupps eine besondere Verantwortung: Er muss <strong>ständig auf mögliche Gefahrensituationen achten</strong>. Das bedeutet nicht nur, offensichtliche Gefahren wie Feuer oder Einsturz zu erkennen, sondern auch versteckte Risiken — wie spannungsführende Leitungen, ausströmendes Gas oder instabile Böden. Das Gefahrenschema hilft dabei, nichts zu übersehen.',
           ru: '<strong>Командир звена</strong> при выдвижении несёт особую ответственность: он должен <strong>постоянно следить за возможными опасностями</strong>. Это значит не только замечать очевидные угрозы вроде огня или обрушения, но и скрытые риски — токоведущие провода, утечку газа или неустойчивые перекрытия. Схема опасностей помогает ничего не пропустить.',
@@ -253,9 +269,25 @@ export const lesson: Lesson = {
           ru: 'Опасность <strong>электричества</strong> требует строгого соблюдения <strong>минимальных дистанций</strong>. При <strong>низком напряжении</strong> (до 1.000 вольт) безопасная дистанция — минимум <strong>1 метр</strong>. При <strong>высоком напряжении</strong> (свыше 1.000 вольт) — минимум <strong>5 метров</strong>. Для установок напряжением <strong>380 кВ</strong> также действует дистанция 5 метров. При упавших <strong>воздушных линиях электропередач</strong> дистанция должна быть <strong>20 метров</strong>, так как напряжение может распространяться по земле и вызывать шаговое напряжение.',
         },
         {
+          type: 'image',
+          src: 'spannungstrichter.png',
+          alt: 'Spannungstrichter bei herunterge­fallenen Leitungen — Abstand 20 Meter',
+          altRu: 'Воронка напряжения при упавших проводах — дистанция 20 метров',
+          caption: 'Spannungstrichter: Bei herunterge­fallenen Freileitungen mindestens 20 Meter Abstand halten',
+          captionRu: 'Воронка напряжения: при упавших ЛЭП соблюдать дистанцию минимум 20 метров',
+        },
+        {
           type: 'text',
           de: 'Beim Einsatz von <strong>CM-Strahlrohren</strong> (Mehrzweck-Strahlrohren) in der Nähe elektrischer Anlagen gelten besondere Regeln: Bei <strong>Niederspannung</strong> darf mit <strong>Sprühstrahl</strong> ein Abstand von mindestens <strong>1 Meter</strong> eingehalten werden. Bei <strong>Hochspannung</strong> muss mit <strong>Vollstrahl</strong> ein Abstand von mindestens <strong>5 Meter</strong> (in einigen Quellen 10 Meter) eingehalten werden. Der Sprühstrahl bietet bei Niederspannung einen gewissen Schutz, weil die einzelnen Wassertröpfchen den Stromfluss unterbrechen — aber das gilt nur für Niederspannung.',
           ru: 'При использовании <strong>CM-стволов</strong> (многоцелевых стволов) вблизи электроустановок действуют особые правила: при <strong>низком напряжении</strong> допускается работа <strong>распылённой струёй</strong> с дистанции минимум <strong>1 метр</strong>. При <strong>высоком напряжении</strong> требуется <strong>сплошная струя</strong> с дистанции минимум <strong>5 метров</strong> (в некоторых источниках — 10 метров). Распылённая струя при низком напряжении обеспечивает определённую защиту, так как отдельные капли прерывают путь тока — но это работает только при низком напряжении.',
+        },
+        {
+          type: 'image',
+          src: 'strahlrohr-abstaende.png',
+          alt: 'Sicherheitsabstände für CM-Strahlrohr bei Niederspannung und Hochspannung',
+          altRu: 'Безопасные дистанции для CM-ствола при низком и высоком напряжении',
+          caption: 'CM-Strahlrohr: Mindestabstände bei Niederspannung (1 m Sprühstrahl) und Hochspannung (5 m Vollstrahl)',
+          captionRu: 'CM-ствол: минимальные дистанции при низком напряжении (1 м распылённая струя) и высоком напряжении (5 м сплошная струя)',
         },
         {
           type: 'text',

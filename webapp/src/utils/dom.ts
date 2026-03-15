@@ -23,32 +23,34 @@ export function h<K extends keyof HTMLElementTagNameMap>(
   return el;
 }
 
-export function createImg(attrs: Record<string, string>): HTMLImageElement {
-  const { src, className, ...rest } = attrs;
-  const cls = className ? `${className} img-loading` : 'img-loading';
-  const img = h('img', { ...rest, className: cls });
+export function createImg(attrs: Record<string, string>): HTMLElement {
+  const { src, className = '', ...rest } = attrs;
 
-  const preload = new Image();
-
-  const reveal = () => {
-    img.classList.remove('img-loading');
-    img.classList.add('img-reveal');
-    img.src = src;
-    // Force browser to paint the hidden state, then trigger transition
-    void img.offsetHeight;
-    img.classList.add('img-visible');
-  };
-
-  preload.addEventListener('load', reveal, { once: true });
-  preload.addEventListener('error', () => img.classList.remove('img-loading'), { once: true });
-  preload.src = src;
-
-  if (preload.complete && preload.naturalWidth > 0) {
-    img.src = src;
-    img.classList.remove('img-loading');
+  // Already in browser cache — return ready image, no skeleton
+  const probe = new Image();
+  probe.src = src;
+  if (probe.complete && probe.naturalWidth > 0) {
+    return h('img', attrs);
   }
 
-  return img;
+  // Skeleton placeholder (div, not img — no broken-image border)
+  const placeholder = h('div', { className: `${className} img-loading`.trim() });
+
+  // Load + fully decode off-DOM, then swap in with fade
+  const img = h('img', { ...rest, src, className: `${className} img-reveal`.trim() });
+
+  img.decode().then(() => {
+    if (!placeholder.parentNode) return;
+    placeholder.replaceWith(img);
+    void img.offsetHeight;
+    img.classList.add('img-visible');
+  }).catch(() => {
+    if (!placeholder.parentNode) return;
+    img.className = className;
+    placeholder.replaceWith(img);
+  });
+
+  return placeholder;
 }
 
 export function clear(el: HTMLElement): void {

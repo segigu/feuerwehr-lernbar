@@ -70,6 +70,14 @@ export const lesson: Lesson = {
         },
         {
           type: 'image',
+          src: 'fdv1-absicherung-ausserorts.png',
+          alt: 'Absicherung der Einsatzstelle außerorts — Schema mit Abständen und Warnzeichen',
+          altRu: 'Ограждение места операции за городом — схема с расстояниями и знаками',
+          caption: 'Absicherung außerorts: Warndreiecke und Blitzleuchten in ausreichendem Abstand vor der Einsatzstelle aufstellen. Je höher die zulässige Geschwindigkeit, desto größer der Abstand.',
+          captionRu: 'Ограждение за городом: предупреждающие треугольники и маячки устанавливают на достаточном расстоянии перед местом. Чем выше разрешённая скорость, тем больше расстояние.',
+        },
+        {
+          type: 'image',
           src: 'fdv1-handzeichen-halt.png',
           alt: 'Handzeichen Halt — Feuerwehrangehöriger signalisiert Stop',
           altRu: 'Жест «Стой» — пожарный подаёт сигнал остановки',

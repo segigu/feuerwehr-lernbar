@@ -196,8 +196,8 @@ export const lesson: Lesson = {
           ru: 'Выбленочный узел можно также <strong>вязать обхватом</strong>, когда предмет нужно обхватить — напр. штангу или перила. Следующие фото показывают <strong>4 фазы вязки обхватом</strong>:',
         },
         { type: 'image', src: 'fdv1-mastwurf-binden-phase1.png', alt: 'Mastwurf binden — Phase 1: Leine um den Gegenstand führen', altRu: 'Выбленочный обхватом — Фаза 1: верёвка обводится вокруг предмета', caption: 'Mastwurf binden — Phase 1', captionRu: 'Выбленочный обхватом — Фаза 1' },
-        { type: 'image', src: 'fdv1-mastwurf-binden-phase2.png', alt: 'Mastwurf binden — Phase 2', altRu: 'Выбленочный обхватом — Фаза 2', caption: 'Mastwurf binden — Phase 2', captionRu: 'Выбленочный обхватом — Фаза 2' },
-        { type: 'image', src: 'fdv1-mastwurf-binden-phase3.png', alt: 'Mastwurf binden — Phase 3', altRu: 'Выбленочный обхватом — Фаза 3', caption: 'Mastwurf binden — Phase 3', captionRu: 'Выбленочный обхватом — Фаза 3' },
+        { type: 'image', src: 'fdv1-mastwurf-binden-phase3.png', alt: 'Mastwurf binden — Phase 2', altRu: 'Выбленочный обхватом — Фаза 2', caption: 'Mastwurf binden — Phase 2', captionRu: 'Выбленочный обхватом — Фаза 2' },
+        { type: 'image', src: 'fdv1-mastwurf-binden-phase2.png', alt: 'Mastwurf binden — Phase 3', altRu: 'Выбленочный обхватом — Фаза 3', caption: 'Mastwurf binden — Phase 3', captionRu: 'Выбленочный обхватом — Фаза 3' },
         { type: 'image', src: 'fdv1-mastwurf-binden-phase4.png', alt: 'Mastwurf binden — Phase 4: fertiger Knoten mit Halbschlag', altRu: 'Выбленочный обхватом — Фаза 4: готовый узел с полуштыком', caption: 'Mastwurf binden — Phase 4 (fertig)', captionRu: 'Выбленочный обхватом — Фаза 4 (готово)' },
         { type: 'image', src: 'halbschlag.png', alt: 'Halbschlag zur Sicherung', altRu: 'Полуштык для фиксации', caption: 'Halbschlag', captionRu: 'Полуштык' },
         {

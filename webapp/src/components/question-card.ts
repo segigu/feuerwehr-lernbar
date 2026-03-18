@@ -29,7 +29,13 @@ export function createQuestionCard(
   const optionsContainer = h('div', { className: 'options-container' });
 
   const keys: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
-  for (const key of keys) {
+  for (let i = keys.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [keys[i], keys[j]] = [keys[j], keys[i]];
+  }
+
+  const displayLetters = ['A', 'B', 'C'];
+  keys.forEach((key, idx) => {
     const isSelected = selectedAnswer === key;
     const isCorrect = key === question.correct;
 
@@ -50,7 +56,7 @@ export function createQuestionCard(
       letterClasses.push('selected');
     }
 
-    const letterBadge = h('span', { className: letterClasses.join(' ') }, key.toUpperCase());
+    const letterBadge = h('span', { className: letterClasses.join(' ') }, displayLetters[idx]);
     const optionText = h('span', { className: 'option-text' }, question.options[key]);
 
     const btn = h('button', {
@@ -65,7 +71,7 @@ export function createQuestionCard(
     }
 
     optionsContainer.appendChild(btn);
-  }
+  });
 
   card.appendChild(optionsContainer);
   return card;

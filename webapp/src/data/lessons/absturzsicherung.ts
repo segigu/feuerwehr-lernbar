@@ -206,15 +206,14 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der <strong>Achterknoten</strong> (gestochener Achterknoten) ist der Standardknoten zum Einbinden in den Auffanggurt. Er wird in 6 Phasen gebunden und anschließend mit einem <strong>Spierenstich</strong> gesichert:',
-          ru: '<strong>Узел-восьмёрка</strong> (проводной) — стандартный узел для привязки к обвязке. Он вяжется в 6 фаз и затем фиксируется <strong>клеверным узлом</strong>:',
+          de: 'Der <strong>Achterknoten</strong> (gestochener Achterknoten) ist der Standardknoten zum Einbinden in den Auffanggurt. Er wird in 5 Phasen gebunden und anschließend mit einem <strong>Spierenstich</strong> gesichert:',
+          ru: '<strong>Узел-восьмёрка</strong> (проводной) — стандартный узел для привязки к обвязке. Он вяжется в 5 фаз и затем фиксируется <strong>клеверным узлом</strong>:',
         },
         { type: 'image', src: 'fdv1-achterknoten-einbinden-1.png', alt: 'Achterknoten einbinden — Phase 1', altRu: 'Восьмёрка — Фаза 1', caption: 'Achterknoten — Phase 1', captionRu: 'Восьмёрка — Фаза 1' },
         { type: 'image', src: 'fdv1-achterknoten-einbinden-2.png', alt: 'Achterknoten einbinden — Phase 2', altRu: 'Восьмёрка — Фаза 2', caption: 'Achterknoten — Phase 2', captionRu: 'Восьмёрка — Фаза 2' },
         { type: 'image', src: 'fdv1-achterknoten-einbinden-3.png', alt: 'Achterknoten einbinden — Phase 3', altRu: 'Восьмёрка — Фаза 3', caption: 'Achterknoten — Phase 3', captionRu: 'Восьмёрка — Фаза 3' },
         { type: 'image', src: 'fdv1-achterknoten-einbinden-4.png', alt: 'Achterknoten einbinden — Phase 4', altRu: 'Восьмёрка — Фаза 4', caption: 'Achterknoten — Phase 4', captionRu: 'Восьмёрка — Фаза 4' },
-        { type: 'image', src: 'fdv1-achterknoten-einbinden-5.png', alt: 'Achterknoten einbinden — Phase 5', altRu: 'Восьмёрка — Фаза 5', caption: 'Achterknoten — Phase 5', captionRu: 'Восьмёрка — Фаза 5' },
-        { type: 'image', src: 'fdv1-achterknoten-einbinden-6.png', alt: 'Achterknoten einbinden — Phase 6', altRu: 'Восьмёрка — Фаза 6', caption: 'Achterknoten — Phase 6', captionRu: 'Восьмёрка — Фаза 6' },
+        { type: 'image', src: 'fdv1-achterknoten-einbinden-6.png', alt: 'Achterknoten einbinden — Phase 5', altRu: 'Восьмёрка — Фаза 5', caption: 'Achterknoten — Phase 5', captionRu: 'Восьмёрка — Фаза 5' },
         { type: 'image', src: 'fdv1-achterknoten-spierenstich.png', alt: 'Achterknoten gesichert mit Spierenstich', altRu: 'Восьмёрка зафиксирована клеверным узлом', caption: 'Achterknoten mit Spierenstich gesichert', captionRu: 'Восьмёрка с клеверным узлом' },
         {
           type: 'text',

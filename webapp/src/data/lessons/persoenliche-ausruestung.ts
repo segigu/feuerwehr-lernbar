@@ -19,6 +19,14 @@ export const lesson: Lesson = {
           ru: '<strong>Средства индивидуальной защиты (СИЗ)</strong> защищают пожарного от опасностей на месте вызова. Без правильной экипировки никто не имеет права работать на месте происшествия. Минимальная защитная экипировка определена в UVV-Feuerwehr (правила предотвращения несчастных случаев) и должна надеваться при каждом выезде.',
         },
         {
+          type: 'image',
+          src: 'fdv1-schutzausruestung-front.png',
+          alt: 'Feuerwehrangehöriger in vollständiger Mindestschutzausrüstung — Frontansicht',
+          altRu: 'Пожарный в полной минимальной защитной экипировке — вид спереди',
+          caption: 'Mindestschutzausrüstung: Feuerwehrschutzanzug, Helm mit Nackenschutz, Schutzschuhwerk und Schutzhandschuhe.',
+          captionRu: 'Минимальная экипировка: защитный костюм, каска с защитой шеи, защитная обувь и защитные перчатки.',
+        },
+        {
           type: 'text',
           de: 'Die <strong>Mindestschutzausrüstung nach UVV-Feuerwehr</strong> besteht aus vier Bestandteilen, die zusammen den Grundschutz für die Brandbekämpfung bilden:',
           ru: '<strong>Минимальная экипировка по UVV-Feuerwehr</strong> состоит из четырёх элементов, образующих базовую защиту для тушения пожаров:',
@@ -69,6 +77,14 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Der <strong>Feuerwehr-Haltegurt</strong> (auch Sicherheitsgurt genannt) wird um die Taille getragen. Am Karabiner befindet sich eine <strong>Selbstrettungsöse</strong>, die im Notfall zur Selbstrettung dient — zum Beispiel, wenn ein Feuerwehrangehöriger aus einem Fenster absteigen muss. Das <strong>Feuerwehrbeil</strong> wird in einer Schutztasche am Haltegurt getragen und dient zum Aufbrechen leichter Hindernisse wie Türen oder Verschalungen.',
           ru: '<strong>Пожарный удерживающий пояс</strong> (также называемый страховочным) надевается на талию. На карабине находится <strong>петля для самоспасения</strong>, которая служит для экстренной эвакуации — например, если пожарному нужно спуститься из окна. <strong>Пожарный топорик</strong> носится в защитном чехле на поясе и служит для взлома лёгких преград — дверей или обшивки.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-schutzausruestung-gurt.png',
+          alt: 'Feuerwehrangehöriger mit Haltegurt, Leinenbeutel und Feuerwehrbeil — Seitenansicht',
+          altRu: 'Пожарный с удерживающим поясом, чехлом для верёвки и пожарным топориком — вид сбоку',
+          caption: 'Ergänzende Ausrüstung: Feuerwehr-Haltegurt mit Karabiner, Leinenbeutel mit Feuerwehrleine und Feuerwehrbeil in Schutztasche.',
+          captionRu: 'Дополнительное снаряжение: удерживающий пояс с карабином, чехол с пожарной верёвкой и пожарный топорик в защитном чехле.',
         },
         {
           type: 'text',

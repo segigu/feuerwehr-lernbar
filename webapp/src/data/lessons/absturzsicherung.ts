@@ -57,6 +57,14 @@ export const lesson: Lesson = {
           ru: 'Самоспасение',
         },
         {
+          type: 'image',
+          src: 'fdv1-leinenbeutel.png',
+          alt: 'Feuerwehrangehöriger legt die Feuerwehrleine in den Leinenbeutel ein',
+          altRu: 'Пожарный укладывает верёвку в чехол',
+          caption: 'Einlegen der Feuerwehrleine: Die Leine wird so in den Beutel eingelegt, dass sie im Einsatzfall frei ablaufen kann. Eine Hand hält den Beutel, die andere legt die Leine ein.',
+          captionRu: 'Укладка пожарной верёвки: верёвка укладывается в чехол так, чтобы при использовании она свободно размотывалась. Одна рука держит чехол, другая укладывает верёвку.',
+        },
+        {
           type: 'key',
           de: 'Feuerwehrleine nach DIN 14920: Länge <strong>30 m</strong>, Durchmesser <strong>10 mm</strong>, Festigkeit <strong>14 kN</strong>. Zweck: Rettung, Selbstrettung, Transport/Sicherung von Geräten. Nicht bei möglichem freien Fall einsetzen!',
           ru: 'Пожарная верёвка по DIN 14920: длина <strong>30 м</strong>, диаметр <strong>10 мм</strong>, прочность <strong>14 кН</strong>. Назначение: спасение, самоспасение, транспортировка/страховка оборудования. Не использовать при возможном свободном падении!',
@@ -117,6 +125,14 @@ export const lesson: Lesson = {
           ru: 'Многофункциональная проушина',
         },
         {
+          type: 'image',
+          src: 'fdv1-karabiner-leiter.png',
+          alt: 'Karabinerhaken des Haltegurtes eingehängt in eine Leitersprosse — Nahaufnahme',
+          altRu: 'Карабин удерживающего пояса зацеплен за ступеньку лестницы — крупный план',
+          caption: 'Karabiner am Anschlagpunkt: Der Karabinerhaken wird direkt an einer Leitersprosse oder einem geeigneten Festpunkt eingehängt. Die Sicherung muss immer über Kopfhöhe erfolgen.',
+          captionRu: 'Карабин на точке крепления: карабин зацепляется за ступеньку лестницы или подходящую опорную точку. Страховка всегда выполняется выше уровня головы.',
+        },
+        {
           type: 'key',
           de: 'Der Haltegurt (DIN 14927) besteht aus: Gurtband mit <strong>Zweidornschnalle</strong>, <strong>Karabinerhaken</strong> mit <strong>Multifunktionsöse</strong> und D-Ösen. Er dient zum Halten und Rückhalten — niemals als Auffanggurt!',
           ru: 'Удерживающий пояс (DIN 14927) состоит из: ленты с <strong>двухшпеньковой пряжкой</strong>, <strong>карабина</strong> с <strong>многофункциональной проушиной</strong> и D-образных проушин. Он служит для удержания и обратного удержания — никогда как обвязка для остановки падения!',
@@ -147,6 +163,22 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Das Halten kann mit Feuerwehr-Haltegurt und Feuerwehrleine durchgeführt werden — ein Gerätesatz Absturzsicherung ist dafür <strong>nicht</strong> erforderlich. Das liegt daran, dass beim korrekten Halten kein freier Fall möglich ist: Die Leine ist immer straff, der Anschlagpunkt liegt oberhalb, und der Sichernde kann über den Halbmastwurf jederzeit bremsen. Damit genügen die einfachen Mittel vollkommen.',
           ru: 'Удержание можно выполнять с помощью удерживающего пояса и пожарной верёвки — комплект защиты от падения для этого <strong>не</strong> нужен. Причина в том, что при правильном удержании свободное падение исключено: верёвка всегда натянута, точка крепления выше, а страхующий может в любой момент затормозить через полумачтовый узел. Простых средств вполне достаточно.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-selbstsicherung-dach.png',
+          alt: 'Selbstsicherung auf einem Flachdach — Feuerwehrangehöriger gesichert am Haltegurt, Leiter angelegt',
+          altRu: 'Самостраховка на плоской крыше — пожарный застрахован поясом, лестница установлена',
+          caption: 'Selbstsicherung und Halbmastwurfsicherung: Die Sicherungsleine wird vom Anschlagpunkt über den Halbmastwurf am Haltegurt geführt. Die Leine bleibt immer straff auf Zug.',
+          captionRu: 'Самостраховка с полумачтовым узлом: страховочная верёвка идёт от точки крепления через полумачтовый узел на поясе. Верёвка всегда остаётся натянутой.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-achterknoten-halbmastwurf.png',
+          alt: 'Achterknoten und Halbmastwurfsicherung am Anschlagpunkt — beschriftetes Foto',
+          altRu: 'Восьмёрка и полумачтовый узел на точке крепления — подписанное фото',
+          caption: 'Anschlagpunkt mit Achterknoten, HMS-Karabiner und Halbmastwurfsicherung. Das freie Seilende bleibt unbelastet.',
+          captionRu: 'Точка крепления с узлом-восьмёркой, HMS-карабином и полумачтовым узлом. Свободный конец верёвки не нагружен.',
         },
         {
           type: 'term',
@@ -221,6 +253,14 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Die Festigkeit des Anschlagpunkts muss <strong>sorgfältig abgeschätzt</strong> werden. Geeignete Anschlagpunkte sind zum Beispiel tragende Bauteile wie massive Stahlträger, Betonpfeiler oder fest verankerte Geländer. Ungeeignet sind dagegen Regenrinnen, dünne Rohre, morsche Holzbalken oder bewegliche Gegenstände. Im Zweifel gilt: Lieber einen anderen Punkt suchen als ein Risiko eingehen. Die Belastung, die bei einem Halten entstehen kann, darf man nicht unterschätzen — selbst eine Person mit 80 kg Körpergewicht erzeugt durch dynamische Kräfte (z. B. Stolpern) ein Vielfaches dieser Last am Anschlagpunkt.',
           ru: 'Прочность точки крепления необходимо <strong>тщательно оценить</strong>. Подходящие точки — это, например, несущие конструкции: массивные стальные балки, бетонные колонны или прочно закреплённые перила. Непригодны водосточные желоба, тонкие трубы, трухлявые деревянные балки или подвижные предметы. При сомнениях лучше искать другую точку, чем рисковать. Нагрузку, которая возникает при удержании, нельзя недооценивать — даже человек весом 80 кг при динамических нагрузках (например, при спотыкании) создаёт на точке крепления силу в несколько раз больше собственного веса.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-seilsteg-dach.png',
+          alt: 'Sicherung auf dem Dach — Feuerwehrangehöriger gesichert am Haltegurt, zwei Kameraden an der Leiter',
+          altRu: 'Страховка на крыше — пожарный застрахован поясом, двое коллег у лестницы',
+          caption: 'Praxis: Sicherung auf dem Flachdach. Der Anschlagpunkt liegt oberhalb, die Sicherungsleine wird straff gehalten. Vier-Augen-Prinzip bei der Beurteilung des Anschlagpunkts.',
+          captionRu: 'Практика: страховка на плоской крыше. Точка крепления выше, страховочная верёвка натянута. Принцип четырёх глаз при оценке точки крепления.',
         },
         {
           type: 'text',

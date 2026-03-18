@@ -211,6 +211,14 @@ export const lesson: Lesson = {
           ru: 'При <strong>независимом водоснабжении</strong> из открытых водоёмов используется всасывающая линия. <strong>Всасывающая корзина</strong> должна находиться минимум на 30 см ниже поверхности воды, чтобы не подсасывался воздух. Количество необходимых всасывающих рукавов определяет <strong>руководитель подразделения</strong> — не командир водяного звена, хотя именно оно собирает всасывающую линию. В группе всасывающую линию собирает <strong>водяное звено</strong>, а <strong>рукавное звено помогает</strong> ему.',
         },
         {
+          type: 'image',
+          src: 'fdv1-hydrant-anschluss.png',
+          alt: 'Wasserentnahme aus einem Hydranten — Standrohr mit angeschlossener B-Leitung',
+          altRu: 'Забор воды из гидранта — стояк с подключённой B-линией',
+          caption: 'Wasserentnahme aus einem Hydranten: Das Standrohr wird eingesetzt, die B-Leitung angeschlossen und zum Löschfahrzeug verlegt.',
+          captionRu: 'Забор воды из гидранта: стояк установлен, B-линия подключена и проложена к пожарному автомобилю.',
+        },
+        {
           type: 'term',
           de: 'Abhängige Versorgung',
           ru: 'Зависимое водоснабжение (из водопровода/гидранта)',
@@ -433,6 +441,27 @@ export const lesson: Lesson = {
           type: 'text',
           de: 'Die Sicherheit der eigenen Einsatzkräfte hat immer höchste Priorität — denn nur ein sicherer Feuerwehrmann kann anderen helfen. Die FwDV 3 legt daher klare Regeln für den Rückzug und die Eigensicherung fest. Wenn ein Truppführer eine <strong>Eigengefährdung</strong> für seinen Trupp erkennt — zum Beispiel Einsturzgefahr, plötzliche Hitzeentwicklung oder Sauerstoffmangel —, muss der Trupp <strong>geschlossen zurückgehen</strong>. Nicht jeder für sich, sondern als Team. Anschließend erfolgt sofort eine <strong>Rückmeldung an den Einheitsführer</strong>.',
           ru: 'Безопасность собственных сил всегда имеет наивысший приоритет — ведь только безопасный пожарный может помочь другим. Поэтому FwDV 3 устанавливает чёткие правила отступления и самостраховки. Если командир звена обнаруживает <strong>угрозу для своего звена</strong> — например, опасность обрушения, внезапный рост температуры или нехватку кислорода — звено должно <strong>отступить вместе</strong>. Не каждый по отдельности, а командой. После этого немедленно следует <strong>доклад руководителю подразделения</strong>.',
+        },
+        {
+          type: 'text',
+          de: 'Wenn Sprechfunk nicht möglich ist oder die Entfernung zu groß, können <strong>Sichtzeichen</strong> (Handzeichen) zur Verständigung verwendet werden. Die FwDV 1 beschreibt standardisierte Handzeichen für Kommandos wie „Halt", „Vor", „Zurück", „Links", „Rechts" und „Motor anlassen/abstellen". Diese Zeichen sollten alle Einsatzkräfte kennen und eindeutig ausführen, damit Missverständnisse vermieden werden.',
+          ru: 'Когда радиосвязь невозможна или расстояние слишком велико, для общения используются <strong>визуальные сигналы</strong> (жесты руками). FwDV 1 описывает стандартизированные жесты для команд: «Стой», «Вперёд», «Назад», «Влево», «Вправо» и «Запуск/остановка двигателя». Эти сигналы должны знать все спасатели и выполнять их однозначно, чтобы избежать недоразумений.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-sichtzeichen-1.png',
+          alt: 'Sichtzeichen — Feuerwehrangehöriger gibt Handzeichen',
+          altRu: 'Визуальный сигнал — пожарный подаёт знак рукой',
+          caption: 'Sichtzeichen nach FwDV 1: Standardisierte Handzeichen für die Kommunikation auf der Einsatzstelle, wenn Sprechfunk nicht möglich ist.',
+          captionRu: 'Визуальные сигналы по FwDV 1: стандартизированные жесты для связи на месте операции, когда радиосвязь невозможна.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-sichtzeichen-2.png',
+          alt: 'Sichtzeichen — Feuerwehrangehöriger zeigt Richtungszeichen',
+          altRu: 'Визуальный сигнал — пожарный показывает направление',
+          caption: 'Richtungszeichen: Klare, eindeutige Handzeichen für Richtungsangaben. Alle Einsatzkräfte müssen die Zeichen kennen.',
+          captionRu: 'Указание направления: чёткие, однозначные жесты для указания направлений. Все спасатели должны знать эти сигналы.',
         },
         {
           type: 'text',

@@ -57,6 +57,27 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
+          de: 'Wenn der Einsatz im Bereich des fließenden Verkehrs stattfindet, muss die Einsatzstelle sofort durch <strong>Warnzeichen</strong> abgesichert werden. Dazu gehören Warndreiecke, Blitzleuchten, Leitkegel und bei Nacht Fackeln oder Blinkleuchten. Die Sicherung erfolgt in ausreichendem Abstand vor der Einsatzstelle — je nach Straßentyp und Geschwindigkeit des Verkehrs.',
+          ru: 'Если операция проходит в зоне дорожного движения, место работы необходимо немедленно обезопасить <strong>предупредительными знаками</strong>. К ним относятся предупреждающие треугольники, проблесковые маячки, конусы и при темноте — факелы или мигающие фонари. Ограждение устанавливается на достаточном расстоянии перед местом операции — в зависимости от типа дороги и скорости движения.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-verkehrssicherung.png',
+          alt: 'Verkehrssicherung der Einsatzstelle — Warndreiecke, Leitkegel und Absperrung',
+          altRu: 'Ограждение места операции — предупреждающие треугольники, конусы и ограждения',
+          caption: 'Verkehrssicherung: Warndreiecke, Blitzleuchten und Leitkegel sichern die Einsatzstelle gegen fließenden Verkehr.',
+          captionRu: 'Ограждение: предупреждающие треугольники, проблесковые маячки и конусы обезопасивают место операции от дорожного движения.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-handzeichen-halt.png',
+          alt: 'Handzeichen Halt — Feuerwehrangehöriger signalisiert Stop',
+          altRu: 'Жест «Стой» — пожарный подаёт сигнал остановки',
+          caption: 'Handzeichen „Halt": Bei der Verkehrsregelung oder Einweisung von Fahrzeugen werden standardisierte Handzeichen verwendet.',
+          captionRu: 'Жест «Стой»: при регулировке движения или наведении транспорта используются стандартизированные жесты.',
+        },
+        {
+          type: 'text',
           de: 'Der <strong>Einsatzbefehl</strong> wird vom Einheitsführer gegeben und muss vom Truppführer <strong>sinngemäß wiederholt</strong> werden. Dadurch stellt der Einheitsführer sicher, dass der Befehl richtig angekommen ist. Wenn etwas unklar ist, muss der Truppführer sofort beim Einheitsführer <strong>nachfragen</strong> — niemand darf mit einem unklaren Auftrag losarbeiten. „Verstanden Ende!" zu sagen, obwohl man den Befehl nicht verstanden hat, ist ein gefährlicher Fehler.',
           ru: '<strong>Боевой приказ</strong> отдаётся руководителем подразделения, и командир звена должен <strong>повторить его по смыслу</strong>. Так руководитель убеждается, что приказ правильно понят. Если что-то неясно, командир звена обязан немедленно <strong>переспросить</strong> — никто не имеет права приступать к работе с непонятным заданием. Сказать «Понял, конец!», не поняв приказа — опасная ошибка.',
         },

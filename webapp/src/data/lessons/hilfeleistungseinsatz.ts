@@ -108,6 +108,27 @@ export const lesson: Lesson = {
           ru: 'Важно понимать: такое распределение задач — <strong>стандартный порядок</strong> по FwDV 3. На практике руководитель может распределить задачи иначе в зависимости от обстановки — например, если не хватает людей или ситуация требует другого. Но основное правило: <strong>звено нападения спасает, водяное звено обеспечивает безопасность, рукавное звено готовит оборудование.</strong>',
         },
         {
+          type: 'text',
+          de: 'Zur Stabilisierung von verunfallten Fahrzeugen oder instabilen Bauteilen kommt das <strong>Abstützen</strong> (Unterbauen) zum Einsatz. Dabei werden Keile, Rüstholz oder spezielle Abstützsysteme verwendet, um Lasten gegen Verschieben, Kippen oder Einstürzen zu sichern. Das Abstützen ist eine der ersten Maßnahmen, die der Wassertrupp nach dem Eintreffen durchführt.',
+          ru: 'Для фиксации аварийных транспортных средств или неустойчивых конструкций применяется <strong>подпирание</strong> (Abstützen). При этом используются клинья, крепёжные брусья или специальные подпорные системы для защиты грузов от смещения, опрокидывания или обрушения. Подпирание — одна из первых мер, которые выполняет водяное звено после прибытия.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-abstuetzen-holz.png',
+          alt: 'Abstützen mit Rüstholz — Keile und Holzblöcke zur Fahrzeugstabilisierung',
+          altRu: 'Подпирание крепёжным деревом — клинья и деревянные блоки для фиксации автомобиля',
+          caption: 'Abstützen mit Rüstholz und Keilen: Verunfallte Fahrzeuge werden gegen Wegrollen und Kippen gesichert.',
+          captionRu: 'Подпирание брусьями и клиньями: аварийные автомобили фиксируют от скатывания и опрокидывания.',
+        },
+        {
+          type: 'image',
+          src: 'fdv1-abstuetzen-stahl.png',
+          alt: 'Abstützen mit Mehrzweck-Stützensystem — Stahlrahmen zur Stabilisierung',
+          altRu: 'Подпирание многофункциональной подпорной системой — стальная рама для стабилизации',
+          caption: 'Mehrzweck-Stützensystem: Professionelle Stahlstützen für die Stabilisierung größerer Lasten und Strukturen.',
+          captionRu: 'Многофункциональная подпорная система: профессиональные стальные опоры для стабилизации крупных грузов и конструкций.',
+        },
+        {
           type: 'term',
           de: 'Angriffstrupp (AT)',
           ru: 'Звено нападения',

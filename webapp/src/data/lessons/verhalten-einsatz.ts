@@ -86,7 +86,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Der <strong>Einsatzbefehl</strong> wird vom Einheitsführer gegeben und muss vom Truppführer <strong>sinngemäß wiederholt</strong> werden. Dadurch stellt der Einheitsführer sicher, dass der Befehl richtig angekommen ist. Wenn etwas unklar ist, muss der Truppführer sofort beim Einheitsführer <strong>nachfragen</strong> — niemand darf mit einem unklaren Auftrag losarbeiten. „Verstanden Ende!" zu sagen, obwohl man den Befehl nicht verstanden hat, ist ein gefährlicher Fehler.',
+          de: 'Der <strong>Einsatzbefehl</strong> wird vom Einheitsführer gegeben und muss vom Truppführer <strong>sinngemäß wiederholt</strong> werden. Dadurch stellt der Einheitsführer sicher, dass der Befehl richtig angekommen ist. Wenn etwas unklar ist, muss der Truppführer sofort beim Einheitsführer <strong>nachfragen</strong> — niemand darf mit einem unklaren Auftrag losarbeiten. „Verstanden Ende!“ zu sagen, obwohl man den Befehl nicht verstanden hat, ist ein gefährlicher Fehler.',
           ru: '<strong>Боевой приказ</strong> отдаётся руководителем подразделения, и командир звена должен <strong>повторить его по смыслу</strong>. Так руководитель убеждается, что приказ правильно понят. Если что-то неясно, командир звена обязан немедленно <strong>переспросить</strong> — никто не имеет права приступать к работе с непонятным заданием. Сказать «Понял, конец!», не поняв приказа — опасная ошибка.',
         },
         {
@@ -277,7 +277,7 @@ export const lesson: Lesson = {
       id: 104,
       question: 'Wie verhalten Sie sich, wenn Sie den Einsatzbefehl des Einheitsführers nicht richtig verstanden haben?',
       options: {
-        a: 'Ich bestätige mit „Verstanden Ende!"',
+        a: 'Ich bestätige mit „Verstanden Ende!“',
         b: 'Ich frage beim Einheitsführer nach',
         c: 'Ich verzichte auf die Wiederholung des Einsatzbefehls',
       },

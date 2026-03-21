@@ -565,7 +565,7 @@ export const lesson: Lesson = {
       options: {
         a: 'Abstand halten, Einsatzzeit begrenzen, Abschirmung nutzen',
         b: 'An der Einsatzstelle trinken, essen und rauchen',
-        c: 'Mit Wasser-Sprühstrahl eine „Hydrowand" aufbauen',
+        c: 'Mit Wasser-Sprühstrahl eine „Hydrowand” aufbauen',
       },
       image: null,
       correct: 'a',
@@ -684,7 +684,7 @@ export const lesson: Lesson = {
       question: 'Welche Schutzmaßnahmen beachten sie als Truppführer bei der Gefahr durch Elektrizität?',
       options: {
         a: 'Die Einhaltung erforderlicher Mindestabstände',
-        b: 'Die Strahlrohreinstellung „Sprühstrahl", durch die alle Risiken ausgeschlossen sind',
+        b: 'Die Strahlrohreinstellung „Sprühstrahl”, durch die alle Risiken ausgeschlossen sind',
         c: 'Durch die Erdung durch meine Schlauchleitung besteht keine Gefahr',
       },
       image: null,

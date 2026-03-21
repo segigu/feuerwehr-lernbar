@@ -259,7 +259,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Das <strong>Gesprächsende</strong> wird mit dem Wort <strong>„Ende"</strong> markiert — <strong>ohne weitere Zusätze</strong>. Man sagt nicht „Ende mit Florian Würzburg" oder „Gespräch beendet, Ende", sondern einfach nur „Ende". Nach dem Empfang einer letzten Nachricht bestätigt man mit <strong>„Verstanden — Ende"</strong>. Bei schlechter Verständigung sagt man <strong>„Ich rufe wieder — Ende"</strong> und versucht es später erneut, vorzugsweise von einem anderen Standort.',
+          de: 'Das <strong>Gesprächsende</strong> wird mit dem Wort <strong>„Ende"</strong> markiert — <strong>ohne weitere Zusätze</strong>. Man sagt nicht „Ende mit Florian Würzburg” oder „Gespräch beendet, Ende", sondern einfach nur „Ende". Nach dem Empfang einer letzten Nachricht bestätigt man mit <strong>„Verstanden — Ende"</strong>. Bei schlechter Verständigung sagt man <strong>„Ich rufe wieder — Ende"</strong> und versucht es später erneut, vorzugsweise von einem anderen Standort.',
           ru: '<strong>Окончание разговора</strong> обозначается словом <strong>«Ende»</strong> — <strong>без каких-либо дополнений</strong>. Нельзя говорить «Ende mit Florian Würzburg» или «Gespräch beendet, Ende» — только просто «Ende». После приёма последнего сообщения подтверждают: <strong>«Verstanden — Ende»</strong>. При плохой связи говорят <strong>«Ich rufe wieder — Ende»</strong> и пробуют позже, желательно с другой позиции.',
         },
         {
@@ -299,7 +299,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'key',
-          de: 'Der Sprechfunkverkehr wird durch den Anruf eröffnet. Die Anrufantwort lautet: „Hier (Rufname), kommen!" Das Gespräch wird mit „Ende" ohne Zusätze beendet. Versprecher werden mit „ich berichtige" korrigiert.',
+          de: 'Der Sprechfunkverkehr wird durch den Anruf eröffnet. Die Anrufantwort lautet: „Hier (Rufname), kommen!” Das Gespräch wird mit „Ende" ohne Zusätze beendet. Versprecher werden mit „ich berichtige" korrigiert.',
           ru: 'Радиопереговоры начинаются вызовом. Ответ на вызов: «Hier (позывной), kommen!» Разговор завершается словом «Ende» без дополнений. Оговорки исправляются словами «ich berichtige».',
         },
       ],
@@ -761,9 +761,9 @@ export const lesson: Lesson = {
       id: 104,
       question: 'Ein Anruf ist durch folgende Anrufantwort zu bestätigen...',
       options: {
-        a: '„(Rufname) hört!"',
-        b: '„(Rufname) absetzen!"',
-        c: '„Hier (Rufname), kommen!"',
+        a: '„(Rufname) hört!”',
+        b: '„(Rufname) absetzen!”',
+        c: '„Hier (Rufname), kommen!”',
       },
       image: null,
       correct: 'c',
@@ -776,8 +776,8 @@ export const lesson: Lesson = {
       id: 105,
       question: 'Wie wird ein Gespräch im Funkverkehr beendet?',
       options: {
-        a: '„Ende mit Florian Würzburg"',
-        b: 'Mit „Ende" ohne weitere Zusätze',
+        a: '„Ende mit Florian Würzburg”',
+        b: 'Mit „Ende” ohne weitere Zusätze',
         c: 'Mit Wiederholung des Funkgespäches',
       },
       image: null,
@@ -942,15 +942,15 @@ export const lesson: Lesson = {
       question: 'Welche Vorschrift regelt die Durchführung des Sprechfunkverkehrs?',
       options: {
         a: 'BOS-Funkrichtlinie',
-        b: 'FwDV 800 / 810',
+        b: 'PDV 810 / DV 810',
         c: 'Vollzugsbekanntmachung BayFwG',
       },
       image: null,
       correct: 'b',
       topic: 'Fragenkatalog',
       sectionId: 'rechtsgrundlagen-funk',
-      explanation: 'Die FwDV 800 (Informations- und Kommunikationstechnik) und die FwDV 810 (Sprech- und Datenfunkverkehr) regeln den Sprechfunkverkehr. Beide sind bundesweit verbindlich für alle BOS.',
-      explanationRu: 'FwDV 800 (информационно-коммуникационные технологии) и FwDV 810 (голосовой и цифровой радиообмен) регулируют радиосвязь. Обе инструкции обязательны для всех BOS на федеральном уровне.',
+      explanation: 'Die PDV 810 / DV 810 (Fernmeldebetriebsdienst) regelt die Durchführung des Sprechfunkverkehrs bei BOS. Die BOS-Funkrichtlinie regelt die technischen Grundlagen, nicht den Betriebsablauf.',
+      explanationRu: 'PDV 810 / DV 810 (служба связи) регулирует проведение радиообмена у BOS. BOS-Funkrichtlinie регулирует технические основы, а не порядок ведения связи.',
     },
     {
       id: 117,

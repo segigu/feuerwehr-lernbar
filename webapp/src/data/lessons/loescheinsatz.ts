@@ -1028,7 +1028,7 @@ export const lesson: Lesson = {
       id: 119,
       question: 'Wie erkennen sie, dass der Einheitsführer einen Einsatz ohne Bereitstellung durchführen will?',
       options: {
-        a: 'Durch das Wort „vor"',
+        a: 'Durch das Wort „vor”',
         b: 'Durch Angabe der Wasserentnahmestelle',
         c: 'An der Lage des Verteilers',
       },

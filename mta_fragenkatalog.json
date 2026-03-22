@@ -883,7 +883,7 @@
         "c": "Mit doppeltem Ankerstich und Halbschlag zum Hintersichern"
       },
       "image": null,
-      "correct": "c",
+      "correct": "a",
       "topic": "Rettung, Leitern und Knoten"
     },
     {
@@ -1135,7 +1135,7 @@
         "c": "Ja, der Truppmann sichert und der Truppführer steigt auf. Danach sichert der Truppführer und der Truppmann steigt auf"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Rettung, Leitern und Knoten"
     },
     {
@@ -1171,7 +1171,7 @@
         "c": "Sofern keine akute Gefahr durch Brand, Bewusstlosigkeit o. ä. besteht, sollen Verletzte im Fahrzeug verbleiben bis der Rettungsdienst die medizinische Lage beurteilt hat"
       },
       "image": null,
-      "correct": "c",
+      "correct": "a",
       "topic": "Erste Hilfe und Einsatzhygiene"
     },
     {
@@ -1339,7 +1339,7 @@
         "c": "Alle Feuerwehrdienstleistenden steigen auf der ihrem Sitzplatz nächstgelegenen Fahrzeugseite aus"
       },
       "image": null,
-      "correct": "b",
+      "correct": "c",
       "topic": "Einsatzgrundsätze und Gefahren"
     },
     {
@@ -1675,7 +1675,7 @@
         "c": "mittig"
       },
       "image": null,
-      "correct": "a",
+      "correct": "b",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1771,7 +1771,7 @@
         "c": "B-Schlauchleitung zum Verteiler vorlegen"
       },
       "image": null,
-      "correct": "a",
+      "correct": "c",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1843,7 +1843,7 @@
         "c": "Einen Einsatz auf Vorbereitung"
       },
       "image": null,
-      "correct": "b",
+      "correct": "a",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1855,7 +1855,7 @@
         "c": "Liegt im Ermessen des Trupps"
       },
       "image": null,
-      "correct": "a",
+      "correct": "b",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -2323,7 +2323,7 @@
         "c": "Verätzungsgefahr"
       },
       "image": "page15_img1.png",
-      "correct": "a",
+      "correct": "c",
       "topic": "Technische Hilfeleistung und Gefahrgut"
     },
     {
@@ -2491,7 +2491,7 @@
         "c": "ein Spruch"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Sprechfunk"
     },
     {

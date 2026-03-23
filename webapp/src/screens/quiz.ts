@@ -211,6 +211,7 @@ export function renderQuiz(container: HTMLElement): () => void {
   function renderNavDots(): void {
     clear(navDots);
     const total = session!.questions.length;
+    const isExam = session!.mode === 'exam';
 
     if (total > 50) return;
 
@@ -221,8 +222,13 @@ export function renderQuiz(container: HTMLElement): () => void {
       if (i === session!.currentIndex) {
         dot.classList.add('current');
       }
-      if (session!.answers.has(q.id)) {
-        dot.classList.add('answered');
+      const answer = session!.answers.get(q.id);
+      if (answer !== undefined) {
+        if (!isExam) {
+          dot.classList.add(answer === q.correct ? 'dot-correct' : 'dot-incorrect');
+        } else {
+          dot.classList.add('answered');
+        }
       }
 
       dot.addEventListener('click', () => {

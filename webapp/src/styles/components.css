@@ -487,6 +487,14 @@
   background: var(--color-text-muted);
 }
 
+.nav-dot.dot-correct {
+  background: var(--color-correct);
+}
+
+.nav-dot.dot-incorrect {
+  background: var(--color-incorrect);
+}
+
 .nav-dot.current {
   background: var(--color-primary);
   transform: scale(1.3);

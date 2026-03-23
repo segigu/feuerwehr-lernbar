@@ -1,5 +1,6 @@
 import type { Question } from '../data/questions';
 import { questions as allQuestions } from '../data/questions';
+import { resetShuffleCache } from '../components/question-card';
 
 export type QuizMode = 'exam' | 'all' | 'topic' | 'lesson';
 
@@ -103,6 +104,7 @@ export function createSession(
   questions: Question[],
   options?: { topicName?: string; lessonId?: string; timerEnabled?: boolean; timerSeconds?: number }
 ): QuizSession {
+  resetShuffleCache();
   session = {
     mode,
     topicName: options?.topicName,

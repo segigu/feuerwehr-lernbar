@@ -2,6 +2,12 @@ import type { Question } from '../data/questions';
 import { h, createImg } from '../utils/dom';
 import { hapticSelection } from '../utils/telegram';
 
+const shuffleCache = new Map<number, Array<'a' | 'b' | 'c'>>();
+
+export function resetShuffleCache(): void {
+  shuffleCache.clear();
+}
+
 export function createQuestionCard(
   question: Question,
   selectedAnswer: 'a' | 'b' | 'c' | null,
@@ -28,10 +34,14 @@ export function createQuestionCard(
 
   const optionsContainer = h('div', { className: 'options-container' });
 
-  const keys: Array<'a' | 'b' | 'c'> = ['a', 'b', 'c'];
-  for (let i = keys.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [keys[i], keys[j]] = [keys[j], keys[i]];
+  let keys = shuffleCache.get(question.id);
+  if (!keys) {
+    keys = ['a', 'b', 'c'];
+    for (let i = keys.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [keys[i], keys[j]] = [keys[j], keys[i]];
+    }
+    shuffleCache.set(question.id, keys);
   }
 
   const displayLetters = ['A', 'B', 'C'];

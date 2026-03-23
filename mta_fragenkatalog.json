@@ -115,7 +115,7 @@
         "c": "Vorstand der Freiwilligen Feuerwehr"
       },
       "image": null,
-      "correct": "a",
+      "correct": "b",
       "topic": "Rechtsgrundlagen und Organisation"
     },
     {
@@ -151,7 +151,7 @@
         "c": "16 Jahre"
       },
       "image": null,
-      "correct": "c",
+      "correct": "a",
       "topic": "Rechtsgrundlagen und Organisation"
     },
     {
@@ -775,7 +775,7 @@
         "c": "3. Obergeschoss"
       },
       "image": null,
-      "correct": "b",
+      "correct": "a",
       "topic": "Geräte und Armaturen"
     },
     {
@@ -895,7 +895,7 @@
         "c": "Schnittschutz (Beinlinge), Infektionsschutzhandschuhe"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Rettung, Leitern und Knoten"
     },
     {
@@ -907,7 +907,7 @@
         "c": "ca. 100 m"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Rettung, Leitern und Knoten"
     },
     {
@@ -1135,7 +1135,7 @@
         "c": "Ja, der Truppmann sichert und der Truppführer steigt auf. Danach sichert der Truppführer und der Truppmann steigt auf"
       },
       "image": null,
-      "correct": "b",
+      "correct": "c",
       "topic": "Rettung, Leitern und Knoten"
     },
     {
@@ -1323,7 +1323,7 @@
       "question": "Warum müssen Sie ihrem Einheitsführer bei der Mannschaftseinteilung während der Anfahrt mitteilen, wenn ihre Einsatzbereitschaft z. B. durch eine Erkältung beeinträchtigt ist?",
       "options": {
         "a": "Ich muss es dem Einheitsführer nicht mitteilen, weil ich erwarten kann, dass er meine verminderte Einsatzfähigkeit selbst erkennt",
-        "b": "Nur so kann der Einheitsführer die Einsatzfähigkeit jedes Feuerwehrdienstleistenden bei der Einteilung berücksichtigent",
+        "b": "Nur so kann der Einheitsführer die Einsatzfähigkeit jedes Feuerwehrdienstleistenden bei der Einteilung berücksichtigen",
         "c": "Damit er Sie nicht als Gruppenführer einteilt"
       },
       "image": null,
@@ -1339,7 +1339,7 @@
         "c": "Alle Feuerwehrdienstleistenden steigen auf der ihrem Sitzplatz nächstgelegenen Fahrzeugseite aus"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Einsatzgrundsätze und Gefahren"
     },
     {
@@ -1407,7 +1407,7 @@
       "question": "Wie verhalten Sie sich als Wassertruppmann beim Eintreffen an der Einsatzstelle?",
       "options": {
         "a": "Ich springe sofort aus dem Fahrzeug und suche eine Wasserentnahmestelle, denn Wasser wird für den Feuerwehreinsatz immer dringend benötigt",
-        "b": "Auf den Einsatzbefehl des Einheitsführer warten, Ruhe bewahren und keine unüberlegten Aktionen durchführen",
+        "b": "Auf den Einsatzbefehl des Einheitsführers warten, Ruhe bewahren und keine unüberlegten Aktionen durchführen",
         "c": "Ich trete in jedem Fall hinter dem Fahrzeug an"
       },
       "image": null,
@@ -1771,7 +1771,7 @@
         "c": "B-Schlauchleitung zum Verteiler vorlegen"
       },
       "image": null,
-      "correct": "c",
+      "correct": "b",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1819,7 +1819,7 @@
         "c": "Der Schlauchtruppführer"
       },
       "image": null,
-      "correct": "b",
+      "correct": "a",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1855,7 +1855,7 @@
         "c": "Liegt im Ermessen des Trupps"
       },
       "image": null,
-      "correct": "b",
+      "correct": "a",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -1884,14 +1884,14 @@
     },
     {
       "id": 156,
-      "question": "Als Angriffstrupp bekommen sie den Einsatzbefehl einen brennenden Palettenstapel abzulöschen. Welche Löschtaktik wenden sie an?",
+      "question": "Als Angriffstrupp bekommen sie den Einsatzbefehl einen brennenden Palettenstapel im Freien abzulöschen. Welche Löschtaktik wenden sie an?",
       "options": {
-        "a": "Mit Sprühstrahl, um das Brandobjekt bewegend",
-        "b": "Aus größerer Entfernung mit Vollstrahl",
+        "a": "Mit Sprühstrahl, um das Brandobjekt, stets außerhalb des Brandrauches, bewegen",
+        "b": "Aus der Deckung mit einem Wasserwerfer",
         "c": "Mit Sprühstrahl, von einem festen Punkt aus"
       },
       "image": null,
-      "correct": "b",
+      "correct": "a",
       "topic": "Löscheinsatz (FwDV 3)"
     },
     {
@@ -2558,8 +2558,8 @@
       "id": 212,
       "question": "Welche Vorschrift regelt die Durchführung des Sprechfunkverkehrs?",
       "options": {
-        "a": "BOS-Funkrichtlinie",
-        "b": "PDV 810 / DV 810",
+        "a": "Merkblatt Sprechfunk",
+        "b": "FwDV 800/810",
         "c": "Vollzugsbekanntmachung BayFwG"
       },
       "image": null,

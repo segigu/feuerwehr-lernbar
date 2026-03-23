@@ -436,220 +436,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
       id: 1,
-      question: 'Was ist die wichtigste Rechtsgrundlage für das Feuerwehrwesen in Bayern?',
-      options: {
-        a: 'Grundgesetz der Bundesrepublik Deutschland',
-        b: 'Bayerisches Feuerwehrgesetz (BayFwG)',
-        c: 'Feuerwehr-Dienstvorschrift 3 (FwDV 3)',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen',
-      explanation: 'Das Bayerische Feuerwehrgesetz (BayFwG) ist das zentrale Gesetz für das Feuerwehrwesen in Bayern. Es regelt Aufgaben, Organisation, Rechte und Pflichten der Feuerwehr. Die FwDV sind bundesweite Dienstvorschriften, aber kein bayerisches Gesetz.',
-      explanationRu: 'Баварский закон о пожарной охране (BayFwG) -- центральный закон пожарного дела в Баварии. Он регулирует задачи, организацию, права и обязанности пожарной охраны. FwDV -- общефедеральные предписания, а не баварский закон.',
-    },
-    {
-      id: 2,
-      question: 'Was regeln die Feuerwehr-Dienstvorschriften (FwDV)?',
-      options: {
-        a: 'Nur die Besoldung der Berufsfeuerwehr',
-        b: 'Einen einheitlichen Standard für die Arbeit der Feuerwehren in ganz Deutschland',
-        c: 'Nur die Ausbildung in Bayern',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen',
-      explanation: 'Die FwDV sind bundesweit gültige Vorschriften, die einen einheitlichen Standard für die Feuerwehrarbeit in ganz Deutschland festlegen — von der Ausbildung (FwDV 2) über taktische Einheiten (FwDV 3) bis zur Führung im Einsatz (FwDV 100).',
-      explanationRu: 'FwDV -- общефедеральные предписания, устанавливающие единый стандарт пожарной работы по всей Германии -- от обучения (FwDV 2) и тактических подразделений (FwDV 3) до руководства операцией (FwDV 100).',
-    },
-    {
-      id: 3,
-      question: 'Was bedeutet "abwehrender Brandschutz"?',
-      options: {
-        a: 'Vorbeugende Maßnahmen wie Brandmeldeanlagen',
-        b: 'Bekämpfung von Bränden nach deren Ausbruch',
-        c: 'Baulicher Brandschutz in Gebäuden',
-      },
-      correct: 'b',
-      topic: 'Pflichtaufgaben',
-      sectionId: 'pflichtaufgaben',
-      explanation: 'Abwehrender Brandschutz umfasst alle Maßnahmen zur Bekämpfung von bereits ausgebrochenen Bränden und Explosionsgefahren. Im Gegensatz zum vorbeugenden Brandschutz (z. B. Brandmeldeanlagen, bauliche Maßnahmen) wird er erst nach Ausbruch eines Brandes aktiv.',
-      explanationRu: 'Оборонительная противопожарная защита включает все меры по борьбе с уже возникшими пожарами и взрывоопасными ситуациями. В отличие от профилактической защиты (пожарная сигнализация, строительные меры), она вступает в действие только после возникновения пожара.',
-    },
-    {
-      id: 4,
-      question: 'Welcher Einsatz gehört zum technischen Hilfsdienst (THL)?',
-      options: {
-        a: 'Löschen eines Dachstuhlbrandes',
-        b: 'Befreiung einer eingeklemmten Person bei einem Verkehrsunfall',
-        c: 'Installation einer Brandmeldeanlage',
-      },
-      correct: 'b',
-      topic: 'Pflichtaufgaben',
-      sectionId: 'pflichtaufgaben',
-      explanation: 'Der technische Hilfsdienst (THL) umfasst Hilfe bei Unglücksfällen und Notlagen, die keine Brände sind — zum Beispiel Verkehrsunfälle, Hochwasser oder umgestürzte Bäume. Ein Dachstuhlbrand gehört zum abwehrenden Brandschutz.',
-      explanationRu: 'Техническая помощь (THL) включает помощь при несчастных случаях и чрезвычайных ситуациях, не связанных с пожарами -- например, ДТП, наводнения или упавшие деревья. Пожар на чердаке относится к оборонительной противопожарной защите.',
-    },
-    {
-      id: 5,
-      question: 'Warum gibt es in Bayern kaum Pflichtfeuerwehren?',
-      options: {
-        a: 'Weil sie verboten sind',
-        b: 'Weil das ehrenamtliche Engagement traditionell stark ist',
-        c: 'Weil die Berufsfeuerwehr überall ausreicht',
-      },
-      correct: 'b',
-      topic: 'Arten der Feuerwehren',
-      sectionId: 'arten-feuerwehren',
-      explanation: 'Die Pflichtfeuerwehr wird nur eingerichtet, wenn nicht genügend Freiwillige gefunden werden. In Bayern ist das selten nötig, weil das ehrenamtliche Engagement traditionell stark ist und fast jede Gemeinde eine Freiwillige Feuerwehr hat.',
-      explanationRu: 'Обязательная пожарная команда создаётся только при нехватке добровольцев. В Баварии это требуется редко, потому что волонтёрская активность традиционно высока и почти в каждой общине есть добровольная пожарная команда.',
-    },
-    {
-      id: 6,
-      question: 'Ab welchem Dienstgrad beginnen die Führungsdienstgrade?',
-      options: {
-        a: 'Oberfeuerwehrmann',
-        b: 'Löschmeister',
-        c: 'Brandmeister',
-      },
-      correct: 'b',
-      topic: 'Organisation',
-      sectionId: 'organisation',
-      explanation: 'Die Führungsdienstgrade beginnen ab dem Löschmeister und setzen mindestens eine Gruppenführer-Ausbildung voraus. Oberfeuerwehrmann ist ein Mannschaftsdienstgrad, Brandmeister liegt über dem Löschmeister in der Rangfolge.',
-      explanationRu: 'Командные звания начинаются с Löschmeister и требуют как минимум подготовки группового командира. Oberfeuerwehrmann -- рядовое звание, Brandmeister -- выше Löschmeister в иерархии.',
-    },
-    {
-      id: 7,
-      question: 'Woran erkennt man Führungsdienstgrade auf der Uniform?',
-      options: {
-        a: 'An roten Streifen auf den Schulterklappen',
-        b: 'An silbernen Streifen auf den Schulterklappen',
-        c: 'An goldenen Sternen auf dem Helm',
-      },
-      correct: 'b',
-      topic: 'Organisation',
-      sectionId: 'organisation',
-      explanation: 'Mannschaftsdienstgrade tragen rote Streifen auf den Schulterklappen, Führungsdienstgrade tragen silberne Streifen. So kann man auf einen Blick erkennen, wer eine Führungsausbildung hat.',
-      explanationRu: 'Рядовые звания отмечены красными полосками на погонах, командные -- серебряными. Так можно сразу определить, кто имеет командирскую подготовку.',
-    },
-    {
-      id: 8,
-      question: 'Wer führt eine Gruppe im Einsatz?',
-      options: {
-        a: 'Der Zugführer',
-        b: 'Der Gruppenführer',
-        c: 'Der Abschnittsleiter',
-      },
-      correct: 'b',
-      topic: 'Organisation',
-      sectionId: 'organisation',
-      explanation: 'Der Gruppenführer führt eine Gruppe von 9 Personen. Der Zugführer führt einen Zug aus mehreren Gruppen, und der Abschnittsleiter führt einen Einsatzabschnitt bei größeren Lagen.',
-      explanationRu: 'Групповой командир руководит группой из 9 человек. Командир взвода руководит взводом из нескольких групп, а начальник участка -- участком при крупных операциях.',
-    },
-    {
-      id: 9,
-      question: 'Welches Gesetz regelt den Einsatz der Feuerwehr bei Katastrophen?',
-      options: {
-        a: 'Bayerisches Feuerwehrgesetz (BayFwG)',
-        b: 'Bayerisches Katastrophenschutzgesetz (BayKSG)',
-        c: 'Sozialgesetzbuch VII (SGB VII)',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen',
-      explanation: 'Das Bayerische Katastrophenschutzgesetz (BayKSG) regelt den Einsatz bei Katastrophen wie großflächigem Hochwasser oder schweren Unwettern. Das BayFwG regelt das allgemeine Feuerwehrwesen, das SGB VII die gesetzliche Unfallversicherung.',
-      explanationRu: 'Баварский закон о защите от катастроф (BayKSG) регулирует действия при катастрофах, таких как масштабные наводнения или сильные штормы. BayFwG регулирует общее пожарное дело, SGB VII -- обязательное страхование от несчастных случаев.',
-    },
-    {
-      id: 10,
-      question: 'Bei einem Feuerwehrunfall: Was muss dem Arzt mitgeteilt werden?',
-      options: {
-        a: 'Dass man privat versichert ist',
-        b: 'Dass es ein Feuerwehrdienst-Unfall ist und die KUVB zuständig ist',
-        c: 'Dass die Gemeinde die Rechnung bezahlt',
-      },
-      correct: 'b',
-      topic: 'Unfallverhütung',
-      sectionId: 'unfallverhuetung',
-      explanation: 'Bei einem Unfall im Feuerwehrdienst muss dem Arzt mitgeteilt werden, dass es sich um einen Feuerwehrdienst-Unfall handelt und die Kommunale Unfallversicherung Bayern (KUVB) der zuständige Versicherungsträger ist. Nur so kann die gesetzliche Unfallversicherung korrekt abgerechnet werden.',
-      explanationRu: 'При несчастном случае на пожарной службе нужно сообщить врачу, что это несчастный случай на службе и что KUVB -- ответственный страховщик. Только так обязательное страхование от несчастных случаев может быть правильно оформлено.',
-    },
-    {
-      id: 11,
-      question: 'Welche Gemeinden in Bayern müssen eine Berufsfeuerwehr aufstellen?',
-      options: {
-        a: 'Alle Gemeinden mit mehr als 50.000 Einwohnern',
-        b: 'Alle Gemeinden mit mehr als 100.000 Einwohnern',
-        c: 'Nur die Landeshauptstadt München',
-      },
-      correct: 'b',
-      topic: 'Arten der Feuerwehren',
-      sectionId: 'arten-feuerwehren',
-      explanation: 'In Bayern sind Gemeinden mit mehr als 100.000 Einwohnern verpflichtet, eine Berufsfeuerwehr aufzustellen. Das betrifft die größeren Städte wie München, Nürnberg, Augsburg und weitere.',
-      explanationRu: 'В Баварии общины с населением более 100 000 человек обязаны создать профессиональную пожарную команду. Это касается крупных городов -- Мюнхена, Нюрнберга, Аугсбурга и других.',
-    },
-    {
-      id: 12,
-      question: 'Wer erlässt die Satzung der Freiwilligen Feuerwehr?',
-      options: {
-        a: 'Der Kommandant',
-        b: 'Der Feuerwehrverein',
-        c: 'Die Gemeinde',
-      },
-      correct: 'c',
-      topic: 'Organisation',
-      sectionId: 'rechte-pflichten',
-      explanation: 'Die Satzung wird von der Gemeinde erlassen, weil die Feuerwehr eine Einrichtung der Gemeinde ist. Sie regelt die innere Ordnung — zum Beispiel Aufnahme und Austritt von Mitgliedern, Rechte und Pflichten sowie die Durchführung von Wahlen.',
-      explanationRu: 'Устав принимается общиной, потому что пожарная команда является учреждением общины. Он регулирует внутренний порядок -- приём и выход членов, права и обязанности, проведение выборов.',
-    },
-    {
-      id: 13,
-      question: 'Was gehört NICHT zu den Pflichtaufgaben der Feuerwehr?',
-      options: {
-        a: 'Anbringen von Dekorationen bei Gemeindeveranstaltungen',
-        b: 'Technische Hilfeleistung bei Verkehrsunfällen',
-        c: 'Bekämpfung von Bränden',
-      },
-      correct: 'a',
-      topic: 'Pflichtaufgaben',
-      sectionId: 'pflichtaufgaben',
-      explanation: 'Die Pflichtaufgaben der Feuerwehr sind abwehrender Brandschutz und technischer Hilfsdienst. Dekorationen bei Gemeindeveranstaltungen anzubringen ist keine Pflichtaufgabe, sondern allenfalls eine freiwillige Unterstützung.',
-      explanationRu: 'Обязательные задачи пожарной охраны -- оборонительная противопожарная защита и техническая помощь. Украшение общинных мероприятий не является обязательной задачей, а в лучшем случае добровольной помощью.',
-    },
-    {
-      id: 14,
-      question: 'Wer schützt eine Werkfeuerwehr in erster Linie?',
-      options: {
-        a: 'Die gesamte Gemeinde',
-        b: 'Den eigenen Betrieb',
-        c: 'Das Bundesland Bayern',
-      },
-      correct: 'b',
-      topic: 'Arten der Feuerwehren',
-      sectionId: 'arten-feuerwehren',
-      explanation: 'Die Werkfeuerwehr wird von Betrieben mit besonderer Brandgefahr unterhalten — zum Beispiel Chemiefabriken oder Flughäfen — und schützt in erster Linie den eigenen Betrieb.',
-      explanationRu: 'Заводская пожарная команда содержится предприятиями с особой пожароопасностью -- например, химическими заводами или аэропортами -- и защищает в первую очередь собственное предприятие.',
-    },
-    {
-      id: 15,
-      question: 'Welche Voraussetzung ist NICHT erforderlich, damit Feuerwehranwärter an Einsätzen teilnehmen dürfen?',
-      options: {
-        a: 'Abgeschlossenes Basismodul',
-        b: 'Abgeschlossene Gruppenführer-Ausbildung',
-        c: 'Zustimmung des Kommandanten',
-      },
-      correct: 'b',
-      topic: 'Rechte und Pflichten',
-      sectionId: 'rechte-pflichten',
-      explanation: 'Feuerwehranwärter dürfen an Einsätzen teilnehmen, wenn sie das Basismodul abgeschlossen haben, mindestens 16 Jahre alt sind und der Kommandant zustimmt. Eine Gruppenführer-Ausbildung ist dafür nicht erforderlich.',
-      explanationRu: 'Кандидаты могут участвовать в выездах при завершённом базовом модуле, возрасте от 16 лет и согласии командира. Подготовка группового командира для этого не требуется.',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 101,
       question: 'Mit welchem Gesetz wird das Feuerwehrwesen in Bayern geregelt?',
       options: {
         a: 'Bayerisches Katastrophenschutzgesetz',
@@ -664,7 +452,7 @@ export const lesson: Lesson = {
       explanationRu: 'Баварский закон о пожарной охране (BayFwG) -- центральный закон, регулирующий всё пожарное дело в Баварии -- от задач и организации до прав и обязанностей. Закон о защите от катастроф регулирует только случаи катастроф.',
     },
     {
-      id: 102,
+      id: 2,
       question: 'Was zählt zu den Pflichtaufgaben der Feuerwehr?',
       options: {
         a: 'Anbringen von Dekorationen',
@@ -679,7 +467,7 @@ export const lesson: Lesson = {
       explanationRu: 'Обязательные задачи пожарной охраны по BayFwG -- оборонительная противопожарная защита (тушение пожаров) и техническая помощь (помощь при несчастных случаях). Украшения и откачка строительных котлованов к ним не относятся.',
     },
     {
-      id: 103,
+      id: 3,
       question: 'Wer darf Personen zur Hilfeleistung verpflichten?',
       options: {
         a: 'Nur der Einsatzleiter',
@@ -694,7 +482,7 @@ export const lesson: Lesson = {
       explanationRu: 'Только руководитель операции может обязать других лиц к оказанию помощи. Ни один другой пожарный -- ни рядовой, ни районный пожарный инспектор непосредственно на месте -- не имеет этого права.',
     },
     {
-      id: 104,
+      id: 4,
       question: 'Wer hat für die ordnungsgemäße Ausrüstung der Feuerwehr zu sorgen?',
       options: {
         a: 'Gemeinde',
@@ -709,7 +497,7 @@ export const lesson: Lesson = {
       explanationRu: 'Община обязана обеспечивать надлежащее оснащение пожарной команды, так как пожарная команда является учреждением общины. Община финансирует транспорт, оборудование и средства индивидуальной защиты.',
     },
     {
-      id: 105,
+      id: 5,
       question: 'Ab wann dürfen Feuerwehranwärter an Einsätzen teilnehmen?',
       options: {
         a: 'Truppführerausbildung muss abgeschlossen sein',
@@ -724,7 +512,7 @@ export const lesson: Lesson = {
       explanationRu: 'Должны быть выполнены три условия: завершённый базовый модуль, возраст не менее 16 лет и согласие командира. Подготовка командира звена или группового командира для этого не требуется.',
     },
     {
-      id: 106,
+      id: 6,
       question: 'Welche Pflicht besteht für Feuerwehrdienstleistende bei Alarm?',
       options: {
         a: 'Unverzüglich am Gerätehaus einfinden',
@@ -739,7 +527,7 @@ export const lesson: Lesson = {
       explanationRu: 'При тревоге каждый пожарный-доброволец должен незамедлительно прибыть к пожарному депо -- как можно скорее, без ненужных задержек. Обратного звонка в диспетчерскую или заявления в администрацию общины недостаточно.',
     },
     {
-      id: 107,
+      id: 7,
       question: 'Wer übernimmt die Lohnfortzahlung eines Arbeitnehmers bei einem Feuerwehreinsatz während der Arbeitszeit?',
       options: {
         a: 'Feuerwehr',
@@ -754,7 +542,7 @@ export const lesson: Lesson = {
       explanationRu: 'Работодатель обязан продолжать выплату зарплаты во время пожарного выезда (ст. 9 BayFwG). Пожарный не должен нести финансовых потерь. Частные работодатели могут потребовать возмещения расходов от общины.',
     },
     {
-      id: 108,
+      id: 8,
       question: 'Wer ist für die Ernennung von Dienstgraden in der Feuerwehr zuständig?',
       options: {
         a: 'Bürgermeister',
@@ -762,14 +550,14 @@ export const lesson: Lesson = {
         c: 'Vorstand der Freiwilligen Feuerwehr',
       },
       image: null,
-      correct: 'a',
+      correct: 'b',
       topic: 'Fragenkatalog',
       sectionId: 'organisation',
-      explanation: 'Die Ernennung der Dienstgrade erfolgt durch den Bürgermeister, weil die Feuerwehr eine Einrichtung der Gemeinde ist. Der Kommandant schlägt die Ernennung vor, aber die formelle Entscheidung trifft der Bürgermeister.',
-      explanationRu: 'Присвоение званий осуществляется бургомистром, так как пожарная команда является учреждением общины. Командир предлагает присвоение, но формальное решение принимает бургомистр.',
+      explanation: 'Die Ernennung der Dienstgrade erfolgt durch den Kommandanten der Feuerwehr. Er ist als Leiter der Feuerwehr für die Ernennung zuständig.',
+      explanationRu: 'Присвоение званий осуществляется командиром пожарной команды. Он как руководитель пожарной команды отвечает за присвоение званий.',
     },
     {
-      id: 109,
+      id: 9,
       question: 'Wozu ist jeder Bürger bei Wahrnehmung eines Brandes verpflichtet?',
       options: {
         a: 'Hat keine Verpflichtung',
@@ -784,7 +572,7 @@ export const lesson: Lesson = {
       explanationRu: 'Каждый гражданин обязан сообщить об обнаруженном пожаре и предпринять попытку тушения, если это возможно без существенной опасности для себя. Обязательно и то, и другое -- не только тушение или только сообщение.',
     },
     {
-      id: 110,
+      id: 10,
       question: 'Was ist bei Dienstverhinderung zu veranlassen?',
       options: {
         a: 'Es ist nichts zu veranlassen',
@@ -799,7 +587,7 @@ export const lesson: Lesson = {
       explanationRu: 'При невозможности явиться на службу -- например, по болезни или при отсутствии -- нужно отпроситься у командира или ближайшего начальника. "Ничего не предпринимать" неправильно, а районный пожарный инспектор для таких уведомлений не уполномочен.',
     },
     {
-      id: 111,
+      id: 11,
       question: 'Das Mindestalter für die Aufnahme in die Freiwillige Feuerwehr als gemeindliche Einrichtung beträgt?',
       options: {
         a: '12 Jahre',
@@ -807,14 +595,14 @@ export const lesson: Lesson = {
         c: '16 Jahre',
       },
       image: null,
-      correct: 'c',
+      correct: 'a',
       topic: 'Fragenkatalog',
       sectionId: 'rechte-pflichten',
-      explanation: 'Das Mindestalter für die Aufnahme in die Freiwillige Feuerwehr als gemeindliche Einrichtung beträgt 16 Jahre. Ab 12 Jahren kann man bereits in der Jugendfeuerwehr aktiv sein, aber erst ab 16 in der FF als Feuerwehranwärter.',
-      explanationRu: 'Минимальный возраст для вступления в добровольную пожарную команду как общинное учреждение -- 16 лет. С 12 лет можно быть в молодёжной пожарной команде, но в FF как кандидат -- только с 16.',
+      explanation: 'Das Mindestalter für die Aufnahme in die Freiwillige Feuerwehr als gemeindliche Einrichtung beträgt 12 Jahre.',
+      explanationRu: 'Минимальный возраст для вступления в добровольную пожарную команду как общинное учреждение составляет 12 лет.',
     },
     {
-      id: 112,
+      id: 12,
       question: 'Bei welchem Versicherungsträger sind Feuerwehrdienstleistende gegen Körperschäden versichert?',
       options: {
         a: 'Berufsgenossenschaft Glas- und Keramik',
@@ -829,7 +617,7 @@ export const lesson: Lesson = {
       explanationRu: 'Пожарные-добровольцы застрахованы от телесных повреждений в Коммунальном страховании от несчастных случаев Баварии (KUVB). KUVB -- носитель обязательного страхования для баварских пожарных команд, а не профессиональное объединение или страхование ответственности.',
     },
     {
-      id: 113,
+      id: 13,
       question: 'Wer ist bei der Wahl des Kommandanten wahlberechtigt?',
       options: {
         a: 'Alle Feuerwehrdienstleistenden und Feuerwehranwärter ab 16 Jahre',
@@ -844,7 +632,7 @@ export const lesson: Lesson = {
       explanationRu: 'Право голоса имеют все пожарные-добровольцы и кандидаты с 16 лет. Речь идёт об активных членах пожарной команды как общинного учреждения -- не о членах объединения и не только о руководящем составе.',
     },
     {
-      id: 114,
+      id: 14,
       question: 'Welche Arten von Feuerwehren nennt das Bayerische Feuerwehrgesetz?',
       options: {
         a: 'Bundesbahnfeuerwehr, Freiwillige Feuerwehr, Berufsfeuerwehr',
@@ -859,7 +647,7 @@ export const lesson: Lesson = {
       explanationRu: 'BayFwG различает четыре вида: добровольную, обязательную, профессиональную и заводскую пожарную команду. Железнодорожная, аэропортовая и производственная пожарные команды не упоминаются в BayFwG как отдельные виды.',
     },
     {
-      id: 115,
+      id: 15,
       question: 'Rechte des Feuerwehrdienstleistenden sind:',
       options: {
         a: 'Lohnfortzahlung durch Arbeitgeber; Versicherungsschutz bei Personen- und Sachschäden; Freistellung bei Einsätzen',
@@ -874,7 +662,7 @@ export const lesson: Lesson = {
       explanationRu: 'Три важнейших права: продолжение выплаты зарплаты работодателем, страховая защита при вреде здоровью и имуществу и освобождение от работы для выездов. "Служба только при наличии времени" и "дом отдыха" -- не закреплённые законом права.',
     },
     {
-      id: 116,
+      id: 16,
       question: 'Welche besonderen Aufgaben hat der Truppführer bei Anwendung der Unfallverhütungsvorschriften?',
       options: {
         a: 'Der Truppführer muss prüfen, welche Bestimmungen der Unfallverhütungsvorschriften den Trupp betreffen',
@@ -889,7 +677,7 @@ export const lesson: Lesson = {
       explanationRu: 'Командир звена обязан проверять, какие положения UVV касаются его звена, и обеспечивать их соблюдение. "Каждый следит за собой" неправильно -- командир звена несёт ответственность за своё звено.',
     },
     {
-      id: 117,
+      id: 17,
       question: 'Die Unfallverhütungsvorschrift (UVV) - Feuerwehren hat Gültigkeit...',
       options: {
         a: 'bei Einhaltung der Versicherungsbedingungen',
@@ -904,7 +692,7 @@ export const lesson: Lesson = {
       explanationRu: 'UVV действуют при всех видах деятельности пожарной службы: на выездах, учениях и обучении. Нет ни одной области пожарной службы, где правила предотвращения несчастных случаев не применяются.',
     },
     {
-      id: 118,
+      id: 18,
       question: 'Sie bemerken als Truppführer, dass ihr Truppmann die B-Druckschläuche falsch auswirft. Bis jetzt hat er sich noch nicht verletzt. Wie handeln sie?',
       options: {
         a: 'Ich muss ihn auf das fachgerechte Auswerfen hinweisen und überwachen',

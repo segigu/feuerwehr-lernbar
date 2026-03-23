@@ -96,31 +96,33 @@ export function renderLessonDetail(container: HTMLElement): () => void {
   );
   cards.appendChild(learnCard);
 
-  // 2. Quiz
-  const quizStats = getLessonQuizStats(lesson.id);
-  const quizBadge = quizStats
-    ? `${quizStats.correct} richtig, ${quizStats.wrong} falsch`
-    : `${lesson.questions.length} Fragen`;
+  // 2. Quiz (only if lesson has questions)
+  const quizStats = lesson.questions.length > 0 ? getLessonQuizStats(lesson.id) : null;
+  if (lesson.questions.length > 0) {
+    const quizBadge = quizStats
+      ? `${quizStats.correct} richtig, ${quizStats.wrong} falsch`
+      : `${lesson.questions.length} Fragen`;
 
-  const quizCard = createMenuCard(
-    'Quiz',
-    quizBadge,
-    'Wissen überprüfen',
-    () => {
-      const questions = getLessonQuestions(lesson);
-      // Shuffle
-      for (let i = questions.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [questions[i], questions[j]] = [questions[j], questions[i]];
+    const quizCard = createMenuCard(
+      'Quiz',
+      quizBadge,
+      'Wissen überprüfen',
+      () => {
+        const questions = getLessonQuestions(lesson);
+        // Shuffle
+        for (let i = questions.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [questions[i], questions[j]] = [questions[j], questions[i]];
+        }
+        createSession('lesson', questions, {
+          lessonId: lesson.id,
+          topicName: lesson.title,
+        });
+        navigate('quiz');
       }
-      createSession('lesson', questions, {
-        lessonId: lesson.id,
-        topicName: lesson.title,
-      });
-      navigate('quiz');
-    }
-  );
-  cards.appendChild(quizCard);
+    );
+    cards.appendChild(quizCard);
+  }
 
   // 3. Vokabeln (only if de+ru and has vocab)
   if (lang === 'de+ru' && vocab.length > 0 && lesson.ready) {

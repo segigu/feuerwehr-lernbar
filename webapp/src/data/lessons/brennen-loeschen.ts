@@ -312,220 +312,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 1,
-      question: 'Was versteht man unter Brennen?',
-      options: {
-        a: 'Eine physikalische Zustandsänderung',
-        b: 'Eine chemische Verbindung von brennbarem Stoff und Sauerstoff unter Freisetzung von Wärme und Licht',
-        c: 'Das Verdampfen einer Flüssigkeit',
-      },
-      correct: 'b',
-      topic: 'Verbrennung',
-      sectionId: 'verbrennung',
-      explanation: 'Brennen ist eine chemische Reaktion: Ein brennbarer Stoff verbindet sich mit Sauerstoff, dabei wird Energie in Form von Wärme und Licht frei. Das ist keine physikalische Zustandsänderung, sondern eine chemische Verbindung.',
-      explanationRu: 'Горение — это химическая реакция: горючее вещество соединяется с кислородом, при этом выделяется энергия в виде тепла и света. Это не физическое изменение состояния, а химическое соединение.',
-    },
-    {
-      id: 2,
-      question: 'Welche Rolle spielt Sauerstoff bei der Verbrennung?',
-      options: {
-        a: 'Er ist selbst brennbar und erzeugt die Flammen',
-        b: 'Er ist nicht brennbar, aber ohne ihn ist keine Verbrennung möglich',
-        c: 'Er kühlt den Brand ab',
-      },
-      correct: 'b',
-      topic: 'Verbrennung',
-      sectionId: 'verbrennung',
-      explanation: 'Sauerstoff selbst ist nicht brennbar, aber er ist unverzichtbar für die Verbrennung. Je besser die Mischung zwischen brennbarem Stoff und Sauerstoff, desto intensiver die Verbrennung.',
-      explanationRu: 'Кислород сам по себе не горит, но он необходим для горения. Чем лучше смешение горючего вещества с кислородом, тем интенсивнее горение.',
-    },
-    {
-      id: 3,
-      question: 'Welche Brandklasse umfasst Metallbrände?',
-      options: {
-        a: 'Brandklasse C',
-        b: 'Brandklasse F',
-        c: 'Brandklasse D',
-      },
-      correct: 'c',
-      topic: 'Brandklassen',
-      sectionId: 'brandklassen',
-      explanation: 'Brandklasse D bezeichnet Metallbrände (z. B. Aluminium, Magnesium, Natrium). Diese Brände sind extrem heiß und erfordern spezielles Metallbrandpulver oder Sand — niemals Wasser!',
-      explanationRu: 'Класс D — пожары металлов (например, алюминий, магний, натрий). Такие пожары чрезвычайно горячи и требуют специального порошка для металлов или песка — ни в коем случае не воду!',
-    },
-    {
-      id: 4,
-      question: 'Warum darf man brennendes Fett nicht mit Wasser löschen?',
-      options: {
-        a: 'Weil Wasser zu teuer ist',
-        b: 'Weil das Wasser schlagartig verdampft und eine Fettexplosion verursacht',
-        c: 'Weil Wasser das Fett nicht berühren kann',
-      },
-      correct: 'b',
-      topic: 'Löschmittel',
-      sectionId: 'brandklassen',
-      explanation: 'Brennendes Fett ist extrem heiß. Wasser verdampft beim Kontakt schlagartig — das Volumen vergrößert sich um das Tausendfache und brennendes Fett wird herausgeschleudert. Das nennt man eine Fettexplosion.',
-      explanationRu: 'Горящий жир чрезвычайно горяч. Вода при контакте мгновенно испаряется — объём увеличивается в тысячу раз, и горящий жир выбрасывается наружу. Это называется жировой взрыв.',
-    },
-    {
-      id: 5,
-      question: 'Welches Löschmittel eignet sich besonders für Flüssigkeitsbrände (Klasse B)?',
-      options: {
-        a: 'Sand',
-        b: 'Schaum',
-        c: 'Metallbrandpulver',
-      },
-      correct: 'b',
-      topic: 'Löschmittel',
-      sectionId: 'loeschmittel',
-      explanation: 'Schaum eignet sich besonders für Brandklasse B, weil er auf der Flüssigkeitsoberfläche schwimmt, den Sauerstoff abschneidet und ein Wiederzünden verhindert. Gleichzeitig kühlt das enthaltene Wasser den Brand ab.',
-      explanationRu: 'Пена особенно подходит для класса B, потому что плавает на поверхности жидкости, перекрывает кислород и предотвращает повторное воспламенение. Одновременно содержащаяся в ней вода охлаждает очаг.',
-    },
-    {
-      id: 6,
-      question: 'Was bedeutet „Ersticken" als Löschverfahren?',
-      options: {
-        a: 'Den brennenden Stoff entfernen',
-        b: 'Den Zutritt von Sauerstoff zum Brand stören oder unterbinden',
-        c: 'Den Brand unter die Zündtemperatur abkühlen',
-      },
-      correct: 'b',
-      topic: 'Löschverfahren',
-      sectionId: 'loeschverfahren',
-      explanation: 'Ersticken bedeutet, den Sauerstoffzutritt zum Brand zu stören — z. B. durch eine Löschdecke, Schaum oder CO₂. Ohne Sauerstoff kann das Feuer nicht weiterbrennen. Die anderen Verfahren sind Abkühlen und Beseitigen.',
-      explanationRu: 'Удушение означает нарушение доступа кислорода к огню — например, кошмой, пеной или CO₂. Без кислорода огонь не может гореть дальше. Другие способы — охлаждение и удаление горючего.',
-    },
-    {
-      id: 7,
-      question: 'Was unterscheidet Vollstrahl und Sprühstrahl?',
-      options: {
-        a: 'Vollstrahl hat größere Wurfweite, Sprühstrahl hat bessere Kühlwirkung',
-        b: 'Es gibt keinen Unterschied',
-        c: 'Sprühstrahl hat größere Wurfweite als Vollstrahl',
-      },
-      correct: 'a',
-      topic: 'Löschtechnik',
-      sectionId: 'loeschtechnik',
-      explanation: 'Der Vollstrahl hat eine große Wurfweite und Wurfhöhe für den Angriff auf Entfernung. Der Sprühstrahl hat dagegen eine geringe Wurfweite und Wurfhöhe, bietet aber durch die feinen Tropfen eine bessere Kühlwirkung.',
-      explanationRu: 'Сплошная струя имеет большую дальность и высоту подачи для атаки на расстоянии. Распылённая струя имеет малую дальность и высоту, но благодаря мелким каплям обеспечивает лучшее охлаждение.',
-    },
-    {
-      id: 8,
-      question: 'Wie verbreitet sich die Wärme durch aufsteigende heiße Gase?',
-      options: {
-        a: 'Durch Wärmeleitung',
-        b: 'Durch Wärmestrahlung',
-        c: 'Durch Wärmeströmung (Konvektion)',
-      },
-      correct: 'c',
-      topic: 'Wärmeausbreitung',
-      sectionId: 'waermeausbreitung',
-      explanation: 'Wärmeströmung (Konvektion) entsteht, wenn heiße Gase aufsteigen und Wärme transportieren. Deshalb breiten sich Brände in Gebäuden oft nach oben aus — heißer Rauch steigt durch Treppenhäuser und Schächte.',
-      explanationRu: 'Конвекция возникает, когда горячие газы поднимаются и переносят тепло. Именно поэтому пожары в зданиях часто распространяются вверх — горячий дым поднимается по лестничным клеткам и шахтам.',
-    },
-    {
-      id: 9,
-      question: 'Wie wirkt CO₂ als Löschmittel?',
-      options: {
-        a: 'Durch Abkühlung des Brandherds',
-        b: 'Durch Ersticken — es verdrängt den Sauerstoff',
-        c: 'Durch chemische Bindung des Brennstoffs',
-      },
-      correct: 'b',
-      topic: 'Löschmittel',
-      sectionId: 'loeschmittel',
-      explanation: 'CO₂ ist ein farbloses Gas, schwerer als Luft, das den Sauerstoff am Brandherd verdrängt und so das Feuer erstickt. Es hinterlässt keine Rückstände, wirkt aber nur in geschlossenen Räumen zuverlässig.',
-      explanationRu: 'CO₂ — бесцветный газ тяжелее воздуха, который вытесняет кислород у очага и тем самым гасит огонь. Он не оставляет следов, но надёжно работает только в закрытых помещениях.',
-    },
-    {
-      id: 10,
-      question: 'Welches Löschverfahren wird am häufigsten von der Feuerwehr eingesetzt?',
-      options: {
-        a: 'Beseitigen des brennbaren Stoffes',
-        b: 'Abkühlen unter die Mindestverbrennungstemperatur',
-        c: 'Ersticken durch Sauerstoffentzug',
-      },
-      correct: 'b',
-      topic: 'Löschverfahren',
-      sectionId: 'loeschverfahren',
-      explanation: 'Abkühlen ist das häufigste Löschverfahren der Feuerwehr. Wasser ist dafür das ideale Löschmittel, weil es viel Wärme aufnehmen kann — besonders beim Verdampfen.',
-      explanationRu: 'Охлаждение — самый распространённый способ тушения в пожарной охране. Вода — идеальное средство, потому что способна поглощать много тепла, особенно при испарении.',
-    },
-    {
-      id: 11,
-      question: 'Warum brennt ein Feuer bei Wind stärker?',
-      options: {
-        a: 'Weil der Wind die Flammen größer macht',
-        b: 'Weil der Wind frischen Sauerstoff zuführt und die Verbrennung intensiviert',
-        c: 'Weil der Wind den Brennstoff verteilt',
-      },
-      correct: 'b',
-      topic: 'Verbrennung',
-      sectionId: 'verbrennung',
-      explanation: 'Je besser die Mischung zwischen brennbarem Stoff und Sauerstoff, desto intensiver die Verbrennung. Wind führt frischen Sauerstoff zu und verbessert diese Mischung — deshalb brennt das Feuer stärker.',
-      explanationRu: 'Чем лучше смешение горючего вещества с кислородом, тем интенсивнее горение. Ветер подаёт свежий кислород и улучшает это смешение — поэтому огонь горит сильнее.',
-    },
-    {
-      id: 12,
-      question: 'Woran erkennt man, dass Wasser seine Löschwirkung erzielt hat?',
-      options: {
-        a: 'Wenn die Flammen höher werden',
-        b: 'Wenn kein dunkler Rauch, sondern nur weißer Dampf aufsteigt',
-        c: 'Wenn das Wasser auf dem Boden steht',
-      },
-      correct: 'b',
-      topic: 'Löschtechnik',
-      sectionId: 'loeschtechnik',
-      explanation: 'Wenn über dem Brandherd nur noch weißer Wasserdampf statt dunklem Rauch aufsteigt, hat das Wasser seine Wirkung getan. Dann sollte das Strahlrohr geschlossen werden, um Wasserschäden zu vermeiden.',
-      explanationRu: 'Когда над очагом поднимается только белый водяной пар вместо тёмного дыма, вода выполнила свою задачу. Тогда следует закрыть ствол, чтобы избежать водяного ущерба.',
-    },
-    {
-      id: 13,
-      question: 'Welcher Löschpulvertyp wirkt bei den Brandklassen A, B und C?',
-      options: {
-        a: 'BC-Pulver (Flammbrandpulver)',
-        b: 'ABC-Pulver (Glutbrandpulver)',
-        c: 'Metallbrandpulver',
-      },
-      correct: 'b',
-      topic: 'Löschmittel',
-      sectionId: 'loeschmittel',
-      explanation: 'ABC-Pulver (Glutbrandpulver) wirkt bei den Brandklassen A, B und C — es schmilzt auf der Glut und bildet eine Kruste. BC-Pulver wirkt nur bei B und C, Metallbrandpulver nur bei D.',
-      explanationRu: 'Порошок ABC действует при классах A, B и C — он плавится на тлеющих углях и образует корку. Порошок BC работает только при B и C, порошок для металлов — только при D.',
-    },
-    {
-      id: 14,
-      question: 'Warum breiten sich Brände in Gebäuden oft nach oben aus?',
-      options: {
-        a: 'Weil brennbare Stoffe immer oben liegen',
-        b: 'Weil heiße Gase durch Konvektion aufsteigen und Wärme nach oben transportieren',
-        c: 'Weil die Feuerwehr immer von unten löscht',
-      },
-      correct: 'b',
-      topic: 'Wärmeausbreitung',
-      sectionId: 'waermeausbreitung',
-      explanation: 'Durch Wärmeströmung (Konvektion) steigen heiße Gase und Rauch auf — durch Treppenhäuser, Lüftungskanäle und Aufzugsschächte. Deshalb sind die Stockwerke über dem Brandgeschoss besonders gefährdet.',
-      explanationRu: 'Из-за конвекции горячие газы и дым поднимаются вверх — по лестничным клеткам, вентиляционным каналам и шахтам лифтов. Поэтому этажи над очагом пожара находятся в особой опасности.',
-    },
-    {
-      id: 15,
-      question: 'Warum soll man einen Gasbrand nur löschen, wenn man die Gaszufuhr absperren kann?',
-      options: {
-        a: 'Weil Gas zu teuer ist',
-        b: 'Weil ohne Absperrung das Gas weiter ausströmt und ein explosionsfähiges Gemisch bildet',
-        c: 'Weil Gasflammen ohnehin nicht gefährlich sind',
-      },
-      correct: 'b',
-      topic: 'Brandklassen',
-      sectionId: 'brandklassen',
-      explanation: 'Wenn man einen Gasbrand löscht, ohne die Gaszufuhr zu stoppen, strömt das Gas weiter aus und bildet ein unsichtbares, explosionsfähiges Gemisch. Die kontrollierte Flamme ist weniger gefährlich als eine mögliche Explosion.',
-      explanationRu: 'Если потушить газовый пожар, не перекрыв подачу газа, газ продолжит выходить и образует невидимую взрывоопасную смесь. Контролируемое пламя менее опасно, чем возможный взрыв.',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 101,
+      id: 19,
       question: 'Ein brennbarer gasförmiger Stoff gehört zur Brandklasse…',
       options: {
         a: 'A',
@@ -540,7 +328,7 @@ export const lesson: Lesson = {
       explanationRu: 'Газообразные вещества, такие как пропан, бутан и ацетилен, относятся к классу C. Класс A — твёрдые тлеющие вещества, класс B — жидкие или плавящиеся.',
     },
     {
-      id: 102,
+      id: 20,
       question: 'Welche Aussage über brennbare Flüssigkeiten ist richtig?',
       options: {
         a: 'Es brennen die Dämpfe und die Flüssigkeit selbst',
@@ -555,7 +343,7 @@ export const lesson: Lesson = {
       explanationRu: 'У горючих жидкостей горят только пары, а не сама жидкость. Бензин, например, испаряется уже при комнатной температуре — эти пары образуют с воздухом воспламеняемую смесь.',
     },
     {
-      id: 103,
+      id: 21,
       question: 'Wie kann sich die Verbrennungswärme ausbreiten?',
       options: {
         a: 'Durch Wärmestrahlung, Wärmedurchfluss, Wärmeströmung',
@@ -570,7 +358,7 @@ export const lesson: Lesson = {
       explanationRu: 'Три способа распространения тепла: тепловое излучение (электромагнитные волны), конвекция (восходящие горячие газы) и теплопроводность (через твёрдые материалы). Термины «Wärmedurchfluss» и «Wärmeübergang» — некорректные обозначения.',
     },
     {
-      id: 104,
+      id: 22,
       question: 'Welche Stoffe gehören zur Brandklasse F?',
       options: {
         a: 'Feste Stoffe',
@@ -585,7 +373,7 @@ export const lesson: Lesson = {
       explanationRu: 'Класс F — пожары пищевых жиров и масел во фритюрницах и жаровнях. Этот класс введён, потому что горящий жир особенно опасен и требует специальных средств тушения. Твёрдые вещества = класс A, жидкости = класс B.',
     },
     {
-      id: 105,
+      id: 23,
       question: 'Wodurch kann ein Feuer gelöscht werden?',
       options: {
         a: 'Entzug von Stickstoff',
@@ -600,7 +388,7 @@ export const lesson: Lesson = {
       explanationRu: 'Охлаждение (отвод тепла) — один из трёх способов тушения: температуру горящего вещества снижают ниже минимальной температуры горения. Азот не играет роли при горении, а подача кислорода усилила бы огонь.',
     },
     {
-      id: 106,
+      id: 24,
       question: 'Welche Voraussetzungen sind für das Brennen notwendig?',
       options: {
         a: 'Es muss nur ein brennbarer Stoff vorhanden sein',
@@ -615,7 +403,7 @@ export const lesson: Lesson = {
       explanationRu: 'Для горения необходимы все три элемента треугольника горения одновременно: горючее вещество, кислород и тепло (энергия воспламенения). Если отсутствует хотя бы один — огня не будет.',
     },
     {
-      id: 107,
+      id: 25,
       question: 'Welche Stoffe gehören zur Brandklasse B?',
       options: {
         a: 'Benzin, Diesel, Petroleum',
@@ -630,7 +418,7 @@ export const lesson: Lesson = {
       explanationRu: 'Класс B — жидкие или плавящиеся вещества: бензин, дизель, керосин. Дерево, бумага, уголь — класс A (твёрдые тлеющие), пропан, бутан, ацетилен — класс C (газы).',
     },
     {
-      id: 108,
+      id: 26,
       question: 'Welche Stoffe gehören zur Brandklasse A?',
       options: {
         a: 'Holz, Papier, Kohle',
@@ -645,7 +433,7 @@ export const lesson: Lesson = {
       explanationRu: 'Класс A — твёрдые вещества, образующие тлеющие угли: дерево, бумага, уголь. Эти материалы при горении тлеют и могут воспламениться повторно. Вода — предпочтительное средство тушения.',
     },
     {
-      id: 109,
+      id: 27,
       question: 'Welcher Feuerlöscher ist für Brände fester glutbildender Stoffe besonders geeignet?',
       options: {
         a: 'Gaslöscher',
@@ -660,7 +448,7 @@ export const lesson: Lesson = {
       explanationRu: 'Водный огнетушитель особенно подходит для класса A (твёрдые тлеющие вещества), потому что вода охлаждает угли ниже температуры горения. Порошковый огнетушитель BC работает только при B и C и для тлеющих пожаров не годится.',
     },
     {
-      id: 110,
+      id: 28,
       question: 'Wer ist für den feuerwehrtechnisch richtigen Einsatz des befohlenen Löschmittels verantwortlich?',
       options: {
         a: 'Der Truppführer',
@@ -675,7 +463,7 @@ export const lesson: Lesson = {
       explanationRu: 'Командир звена отвечает за технически правильное применение назначенного средства тушения и выполнение техники тушения. Командир отделения выбирает средство, а командир звена обеспечивает правильное применение.',
     },
     {
-      id: 111,
+      id: 29,
       question: 'Wer ist für die Auswahl des einzusetzenden Löschmittels zuständig?',
       options: {
         a: 'Gruppenführer oder Einheitsführer',
@@ -690,7 +478,7 @@ export const lesson: Lesson = {
       explanationRu: 'Выбор средства тушения — задача командира отделения (руководителя подразделения). Он оценивает обстановку, определяет класс пожара и решает, какое средство применять. Командир звена затем технически реализует решение.',
     },
     {
-      id: 112,
+      id: 30,
       question: 'Wer ist für die Durchführung der Löschtechnik des Trupps verantwortlich?',
       options: {
         a: 'Der Truppführer',
@@ -705,7 +493,7 @@ export const lesson: Lesson = {
       explanationRu: 'Командир звена отвечает за выполнение техники тушения. Он определяет, как ведётся ствол, какой вид струи применяется и когда открывать или закрывать. Пожарный звена помогает, но ответственности не несёт.',
     },
     {
-      id: 113,
+      id: 31,
       question: 'Kann es durch falschen Strahlrohreinsatz bei der Brandbekämpfung zu einer Vergrößerung der Gefahr kommen?',
       options: {
         a: 'Ja, z. B. Fettexplosion oder Staubexplosion',
@@ -720,7 +508,7 @@ export const lesson: Lesson = {
       explanationRu: 'Неправильное применение ствола может значительно усилить опасность. Вода на горящий жир вызывает жировой взрыв, в запылённой среде может произойти пылевой взрыв. Поэтому правильная техника тушения жизненно важна.',
     },
     {
-      id: 114,
+      id: 32,
       question: 'Wie verhält sich Wasser beim Verdampfen?',
       options: {
         a: 'Sehr starke Volumenvergrößerung',
@@ -735,8 +523,8 @@ export const lesson: Lesson = {
       explanationRu: 'При испарении объём воды увеличивается примерно в 1700 раз — очень сильное увеличение. Этот пар к тому же вытесняет кислород, создавая эффект удушения. Именно поэтому вода так эффективна как средство тушения.',
     },
     {
-      id: 115,
-      question: 'Untrügliches Zeichen dafür, dass das Löschmittel Wasser seine Wirkung getan hat, ist die Dampfbildung über dem Brandherd. Es gilt „Strahlrohr schließen", wenn...',
+      id: 33,
+      question: 'Untrügliches Zeichen dafür, dass das Löschmittel Wasser seine Wirkung getan hat, ist die Dampfbildung über dem Brandherd. Es gilt „Strahlrohr schließen”, wenn...',
       options: {
         a: 'kein dunkler Rauch, sondern nur weißer Wasserdampf über dem Brandherd aufsteigt',
         b: 'sich Rauch und Dampf über dem Brandherd bilden',
@@ -750,7 +538,7 @@ export const lesson: Lesson = {
       explanationRu: 'Когда тёмный дым перестал подниматься и виден только белый водяной пар, вода выполнила свою задачу. Тогда следует закрыть ствол, чтобы избежать водяного ущерба и лишнего парообразования.',
     },
     {
-      id: 116,
+      id: 34,
       question: 'Welchen Nachteil hat der Sprühstrahl gegenüber dem Vollstrahl?',
       options: {
         a: 'Der Sprühstrahl hat eine geringe Wurfweite und Wurfhöhe',

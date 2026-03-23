@@ -339,208 +339,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 1,
-      question: 'Welchen Durchmesser hat eine Feuerwehrleine?',
-      options: { a: '8 mm', b: '10 mm', c: '12 mm' },
-      correct: 'b',
-      topic: 'Feuerwehrleine',
-      sectionId: 'feuerwehrleine',
-      explanation: 'Die Feuerwehrleine nach DIN 14920 hat einen Durchmesser von 10 mm. Sie ist 30 m lang und hat eine Festigkeit von 14 kN.',
-      explanationRu: 'Пожарная верёвка по DIN 14920 имеет диаметр 10 мм. Её длина — 30 м, прочность — 14 кН.',
-    },
-    {
-      id: 2,
-      question: 'Welche Festigkeit (Mindestzugkraft) hat eine Feuerwehrleine?',
-      options: { a: '10 kN', b: '14 kN', c: '20 kN' },
-      correct: 'b',
-      topic: 'Feuerwehrleine',
-      sectionId: 'feuerwehrleine',
-      explanation: 'Die Feuerwehrleine hat eine Mindestfestigkeit von 14 kN (ca. 1,4 Tonnen). Dieser Wert ist in DIN 14920 festgelegt.',
-      explanationRu: 'Минимальная прочность пожарной верёвки — 14 кН (ок. 1,4 тонны). Это значение определено стандартом DIN 14920.',
-    },
-    {
-      id: 3,
-      question: 'Was ist der Unterschied zwischen Halten und Rückhalten?',
-      options: {
-        a: 'Beim Halten kann die Person zur Kante gehen, beim Rückhalten nicht',
-        b: 'Es gibt keinen Unterschied',
-        c: 'Rückhalten ist nur mit Gerätesatz Absturzsicherung erlaubt',
-      },
-      correct: 'a',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'rueckhalten',
-      explanation: 'Beim Halten kann die Person bis zur Kante gehen, wird aber von oben durch die Leine gesichert. Beim Rückhalten wird die Leine so kurz gehalten, dass die Person die Absturzkante gar nicht erst erreichen kann (Mindestabstand 2 m).',
-      explanationRu: 'При удержании человек может подойти к краю, но его страхуют верёвкой сверху. При обратном удержании верёвку держат так коротко, что человек вообще не может достичь края падения (минимум 2 м).',
-    },
-    {
-      id: 4,
-      question: 'Wozu dient der Halbmastwurf (HMS) beim Sichern?',
-      options: {
-        a: 'Zum Verbinden zweier Leinen',
-        b: 'Als Bremsknoten an der D-Öse des Haltegurtes des Sichernden',
-        c: 'Zum Befestigen der Leine am Anschlagpunkt',
-      },
-      correct: 'b',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'halten',
-      explanation: 'Der Halbmastwurf wird als Bremsknoten an der D-Öse des Haltegurtes des Sichernden eingesetzt. Er ermöglicht es, die Leine kontrolliert nachzugeben oder zu blockieren.',
-      explanationRu: 'Полумачтовый узел используется как тормозной узел на D-проушине пояса страхующего. Он позволяет контролируемо выдавать или блокировать верёвку.',
-    },
-    {
-      id: 5,
-      question: 'Was ist ein Brustbund?',
-      options: {
-        a: 'Ein Teil des Feuerwehr-Haltegurtes',
-        b: 'Eine Oberkörpersicherung aus der Feuerwehrleine für den zu Sichernden',
-        c: 'Ein Werkzeug zum Befestigen von Leinen',
-      },
-      correct: 'b',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'halten',
-      explanation: 'Der Brustbund ist eine Oberkörpersicherung, die aus der Feuerwehrleine geknüpft wird. Der zu sichernde Feuerwehrangehörige wird damit eingebunden — die Last verteilt sich auf Brust und Rücken.',
-      explanationRu: 'Грудная обвязка — это страховка для верхней части тела, которая вяжется из пожарной верёвки. Ею обвязывают страхуемого — нагрузка распределяется на грудь и спину.',
-    },
-    {
-      id: 6,
-      question: 'Was bedeutet das Vier-Augen-Prinzip bei der Absturzsicherung?',
-      options: {
-        a: 'Die Ausrüstung muss vier Ösen haben',
-        b: 'Mindestens zwei Personen müssen den Anschlagpunkt gemeinsam prüfen',
-        c: 'Vier Personen müssen beim Sichern anwesend sein',
-      },
-      correct: 'b',
-      topic: 'Anschlagpunkte',
-      sectionId: 'anschlagpunkte',
-      explanation: 'Das Vier-Augen-Prinzip bedeutet, dass mindestens zwei Personen den Anschlagpunkt unabhängig beurteilen müssen. Eine Person allein könnte sich irren oder etwas übersehen.',
-      explanationRu: 'Принцип четырёх глаз означает, что минимум два человека должны независимо оценить точку крепления. Один человек может ошибиться или что-то упустить.',
-    },
-    {
-      id: 7,
-      question: 'Warum darf die Feuerwehrleine nicht über scharfe Kanten geführt werden?',
-      options: {
-        a: 'Weil sie dann nass werden könnte',
-        b: 'Weil sie dort beschädigt werden und im Ernstfall reißen könnte',
-        c: 'Weil der Knoten sich dann löst',
-      },
-      correct: 'b',
-      topic: 'Anschlagpunkte',
-      sectionId: 'anschlagpunkte',
-      explanation: 'Scharfe Kanten können die Feuerwehrleine beschädigen — Scheuerstellen und Schnitte schwächen die Struktur. Unter Belastung könnte die Leine an der beschädigten Stelle reißen.',
-      explanationRu: 'Острые кромки могут повредить верёвку — потёртости и надрезы ослабляют структуру. Под нагрузкой верёвка может порваться в повреждённом месте.',
-    },
-    {
-      id: 8,
-      question: 'Wofür eignet sich das Rückhalten besonders gut?',
-      options: {
-        a: 'Für Arbeiten in großer Höhe an Masten',
-        b: 'Für Arbeiten auf stabilen Flachdächern ohne Einbruchgefahr',
-        c: 'Für Arbeiten auf maroden Dächern',
-      },
-      correct: 'b',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'rueckhalten',
-      explanation: 'Rückhalten eignet sich besonders für stabile Flachdächer, wo keine Gefahr des Einbrechens besteht. Bei maroden Dächern wäre Rückhalten wirkungslos, weil die Gefahr von der Fläche selbst ausgeht, nicht vom Rand.',
-      explanationRu: 'Обратное удержание особенно подходит для прочных плоских крыш без опасности провала. На ветхих крышах оно бесполезно, потому что опасность исходит от самой поверхности, а не от края.',
-    },
-    {
-      id: 9,
-      question: 'Was gehört zum Feuerwehr-Haltegurt nach DIN 14927?',
-      options: {
-        a: 'Gurt mit Zweidornschnalle und Karabinerhaken mit Multifunktionsöse',
-        b: 'Auffanggurt mit Bandfalldämpfer',
-        c: 'Brustgurt mit Seilklemme',
-      },
-      correct: 'a',
-      topic: 'Haltegurt',
-      sectionId: 'haltegurt',
-      explanation: 'Der Feuerwehr-Haltegurt nach DIN 14927 besteht aus einem Gurt mit Zweidornschnalle zur Größenanpassung und einem Karabinerhaken mit Multifunktionsöse. Er dient zum Halten/Rückhalten — nicht als Auffanggurt.',
-      explanationRu: 'Удерживающий пояс по DIN 14927 состоит из ленты с двухшпеньковой пряжкой для регулировки размера и карабина с многофункциональной проушиной. Он для удержания/обратного удержания — не для остановки падения.',
-    },
-    {
-      id: 10,
-      question: 'Was ist die Aufgabe der D-Öse am Feuerwehr-Haltegurt?',
-      options: {
-        a: 'Befestigung des Helms',
-        b: 'Aufnahme für den Halbmastwurf und Anschlagpunkt für die Sicherungsleine',
-        c: 'Verbindung des Haltegurtes mit der Einsatzjacke',
-      },
-      correct: 'b',
-      topic: 'Haltegurt',
-      sectionId: 'haltegurt',
-      explanation: 'Die D-Öse dient als Anschlagpunkt am Haltegurt. Der Sichernde führt den Halbmastwurf an der D-Öse seines Haltegurtes, um die Sicherungsleine kontrolliert zu führen.',
-      explanationRu: 'D-образная проушина служит точкой крепления на поясе. Страхующий вяжет полумачтовый узел на D-проушине своего пояса, чтобы контролируемо вести верёвку.',
-    },
-    {
-      id: 11,
-      question: 'Wo muss der Anschlagpunkt beim Halten liegen?',
-      options: {
-        a: 'Unterhalb des zu Sichernden',
-        b: 'Auf gleicher Höhe mit dem Gesicherten',
-        c: 'Oberhalb des zu Sichernden',
-      },
-      correct: 'c',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'halten',
-      explanation: 'Beim Halten muss der Anschlagpunkt oberhalb der zu sichernden Person liegen. Wird die Leine von oben geführt, wirkt die Schwerkraft in Richtung der Sicherung — die Person kann nicht tiefer fallen als der Punkt erlaubt.',
-      explanationRu: 'При удержании точка крепления должна быть выше страхуемого. Когда верёвка идёт сверху, сила тяжести действует в направлении страховки — человек не может упасть ниже этой точки.',
-    },
-    {
-      id: 12,
-      question: 'Welche Norm regelt den Feuerwehr-Haltegurt?',
-      options: { a: 'DIN 14920', b: 'DIN 14927', c: 'DIN EN 361' },
-      correct: 'b',
-      topic: 'Haltegurt',
-      sectionId: 'haltegurt',
-      explanation: 'Der Feuerwehr-Haltegurt ist nach DIN 14927 (in Verbindung mit DIN EN 358) genormt. DIN 14920 gilt dagegen für die Feuerwehrleine, DIN EN 361 für Auffanggurte.',
-      explanationRu: 'Удерживающий пояс стандартизирован по DIN 14927 (в сочетании с DIN EN 358). DIN 14920 — для пожарной верёвки, DIN EN 361 — для обвязок для остановки падения.',
-    },
-    {
-      id: 13,
-      question: 'Was sind geeignete Anschlagpunkte?',
-      options: {
-        a: 'Regenrinnen und dünne Rohre',
-        b: 'Tragende Bauteile wie massive Stahlträger oder Betonpfeiler',
-        c: 'Bewegliche Gegenstände und Holzgeländer',
-      },
-      correct: 'b',
-      topic: 'Anschlagpunkte',
-      sectionId: 'anschlagpunkte',
-      explanation: 'Geeignete Anschlagpunkte sind tragende Bauteile: massive Stahlträger, Betonpfeiler, fest verankerte Geländer. Regenrinnen, dünne Rohre und bewegliche Gegenstände sind ungeeignet, weil sie der Belastung nicht standhalten.',
-      explanationRu: 'Подходящие точки крепления — несущие конструкции: массивные стальные балки, бетонные колонны, прочно закреплённые перила. Водосточные желоба, тонкие трубы и подвижные предметы непригодны, так как не выдержат нагрузку.',
-    },
-    {
-      id: 14,
-      question: 'Warum muss die Leine beim Halten immer straff auf Zug gehalten werden?',
-      options: {
-        a: 'Damit der Gesicherte sich nicht frei bewegen kann',
-        b: 'Damit bei einem Rutschen kein freier Fall entsteht, für den weder Leine noch Haltegurt ausgelegt sind',
-        c: 'Damit der Knoten nicht aufgeht',
-      },
-      correct: 'b',
-      topic: 'Sicherungsmethoden',
-      sectionId: 'halten',
-      explanation: 'Wenn die Leine durchhängt und die Person rutscht, entsteht ein kurzer freier Fall. Die Feuerwehrleine und der Haltegurt sind nicht für Sturzbelastungen konstruiert — deshalb muss die Leine immer straff gehalten werden.',
-      explanationRu: 'Если верёвка провисает и человек поскользнётся, возникнет короткий свободный полёт. Пожарная верёвка и удерживающий пояс не рассчитаны на ударные нагрузки при падении — поэтому верёвка должна быть всегда натянута.',
-    },
-    {
-      id: 15,
-      question: 'Wann wird der Gerätesatz Absturzsicherung benötigt?',
-      options: {
-        a: 'Immer beim Arbeiten auf Dächern',
-        b: 'Nur bei Höhen über 20 Meter',
-        c: 'Wenn ein freier Fall nicht ausgeschlossen werden kann und Auffangen notwendig ist',
-      },
-      correct: 'c',
-      topic: 'Feuerwehrleine',
-      sectionId: 'feuerwehrleine',
-      explanation: 'Der Gerätesatz Absturzsicherung (nach DIN 14800-17) wird benötigt, wenn ein freier Fall möglich ist und eine Person aufgefangen werden muss. Beim einfachen Halten/Rückhalten genügen Feuerwehrleine und Haltegurt.',
-      explanationRu: 'Комплект защиты от падения (по DIN 14800-17) нужен, когда возможен свободный полёт и необходимо задержать падающего. При обычном удержании/обратном удержании достаточно пожарной верёвки и пояса.',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 101,
+      id: 163,
       question: 'Welche Länge hat eine Feuerwehrleine?',
       options: {
         a: '30 Meter',
@@ -555,7 +355,7 @@ export const lesson: Lesson = {
       explanationRu: 'Пожарная верёвка по DIN 14920 имеет стандартную длину 30 метров. Её диаметр — 10 мм, прочность — 14 кН.',
     },
     {
-      id: 102,
+      id: 164,
       question: 'Welche Verwendung hat der Feuerwehr-Haltegurt?',
       options: {
         a: 'Sichern der Gefahr des Stürzens durch Halten/Rückhalten',
@@ -570,7 +370,7 @@ export const lesson: Lesson = {
       explanationRu: 'Удерживающий пояс служит для защиты от опасности падения методами удержания и обратного удержания. Он не является обвязкой для остановки падения и не может использоваться для задержания уже происходящего падения.',
     },
     {
-      id: 103,
+      id: 165,
       question: 'Welche Sicherungsmethoden kennen Sie?',
       options: {
         a: 'Halten/Rückhalten',
@@ -585,7 +385,7 @@ export const lesson: Lesson = {
       explanationRu: 'Два метода страховки в пожарной охране — удержание (Halten) и обратное удержание (Rückhalten). При удержании человека страхуют сверху, при обратном удержании он не может достичь края падения (минимум 2 м).',
     },
     {
-      id: 104,
+      id: 166,
       question: 'Welchen Zweck hat die Feuerwehrleine?',
       options: {
         a: 'Rettung; Selbstrettung; Sicherung/Aufziehen von Geräten',
@@ -600,7 +400,7 @@ export const lesson: Lesson = {
       explanationRu: 'Три основных назначения пожарной верёвки: спасение людей (через грудную обвязку), самоспасение в аварийных ситуациях и транспортировка/страховка оборудования (подъём рукавов). Для ограждения используют многоцелевую верёвку.',
     },
     {
-      id: 105,
+      id: 167,
       question: 'Nennen Sie den Mindestabstand zur Absturzkante beim Rückhalten:',
       options: {
         a: 'Zwei Meter',
@@ -615,7 +415,7 @@ export const lesson: Lesson = {
       explanationRu: 'При обратном удержании минимальное расстояние до края падения — ок. 2 метра. Эта дистанция учитывает, что человек при спотыкании ещё проходит какое-то расстояние, прежде чем верёвка его остановит.',
     },
     {
-      id: 106,
+      id: 168,
       question: 'Was ist beim Sichern einer Person zu beachten?',
       options: {
         a: 'Der Anschlagpunkt ist oberhalb der zu sichernden Person anzubringen',
@@ -630,7 +430,7 @@ export const lesson: Lesson = {
       explanationRu: 'При страховке (удержании) точка крепления должна быть выше страхуемого, чтобы сила тяжести действовала в направлении страховки. Верёвка должна быть натянута — провисание опасно, так как может возникнуть короткий свободный полёт.',
     },
     {
-      id: 107,
+      id: 169,
       question: 'Wie weit darf man beim Rückhalten an die Absturzkante heran treten?',
       options: {
         a: 'Ein Abstand von zwei Metern zur Absturzkante ist einzuhalten',
@@ -645,7 +445,7 @@ export const lesson: Lesson = {
       explanationRu: 'При обратном удержании необходимо соблюдать расстояние 2 метра до края. Смысл обратного удержания именно в том, что человек не может достичь края — поэтому даже кратковременные работы у края не допускаются.',
     },
     {
-      id: 108,
+      id: 170,
       question: 'Wann darf eine Feuerwehrleine nicht eingesetzt werden?',
       options: {
         a: 'Wenn ein Absturz nicht ausgeschlossen werden kann',
@@ -660,7 +460,7 @@ export const lesson: Lesson = {
       explanationRu: 'Пожарную верёвку нельзя использовать, когда падение (свободный полёт) не исключено. Она не является аварийной верёвкой и не имеет амортизации. Для удержания, обратного удержания и самоспасения она подходит.',
     },
     {
-      id: 109,
+      id: 171,
       question: 'Darf der Feuerwehr-Haltegurt als Auffanggurt benutzt werden?',
       options: {
         a: 'Nein, ein Feuerwehr-Haltegurt darf grundsätzlich nicht als Auffanggurt genutzt werden',
@@ -675,7 +475,7 @@ export const lesson: Lesson = {
       explanationRu: 'Удерживающий пояс категорически нельзя использовать как обвязку для остановки падения. Он рассчитан только на удержание и обратное удержание. При свободном падении возникающие нагрузки могут привести к тяжёлым травмам — для этого нужна настоящая обвязка с амортизатором.',
     },
     {
-      id: 110,
+      id: 172,
       question: 'Kann das Halten mit Feuerwehr-Haltegurt und Feuerwehrleine durchgeführt werden?',
       options: {
         a: 'Ja, es genügt eine Feuerwehrleine und der Feuerwehr-Haltegurt',
@@ -690,7 +490,7 @@ export const lesson: Lesson = {
       explanationRu: 'Для удержания достаточно удерживающего пояса и пожарной верёвки. Поскольку при правильном удержании свободное падение исключено (верёвка натянута, точка крепления выше), комплект защиты от падения не нужен.',
     },
     {
-      id: 111,
+      id: 173,
       question: 'Was ist beim Rückhalten zu beachten?',
       options: {
         a: 'Ein Absturz wird ausgeschlossen, weil die Absturzkante durch das Rückhalten nicht erreicht werden kann',

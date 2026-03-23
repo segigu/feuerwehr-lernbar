@@ -427,160 +427,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 1,
-      question: 'Wie viele Personen gehören zu einem Trupp (1/2)?',
-      options: { a: '2 Personen', b: '3 Personen', c: '6 Personen' },
-      correct: 'b',
-      topic: 'Besatzung',
-      sectionId: 'besatzung',
-      explanation: 'Ein Trupp 1/2 besteht aus 3 Personen: einem Truppführer und zwei Feuerwehrangehörigen. Die Bezeichnung „1/2" bedeutet 1 Führungskraft + 2 weitere.',
-      explanationRu: 'Звено 1/2 состоит из 3 человек: командир и двое пожарных. Обозначение «1/2» означает 1 руководитель + 2 бойца.',
-    },
-    {
-      id: 2,
-      question: 'Welches Fahrzeug hat einen Löschwasserbehälter mit 500 Litern?',
-      options: { a: 'TSF', b: 'TSF-W', c: 'MLF' },
-      correct: 'b',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'kleinere-loeschfahrzeuge',
-      explanation: 'Das TSF-W hat einen Löschwasserbehälter mit 500 Litern. Das „W" steht für Wasser. Das TSF hat gar keinen Tank, das MLF hat 600–1.000 Liter.',
-      explanationRu: 'TSF-W оснащён баком на 500 литров. Буква «W» означает воду. У TSF бака нет вовсе, у MLF — 600–1 000 литров.',
-    },
-    {
-      id: 3,
-      question: 'Wofür steht die Abkürzung FPN?',
-      options: { a: 'Feuerwehrpumpennorm', b: 'Feuerlöschkreiselpumpe Normaldruck', c: 'Fahrzeugpumpe Niederdruck' },
-      correct: 'b',
-      topic: 'Pumpen',
-      sectionId: 'pumpen',
-      explanation: 'FPN steht für Feuerlöschkreiselpumpe Normaldruck. Es ist eine fest im Fahrzeug eingebaute Kreiselpumpe, die vom Fahrzeugmotor angetrieben wird.',
-      explanationRu: 'FPN расшифровывается как Feuerlöschkreiselpumpe Normaldruck — стационарный центробежный насос нормального давления, работающий от двигателя автомобиля.',
-    },
-    {
-      id: 4,
-      question: 'Was ist der Hauptunterschied zwischen TSF und TSF-W?',
-      options: { a: 'Das TSF-W hat eine größere Besatzung', b: 'Das TSF-W hat einen Löschwassertank und Schnellangriff', c: 'Das TSF-W hat eine stärkere Pumpe' },
-      correct: 'b',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'kleinere-loeschfahrzeuge',
-      explanation: 'Das TSF-W ergänzt das TSF um einen Löschwasserbehälter (500 l) und eine Schnellangriffseinrichtung. Besatzung (Staffel 1/5) und Pumpe (PFPN 10-1000) sind gleich.',
-      explanationRu: 'TSF-W дополняет TSF баком (500 л) и устройством быстрой атаки. Экипаж (отделение 1/5) и насос (PFPN 10-1000) одинаковы.',
-    },
-    {
-      id: 5,
-      question: 'Wie viele Pressluftatmer befinden sich auf einem TLF?',
-      options: { a: '4 PA', b: '6 PA', c: '2 PA' },
-      correct: 'c',
-      topic: 'Tanklöschfahrzeuge',
-      sectionId: 'tankloeschfahrzeuge',
-      explanation: 'Auf Tanklöschfahrzeugen befinden sich nur 2 Pressluftatmer, weil die Besatzung nur aus einem Trupp (1/2 = 3 Personen) besteht. Das reicht für einen Atemschutztrupp.',
-      explanationRu: 'На автоцистернах всего 2 дыхательных аппарата, так как экипаж — только звено (1/2 = 3 человека). Этого хватает на одну пару в СИЗОД.',
-    },
-    {
-      id: 6,
-      question: 'Welches Fahrzeug führt einen Schaum-Wasserwerfer mit?',
-      options: { a: 'TLF 2000', b: 'LF 20', c: 'TLF 4000' },
-      correct: 'c',
-      topic: 'Tanklöschfahrzeuge',
-      sectionId: 'tankloeschfahrzeuge',
-      explanation: 'Das TLF 4000 verfügt über einen Schaum-Wasserwerfer und Schaummittel. Der Werfer ist auf dem Dach montiert und gibt Wasser oder Schaum unter hohem Druck ab.',
-      explanationRu: 'TLF 4000 оснащён пенно-водяным лафетным стволом и запасом пенообразователя. Ствол установлен на крыше и подаёт воду или пену под высоким давлением.',
-    },
-    {
-      id: 7,
-      question: 'Was bedeutet FPN 10-2000?',
-      options: { a: '2.000 l Tankvolumen bei 10 bar', b: '2.000 l/min Nennförderleistung bei 10 bar Nennförderdruck', c: '2.000 m Förderstrecke bei 10 bar' },
-      correct: 'b',
-      topic: 'Pumpen',
-      sectionId: 'pumpen',
-      explanation: 'FPN 10-2000 bedeutet: Feuerlöschkreiselpumpe Normaldruck mit einer Nennförderleistung von 2.000 l/min bei einem Nennförderdruck von 10 bar. Die erste Zahl ist der Druck, die zweite die Förderleistung.',
-      explanationRu: 'FPN 10-2000 означает: центробежный пожарный насос нормального давления с номинальной подачей 2 000 л/мин при номинальном давлении 10 бар. Первое число — давление, второе — производительность.',
-    },
-    {
-      id: 8,
-      question: 'Wie viel Löschwasser führt ein HLF 20 mit?',
-      options: { a: '2.000 l', b: '1.600 l', c: '1.000 l' },
-      correct: 'b',
-      topic: 'Sonderfahrzeuge',
-      sectionId: 'hlf-und-sonder',
-      explanation: 'Das HLF 20 hat einen Tank von 1.600 Litern — weniger als das LF 20 (2.000 l), weil die erweiterte THL-Ausrüstung zusätzlichen Platz braucht.',
-      explanationRu: 'У HLF 20 бак на 1 600 литров — меньше, чем у LF 20 (2 000 л), потому что расширенное спасательное оборудование занимает дополнительное место.',
-    },
-    {
-      id: 9,
-      question: 'Welches Fahrzeug hat zwei Pumpen (FPN und PFPN)?',
-      options: { a: 'LF 10', b: 'HLF 20', c: 'LF 20 KatS' },
-      correct: 'c',
-      topic: 'Sonderfahrzeuge',
-      sectionId: 'hlf-und-sonder',
-      explanation: 'Das LF 20 KatS hat als einziges Löschfahrzeug zwei Pumpen: eine fest eingebaute FPN 10-2000 und eine tragbare PFPN 10-2000. Das ermöglicht unabhängige Wasserförderung.',
-      explanationRu: 'LF 20 KatS — единственный пожарный автомобиль с двумя насосами: стационарным FPN 10-2000 и переносным PFPN 10-2000. Это позволяет вести перекачку воды независимо.',
-    },
-    {
-      id: 10,
-      question: 'Welche Leiter wird auf einem LF 20 mitgeführt?',
-      options: { a: '4-teilige Steckleiter', b: '3-teilige Schiebleiter', c: '2-teilige Steckleiter' },
-      correct: 'b',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'mittlere-loeschfahrzeuge',
-      explanation: 'Das LF 20 führt eine 3-teilige Schiebleiter mit, während die meisten anderen Löschfahrzeuge (TSF, TSF-W, MLF, LF 10) eine 4-teilige Steckleiter tragen.',
-      explanationRu: 'LF 20 несёт 3-секционную выдвижную лестницу, тогда как большинство других пожарных автомобилей (TSF, TSF-W, MLF, LF 10) оснащены 4-секционной штекерной лестницей.',
-    },
-    {
-      id: 11,
-      question: 'Was ist ein TSA?',
-      options: { a: 'Ein Tragkraftspritzenfahrzeug mit Allradantrieb', b: 'Ein Tragkraftspritzenanhänger ohne eigene Besatzung', c: 'Ein Tanklöschfahrzeug mit Schnellangriff' },
-      correct: 'b',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'kleinere-loeschfahrzeuge',
-      explanation: 'Der TSA (Tragkraftspritzenanhänger) ist ein Anhänger — kein eigenständiges Fahrzeug. Er hat keine eigene Besatzung und wird von einem anderen Fahrzeug gezogen.',
-      explanationRu: 'TSA (Tragkraftspritzenanhänger) — это прицеп, а не самостоятельный автомобиль. У него нет собственного экипажа; его буксирует другая машина.',
-    },
-    {
-      id: 12,
-      question: 'Wie viel Löschwasser hat ein LF 10?',
-      options: { a: '600 l', b: '1.000 l', c: '1.200 l' },
-      correct: 'c',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'mittlere-loeschfahrzeuge',
-      explanation: 'Das LF 10 führt einen Löschwassertank mit 1.200 Litern mit. Das ist mehr als beim MLF (600–1.000 l), aber weniger als beim LF 20 (2.000 l).',
-      explanationRu: 'LF 10 имеет бак на 1 200 литров. Это больше, чем у MLF (600–1 000 л), но меньше, чем у LF 20 (2 000 л).',
-    },
-    {
-      id: 13,
-      question: 'Welche Besatzung hat ein LF 20?',
-      options: { a: 'Trupp 1/2', b: 'Staffel 1/5', c: 'Gruppe 1/8' },
-      correct: 'c',
-      topic: 'Löschfahrzeuge',
-      sectionId: 'mittlere-loeschfahrzeuge',
-      explanation: 'Das LF 20 hat eine Gruppe (1/8 = 9 Personen) als Besatzung. Alle Löschgruppenfahrzeuge (LF) und Hilfeleistungslöschfahrzeuge (HLF) haben eine Gruppe.',
-      explanationRu: 'У LF 20 экипаж — группа (1/8 = 9 человек). Все групповые пожарные автомобили (LF) и универсальные (HLF) укомплектованы группой.',
-    },
-    {
-      id: 14,
-      question: 'Was hat das LF 20 KatS, was andere Löschfahrzeuge nicht haben?',
-      options: { a: 'Drehleiter', b: 'Stromerzeuger und Lichtmast', c: 'Hubarbeitsbühne' },
-      correct: 'b',
-      topic: 'Sonderfahrzeuge',
-      sectionId: 'hlf-und-sonder',
-      explanation: 'Das LF 20 KatS ist speziell mit einem Stromerzeuger, einem Lichtmast und 300 m B-Schläuchen ausgestattet, die während der Fahrt verlegt werden können.',
-      explanationRu: 'LF 20 KatS специально оснащён генератором, осветительной мачтой и 300 м рукавов B, которые можно прокладывать на ходу.',
-    },
-    {
-      id: 15,
-      question: 'Warum hat ein HLF einen kleineren Löschwassertank als ein LF?',
-      options: { a: 'Weil das HLF leichter sein soll', b: 'Weil die erweiterte THL-Ausrüstung zusätzlichen Platz braucht', c: 'Weil das HLF kein Wasser benötigt' },
-      correct: 'b',
-      topic: 'Sonderfahrzeuge',
-      sectionId: 'hlf-und-sonder',
-      explanation: 'Die erweiterte THL-Ausrüstung (hydraulischer Rettungssatz usw.) braucht Platz. Deshalb ist der Löschwassertank beim HLF kleiner: HLF 10 hat 1.000 l statt 1.200 l (LF 10), HLF 20 hat 1.600 l statt 2.000 l (LF 20).',
-      explanationRu: 'Расширенное спасательное оборудование (гидравлический инструмент и т. д.) занимает место. Поэтому бак у HLF меньше: HLF 10 — 1 000 л вместо 1 200 л (LF 10), HLF 20 — 1 600 л вместо 2 000 л (LF 20).',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 101,
+      id: 35,
       question: 'Welches Feuerwehrfahrzeug hat eine Löschgruppe als Besatzung?',
       options: {
         a: 'TSF',
@@ -595,7 +443,7 @@ export const lesson: Lesson = {
       explanationRu: 'HLF (универсальный пожарно-спасательный автомобиль) укомплектован группой (1/8 = 9 человек). У TSF — отделение (1/5), у TLF — только звено (1/2).',
     },
     {
-      id: 102,
+      id: 36,
       question: 'Welche Steckleiter befindet sich in der Regel auf dem Dach eines TSF-W?',
       options: {
         a: 'Einteilige Steckleiter',
@@ -610,7 +458,7 @@ export const lesson: Lesson = {
       explanationRu: 'На крыше TSF-W установлена 4-секционная штекерная лестница. Она обеспечивает высоту спасения ок. 8 метров (2-й этаж).',
     },
     {
-      id: 103,
+      id: 37,
       question: 'Welches Feuerlöschfahrzeug besitzt keinen Löschwassertank?',
       options: {
         a: 'LF 20',
@@ -625,7 +473,7 @@ export const lesson: Lesson = {
       explanationRu: 'TSF (Tragkraftspritzenfahrzeug) не имеет бака для воды. Воду всегда приходится забирать из внешнего источника. TSF-W имеет 500 л, MLF — 600–1 000 л.',
     },
     {
-      id: 104,
+      id: 38,
       question: 'Auf welchem Feuerlöschfahrzeug ist die Ausstattung zur erweiterten technischen Hilfeleistung verladen?',
       options: {
         a: 'LF',
@@ -640,7 +488,7 @@ export const lesson: Lesson = {
       explanationRu: 'HLF (универсальный пожарно-спасательный автомобиль) несёт расширенное спасательное оборудование — например, гидравлический инструмент (ножницы, расширитель) для работы при ДТП.',
     },
     {
-      id: 105,
+      id: 39,
       question: 'Für wieviele Feuerwehrdienstleistende ist die Beladung von TSA, TSF und TSF-W ausgelegt?',
       options: {
         a: 'Für einen Trupp 1/1',
@@ -655,7 +503,7 @@ export const lesson: Lesson = {
       explanationRu: 'Оборудование TSA, TSF и TSF-W рассчитано на группу 1/8 (9 человек). При этом экипаж TSF и TSF-W — только отделение (1/5 = 6 человек): снаряжения хватает на большее число бойцов, чем помещается в машину.',
     },
     {
-      id: 106,
+      id: 40,
       question: 'Wieviele Atemschutzgeräte werden üblicherweise auf Feuerlöschfahrzeugen (Tanklöschfahrzeuge ausgenommen) mit Atemschutzausstattung mitgeführt?',
       options: {
         a: '2',
@@ -670,7 +518,7 @@ export const lesson: Lesson = {
       explanationRu: 'На пожарных автомобилях тушения (TSF, TSF-W, MLF, LF, HLF) обычно возят 4 дыхательных аппарата. Только на автоцистернах (TLF) — 2, так как экипаж меньше.',
     },
     {
-      id: 107,
+      id: 41,
       question: 'Für wieviele Feuerwehrdienstleistende bietet die Atemschutzausstattung von Löschfahrzeugen (Tanklöschfahrzeuge ausgenommen) üblicherweise Schutz?',
       options: {
         a: 'Für einen Trupp',
@@ -685,7 +533,7 @@ export const lesson: Lesson = {
       explanationRu: '4 дыхательных аппарата хватает на 2 звена (по 2 человека в СИЗОД на звено). Хотя в звене 3 человека, под защитой органов дыхания работают только командир и боец — водитель остаётся у машины.',
     },
     {
-      id: 108,
+      id: 42,
       question: 'Was bedeutet die Bezeichnung LF10?',
       options: {
         a: 'Löschgruppenfahrzeug mit einer zulässigen Gesamtmasse von 10 t',
@@ -700,7 +548,7 @@ export const lesson: Lesson = {
       explanationRu: 'LF 10 означает: групповой пожарный автомобиль со стационарным насосом FPN 10-1000 (1 000 л/мин при 10 бар). «10» относится к насосу, а не к массе или объёму бака.',
     },
     {
-      id: 109,
+      id: 43,
       question: 'Was bedeutet die Bezeichnung FPN 10-1000?',
       options: {
         a: 'Feuerlöschkreiselpumpe Normaldruck mit einer Nennförderstrecke von 1.000 m bei einem Nennförderdruck von 10 bar',
@@ -715,7 +563,7 @@ export const lesson: Lesson = {
       explanationRu: 'FPN 10-1000 = центробежный насос нормального давления, подающий при 10 бар номинального давления 1 000 литров в минуту. Речь о литрах в минуту, а не о метрах подачи.',
     },
     {
-      id: 110,
+      id: 44,
       question: 'Wie wird die Tragkraftspritze TS (tragbare Feuerlöschkreiselpumpe) nach Norm bezeichnet?',
       options: {
         a: 'FPN (Fire Pump Normal Pressure)',
@@ -730,7 +578,7 @@ export const lesson: Lesson = {
       explanationRu: 'Мотопомпа по стандарту называется PFPN — Portable Fire Pump Normal Pressure. Нормативное обозначение на английском. FPN — стационарный насос, а не переносной.',
     },
     {
-      id: 111,
+      id: 45,
       question: 'Welches Feuerwehrfahrzeug hat eine Staffel als Besatzung?',
       options: {
         a: 'HLF',
@@ -745,7 +593,7 @@ export const lesson: Lesson = {
       explanationRu: 'TSF укомплектован отделением (1/5 = 6 человек). TSF-W и MLF тоже выезжают с отделением. У HLF — группа (1/8), у RW — звено (1/2).',
     },
     {
-      id: 112,
+      id: 46,
       question: 'Welches Feuerwehrfahrzeug hat einen Trupp als Besatzung?',
       options: {
         a: 'TSF',
@@ -760,7 +608,7 @@ export const lesson: Lesson = {
       explanationRu: 'Аварийно-спасательный автомобиль (RW) укомплектован звеном (1/2 = 3 человека). Все автоцистерны (TLF) тоже выезжают со звеном. У TSF — отделение, у HLF — группа.',
     },
     {
-      id: 113,
+      id: 47,
       question: 'Welche Aussage trifft auf ein MLF zu?',
       options: {
         a: 'Besatzung für eine Gruppe; Beladung für eine Gruppe; 1200 l Löschwasserbehälter',
@@ -775,7 +623,7 @@ export const lesson: Lesson = {
       explanationRu: 'У MLF экипаж — отделение (1/5), оборудование на группу (1/8). Бак — 600–1 000 л (не 1 200 л), на крыше — 4-секционная штекерная лестница (не выдвижная).',
     },
     {
-      id: 114,
+      id: 48,
       question: 'Welche aktuellen Fahrzeugtypen gehören zur Gruppe der Feuerlöschfahrzeuge?',
       options: {
         a: 'GW-L 1; TSF; RW',
@@ -790,7 +638,7 @@ export const lesson: Lesson = {
       explanationRu: 'LF 10, HLF 10 и LF 20 относятся к группе пожарных автомобилей тушения. GW-L — грузовой автомобиль, RW — аварийно-спасательный, DLK — автолестница, WLF — мультилифт, ELW — штабной — всё это не пожарные автомобили тушения.',
     },
     {
-      id: 115,
+      id: 49,
       question: 'Welche Verwendung hat das LF 20 KatS?',
       options: {
         a: 'Rettung von Personen aus Höhen',
@@ -805,7 +653,7 @@ export const lesson: Lesson = {
       explanationRu: 'LF 20 KatS универсален: тушение, быстрая подача воды, перекачка на большие расстояния и технические спасательные работы. Спасение с высоты — задача автолестниц и подъёмников.',
     },
     {
-      id: 116,
+      id: 50,
       question: 'Welche Besatzung hat ein TLF 3000?',
       options: {
         a: 'Staffel 1/5',
@@ -820,7 +668,7 @@ export const lesson: Lesson = {
       explanationRu: 'Экипаж TLF 3000 — звено (1/2 = 3 человека). Все автоцистерны (TLF 2000, 3000, 4000) укомплектованы звеном.',
     },
     {
-      id: 117,
+      id: 51,
       question: 'Wie viel Liter Löschwasser führt ein TLF 4000 mit?',
       options: {
         a: '400 l Löschwasser',
@@ -835,7 +683,7 @@ export const lesson: Lesson = {
       explanationRu: 'TLF 4000 перевозит 4 000 литров воды — число в названии указывает объём бака. Это крупнейшая автоцистерна.',
     },
     {
-      id: 118,
+      id: 52,
       question: 'Wie viel Liter Löschwasser führt ein TSF mit?',
       options: {
         a: '500 l Löschwasser',
@@ -849,66 +697,8 @@ export const lesson: Lesson = {
       explanation: 'Das TSF führt kein Löschwasser mit — es hat keinen Löschwassertank. Das TSF-W (mit „W" für Wasser) hat dagegen 500 Liter. Die 600 l wären der Mindesttank eines MLF.',
       explanationRu: 'TSF не перевозит воду — у него нет бака. TSF-W (с буквой «W» — Wasser) оснащён баком на 500 литров. 600 л — это минимальный бак MLF.',
     },
-    // Alternative Antriebe questions (from Kap 13)
     {
-      id: 16,
-      question: 'Welche Eigenschaft unterscheidet LPG (Flüssiggas) von CNG (Erdgas)?',
-      options: {
-        a: 'LPG ist leichter als Luft, CNG schwerer',
-        b: 'LPG ist schwerer als Luft und sammelt sich in Senken, CNG ist leichter und steigt auf',
-        c: 'Beide Gase sind gleich schwer wie Luft',
-      },
-      correct: 'b',
-      topic: 'Alternative Antriebe',
-      sectionId: 'alternative-antriebe',
-      explanation: 'LPG (Propan/Butan) ist schwerer als Luft und sammelt sich in Senken und Gruben. CNG (Methan) ist leichter als Luft und steigt nach oben. Das beeinflusst die Gefahrenbeurteilung erheblich.',
-      explanationRu: 'LPG (пропан/бутан) тяжелее воздуха и скапливается в низинах и ямах. CNG (метан) легче воздуха и поднимается вверх. Это существенно влияет на оценку опасности.',
-    },
-    {
-      id: 17,
-      question: 'Wie lange muss man nach Deaktivierung eines Hybridsystems auf den Spannungsabfall warten?',
-      options: {
-        a: 'Ca. 1 Minute',
-        b: 'Ca. 5 Minuten',
-        c: 'Ca. 15 Minuten',
-      },
-      correct: 'b',
-      topic: 'Alternative Antriebe',
-      sectionId: 'alternative-antriebe',
-      explanation: 'Nach Deaktivierung des Hybridsystems dauert der Spannungsabfall ca. 5 Minuten. Erst danach ist ein sicheres Arbeiten an den Hochvoltkomponenten möglich.',
-      explanationRu: 'После деактивации гибридной системы спад напряжения занимает ок. 5 минут. Только после этого безопасна работа с высоковольтными компонентами.',
-    },
-    {
-      id: 18,
-      question: 'Was kennzeichnen orangefarbene Kabel im Motorraum eines Fahrzeugs?',
-      options: {
-        a: 'Den Airbag-Kreislauf',
-        b: 'Hochvoltkomponenten eines Hybrid- oder Elektrofahrzeugs',
-        c: 'Die Bordelektrik des Dieselmotors',
-      },
-      correct: 'b',
-      topic: 'Alternative Antriebe',
-      sectionId: 'alternative-antriebe',
-      explanation: 'Orangefarbene Kabel kennzeichnen Hochvoltkomponenten bei Hybrid- und Elektrofahrzeugen. Sie dürfen auf keinen Fall berührt oder geöffnet werden — Lebensgefahr durch Hochspannung.',
-      explanationRu: 'Оранжевые кабели обозначают высоковольтные компоненты гибридных и электрических автомобилей. Их ни в коем случае нельзя трогать или вскрывать — смертельная опасность от высокого напряжения.',
-    },
-    {
-      id: 19,
-      question: 'Was muss bei Austritt von Elektrolyt-Gel aus einer Hybrid-Batterie getragen werden?',
-      options: {
-        a: 'Nur die übliche PSA',
-        b: 'Schutzbrille und Chemikalienschutzhandschuhe',
-        c: 'Vollständiger Chemikalienschutzanzug',
-      },
-      correct: 'b',
-      topic: 'Alternative Antriebe',
-      sectionId: 'alternative-antriebe',
-      explanation: 'Bei Austritt von Elektrolyt-Gel sind Schutzbrille und Chemikalienschutzhandschuhe erforderlich. Die Batteriesäure wird mit Chemikalienbinder aufgenommen.',
-      explanationRu: 'При утечке электролитного геля необходимы защитные очки и химзащитные перчатки. Батарейную кислоту собирают химическим сорбентом.',
-    },
-    // Alternative Antriebe catalog questions
-    {
-      id: 120,
+      id: 193,
       question: 'Welche Erkennungsmöglichkeit von außen besteht bei einem Fahrzeug, das mit Flüssiggas betrieben wird?',
       options: {
         a: 'Von außen nicht erkennbar',
@@ -923,7 +713,7 @@ export const lesson: Lesson = {
       explanationRu: 'Газовые автомобили можно распознать по надписям LPG, BiFuel, Flüssiggas или Autogas. Утверждение «снаружи не распознать» неверно — подсказки есть. Прямоугольная крышка бака — не типичный признак.',
     },
     {
-      id: 121,
+      id: 194,
       question: 'Welche alternative Antriebe werden derzeit in der Fahrzeugtechnik verwendet?',
       options: {
         a: 'Diesel; Benzin; Biodiesel',
@@ -938,7 +728,7 @@ export const lesson: Lesson = {
       explanationRu: 'Альтернативные приводы — это природный газ (CNG), сжиженный газ (LPG) и гибридный привод. Дизель и бензин — обычные двигатели, фотовольтаика и биогаз не используются как автомобильные приводы.',
     },
     {
-      id: 122,
+      id: 195,
       question: 'Wo kann man Erkennungshinweise auf alternative Antriebstechnik an einem PKW finden?',
       options: {
         a: 'Es gibt keine Erkennungshinweise auf alternative Antriebstechnik an einem PKW',
@@ -953,7 +743,7 @@ export const lesson: Lesson = {
       explanationRu: 'Признаки альтернативного привода можно найти в трёх местах: спасательная карта (под солнцезащитным козырьком), внутренняя сторона крышки бака (второй заливной патрубок) и моторный отсек (например, оранжевые кабели у гибридов/электро).',
     },
     {
-      id: 123,
+      id: 196,
       question: 'Welche besonderen Maßnahmen sind an einem verunfallten gasbetriebenen PKW (LPG oder CNG) erforderlich?',
       options: {
         a: 'Es sind keine besonderen Maßnahmen erforderlich',

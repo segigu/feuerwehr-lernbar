@@ -170,66 +170,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions
     {
-      id: 10,
-      question: 'Warum soll die Einsatzstelle nach Bränden so wenig wie möglich verändert werden?',
-      options: {
-        a: 'Weil die Feuerwehr nicht zuständig für Aufräumarbeiten ist',
-        b: 'Wegen der Brandursachenermittlung durch Polizei und Brandermittler',
-        c: 'Um Kosten für die Versicherung zu sparen',
-      },
-      correct: 'b',
-      topic: 'Einsatzende',
-      sectionId: 'einsatzende',
-      explanation: 'Die Einsatzstelle muss für die Brandursachenermittlung erhalten bleiben. Aufräumarbeiten können wichtige Spuren zerstören. Die Einsatzstelle ist die „Visitenkarte" der Feuerwehr.',
-      explanationRu: 'Место пожара должно быть сохранено для установления причины возгорания. Уборка может уничтожить важные улики. Место вызова — «визитная карточка» пожарной службы.',
-    },
-    {
-      id: 11,
-      question: 'Welches Signal bedeutet „Gefahr — Alles zurück!"?',
-      options: {
-        a: 'Dreimal Hupen',
-        b: 'Pfeifsignal',
-        c: 'Funkmeldung',
-      },
-      correct: 'b',
-      topic: 'Einsatzgrundsätze',
-      sectionId: 'eintreffen-einsatz',
-      explanation: 'Das Pfeifsignal bedeutet „Gefahr – Alles zurück!". Jeder, der es hört, muss es wiederholen und zum Sammelplatz (Verteiler/Fahrzeug) gehen.',
-      explanationRu: 'Сигнал свистком означает «Опасность — всем назад!». Каждый, кто его слышит, обязан повторить и направиться к месту сбора (разветвление/автомобиль).',
-    },
-    {
-      id: 12,
-      question: 'Was ist eine Tröpfcheninfektion?',
-      options: {
-        a: 'Infektion durch Insektenstiche',
-        b: 'Übertragung von Erregern durch Husten, Niesen oder Ansprechen',
-        c: 'Infektion durch kontaminiertes Wasser',
-      },
-      correct: 'b',
-      topic: 'Erkrankung',
-      sectionId: 'einsatzende',
-      explanation: 'Bei einer Tröpfcheninfektion werden Krankheitserreger durch Husten, Niesen oder Ansprechen übertragen — also durch feinste Tröpfchen in der Atemluft.',
-      explanationRu: 'При капельной инфекции возбудители передаются через кашель, чихание или разговор — мельчайшими каплями в воздухе.',
-    },
-    {
-      id: 15,
-      question: 'Welchen Weg soll man nach dem Einsatz nach Hause nehmen?',
-      options: {
-        a: 'Den schönsten Weg',
-        b: 'Den kürzesten Weg',
-        c: 'Den Weg über das Krankenhaus zur Kontrolle',
-      },
-      correct: 'b',
-      topic: 'Einsatzende',
-      sectionId: 'einsatzende',
-      explanation: 'Der Heimweg nach dem Einsatz soll auf dem kürzesten Weg erfolgen, weil nur auf dem direkten Weg Versicherungsschutz besteht. Umwege sind nicht versichert.',
-      explanationRu: 'Путь домой после вызова должен быть кратчайшим, потому что страховка действует только на прямом маршруте. Объезды не застрахованы.',
-    },
-    // Catalog questions
-    {
-      id: 101,
+      id: 108,
       question: 'Worauf achten Sie bei Fahrzeugen, die zum Einsatz aus der Fahrzeughalle fahren?',
       options: {
         a: 'Vollständige Besatzung',
@@ -244,11 +186,11 @@ export const lesson: Lesson = {
       explanationRu: 'Запрещено запрыгивать на уже тронувшиеся машины. В суматохе тревоги есть опасность соскользнуть и попасть под колёса.',
     },
     {
-      id: 102,
+      id: 109,
       question: 'Warum müssen Sie ihrem Einheitsführer bei der Mannschaftseinteilung während der Anfahrt mitteilen, wenn ihre Einsatzbereitschaft z. B. durch eine Erkältung beeinträchtigt ist?',
       options: {
         a: 'Ich muss es dem Einheitsführer nicht mitteilen, weil ich erwarten kann, dass er meine verminderte Einsatzfähigkeit selbst erkennt',
-        b: 'Nur so kann der Einheitsführer die Einsatzfähigkeit jedes Feuerwehrdienstleistenden bei der Einteilung berücksichtigent',
+        b: 'Nur so kann der Einheitsführer die Einsatzfähigkeit jedes Feuerwehrdienstleistenden bei der Einteilung berücksichtigen',
         c: 'Damit er Sie nicht als Gruppenführer einteilt',
       },
       image: null,
@@ -259,7 +201,7 @@ export const lesson: Lesson = {
       explanationRu: 'Только если руководитель проинформирован об ограничениях, он сможет учесть реальную боеспособность каждого при распределении. Сам он этого заметить не может.',
     },
     {
-      id: 103,
+      id: 110,
       question: 'Zu welcher Fahrzeugseite hin wird die Mannschaft bei Eintreffen an der Einsatzstelle im Regelfall absitzen, wenn der Einheitsführer keine anderen Anweisungen gibt?',
       options: {
         a: 'Zur verkehrszugewandten Seite',
@@ -267,14 +209,14 @@ export const lesson: Lesson = {
         c: 'Alle Feuerwehrdienstleistenden steigen auf der ihrem Sitzplatz nächstgelegenen Fahrzeugseite aus',
       },
       image: null,
-      correct: 'c',
+      correct: 'b',
       topic: 'Fragenkatalog',
       sectionId: 'eintreffen-einsatz',
-      explanation: 'Im Regelfall steigen alle Feuerwehrdienstleistenden auf der ihrem Sitzplatz nächstgelegenen Fahrzeugseite aus, sofern der Einheitsführer keine anderen Anweisungen gibt.',
-      explanationRu: 'По умолчанию все пожарные выходят на ту сторону автомобиля, которая ближайшая к их сиденью, если руководитель подразделения не даёт других указаний.',
+      explanation: 'Im Regelfall sitzt die Mannschaft zur verkehrsabgewandten Seite ab, um sich vor Gefahren durch den fließenden Verkehr zu schützen.',
+      explanationRu: 'По умолчанию личный состав высаживается на сторону, противоположную потоку транспорта, чтобы защититься от опасностей движущегося транспорта.',
     },
     {
-      id: 104,
+      id: 111,
       question: 'Wie verhalten Sie sich, wenn Sie den Einsatzbefehl des Einheitsführers nicht richtig verstanden haben?',
       options: {
         a: 'Ich bestätige mit „Verstanden Ende!“',
@@ -289,7 +231,7 @@ export const lesson: Lesson = {
       explanationRu: 'При непонятном приказе нужно немедленно переспросить. Сказать «Понял, конец!», не поняв приказа — опасная ошибка, она может привести к неправильным действиям.',
     },
     {
-      id: 105,
+      id: 112,
       question: 'Welche Einsatzgrundsätze gelten beim Vorgehen eines Angriffstrupps?',
       options: {
         a: 'Trupp teilt sich immer auf und jeder führt seine Aufgaben eigenständig durch',
@@ -304,7 +246,7 @@ export const lesson: Lesson = {
       explanationRu: 'Звено всегда остаётся вместе — командир и пожарный никогда не разделяются. Собственная безопасность имеет высший приоритет. Доклады даёт командир звена, а не только пожарный.',
     },
     {
-      id: 106,
+      id: 113,
       question: 'Wie verhalten Sie sich als Truppführer, wenn Einsturzgefahr besteht?',
       options: {
         a: 'Ein Hinweis an den Einheitsführer ist ausreichend',
@@ -319,8 +261,8 @@ export const lesson: Lesson = {
       explanationRu: 'При угрозе обрушения все три действия выполняются одновременно: предупредить пожарного, укрыться под прочными конструкциями (дверные/оконные перемычки), обеспечить отступление и доложить руководителю.',
     },
     {
-      id: 107,
-      question: 'An der Einsatzstelle ertönt das Signal „Gefahr – Alles zurück!" Wie verhalten Sie sich?',
+      id: 114,
+      question: 'An der Einsatzstelle ertönt das Signal „Gefahr – Alles zurück!“ Wie verhalten Sie sich?',
       options: {
         a: 'Es reicht völlig aus, wenn ich nur das Signal wiederhole',
         b: 'Signal wiederholen, Sammelplatz am Fahrzeug aufsuchen, Meldung beim Einheitsführer',
@@ -334,7 +276,7 @@ export const lesson: Lesson = {
       explanationRu: 'При свистке необходимы три шага: повторить сигнал (чтобы все услышали), идти к месту сбора (автомобиль/разветвление) и доложить руководителю. Одного повторения сигнала недостаточно.',
     },
     {
-      id: 108,
+      id: 115,
       question: 'Warum wird nach Einsätzen eine Einsatznachbesprechung durchgeführt?',
       options: {
         a: 'Um Truppführer, die sich falsch verhalten haben, vor der gesamten Mannschaft zu tadeln',
@@ -349,11 +291,11 @@ export const lesson: Lesson = {
       explanationRu: 'Разбор служит конструктивному обучению: выявить ошибки, улучшить действия и распознать травмирующие ситуации. Речь не о наказании отдельных товарищей.',
     },
     {
-      id: 109,
+      id: 116,
       question: 'Wie verhalten Sie sich als Wassertruppmann beim Eintreffen an der Einsatzstelle?',
       options: {
         a: 'Ich springe sofort aus dem Fahrzeug und suche eine Wasserentnahmestelle, denn Wasser wird für den Feuerwehreinsatz immer dringend benötigt',
-        b: 'Auf den Einsatzbefehl des Einheitsführer warten, Ruhe bewahren und keine unüberlegten Aktionen durchführen',
+        b: 'Auf den Einsatzbefehl des Einheitsführers warten, Ruhe bewahren und keine unüberlegten Aktionen durchführen',
         c: 'Ich trete in jedem Fall hinter dem Fahrzeug an',
       },
       image: null,
@@ -364,7 +306,7 @@ export const lesson: Lesson = {
       explanationRu: 'При прибытии: сохранять спокойствие, оставаться у машины и ждать приказа руководителя. Никаких необдуманных действий — даже если вода нужна срочно.',
     },
     {
-      id: 112,
+      id: 119,
       question: 'Wie erfolgt die Übertragung von Krankheitserregern bei einer Tröpfcheninfektion?',
       options: {
         a: 'Durch den Kontakt mit Körperflüssigkeiten eines Verletzten (z. B. Blut, Erbrochenes)',
@@ -379,7 +321,7 @@ export const lesson: Lesson = {
       explanationRu: 'При капельной инфекции возбудители передаются через кашель, чихание или разговор — мельчайшие капли попадают в воздух. Контакт с кровью — это контактная инфекция.',
     },
     {
-      id: 113,
+      id: 120,
       question: 'Wie werden Kanülen nach Gebrauch entsorgt?',
       options: {
         a: 'Zusammen mit dem Schrott der Unfallfahrzeuge',
@@ -394,7 +336,7 @@ export const lesson: Lesson = {
       explanationRu: 'Использованные канюли утилизируются в специальных контейнерах для острых отходов — никогда в обычный мусор. Это обязанность не только службы скорой помощи.',
     },
     {
-      id: 115,
+      id: 122,
       question: 'Wie werden stark verschmutzte Geräte nach Einsatzende von der Einsatzstelle zum Feuerwehrhaus transportiert?',
       options: {
         a: 'Im Mannschaftsraum des Löschfahrzeugs',
@@ -409,7 +351,7 @@ export const lesson: Lesson = {
       explanationRu: 'Сильно загрязнённое оборудование перевозится в пластиковом мешке или герметичном контейнере — никогда открыто в кабине, чтобы избежать контаминации.',
     },
     {
-      id: 117,
+      id: 124,
       question: 'Wie kann ich mich vor der Gefahr durch Erkrankung/ Ansteckung schützen?',
       options: {
         a: 'Immer Atemschutz tragen',

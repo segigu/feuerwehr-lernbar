@@ -434,221 +434,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // ── Custom questions (1–15) ──────────────────────────────────
     {
-      id: 1,
-      question: 'Welche Schlaucharten unterscheidet die Feuerwehr?',
-      options: {
-        a: 'Druckschläuche, Druckschläuche S und Saugschläuche',
-        b: 'Saugschläuche und Gartenschläuche',
-        c: 'Nur Druckschläuche in verschiedenen Größen',
-      },
-      correct: 'a',
-      topic: 'Schläuche',
-      sectionId: 'schlaeuche',
-      explanation: 'Die Feuerwehr unterscheidet drei Grundtypen: Druckschläuche (falt-/rollbar, für Löschmittel unter Druck), Druckschläuche S (formbeständig, Schnellangriff) und Saugschläuche (formbeständig, zum Ansaugen aus Gewässern).',
-      explanationRu: 'Пожарная охрана различает три основных типа: напорные рукава (складные, для подачи под давлением), напорные рукава S (жёсткие, быстрое нападение) и всасывающие рукава (жёсткие, забор воды из водоёмов).',
-    },
-    {
-      id: 2,
-      question: 'Was kennzeichnet einen Druckschlauch S?',
-      options: {
-        a: 'Er ist nur für Saugbetrieb geeignet',
-        b: 'Er ist formbeständig und wird für den Schnellangriff verwendet',
-        c: 'Er hat den größten Durchmesser aller Schläuche',
-      },
-      correct: 'b',
-      topic: 'Schläuche',
-      sectionId: 'schlaeuche',
-      explanation: 'Druckschläuche S sind formbeständig — sie behalten ihre runde Form auch ohne Innendruck. Sie sind fest auf einer Haspel im Fahrzeug montiert und ermöglichen den Schnellangriff.',
-      explanationRu: 'Напорные рукава S сохраняют форму — остаются круглыми без внутреннего давления. Они намотаны на катушку в машине и позволяют быстро начать тушение.',
-    },
-    {
-      id: 3,
-      question: 'Welche Kupplungsarten gibt es bei der Feuerwehr?',
-      options: {
-        a: 'Nur Schlauchkupplungen',
-        b: 'Schlauchkupplung, Festkupplung, Blindkupplung und Übergangsstück',
-        c: 'Nur Blindkupplungen und Übergangsstücke',
-      },
-      correct: 'b',
-      topic: 'Kupplungen',
-      sectionId: 'kupplungen',
-      explanation: 'Die Feuerwehr verwendet vier Kupplungsarten: Schlauchkupplung (drehbar am Schlauch), Festkupplung (fest am Gerät), Blindkupplung (verschließt offene Anschlüsse) und Übergangsstück (verbindet verschiedene Größen: A-B, B-C, C-D).',
-      explanationRu: 'Пожарная охрана использует четыре типа головок: рукавная (вращающаяся), неподвижная (на устройстве), заглушка (закрывает открытые входы) и переходник (соединяет разные размеры: A-B, B-C, C-D).',
-    },
-    {
-      id: 4,
-      question: 'Wodurch wird die Abdichtung zwischen zwei Kupplungen erreicht?',
-      options: {
-        a: 'Durch Schraubgewinde',
-        b: 'Durch Dicht- oder Saugringe',
-        c: 'Durch Klebeband',
-      },
-      correct: 'b',
-      topic: 'Kupplungen',
-      sectionId: 'kupplungen',
-      explanation: 'Die Abdichtung zwischen zwei Kupplungen erfolgt durch Dicht- oder Saugringe. Diese Gummiringe werden in die Kupplung eingelegt und verhindern das Austreten von Wasser an der Verbindungsstelle.',
-      explanationRu: 'Герметичность между двумя головками обеспечивается уплотнительными или всасывающими кольцами. Эти резиновые кольца вставляются в головку и предотвращают утечку воды в месте соединения.',
-    },
-    {
-      id: 5,
-      question: 'Wozu dient der Saugkorb?',
-      options: {
-        a: 'Zur Wasserentnahme aus Unterflurhydranten',
-        b: 'Zur Wasserentnahme aus offenen Gewässern — er schützt die Pumpe vor Fremdkörpern',
-        c: 'Zum Verschließen von Schlauchleitungen',
-      },
-      correct: 'b',
-      topic: 'Wasserentnahme',
-      sectionId: 'wasserentnahme',
-      explanation: 'Der Saugkorb sitzt am Ende der Saugleitung und wird in ein offenes Gewässer eingetaucht. Er wirkt als Sieb und verhindert, dass Steine, Schmutz oder andere Fremdkörper in die Pumpe gelangen.',
-      explanationRu: 'Всасывающая сетка устанавливается на конце всасывающей линии и опускается в водоём. Она работает как фильтр и не пропускает камни, грязь и другие предметы в насос.',
-    },
-    {
-      id: 6,
-      question: 'In welcher Reihenfolge werden die Abgänge am Verteiler zugeordnet?',
-      options: {
-        a: 'Links = 3. Rohr, Mitte = 1. Rohr, Rechts = 2. Rohr',
-        b: 'Links = 1. Rohr, Rechts = 2. Rohr, Mitte = 3. Rohr',
-        c: 'Links = 2. Rohr, Rechts = 1. Rohr, Mitte = 3. Rohr',
-      },
-      correct: 'b',
-      topic: 'Löschmittelfortleitung',
-      sectionId: 'fortleitung',
-      explanation: 'Die Reihenfolge am Verteiler ist festgelegt: Links ist das 1. Rohr, rechts das 2. Rohr und die Mitte das 3. Rohr. Die Abgänge müssen immer langsam geöffnet und geschlossen werden, um Druckstöße zu vermeiden.',
-      explanationRu: 'Порядок выходов распределителя фиксирован: левый — 1-й ствол, правый — 2-й ствол, средний — 3-й ствол. Выходы всегда нужно открывать и закрывать медленно, чтобы избежать гидроударов.',
-    },
-    {
-      id: 7,
-      question: 'Welchen Vorteil bietet der Stützkrümmer am B-Strahlrohr?',
-      options: {
-        a: 'Er erhöht die Wassermenge',
-        b: 'Er reduziert die Bedienung von 3 auf 2 Personen',
-        c: 'Er verlängert die Reichweite des Strahls',
-      },
-      correct: 'b',
-      topic: 'Löschmittelfortleitung',
-      sectionId: 'fortleitung',
-      explanation: 'Der Stützkrümmer leitet den Rückstoß des B-Strahlrohrs in den Boden ab. Dadurch sind nur noch 2 statt 3 Personen nötig, um das Strahlrohr sicher zu bedienen.',
-      explanationRu: 'Опорное колено отводит отдачу B-ствола в землю. Благодаря этому для безопасной работы со стволом нужны 2 человека вместо 3.',
-    },
-    {
-      id: 8,
-      question: 'Welche drei Stellungen hat ein Mehrzweckstrahlrohr?',
-      options: {
-        a: 'Vollstrahl, Halbstrahl, Sprühstrahl',
-        b: 'Vollstrahl, geschlossen, Sprühstrahl',
-        c: 'Sprühstrahl, Nebel, geschlossen',
-      },
-      correct: 'b',
-      topic: 'Strahlrohre',
-      sectionId: 'strahlrohre',
-      explanation: 'Ein Mehrzweckstrahlrohr hat genau drei Stellungen: Vollstrahl (gebündelter Wasserstrahl mit großer Reichweite), geschlossen (kein Wasser) und Sprühstrahl (fein verteiltes Wasser für Kühlung und Eigenschutz).',
-      explanationRu: 'Комбинированный ствол имеет ровно три положения: компактная струя (сфокусированная, большая дальность), закрыто (без воды) и распылённая струя (мелкораспылённая вода для охлаждения и самозащиты).',
-    },
-    {
-      id: 9,
-      question: 'Wie groß ist die Wasserabgabe eines BM-Strahlrohrs mit Mundstück bei 5 bar?',
-      options: {
-        a: 'ca. 200 l/min',
-        b: 'ca. 400 l/min',
-        c: 'ca. 800 l/min',
-      },
-      correct: 'b',
-      topic: 'Strahlrohre',
-      sectionId: 'strahlrohre',
-      explanation: 'Das BM-Strahlrohr liefert mit Mundstück ca. 400 l/min bei 5 bar. Ohne Mundstück sind es ca. 800 l/min. Das Mundstück reduziert die Durchflussmenge, erhöht aber die Wurfweite.',
-      explanationRu: 'BM-ствол с насадком подаёт ок. 400 л/мин при 5 бар. Без насадка — ок. 800 л/мин. Насадок уменьшает расход, но увеличивает дальность.',
-    },
-    {
-      id: 10,
-      question: 'Welche Längen haben C42-Druckschläuche nach Norm?',
-      options: {
-        a: '5 und 20 m',
-        b: '15 und 30 m',
-        c: '15 und 35 m',
-      },
-      correct: 'b',
-      topic: 'Schläuche',
-      sectionId: 'schlaeuche',
-      explanation: 'C42-Druckschläuche (42 mm Innendurchmesser) gibt es in 15 m und 30 m Länge. Im Gegensatz dazu haben C52-Schläuche (52 mm) nur die Länge 15 m.',
-      explanationRu: 'Напорные рукава C42 (42 мм) выпускаются длиной 15 и 30 м. В отличие от них, рукава C52 (52 мм) — только 15 м.',
-    },
-    {
-      id: 11,
-      question: 'Was ist beim Öffnen und Schließen der Abgänge am Verteiler zu beachten?',
-      options: {
-        a: 'Abgänge schnell öffnen, um sofort Wasser zu liefern',
-        b: 'Abgänge langsam öffnen und schließen, um Druckstöße zu vermeiden',
-        c: 'Alle Abgänge gleichzeitig öffnen',
-      },
-      correct: 'b',
-      topic: 'Löschmittelfortleitung',
-      sectionId: 'fortleitung',
-      explanation: 'Abgänge am Verteiler müssen immer langsam geöffnet und geschlossen werden. Schnelles Öffnen oder Schließen verursacht Druckstöße (Wasserschläge), die Schläuche und Kupplungen beschädigen können.',
-      explanationRu: 'Выходы распределителя всегда нужно открывать и закрывать медленно. Быстрое открытие или закрытие вызывает гидроудары, которые могут повредить рукава и головки.',
-    },
-    {
-      id: 12,
-      question: 'Welches Gerät wird zum Öffnen von Hydranten und Anheben von Schachtdeckeln benötigt?',
-      options: {
-        a: 'Kupplungsschlüssel und Brechstange',
-        b: 'Hydrantenschlüssel und Schachthaken',
-        c: 'Schraubenzieher und Hammer',
-      },
-      correct: 'b',
-      topic: 'Zubehör',
-      sectionId: 'sonstige-geraete',
-      explanation: 'Der Hydrantenschlüssel dient zum Öffnen von Über- und Unterflurhydranten. Der Schachthaken wird zum Anheben von Schachtdeckeln verwendet, um an den darunterliegenden Hydranten zu gelangen.',
-      explanationRu: 'Гидрантный ключ нужен для открытия надземных и подземных гидрантов. Крюк для колодцев — для подъёма крышек, чтобы добраться до расположенного под ними гидранта.',
-    },
-    {
-      id: 13,
-      question: 'Was ist die Aufgabe des Sammelstücks?',
-      options: {
-        a: 'Es teilt eine Leitung in mehrere Abgänge auf',
-        b: 'Es führt zwei oder mehr Leitungen zu einer zusammen',
-        c: 'Es verschließt die Schlauchleitung am Ende',
-      },
-      correct: 'b',
-      topic: 'Löschmittelfortleitung',
-      sectionId: 'fortleitung',
-      explanation: 'Das Sammelstück führt mehrere Schlauchleitungen zu einer einzigen zusammen. Es besitzt Klappen, die freie Eingänge verschließen. Im Gegensatz dazu teilt der Verteiler eine Leitung in mehrere Abgänge auf.',
-      explanationRu: 'Сборник объединяет несколько рукавных линий в одну. У него есть заслонки для перекрытия свободных входов. В отличие от него, распределитель делит одну линию на несколько выходов.',
-    },
-    {
-      id: 14,
-      question: 'Wie werden nasse Druckschläuche nach dem Einsatz gerollt?',
-      options: {
-        a: 'Doppelt rollen',
-        b: 'Einfach rollen',
-        c: 'Gar nicht rollen, sondern ausgelegt trocknen lassen',
-      },
-      correct: 'b',
-      topic: 'Schläuche',
-      sectionId: 'schlaeuche',
-      explanation: 'Nasse Druckschläuche werden einfach gerollt, damit die Restfeuchtigkeit besser entweichen kann. Nur trockene Schläuche werden doppelt gerollt (für die Lagerung auf dem Fahrzeug).',
-      explanationRu: 'Мокрые напорные рукава скатывают в одинарный рулон, чтобы остаточная влага лучше испарялась. Только сухие рукава скатывают в двойной рулон (для хранения на машине).',
-    },
-    {
-      id: 15,
-      question: 'Welchen Durchflussbereich bieten Hohlstrahlrohre?',
-      options: {
-        a: 'Nur 100 l/min',
-        b: 'Stufenlos ca. 40 bis 1000 l/min',
-        c: 'Stufenlos ca. 200 bis 500 l/min',
-      },
-      correct: 'b',
-      topic: 'Strahlrohre',
-      sectionId: 'strahlrohre',
-      explanation: 'Hohlstrahlrohre ermöglichen eine stufenlose Regulierung des Durchflusses von ca. 40 bis 1000 l/min. Zusätzlich kann der Sprühwinkel verändert werden — vom gebündelten Strahl bis zum breiten Sprühkegel.',
-      explanationRu: 'Стволы с полым потоком позволяют плавно регулировать расход от ок. 40 до 1000 л/мин. Дополнительно можно менять угол распыления — от компактной струи до широкого конуса.',
-    },
-
-    // ── Catalog questions (101–114) ──────────────────────────────
-    {
-      id: 101,
+      id: 58,
       question: 'Welche Schläuche werden bei der Wasserentnahme aus Hydranten verwendet?',
       options: {
         a: 'Druckschläuche',
@@ -663,7 +450,7 @@ export const lesson: Lesson = {
       explanationRu: 'Для забора воды из гидрантов используются только напорные рукава. Всасывающие рукава предназначены только для открытых водоёмов и не должны подключаться к гидрантам.',
     },
     {
-      id: 102,
+      id: 59,
       question: 'Wozu findet das Standrohr Verwendung?',
       options: {
         a: 'Zur Wasserentnahme aus Überflurhydranten',
@@ -678,7 +465,7 @@ export const lesson: Lesson = {
       explanationRu: 'Стояк устанавливается в подземные гидранты — те, что встроены в дорожное покрытие. Он фиксируется клешневой гайкой и выравнивается по часовой стрелке.',
     },
     {
-      id: 103,
+      id: 60,
       question: 'Armaturen zur Löschmittelfortleitung sind:',
       options: {
         a: 'Strahlrohre',
@@ -693,7 +480,7 @@ export const lesson: Lesson = {
       explanationRu: 'Сборник, распределитель и опорное колено — это арматура для транспортировки огнетушащих средств. Стволы относятся к подаче, всасывающая сетка и стояк — к забору воды.',
     },
     {
-      id: 104,
+      id: 61,
       question: 'Welche Längen haben B-Druckschläuche nach gültiger Norm?',
       options: {
         a: '15, 20 und 30 m',
@@ -708,7 +495,7 @@ export const lesson: Lesson = {
       explanationRu: 'Напорные B-рукава (75 мм) выпускаются трёх длин: 5, 20 и 35 м. Короткий 5-метровый вариант используется как соединительный отрезок, 20 и 35 м — как подводящие линии.',
     },
     {
-      id: 105,
+      id: 62,
       question: 'Warum sind Hohlstrahlrohre für den Innenangriff anstelle von Mehrzweckstrahlrohren zu bevorzugen?',
       options: {
         a: 'Hohlstrahlrohre sind teurer',
@@ -723,7 +510,7 @@ export const lesson: Lesson = {
       explanationRu: 'Стволы с полым потоком создают мелкодисперсный водяной туман, который поглощает больше тепла, чем компактная струя. Это улучшает охлаждение и тушение, одновременно снижая ущерб от воды.',
     },
     {
-      id: 106,
+      id: 63,
       question: 'Welche maximale Steighöhe kann in der Regel mit vier Steckleiterteilen erreicht werden?',
       options: {
         a: '2. Obergeschoss',
@@ -731,14 +518,14 @@ export const lesson: Lesson = {
         c: '3. Obergeschoss',
       },
       image: null,
-      correct: 'b',
+      correct: 'a',
       topic: 'Fragenkatalog',
       sectionId: 'sonstige-geraete',
-      explanation: 'Vier Steckleiterteile ergeben eine Rettungshöhe von ca. 8 Metern, was dem 1. Obergeschoss entspricht. Für höhere Stockwerke wird die Schiebleiter (ca. 12 m) oder eine Drehleiter benötigt.',
-      explanationRu: 'Четыре секции штекерной лестницы дают высоту спасения ок. 8 м — это 1-й этаж (1. OG). Для более высоких этажей нужна выдвижная лестница (ок. 12 м) или автолестница.',
+      explanation: 'Vier Steckleiterteile ergeben eine Rettungshöhe von ca. 8 Metern, was dem 2. Obergeschoss entspricht. Für höhere Stockwerke wird die Schiebleiter (ca. 12 m) oder eine Drehleiter benötigt.',
+      explanationRu: 'Четыре секции штекерной лестницы дают высоту спасения ок. 8 м — это 2-й этаж (2. OG). Для более высоких этажей нужна выдвижная лестница (ок. 12 м) или автолестница.',
     },
     {
-      id: 107,
+      id: 64,
       question: 'Wo darf eine Feuerwehrleine nicht eingesetzt werden?',
       options: {
         a: 'Zum Hochziehen von Geräten',
@@ -753,7 +540,7 @@ export const lesson: Lesson = {
       explanationRu: 'Пожарную верёвку нельзя использовать для страховки от падения, если возможен свободный полёт. Она не рассчитана на динамические нагрузки (рывок при падении) и может порваться.',
     },
     {
-      id: 108,
+      id: 65,
       question: 'Wozu dient die Tauchpumpe?',
       options: {
         a: 'Zur Luftversorgung für Taucher',
@@ -768,7 +555,7 @@ export const lesson: Lesson = {
       explanationRu: 'Погружной насос — электрическое устройство, которое ставится прямо в воду. Он откачивает воду из затопленных подвалов, колодцев, ям и ёмкостей, подавая её наружу через напорный рукав.',
     },
     {
-      id: 109,
+      id: 66,
       question: 'Worauf ist bei der Inbetriebnahme eines Unterflurhydranten zu achten?',
       options: {
         a: 'Bei Frostgefahr die Straßenkappe mit Sand füllen',
@@ -783,7 +570,7 @@ export const lesson: Lesson = {
       explanationRu: 'Перед установкой стояка клешневая гайка должна быть полностью свинчена вниз. Только после этого стояк вставляется в гидрант и выравнивается по часовой стрелке.',
     },
     {
-      id: 110,
+      id: 67,
       question: 'Wann ist Feuerwehrschutzschuhwerk zu tragen?',
       options: {
         a: 'Beim Feuerwehrfest',
@@ -798,7 +585,7 @@ export const lesson: Lesson = {
       explanationRu: 'Защитную обувь пожарного необходимо носить на всех выездах и учениях. Она защищает от влаги, жара, падающих предметов и химикатов. На занятиях или пожарных праздниках она не обязательна.',
     },
     {
-      id: 111,
+      id: 68,
       question: 'Welche Einsatzgrundsätze für tragbare Feuerlöscher sind richtig?',
       options: {
         a: 'Nach Möglichkeit mehrere Löscher gleichzeitig einsetzen',
@@ -813,7 +600,7 @@ export const lesson: Lesson = {
       explanationRu: 'Несколько огнетушителей следует применять одновременно, а не последовательно — это значительно повышает эффективность. Огонь атакуют по ветру (не против), и только капельные/текучие возгорания тушат сверху вниз.',
     },
     {
-      id: 112,
+      id: 69,
       question: 'Wie groß ist die Wasserabgabe bei CM-Strahlrohren mit Mundstück bei einem Strahlrohrdruck von ca. 5 bar?',
       options: {
         a: 'ca. 200 l/min',
@@ -828,7 +615,7 @@ export const lesson: Lesson = {
       explanationRu: 'CM-ствол с насадком подаёт ок. 100 л/мин при давлении 5 бар. Без насадка — ок. 200 л/мин. Насадок сужает выходное отверстие, увеличивая дальность и уменьшая расход.',
     },
     {
-      id: 113,
+      id: 70,
       question: 'Welche Behandlung von Druckschläuchen nach dem Gebrauch (Einsatz) ist richtig?',
       options: {
         a: 'Nach jedem Gebrauch reinigen und trocknen',
@@ -843,7 +630,7 @@ export const lesson: Lesson = {
       explanationRu: 'Напорные рукава после каждого использования нужно чистить и сушить. Мокрые рукава скатывают в одинарный (не двойной!) рулон. Прямые солнечные лучи вредят материалу — лучше сушить в башне для рукавов или на сушильной раме.',
     },
     {
-      id: 114,
+      id: 71,
       question: 'Wie viele C-Schläuche befinden sich in der Regel in einem Schlauchtragekorb?',
       options: {
         a: '2',

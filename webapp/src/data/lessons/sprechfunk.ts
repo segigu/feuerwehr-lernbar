@@ -499,221 +499,8 @@ export const lesson: Lesson = {
   ],
 
   questions: [
-    // ===== Custom questions (id 1–15) =====
     {
-      id: 1,
-      question: 'Welchen FMS-Status sendet ein Fahrzeug, wenn es am Einsatzort eingetroffen ist?',
-      options: {
-        a: 'Status 3 — Einsatzübernahme',
-        b: 'Status 4 — Einsatzort',
-        c: 'Status 5 — Sprechwunsch',
-      },
-      correct: 'b',
-      topic: 'FMS-Statusmeldungen',
-      sectionId: 'fms-statusmeldungen',
-      explanation: 'Status 4 bedeutet „Einsatzort" — das Fahrzeug ist am Einsatzort eingetroffen. Status 3 (Einsatzübernahme) wird beim Ausrücken gesendet, Status 5 signalisiert einen Sprechwunsch.',
-      explanationRu: 'Статус 4 означает «на месте» — машина прибыла на место происшествия. Статус 3 (принятие вызова) отправляется при выезде, Статус 5 — запрос на переговоры.',
-    },
-    {
-      id: 2,
-      question: 'Was bedeutet FMS-Status 3?',
-      options: {
-        a: 'Einsatzbereit auf der Wache',
-        b: 'Einsatzübernahme — das Fahrzeug ist ausgerückt',
-        c: 'Nicht einsatzbereit',
-      },
-      correct: 'b',
-      topic: 'FMS-Statusmeldungen',
-      sectionId: 'fms-statusmeldungen',
-      explanation: 'Status 3 bedeutet „Einsatzübernahme" — das Fahrzeug hat den Einsatz angenommen und ist ausgerückt. Status 2 wäre „einsatzbereit Wache" und Status 6 „nicht einsatzbereit".',
-      explanationRu: 'Статус 3 означает «принятие вызова» — машина приняла вызов и выехала. Статус 2 — «готов на станции», Статус 6 — «не готов к выезду».',
-    },
-    {
-      id: 3,
-      question: 'Was ist der Unterschied zwischen TMO und DMO im Digitalfunk?',
-      options: {
-        a: 'TMO ist verschlüsselt, DMO ist unverschlüsselt',
-        b: 'TMO nutzt Basisstationen (Netzbetrieb), DMO ist Direktbetrieb ohne Netz',
-        c: 'TMO ist für Fahrzeuge, DMO ist für Handgeräte',
-      },
-      correct: 'b',
-      topic: 'Digitalfunk',
-      sectionId: 'digitalfunk-tetra',
-      explanation: 'TMO (Trunked Mode Operation) nutzt die Netzinfrastruktur mit Basisstationen — für Verbindung zur Leitstelle und überörtliche Kommunikation. DMO (Direct Mode Operation) ist der Direktbetrieb ohne Netz — für den Einsatzstellenfunk.',
-      explanationRu: 'TMO (Trunked Mode Operation) использует сетевую инфраструктуру с базовыми станциями — для связи с диспетчерской и межрегиональной коммуникации. DMO (Direct Mode Operation) — прямой режим без сети — для связи на месте.',
-    },
-    {
-      id: 4,
-      question: 'Welche Organisation gehört NICHT zu den BOS?',
-      options: {
-        a: 'Bundeszollverwaltung',
-        b: 'ADAC',
-        c: 'Freiwillige Feuerwehren',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen-funk',
-      explanation: 'Der ADAC ist ein privatwirtschaftliches Unternehmen und gehört nicht zu den BOS. Die Bundeszollverwaltung und die Freiwilligen Feuerwehren sind dagegen BOS-Organisationen gemäß der BOS-Funkrichtlinie.',
-      explanationRu: 'ADAC — частная компания, не входящая в BOS. Федеральная таможенная служба и добровольные пожарные дружины, напротив, относятся к BOS согласно директиве BOS-Funk.',
-    },
-    {
-      id: 5,
-      question: 'Welches Organisationskennwort wird für die Johanniter im Funkverkehr verwendet?',
-      options: {
-        a: 'Johannes',
-        b: 'Akkon',
-        c: 'Pelikan',
-      },
-      correct: 'b',
-      topic: 'Funkrufnamen',
-      sectionId: 'bos-und-funkrufnamen',
-      explanation: 'Die Johanniter verwenden das Kennwort „Akkon" im Digitalfunk. „Johannes" ist das Kennwort des Malteser-Hilfsdienstes und „Pelikan" das der DLRG.',
-      explanationRu: 'Йоханнитер используют кодовое слово «Akkon» в цифровой радиосвязи. «Johannes» — обозначение Мальтийской службы помощи, а «Pelikan» — DLRG.',
-    },
-    {
-      id: 6,
-      question: 'Was bewirkt die rote Taste am TETRA-Funkgerät?',
-      options: {
-        a: 'Sie schaltet das Gerät aus',
-        b: 'Sie aktiviert die Notruffunktion — Mikrofon wird freigeschaltet, alle Gespräche werden unterbrochen',
-        c: 'Sie wechselt in den DMO-Modus',
-      },
-      correct: 'b',
-      topic: 'Notruf',
-      sectionId: 'funkdisziplin-und-notruf',
-      explanation: 'Die rote Taste aktiviert die Notruffunktion: Das Mikrofon wird für einen programmierten Zeitraum freigeschaltet (ohne Sprechtaste), alle in der Gruppe hören mit, und alle anderen Gespräche werden sofort unterbrochen.',
-      explanationRu: 'Красная кнопка активирует экстренный вызов: микрофон включается на запрограммированное время (без нажатия тангенты), все в группе слышат, и все остальные разговоры немедленно прерываются.',
-    },
-    {
-      id: 7,
-      question: 'Welche Angaben enthält eine Lagemeldung?',
-      options: {
-        a: 'Einsatzort, Lage, Schadenshöhe',
-        b: 'Einsatzort, Lage, Maßnahmen, Zeit-/Kräftebedarf',
-        c: 'Einsatzort, Wetterlage, Personenzahl',
-      },
-      correct: 'b',
-      topic: 'Meldungen',
-      sectionId: 'nachrichtenarten-und-meldungen',
-      explanation: 'Eine Lagemeldung enthält vier Bestandteile: Einsatzort, Lage, getroffene/geplante Maßnahmen und Zeit-/Kräftebedarf. Schadenshöhe oder Wetterlage gehören nicht zum festen Schema.',
-      explanationRu: 'Донесение об обстановке содержит четыре элемента: место, обстановку, принятые/планируемые меры и потребность в силах/времени. Размер ущерба или погода не входят в стандартную схему.',
-    },
-    {
-      id: 8,
-      question: 'Welche Funktion hat ein Repeater im DMO?',
-      options: {
-        a: 'Er verschlüsselt die Kommunikation',
-        b: 'Er erweitert die Reichweite im Direktmodus',
-        c: 'Er verbindet DMO mit dem Telefonnetz',
-      },
-      correct: 'b',
-      topic: 'Funktechnik',
-      sectionId: 'funkgeraete-und-kommunikation',
-      explanation: 'Ein Repeater ist eine Funktion des Funkgerätes zur Reichweitenerweiterung im DMO. Er empfängt das Signal und sendet es verstärkt weiter. Alle Funkgeräte können als Repeater eingesetzt werden, wenn sie entsprechend programmiert sind.',
-      explanationRu: 'Ретранслятор (Repeater) — это функция радиостанции для увеличения дальности в DMO. Он принимает сигнал и передаёт его дальше с усилением. Все радиостанции могут работать как ретрансляторы, если запрограммированы.',
-    },
-    {
-      id: 9,
-      question: 'In welchem Gerät steht die Gateway-Funktion zur Verfügung?',
-      options: {
-        a: 'In jedem Handfunkgerät (HRT)',
-        b: 'Nur in Fahrzeugfunkgeräten (MRT)',
-        c: 'Nur in der Leitstelle (FRT)',
-      },
-      correct: 'b',
-      topic: 'Funktechnik',
-      sectionId: 'funkgeraete-und-kommunikation',
-      explanation: 'Die Gateway-Funktion steht nur in Fahrzeugfunkgeräten (MRT) zur Verfügung, weil diese eine höhere Sende- und Empfangsleistung haben. Sie leitet DMO-Verkehr ins TETRA-Netz (TMO) über.',
-      explanationRu: 'Функция шлюза доступна только в автомобильных радиостанциях (MRT), поскольку у них более высокая мощность. Она перенаправляет DMO-трафик в сеть TETRA (TMO).',
-    },
-    {
-      id: 10,
-      question: 'Welches Organisationskennwort hat die Feuerwehr im digitalen Sprechfunkverkehr?',
-      options: {
-        a: 'Heros',
-        b: 'Florian',
-        c: 'Kater',
-      },
-      correct: 'b',
-      topic: 'Funkrufnamen',
-      sectionId: 'bos-und-funkrufnamen',
-      explanation: 'Die Feuerwehr verwendet das Kennwort „Florian" im digitalen Sprechfunkverkehr. „Heros" ist das Kennwort des THW und „Kater" das der Katastrophenschutz-Behörde.',
-      explanationRu: 'Пожарная охрана использует кодовое слово «Florian» в цифровой радиосвязи. «Heros» — обозначение THW, а «Kater» — ведомства гражданской обороны.',
-    },
-    {
-      id: 11,
-      question: 'Was bedeutet „quasi-optische Ausbreitung" bei UKW-Funkwellen?',
-      options: {
-        a: 'Die Wellen folgen der Erdkrümmung',
-        b: 'Die Wellen breiten sich fast wie Lichtstrahlen geradlinig aus',
-        c: 'Die Wellen werden von der Ionosphäre reflektiert',
-      },
-      correct: 'b',
-      topic: 'Funktechnik',
-      sectionId: 'digitalfunk-tetra',
-      explanation: 'UKW-Funkwellen breiten sich quasi-optisch aus — sie verhalten sich ähnlich wie Lichtstrahlen, gehen geradeaus und können Hindernisse wie Berge nicht „umbiegen". Deshalb ist die Reichweite stark von Bebauung und Geländeform abhängig.',
-      explanationRu: 'УКВ-волны распространяются квазиоптически — ведут себя подобно свету, идут по прямой и не могут «обогнуть» горы. Поэтому дальность сильно зависит от застройки и рельефа.',
-    },
-    {
-      id: 12,
-      question: 'Wofür steht die Abkürzung BOS?',
-      options: {
-        a: 'Bundesorganisation für Sicherheitsdienste',
-        b: 'Behörden und Organisationen mit Sicherheitsaufgaben',
-        c: 'Bayerische Organisation für Sprechfunk',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen-funk',
-      explanation: 'BOS steht für „Behörden und Organisationen mit Sicherheitsaufgaben". Dazu gehören Polizei, Feuerwehr, Rettungsdienst, THW, Bundeszollverwaltung und weitere.',
-      explanationRu: 'BOS означает «Ведомства и организации, выполняющие задачи обеспечения безопасности». К ним относятся полиция, пожарная охрана, служба спасения, THW, федеральная таможня и другие.',
-    },
-    {
-      id: 13,
-      question: 'Was unterscheidet die Gruppenkommunikation von der Einzelkommunikation im Digitalfunk?',
-      options: {
-        a: 'Gruppenkommunikation ist verschlüsselt, Einzelkommunikation nicht',
-        b: 'Bei der Gruppenkommunikation spricht einer und alle hören zu; Einzelkommunikation ist ein Gespräch zwischen zwei Teilnehmern',
-        c: 'Gruppenkommunikation funktioniert nur im TMO, Einzelkommunikation nur im DMO',
-      },
-      correct: 'b',
-      topic: 'Kommunikationsarten',
-      sectionId: 'funkgeraete-und-kommunikation',
-      explanation: 'Bei der Gruppenkommunikation (Regelkommunikation) spricht einer und alle Gruppenmitglieder hören zu — ressourcenschonend. Bei der Einzelkommunikation sprechen zwei Teilnehmer miteinander, sind dabei aber nicht in der Gruppe aktiv und binden erhebliche Netzressourcen.',
-      explanationRu: 'При групповой коммуникации (стандартный режим) один говорит, а все члены группы слушают — это экономит ресурсы. При индивидуальной коммуникации два участника говорят друг с другом, но при этом не активны в группе и занимают значительные сетевые ресурсы.',
-    },
-    {
-      id: 14,
-      question: 'Welche Vorschriften regeln den Sprechfunkverkehr bei den BOS?',
-      options: {
-        a: 'FwDV 3 und FwDV 7',
-        b: 'FwDV 800 und FwDV 810',
-        c: 'DIN 14011 und DIN 14090',
-      },
-      correct: 'b',
-      topic: 'Rechtsgrundlagen',
-      sectionId: 'rechtsgrundlagen-funk',
-      explanation: 'Die FwDV 800 regelt die Informations- und Kommunikationstechnik im Einsatz, die FwDV 810 den Sprech- und Datenfunkverkehr. Beide Vorschriften sind für alle BOS verbindlich.',
-      explanationRu: 'FwDV 800 регулирует информационно-коммуникационные технологии на выезде, FwDV 810 — голосовой и цифровой радиообмен. Обе инструкции обязательны для всех организаций BOS.',
-    },
-    {
-      id: 15,
-      question: 'Was bedeutet der ILS-Statuscode „C" im FMS?',
-      options: {
-        a: 'Einrücken — Rückkehr zum Standort',
-        b: 'Melden für Einsatz — es liegt ein Einsatzauftrag vor',
-        c: 'Sammelruf an alle Einheiten',
-      },
-      correct: 'b',
-      topic: 'FMS-Statusmeldungen',
-      sectionId: 'fms-statusmeldungen',
-      explanation: 'Der ILS-Statuscode „C" bedeutet „Melden für Einsatz" — die Leitstelle teilt dem Fahrzeug mit, dass ein Einsatzauftrag vorliegt. „E" bedeutet Einrücken und „A" ist der Sammelruf.',
-      explanationRu: 'Код ILS «C» означает «доклад на вызов» — диспетчерская сообщает машине, что есть задание. «E» — возвращение на базу, «A» — общий вызов.',
-    },
-
-    // ===== Catalog questions (id 101–118) =====
-    {
-      id: 101,
+      id: 197,
       question: 'Wofür werden Handfunkgeräte in der Regel verwendet?',
       options: {
         a: 'Funkverbindung von Feststation zu Fahrzeug',
@@ -728,7 +515,7 @@ export const lesson: Lesson = {
       explanationRu: 'Носимые радиостанции (HRT) — портативные устройства для отдельных пожарных. Они используются для связи на месте — например, между штурмовым звеном внутри здания и командиром перед ним.',
     },
     {
-      id: 102,
+      id: 198,
       question: 'Was ist zu tun, wenn im Sprechfunk eine Notfallmeldung abgesetzt wird?',
       options: {
         a: 'Nichts, der normale Sprechfunkverkehr kann fortgesetzt werden',
@@ -743,7 +530,7 @@ export const lesson: Lesson = {
       explanationRu: 'При сообщении о ЧП весь радиообмен немедленно прерывается. Все станции замолкают и освобождают канал, чтобы можно было координировать спасение.',
     },
     {
-      id: 103,
+      id: 199,
       question: 'Bei welcher Aufzählung gehören sämtliche Behörden/ Organisationen zu den Behörden und Organisationen mit Sicherheitsaufgaben (BOS)?',
       options: {
         a: 'Malteser-Hilfsdienst, ADAC, Luftrettungsstaffel Bayern',
@@ -758,7 +545,7 @@ export const lesson: Lesson = {
       explanationRu: 'К BOS относятся, в частности, полиция, федеральная таможня и добровольные пожарные дружины. ADAC (ответ a) и Telekom (ответ b) — частные компании, они к BOS не относятся.',
     },
     {
-      id: 104,
+      id: 200,
       question: 'Ein Anruf ist durch folgende Anrufantwort zu bestätigen...',
       options: {
         a: '„(Rufname) hört!”',
@@ -773,7 +560,7 @@ export const lesson: Lesson = {
       explanationRu: 'Правильный ответ на вызов: «Hier (свой позывной), kommen!» — например, «Hier Florian Dachau 11/1, kommen!» Слово «kommen» сигнализирует собеседнику, что теперь его очередь говорить.',
     },
     {
-      id: 105,
+      id: 201,
       question: 'Wie wird ein Gespräch im Funkverkehr beendet?',
       options: {
         a: '„Ende mit Florian Würzburg”',
@@ -788,7 +575,7 @@ export const lesson: Lesson = {
       explanationRu: 'Радиопереговоры завершаются словом «Ende» — без дополнений вроде позывных или других формулировок. Так канал быстро освобождается для других участников.',
     },
     {
-      id: 106,
+      id: 202,
       question: 'Von welchen Faktoren hängt die Reichweite einer Funkverbindung ab?',
       options: {
         a: 'Gruppeneinteilung/Kanaleinteilung',
@@ -803,7 +590,7 @@ export const lesson: Lesson = {
       explanationRu: 'Дальность зависит от застройки (здания ослабляют сигнал), рельефа (горы блокируют) и погоды. УКВ-волны распространяются квазиоптически, поэтому физические факторы сильно влияют на дальность.',
     },
     {
-      id: 107,
+      id: 203,
       question: 'Der Sprechfunkverkehr wird eröffnet durch...',
       options: {
         a: 'die Gegenstelle',
@@ -818,7 +605,7 @@ export const lesson: Lesson = {
       explanationRu: 'Радиопереговоры всегда начинаются вызовом — вызывающий сначала называет позывной вызываемой станции, затем свой, а затем слово «kommen».',
     },
     {
-      id: 108,
+      id: 204,
       question: 'Welcher Grundsatz ist unter anderem beim Sprechfunkverkehr zu beachten?',
       options: {
         a: 'Schnell und deutlich sprechen',
@@ -833,7 +620,7 @@ export const lesson: Lesson = {
       explanationRu: 'Важный принцип: не говорить слишком громко — микрофон достаточно чувствителен, чрезмерная громкость искажает передачу. Сокращений следует избегать, а не использовать.',
     },
     {
-      id: 109,
+      id: 205,
       question: 'Am Einsatzort angekommen, stellen Sie fest, dass Sie eine schlechte Verbindung zur Leitstelle haben. Welche Maßnahme ist jetzt richtig?',
       options: {
         a: 'Ausfall der Relaisfunkstelle/Basisstation über Telefon melden',
@@ -848,7 +635,7 @@ export const lesson: Lesson = {
       explanationRu: 'При плохой связи правильная мера — сменить позицию. Часто достаточно нескольких метров — поскольку УКВ-волны распространяются квазиоптически и препятствия могут блокировать сигнал.',
     },
     {
-      id: 110,
+      id: 206,
       question: 'Eine formlose Nachricht ist...',
       options: {
         a: 'eine Meldung',
@@ -863,7 +650,7 @@ export const lesson: Lesson = {
       explanationRu: 'Согласно PDV 810, Durchsage (устное сообщение) — это неформальное сообщение. Spruch, напротив, — формализованное сообщение, зафиксированное письменно и передаваемое дословно.',
     },
     {
-      id: 111,
+      id: 207,
       question: 'Eine Lagemeldung enthält in der Regel folgende Angaben:',
       options: {
         a: 'Einsatzort, Lage, Schadenshöhe',
@@ -878,7 +665,7 @@ export const lesson: Lesson = {
       explanationRu: 'Донесение об обстановке содержит четыре элемента: место, обстановку, принятые и планируемые меры, а также потребность во времени и силах. Так диспетчерская получает полную картину.',
     },
     {
-      id: 112,
+      id: 208,
       question: 'Bei der Durchgabe einer Nachricht hat sich der Sprechfunker versprochen und will den Fehler richtig stellen. Welche Formulierung ist richtig?',
       options: {
         a: 'Die Verpflegung trifft in einer Stunde - ich berichtige - in einer halben Stunde ein, kommen',
@@ -893,7 +680,7 @@ export const lesson: Lesson = {
       explanationRu: 'При оговорке используется формулировка «ich berichtige» — не «ich verbessere» и не «Wiederhole». Правильная форма: «... in einer Stunde — ich berichtige — in einer halben Stunde ein, kommen.»',
     },
     {
-      id: 113,
+      id: 209,
       question: 'Wann ist eine Lagemeldung erforderlich?',
       options: {
         a: 'Wenn die Lage festgestellt (erkundet) wurde oder sich wesentlich verändert hat',
@@ -908,7 +695,7 @@ export const lesson: Lesson = {
       explanationRu: 'Донесение об обстановке необходимо, когда обстановка разведана (установлена) или существенно изменилась — не «когда будет время», а как только появилась важная информация.',
     },
     {
-      id: 114,
+      id: 210,
       question: 'Die Funkalarmierung ist ein Verfahren zum...',
       options: {
         a: 'Übermittlen von Nachrichtentexten',
@@ -923,8 +710,8 @@ export const lesson: Lesson = {
       explanationRu: 'Радиооповещение служит для оповещения руководящих и оперативных сил — например, через пейджеры. Диспетчерская передаёт сигнал и краткое сообщение с ключевым словом вызова.',
     },
     {
-      id: 115,
-      question: 'Welches ist die richtige Buchstabierweise des Wortes „Duplex"?',
+      id: 211,
+      question: 'Welches ist die richtige Buchstabierweise des Wortes „Duplex”?',
       options: {
         a: 'Dora-Ulrich-Paula-Ludwig-Emil-Xantippe',
         b: 'Delta-Ulrich-Paula-Ludwig-Erich-Xantippe',
@@ -938,22 +725,22 @@ export const lesson: Lesson = {
       explanationRu: '«Duplex» произносится по таблице BOS: D = Dora, U = Ulrich, P = Paula, L = Ludwig, E = Emil, X = Xantippe. «Delta» и «Erich» — не из этой таблицы, «Paul» вместо «Paula» тоже неверно.',
     },
     {
-      id: 116,
+      id: 212,
       question: 'Welche Vorschrift regelt die Durchführung des Sprechfunkverkehrs?',
       options: {
-        a: 'BOS-Funkrichtlinie',
-        b: 'PDV 810 / DV 810',
+        a: 'Merkblatt Sprechfunk',
+        b: 'FwDV 800/810',
         c: 'Vollzugsbekanntmachung BayFwG',
       },
       image: null,
       correct: 'b',
       topic: 'Fragenkatalog',
       sectionId: 'rechtsgrundlagen-funk',
-      explanation: 'Die PDV 810 / DV 810 (Fernmeldebetriebsdienst) regelt die Durchführung des Sprechfunkverkehrs bei BOS. Die BOS-Funkrichtlinie regelt die technischen Grundlagen, nicht den Betriebsablauf.',
-      explanationRu: 'PDV 810 / DV 810 (служба связи) регулирует проведение радиообмена у BOS. BOS-Funkrichtlinie регулирует технические основы, а не порядок ведения связи.',
+      explanation: 'Die FwDV 800/810 regelt die Durchführung des Sprechfunkverkehrs bei BOS. Das Merkblatt Sprechfunk dient nur als Lernhilfe, nicht als Vorschrift.',
+      explanationRu: 'FwDV 800/810 регулирует проведение радиообмена у BOS. Merkblatt Sprechfunk — это лишь учебное пособие, а не предписание.',
     },
     {
-      id: 117,
+      id: 213,
       question: 'Nach welchen Gesetzmäßigkeiten breiten sich UKW-Funkwellen aus?',
       options: {
         a: 'Sie folgen dem Verlauf der Erdkrümmung',
@@ -968,7 +755,7 @@ export const lesson: Lesson = {
       explanationRu: 'УКВ-волны распространяются квазиоптически — ведут себя почти как лучи света, идут по прямой и отражаются от препятствий. Они не следуют кривизне Земли и распространяются со скоростью света.',
     },
     {
-      id: 118,
+      id: 214,
       question: 'Eigenhändiges Ändern einer Nachricht ist dem Betriebspersonal...',
       options: {
         a: 'in Einzelfällen erlaubt',

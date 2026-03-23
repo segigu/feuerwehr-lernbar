@@ -186,151 +186,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-6)
     {
-      id: 1,
-      question: 'Was steht auf der oberen Hälfte einer orangefarbenen Warntafel?',
-      options: {
-        a: 'Die Stoffnummer (UN-Nummer)',
-        b: 'Die Nummer zur Kennzeichnung der Gefahr (Gefahrnummer)',
-        c: 'Der Name des Stoffes',
-      },
-      correct: 'b',
-      topic: 'Gefahrgut-Kennzeichnung',
-      sectionId: 'gefahrgut-kennzeichnung',
-      explanation: 'Die obere Hälfte zeigt die Nummer zur Kennzeichnung der Gefahr (auch Kemler-Zahl genannt). Die untere Hälfte enthält die Stoffnummer (UN-Nummer).',
-      explanationRu: 'Верхняя половина показывает номер обозначения опасности (также число Кемлера). Нижняя половина содержит номер вещества (номер ООН).',
-    },
-    {
-      id: 2,
-      question: 'Wofür steht das „S" in der GAMS-Regel?',
-      options: {
-        a: 'Sichern der Einsatzstelle',
-        b: 'Spezialkräfte alarmieren',
-        c: 'Stoffe identifizieren',
-      },
-      correct: 'b',
-      topic: 'GAMS-Regel',
-      sectionId: 'gams-regel',
-      explanation: 'S steht für „Spezialkräfte alarmieren" — z. B. ABC-Zug oder Gefahrgut-Messwagen. Diese Einheiten verfügen über spezielle Ausrüstung und Fachwissen.',
-      explanationRu: 'S означает «Вызвать специалистов» (Spezialkräfte alarmieren) — например, отряд РХБЗ или измерительный автомобиль. Эти подразделения располагают специальным оборудованием и знаниями.',
-    },
-    {
-      id: 3,
-      question: 'Was bedeutet eine schwarz-weiße Raute als Gefahrgut-Kennzeichnung?',
-      options: {
-        a: 'Radioaktiver Stoff',
-        b: 'Ätzender Stoff',
-        c: 'Verpackung enthält Gefahrgut in begrenzten Mengen (LQ)',
-      },
-      correct: 'c',
-      topic: 'Gefahrgut-Kennzeichnung',
-      sectionId: 'gefahrgut-kennzeichnung',
-      explanation: 'Die schwarz-weiße Raute (schwarze Ecken oben/unten, weißer Mittelbereich) kennzeichnet Gefahrgut in begrenzten Mengen (Limited Quantities). Die Stoffe sind dennoch gefährlich.',
-      explanationRu: 'Чёрно-белый ромб (чёрные углы сверху/снизу, белая середина) обозначает опасный груз в ограниченных количествах (Limited Quantities). Вещества всё равно опасны.',
-    },
-    {
-      id: 4,
-      question: 'Zu welcher Gefahrgutklasse gehören entzündbare flüssige Stoffe?',
-      options: {
-        a: 'Klasse 2',
-        b: 'Klasse 3',
-        c: 'Klasse 5',
-      },
-      correct: 'b',
-      topic: 'Gefahrgut-Kennzeichnung',
-      sectionId: 'gefahrgut-kennzeichnung',
-      explanation: 'Klasse 3 umfasst entzündbare flüssige Stoffe (z. B. Benzin, Diesel). Sie werden mit einer Flamme auf rotem Hintergrund gekennzeichnet.',
-      explanationRu: 'Класс 3 охватывает воспламеняющиеся жидкости (например, бензин, дизель). Они обозначаются пламенем на красном фоне.',
-    },
-    {
-      id: 5,
-      question: 'Was bedeutet das Gefahrzettel-Symbol „Totenkopf mit gekreuzten Knochen"?',
-      options: {
-        a: 'Explosionsgefahr',
-        b: 'Vergiftungsgefahr (Klasse 6.1)',
-        c: 'Radioaktivität',
-      },
-      correct: 'b',
-      topic: 'Gefahrgut-Kennzeichnung',
-      sectionId: 'gefahrgut-kennzeichnung',
-      explanation: 'Der Totenkopf mit gekreuzten Knochen kennzeichnet giftige Stoffe der Klasse 6.1. Diese Stoffe können bei Einatmen, Verschlucken oder Hautkontakt schwere Gesundheitsschäden verursachen.',
-      explanationRu: 'Череп с костями обозначает ядовитые вещества класса 6.1. Эти вещества могут вызвать тяжёлый вред здоровью при вдыхании, проглатывании или контакте с кожей.',
-    },
-    {
-      id: 6,
-      question: 'Wie verhält sich die Feuerwehr, bis Spezialkräfte im Gefahrguteinsatz eintreffen?',
-      options: {
-        a: 'Sie beginnt sofort mit der Dekontamination',
-        b: 'Sie beschränkt sich auf die Erstmaßnahmen der GAMS-Regel',
-        c: 'Sie zieht sich vollständig zurück',
-      },
-      correct: 'b',
-      topic: 'GAMS-Regel',
-      sectionId: 'gams-regel',
-      explanation: 'Bis die Spezialkräfte eintreffen, beschränkt sich die örtliche Feuerwehr auf die Erstmaßnahmen der GAMS-Regel: Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern.',
-      explanationRu: 'До прибытия специалистов местная пожарная охрана ограничивается первоочередными мерами по правилу GAMS: распознать опасность, оградить, спасти людей, вызвать специалистов.',
-    },
-    {
-      id: 7,
-      question: 'Wie groß ist der Absperrbereich im Gefahrguteinsatz mindestens?',
-      options: {
-        a: '25 Meter',
-        b: '50 Meter',
-        c: '100 Meter',
-      },
-      correct: 'c',
-      topic: 'GAMS-Regel',
-      sectionId: 'gams-regel',
-      explanation: 'Der Absperrbereich beträgt mindestens 100 Meter. Der innere Gefahrenbereich (nur für Einsatzkräfte mit Schutzausrüstung) umfasst mindestens 50 Meter.',
-      explanationRu: 'Зона ограждения составляет минимум 100 метров. Внутренняя зона опасности (только для пожарных в защитном снаряжении) — минимум 50 метров.',
-    },
-    // GHS-Piktogramme questions (id 8-10)
-    {
-      id: 8,
-      question: 'Was kennzeichnen GHS-Piktogramme?',
-      options: {
-        a: 'Gefährliche Güter auf Transportfahrzeugen',
-        b: 'Gefahrstoffe an Arbeitsplätzen, in Lagern und auf Verpackungen',
-        c: 'Rettungswege in Gebäuden',
-      },
-      correct: 'b',
-      topic: 'GHS-Piktogramme',
-      sectionId: 'ghs-piktogramme',
-      explanation: 'GHS-Piktogramme kennzeichnen Gefahrstoffe an Arbeitsplätzen, in Lagern und auf Produktverpackungen. Transportfahrzeuge werden mit ADR-Gefahrzetteln gekennzeichnet, Rettungswege mit grünen Rettungszeichen.',
-      explanationRu: 'Пиктограммы GHS обозначают опасные вещества на рабочих местах, складах и упаковках. Транспорт маркируется знаками ADR, а пути эвакуации — зелёными знаками.',
-    },
-    {
-      id: 9,
-      question: 'Wie sehen GHS-Piktogramme aus?',
-      options: {
-        a: 'Farbige Rauten mit weißem Hintergrund (wie ADR-Gefahrzettel)',
-        b: 'Rot umrandete Rauten mit schwarzem Symbol auf weißem Hintergrund',
-        c: 'Gelbe Dreiecke mit schwarzem Symbol',
-      },
-      correct: 'b',
-      topic: 'GHS-Piktogramme',
-      sectionId: 'ghs-piktogramme',
-      explanation: 'GHS-Piktogramme sind rot umrandete Rauten mit schwarzem Symbol auf weißem Hintergrund. ADR-Gefahrzettel haben farbige Hintergründe (rot, grün, gelb, blau). Gelbe Dreiecke sind Warnschilder nach ISO 7010.',
-      explanationRu: 'Пиктограммы GHS — ромбы с красной рамкой, чёрным символом на белом фоне. Знаки ADR имеют цветной фон (красный, зелёный, жёлтый, синий). Жёлтые треугольники — предупреждающие знаки по ISO 7010.',
-    },
-    {
-      id: 10,
-      question: 'Was bedeutet das GHS-Piktogramm „Totenkopf mit gekreuzten Knochen" (GHS06)?',
-      options: {
-        a: 'Umweltgefährdend',
-        b: 'Akute Toxizität — Lebensgefahr',
-        c: 'Ätzende Wirkung',
-      },
-      correct: 'b',
-      topic: 'GHS-Piktogramme',
-      sectionId: 'ghs-piktogramme',
-      explanation: 'GHS06 (Totenkopf) warnt vor akuter Toxizität — der Stoff kann bei Einatmen, Verschlucken oder Hautkontakt lebensbedrohlich sein. Umweltgefährdung ist GHS09, Ätzwirkung ist GHS05.',
-      explanationRu: 'GHS06 (череп) предупреждает об острой токсичности — вещество может быть смертельно опасным при вдыхании, проглатывании или контакте с кожей. Опасность для окружающей среды — GHS09, разъедающее действие — GHS05.',
-    },
-    // Catalog questions (id 101-119)
-    {
-      id: 101,
+      id: 183,
       question: 'Was wird mit orangefarbenen Warntafeln gekennzeichnet?',
       options: {
         a: 'Straßen- und Schienenfahrzeuge, die gefährliche Stoffe ab bestimmten Mengen befördern',
@@ -345,7 +202,7 @@ export const lesson: Lesson = {
       explanationRu: 'Оранжевые таблицы обозначают автомобильный и железнодорожный транспорт, перевозящий опасные вещества от определённого количества. Здания маркируются по-другому, а для упаковок используются знаки опасности.',
     },
     {
-      id: 102,
+      id: 184,
       question: 'Sie sehen auf einer Kiste der Ladung eines verunglückten LKW folgendes Schild. Was melden Sie Ihrem Gruppenführer?',
       options: {
         a: 'Brandgefahr',
@@ -360,7 +217,7 @@ export const lesson: Lesson = {
       explanationRu: 'Знак показывает символ инфекционных веществ (класс 6.2). Эти вещества могут передавать инфекционные заболевания — например, медицинские отходы или лабораторные образцы.',
     },
     {
-      id: 103,
+      id: 185,
       question: 'Sie sehen an der Tür eines Gebäudes folgendes Schild (schwarz auf gelbem Hintergrund). Womit müssen Sie rechnen?',
       options: {
         a: 'Verätzungsgefahr',
@@ -375,7 +232,7 @@ export const lesson: Lesson = {
       explanationRu: 'Взрывающаяся бомба на жёлтом фоне предупреждает об опасности взрыва. Этот символ указывает на наличие взрывчатых веществ или опасность взрыва.',
     },
     {
-      id: 104,
+      id: 186,
       question: 'Welche Nummernsysteme befinden sich auf einer orangefarbenen Warntafel?',
       options: {
         a: 'Gefährdungsnummer und Einsatznummer',
@@ -390,7 +247,7 @@ export const lesson: Lesson = {
       explanationRu: 'Оранжевая таблица показывает два числа: сверху номер обозначения опасности (число Кемлера) и снизу номер вещества (номер ООН). Другие обозначения вроде «номер операции» или «транспортный код» ошибочны.',
     },
     {
-      id: 105,
+      id: 187,
       question: 'Sie sehen auf einem Fass in einem Lager folgendes Schild (schwarz auf weiß-rotem Hintergrund). Welche Gefahr kann von diesem Stoff ausgehen??',
       options: {
         a: 'Vergiftungsgefahr',
@@ -405,7 +262,7 @@ export const lesson: Lesson = {
       explanationRu: 'Символ пламени на бело-красном фоне обозначает воспламеняющиеся твёрдые вещества (класс 4.1). От этих веществ исходит опасность пожара — не отравления или утечки газа.',
     },
     {
-      id: 106,
+      id: 188,
       question: 'Eine Gefahrgutumschließung ist mit folgendem Symbol gekennzeichnet (schwarz auf rotem Hintergrund). Was enthält die Verpackung?',
       options: {
         a: 'Einen festen brennbaren Stoff',
@@ -420,7 +277,7 @@ export const lesson: Lesson = {
       explanationRu: 'Пламя на красном фоне обозначает воспламеняющиеся жидкости (класс 3) — например, бензин, этанол или растворители. Воспламеняющиеся твёрдые вещества (класс 4) имеют бело-красный фон.',
     },
     {
-      id: 107,
+      id: 189,
       question: 'Wie verhalten Sie sich, wenn Sie im Gefahrguteinsatz einen verletzten Menschen im Gefahrenbereich entdecken?',
       options: {
         a: 'Ich retten den Menschen sofort aus dem Gefahrenbereich',
@@ -435,7 +292,7 @@ export const lesson: Lesson = {
       explanationRu: 'При работе с опасными грузами о находке немедленно докладывают руководителю. Не действовать самостоятельно — руководитель решает о защитном снаряжении и порядке действий, чтобы вы сами не подвергались опасности.',
     },
     {
-      id: 108,
+      id: 190,
       question: 'Welche Einsatzmaßnahmen beschreibt die GAMS- Regel?',
       options: {
         a: 'Gase Absorbieren, Mineralöle Separieren',
@@ -450,7 +307,7 @@ export const lesson: Lesson = {
       explanationRu: 'GAMS расшифровывается: Распознать опасность — Оградить — Спасти людей — Вызвать специалистов. Правило GAMS описывает неотложные первоочередные меры любого пожарного подразделения при работе с опасными грузами.',
     },
     {
-      id: 109,
+      id: 191,
       question: 'Was bedeutet folgende Kennzeichnung (schwarz-weiß)?',
       options: {
         a: 'Tank enthält wassergefährdende Stoffe',
@@ -465,7 +322,7 @@ export const lesson: Lesson = {
       explanationRu: 'Чёрно-белый ромб (чёрные углы сверху/снизу, белая середина) — маркировка ограниченных количеств (Limited Quantities, LQ). Упаковка содержит меньшие ёмкости с опасным грузом в ограниченных количествах.',
     },
     {
-      id: 110,
+      id: 192,
       question: 'Welche Gefahr besteht bei folgender Kennzeichnung (schwarz-weiß)?',
       options: {
         a: 'Gesundheitsgefahr',

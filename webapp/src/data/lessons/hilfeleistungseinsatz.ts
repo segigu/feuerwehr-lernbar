@@ -189,66 +189,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-8)
     {
-      id: 1,
-      question: 'Welche Dienstvorschrift regelt die Aufgabenverteilung im Hilfeleistungseinsatz?',
-      options: {
-        a: 'FwDV 10 „Tragbare Leitern"',
-        b: 'FwDV 3 „Einheiten im Lösch- und Hilfeleistungseinsatz"',
-        c: 'FwDV 7 „Atemschutz"',
-      },
-      correct: 'b',
-      topic: 'Grundlagen TH',
-      sectionId: 'th-grundlagen',
-      explanation: 'Die FwDV 3 „Einheiten im Lösch- und Hilfeleistungseinsatz" regelt die Aufgabenverteilung der Gruppe sowohl im Lösch- als auch im Hilfeleistungseinsatz.',
-      explanationRu: 'FwDV 3 «Подразделения при тушении и технической помощи» регулирует распределение задач группы как при тушении, так и при технической помощи.',
-    },
-    {
-      id: 2,
-      question: 'Auf welcher Seite des Fahrzeugs sitzt die Mannschaft bei einem TH-Einsatz auf einer Straße ab?',
-      options: {
-        a: 'Immer auf der rechten Seite',
-        b: 'Auf der verkehrsabgewandten Seite',
-        c: 'Auf der verkehrszugewandten Seite',
-      },
-      correct: 'b',
-      topic: 'Absitzen und Verkehr',
-      sectionId: 'absitzen-verkehrssicherung',
-      explanation: 'Die Mannschaft sitzt auf Befehl des Einheitsführers zur verkehrsabgewandten Seite ab, um sich vor Gefahren durch den fließenden Verkehr zu schützen.',
-      explanationRu: 'Личный состав высаживается по команде руководителя на сторону, противоположную потоку транспорта, чтобы защититься от опасностей движущегося транспорта.',
-    },
-    {
-      id: 3,
-      question: 'Was ist die erste Maßnahme des Angriffstrupps bei einer eingeklemmten Person im PKW?',
-      options: {
-        a: 'Sofort die Tür aufbrechen',
-        b: 'Überprüfung der Vitalfunktionen',
-        c: 'Hydraulische Rettungsgeräte ansetzen',
-      },
-      correct: 'b',
-      topic: 'Patientenversorgung',
-      sectionId: 'patientenversorgung',
-      explanation: 'Die erste Maßnahme ist die Überprüfung der Vitalfunktionen: Bewusstsein, Atmung, Puls. Erst danach werden weitere Rettungsmaßnahmen eingeleitet.',
-      explanationRu: 'Первая мера — проверка жизненных функций: сознание, дыхание, пульс. Только после этого начинаются дальнейшие спасательные мероприятия.',
-    },
-    {
-      id: 4,
-      question: 'Wer sichert die Einsatzstelle sofort mit Warnblinkanlage und Blaulicht?',
-      options: {
-        a: 'Der Angriffstrupp',
-        b: 'Der Melder',
-        c: 'Der Maschinist',
-      },
-      correct: 'c',
-      topic: 'Absitzen und Verkehr',
-      sectionId: 'absitzen-verkehrssicherung',
-      explanation: 'Der Maschinist sichert sofort die Einsatzstelle mit Warnblinkanlage, Fahrlicht und blauem Blinklicht. Das ist seine feste Aufgabe nach FwDV 3.',
-      explanationRu: 'Машинист немедленно обозначает место аварийной сигнализацией, фарами и синими маячками. Это его постоянная задача по FwDV 3.',
-    },
-    // Catalog questions (id 101-109)
-    {
-      id: 101,
+      id: 174,
       question: 'Wie schützt sich die Mannschaft bei technischen Hilfeleistungen auf öffentlichen Verkehrsflächen vor Gefahren durch den Verkehr?',
       options: {
         a: 'Mannschaft bleibt im Löschfahrzeug',
@@ -263,7 +205,7 @@ export const lesson: Lesson = {
       explanationRu: 'Личный состав выходит по команде руководителя на сторону, противоположную потоку транспорта. Так он защищён от движущегося транспорта. Строиться за машиной было бы опасно, так как там проезжает транспорт.',
     },
     {
-      id: 102,
+      id: 175,
       question: 'Welcher Trupp ist im technischen Hilfeleistungseinsatz grundsätzlich erster Rettungstrupp?',
       options: {
         a: 'Angriffstrupp',
@@ -278,7 +220,7 @@ export const lesson: Lesson = {
       explanationRu: 'Звено нападения — первое спасательное звено при TH-выезде. Оно извлекает зажатых, оказывает первую помощь и выполняет техническое спасение.',
     },
     {
-      id: 103,
+      id: 176,
       question: 'Welcher Trupp ist bei der technischen Hilfeleistung für Sicherungsaufgaben zuständig?',
       options: {
         a: 'Wassertrupp',
@@ -293,7 +235,7 @@ export const lesson: Lesson = {
       explanationRu: 'Водяное звено берёт на себя задачи обеспечения безопасности при TH-выезде — например, обеспечение противопожарной защиты, фиксация автомобиля, обеспечение безопасности места от дальнейших угроз.',
     },
     {
-      id: 104,
+      id: 177,
       question: 'Welche Aufgabe hat der Wassertrupp bei einem Hilfeleistungseinsatz?',
       options: {
         a: 'Sichern der Einsatzstelle, z. B. gegen Brandgefahr',
@@ -308,8 +250,8 @@ export const lesson: Lesson = {
       explanationRu: 'Водяное звено обеспечивает безопасность от пожара и других угроз. Подготовка оборудования — задача рукавного звена, спасение выполняет звено нападения.',
     },
     {
-      id: 105,
-      question: 'Sie erhalten als Angriffstrupp vom Einheitsführer den Befehl: „Angriffstrupp zur Versorgung der Person im PKW vor!". Welche erste Maßnahme führen sie durch?',
+      id: 178,
+      question: 'Sie erhalten als Angriffstrupp vom Einheitsführer den Befehl: „Angriffstrupp zur Versorgung der Person im PKW vor!”. Welche erste Maßnahme führen sie durch?',
       options: {
         a: 'Überprüfen der Vitalfunktionen',
         b: 'Sofortige Rettung der Person',
@@ -323,7 +265,7 @@ export const lesson: Lesson = {
       explanationRu: 'Первая мера — всегда проверка жизненных функций (сознание, дыхание, пульс). Только после этой оценки принимаются дальнейшие меры — немедленное освобождение без предварительной проверки может усугубить травмы.',
     },
     {
-      id: 106,
+      id: 179,
       question: 'Welche Aufgabe übernimmt der Schlauchtrupp bei einem Hilfeleistungseinsatz?',
       options: {
         a: 'Die Gerätebereitstellung',
@@ -338,7 +280,7 @@ export const lesson: Lesson = {
       explanationRu: 'Рукавное звено готовит заказанное оборудование и поддерживает наступающие звенья. Обеспечение безопасности — задача водяного звена, спасение — звена нападения.',
     },
     {
-      id: 107,
+      id: 180,
       question: 'Welche Aussage über den Angriffstrupp im Hilfeleistungseinsatz ist richtig?',
       options: {
         a: 'Er rettet und leistet technische Hilfe',
@@ -353,7 +295,7 @@ export const lesson: Lesson = {
       explanationRu: 'Звено нападения спасает и оказывает техническую помощь — оно является первым спасательным звеном. Обеспечение безопасности — задача водяного звена, подготовка оборудования — рукавного звена.',
     },
     {
-      id: 108,
+      id: 181,
       question: 'Worauf achten Sie beim Absitzen an der Einsatzstelle?',
       options: {
         a: 'Auf Gefahren durch den fließenden Verkehr',
@@ -368,7 +310,7 @@ export const lesson: Lesson = {
       explanationRu: 'При высадке необходимо следить за опасностями от движущегося транспорта. Нет жёсткого правила «всегда справа» или «всегда слева» — решающее значение имеет сторона, противоположная потоку.',
     },
     {
-      id: 109,
+      id: 182,
       question: 'Eine in einem PKW eingeklemmte Person soll durch ihren Trupp betreut werden. Das Fahrzeug ist noch nicht gesichert und könnte abrutschen. Wie verhalten sie sich?',
       options: {
         a: 'Mit der Betreuung der Person wird unverzüglich von außerhalb begonnen',

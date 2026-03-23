@@ -313,164 +313,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions
     {
-      id: 1,
-      question: 'Wofür steht das Gefahrenschema AAAA C EEEE?',
-      options: {
-        a: 'Atemgifte, Angstreaktionen, Ausbreitung, Atomare Gefahren, Chemische Stoffe, Erkrankung, Explosion, Einsturz, Elektrizität',
-        b: 'Atemgifte, Absturz, Ausbreitung, Atomare Gefahren, Chemische Stoffe, Erkrankung, Explosion, Einsturz, Ertrinken',
-        c: 'Atemgifte, Angstreaktionen, Absturz, Atomare Gefahren, Chemische Stoffe, Erkrankung, Explosion, Einsturz, Elektrizität',
-      },
-      correct: 'a',
-      topic: 'Gefahrenschema',
-      sectionId: 'gefahrenschema',
-      explanation: 'Das Schema AAAA C EEEE (4A-1C-4E) umfasst: Atemgifte, Angstreaktionen, Ausbreitung, Atomare Gefahren, Chemische Stoffe, Erkrankung, Explosion, Einsturz, Elektrizität. Absturz und Ertrinken gehören nicht dazu.',
-      explanationRu: 'Схема AAAA C EEEE (4A-1C-4E) включает: ядовитые газы, паника, распространение, атомные угрозы, химические вещества, заболевание, взрыв, обрушение, электричество. Падение с высоты и утопление в неё не входят.',
-    },
-    {
-      id: 2,
-      question: 'In welche drei Gruppen werden Atemgifte eingeteilt?',
-      options: {
-        a: 'Erstickend (I), Reiz/Ätz (II), Blut/Nerven/Zellen (III)',
-        b: 'Leicht (I), Mittel (II), Schwer (III)',
-        c: 'Gasförmig (I), Flüssig (II), Fest (III)',
-      },
-      correct: 'a',
-      topic: 'Atemgifte',
-      sectionId: 'atemgifte-angst',
-      explanation: 'Atemgifte werden nach ihrer Wirkung eingeteilt: Gruppe I verdrängt Sauerstoff (erstickend), Gruppe II reizt/verätzt Atemwege, Gruppe III wirkt auf Blut, Nerven und Zellen (z. B. CO).',
-      explanationRu: 'Ядовитые газы делятся по воздействию: группа I вытесняет кислород (удушающие), группа II раздражает/разъедает дыхательные пути, группа III действует на кровь, нервы и клетки (например, CO).',
-    },
-    {
-      id: 3,
-      question: 'Was bedeutet GAMS bei chemischen Gefahren?',
-      options: {
-        a: 'Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern',
-        b: 'Gas melden, Absichern, Messen, Sperrzone einrichten',
-        c: 'Gefahrstoff analysieren, Abstand halten, Messgerät einsetzen, Schutzausrüstung anlegen',
-      },
-      correct: 'a',
-      topic: 'Chemische Gefahren',
-      sectionId: 'abc-gefahren',
-      explanation: 'GAMS steht für: Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern. Es ist die Grundregel für den Umgang mit chemischen Gefahrstoffen.',
-      explanationRu: 'GAMS расшифровывается: распознать опасность, оцепить, спасти людей, вызвать спецподразделения. Это основное правило работы с химически опасными веществами.',
-    },
-    {
-      id: 4,
-      question: 'Welcher Sicherheitsabstand gilt bei Niederspannung (bis 1.000 V)?',
-      options: {
-        a: '5 Meter',
-        b: '1 Meter',
-        c: '20 Meter',
-      },
-      correct: 'b',
-      topic: 'Elektrizität',
-      sectionId: 'einsturz-elektrizitaet',
-      explanation: 'Bei Niederspannung (bis 1.000 Volt) beträgt der Sicherheitsabstand mindestens 1 Meter. 5 Meter gelten für Hochspannung, 20 Meter für abgestürzte Freileitungen.',
-      explanationRu: 'При низком напряжении (до 1.000 вольт) безопасная дистанция — минимум 1 метр. 5 метров — для высокого напряжения, 20 метров — для упавших ЛЭП.',
-    },
-    {
-      id: 5,
-      question: 'Welcher Abstand ist bei abgestürzten Freileitungen einzuhalten?',
-      options: {
-        a: '5 Meter',
-        b: '10 Meter',
-        c: '20 Meter',
-      },
-      correct: 'c',
-      topic: 'Elektrizität',
-      sectionId: 'einsturz-elektrizitaet',
-      explanation: 'Bei abgestürzten Freileitungen beträgt der Sicherheitsabstand 20 Meter, weil die Spannung über den Boden abfließen und Schrittspannung entstehen kann.',
-      explanationRu: 'При упавших воздушных ЛЭП дистанция составляет 20 метров, поскольку напряжение может распространяться по земле и вызывать шаговое напряжение.',
-    },
-    {
-      id: 6,
-      question: 'Warum können PV-Anlagen nicht vollständig abgeschaltet werden?',
-      options: {
-        a: 'Weil der Wechselrichter defekt sein kann',
-        b: 'Weil sie Gleichstrom erzeugen, solange Licht auf die Module fällt',
-        c: 'Weil sie an das öffentliche Stromnetz angeschlossen sind',
-      },
-      correct: 'b',
-      topic: 'Elektrizität',
-      sectionId: 'einsturz-elektrizitaet',
-      explanation: 'PV-Anlagen erzeugen Gleichstrom bis 1.000 V, solange Licht auf die Module fällt. Selbst bei getrenntem Wechselrichter liegt an Modulen und Leitungen Spannung an.',
-      explanationRu: 'Фотоэлектрические установки генерируют постоянный ток до 1.000 В, пока на модули попадает свет. Даже при отключённом инверторе на модулях и проводах сохраняется напряжение.',
-    },
-    {
-      id: 7,
-      question: 'Was ist der Unterschied zwischen Kontamination und Inkorporation?',
-      options: {
-        a: 'Kontamination = Verunreinigung der Oberfläche; Inkorporation = Aufnahme in den Körper',
-        b: 'Kontamination = Aufnahme in den Körper; Inkorporation = Verunreinigung der Oberfläche',
-        c: 'Beides bedeutet das Gleiche',
-      },
-      correct: 'a',
-      topic: 'ABC-Gefahren',
-      sectionId: 'abc-gefahren',
-      explanation: 'Kontamination ist die Verunreinigung der Oberfläche mit Gefahrstoffen (abwaschbar). Inkorporation ist die Aufnahme von Schadstoffen in den Körper — deutlich gefährlicher.',
-      explanationRu: 'Контаминация — загрязнение поверхности опасными веществами (можно смыть). Инкорпорация — попадание вредных веществ внутрь организма — значительно опаснее.',
-    },
-    {
-      id: 8,
-      question: 'Was ist ein Backdraft?',
-      options: {
-        a: 'Ein schlagartiger Feuerstoß bei plötzlicher Sauerstoffzufuhr in einen sauerstoffarmen Brandraum',
-        b: 'Das gleichzeitige Entzünden aller brennbaren Oberflächen im Raum',
-        c: 'Ein Rückzünden durch den Schlauch',
-      },
-      correct: 'a',
-      topic: 'Brandausbreitung',
-      sectionId: 'ausbreitung-explosion',
-      explanation: 'Backdraft (Rauchgasdurchzündung) entsteht, wenn Sauerstoff schlagartig in einen sauerstoffarmen Brandraum gelangt. Flashover dagegen ist das gleichzeitige Entzünden aller brennbaren Oberflächen.',
-      explanationRu: 'Обратная тяга (Backdraft) возникает, когда кислород резко поступает в бедное кислородом помещение с огнём. Flashover — это одновременное воспламенение всех горючих поверхностей.',
-    },
-    {
-      id: 9,
-      question: 'Wie schützt man sich vor atomarer Strahlung?',
-      options: {
-        a: 'Schutzanzug anlegen und schnell durchlaufen',
-        b: 'Abstand halten, Aufenthaltsdauer begrenzen, Abschirmung nutzen',
-        c: 'Atemschutzmaske genügt',
-      },
-      correct: 'b',
-      topic: 'Atomare Gefahren',
-      sectionId: 'abc-gefahren',
-      explanation: 'Schutz vor atomarer Strahlung basiert auf drei Prinzipien: Abstand halten (je weiter, desto geringer die Dosis), Aufenthaltsdauer begrenzen und Abschirmung nutzen.',
-      explanationRu: 'Защита от радиации основана на трёх принципах: соблюдать дистанцию (чем дальше — тем меньше доза), ограничивать время пребывания и использовать экранирование.',
-    },
-    {
-      id: 13,
-      question: 'Was muss der Truppführer beim Vorgehen ständig beachten?',
-      options: {
-        a: 'Die Uhrzeit, um den Einsatz zeitlich zu dokumentieren',
-        b: 'Ständig auf mögliche Gefahrensituationen achten',
-        c: 'Dass Sichtkontakt zum Einheitsführer besteht',
-      },
-      correct: 'b',
-      topic: 'Einsatzgrundsätze',
-      sectionId: 'gefahrenschema',
-      explanation: 'Der Truppführer muss ständig auf mögliche Gefahrensituationen achten — das ist seine wichtigste Verantwortung beim Vorgehen. Sichtkontakt zum Einheitsführer ist dabei nicht immer möglich.',
-      explanationRu: 'Командир звена должен постоянно следить за возможными опасностями — это его главная обязанность при выдвижении. Визуальный контакт с руководителем не всегда возможен.',
-    },
-    {
-      id: 14,
-      question: 'Wo sucht der Trupp bei Einsturzgefahr Schutz im Gebäudeinneren?',
-      options: {
-        a: 'An Außenwänden',
-        b: 'Unter Tür- und Fensterstürzen',
-        c: 'In der Mitte des Raumes',
-      },
-      correct: 'b',
-      topic: 'Einsturz',
-      sectionId: 'einsturz-elektrizitaet',
-      explanation: 'Bei Einsturzgefahr sucht der Trupp Schutz unter Tür- und Fensterstürzen — das sind besonders standfeste Gebäudeteile, weil sie als verstärkte Konstruktionen gebaut sind.',
-      explanationRu: 'При угрозе обрушения звено укрывается под дверными и оконными перемычками — это особенно прочные элементы здания, так как они спроектированы как усиленные конструкции.',
-    },
-    // Catalog questions
-    {
-      id: 110,
+      id: 117,
       question: 'Was versteht man unter Kontamination?',
       options: {
         a: 'Reinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen bei Verunreinigung mit ABC-Gefahrstoffen',
@@ -485,7 +329,7 @@ export const lesson: Lesson = {
       explanationRu: 'Контаминация — это загрязнение поверхности опасными ABC-веществами. Не очистка (это деконтаминация) и не попадание в организм (это инкорпорация).',
     },
     {
-      id: 111,
+      id: 118,
       question: 'Was versteht man unter Inkorporation?',
       options: {
         a: 'Reinigung der Oberfläche von Lebewesen, des Bodens, von Gewässern und Gegenständen bei Verunreinigung mit ABC-Gefahrstoffen',
@@ -500,7 +344,7 @@ export const lesson: Lesson = {
       explanationRu: 'Инкорпорация — попадание вредных веществ в организм через дыхание, кожу или с пищей. Она опаснее контаминации, потому что вещества действуют непосредственно внутри тела.',
     },
     {
-      id: 114,
+      id: 121,
       question: 'Warum wird der Einheitsführer versuchen, die Anzahl der Einsatzkräfte im Gefahrenbereich auf das erforderliche Mindestmaß reduzieren?',
       options: {
         a: 'Damit alle gleichmäßig mit Arbeit belastet werden',
@@ -515,7 +359,7 @@ export const lesson: Lesson = {
       explanationRu: 'Единственная причина сокращения — снижение риска заражения и собственной опасности. Чем меньше людей в зоне опасности, тем меньше может пострадать.',
     },
     {
-      id: 116,
+      id: 123,
       question: 'Worauf ist bei Einsturzgefahr besonders zu achten?',
       options: {
         a: 'Trümmerschatten beachten',
@@ -530,7 +374,7 @@ export const lesson: Lesson = {
       explanationRu: 'При угрозе обрушения главная опасность — тень обломков: зона, которой угрожает возможное обрушение. Этой зоны необходимо избегать.',
     },
     {
-      id: 118,
+      id: 125,
       question: 'Welche Abstände sind von Spannung führenden Teilen beim Einsatz von CM-Strahlrohren zu halten?',
       options: {
         a: '1 m für Sprühstrahl bei Niederspannung und 10 m für Vollstrahl bei Hochspannung',
@@ -545,7 +389,7 @@ export const lesson: Lesson = {
       explanationRu: 'Для CM-стволов действуют фиксированные дистанции: 1 м распылённая струя при низком напряжении и 5–10 м сплошная струя при высоком. Воду можно применять вблизи электроустановок при соблюдении дистанций.',
     },
     {
-      id: 119,
+      id: 126,
       question: 'Welche Gefahr fehlt im folgenden Merkschema für die Gefahren der Einsatzstelle? Atemgifte, Angstreaktionen, Atomare Gefahren, Ausbreitung, Chemische Stoffe, Erkrankung, Explosion, Einsturz',
       options: {
         a: 'Elektrizität',
@@ -560,7 +404,7 @@ export const lesson: Lesson = {
       explanationRu: 'В схеме AAAA C EEEE в перечислении не хватает «E» — электричество. Утопление и падение с высоты не входят в эту схему.',
     },
     {
-      id: 120,
+      id: 127,
       question: 'Wie lässt sich die Strahlenbelastung bei atomaren Gefahren verringern?',
       options: {
         a: 'Abstand halten, Einsatzzeit begrenzen, Abschirmung nutzen',
@@ -575,7 +419,7 @@ export const lesson: Lesson = {
       explanationRu: 'Три принципа защиты от радиации: дистанция (снижение дозы), ограничение времени пребывания и экранирование (стены, техника). Есть и пить на месте вызова запрещено.',
     },
     {
-      id: 121,
+      id: 128,
       question: 'Wie kann sich der Angriffstrupp vor der Gefahr durch Brandausbreitung schützen?',
       options: {
         a: 'Nur mit Wasser am Rohr vorgehen',
@@ -590,7 +434,7 @@ export const lesson: Lesson = {
       explanationRu: 'Атакующее звено может входить в зону опасности только с водой на стволе. Без воды оно было бы беззащитно перед огнём. Пути отступления должны быть обеспечены — быстрое продвижение без отхода — грубая ошибка.',
     },
     {
-      id: 122,
+      id: 129,
       question: 'Welches Verhalten kann bei der Stressbewältigung hilfreich sein?',
       options: {
         a: 'Pausen einlegen, sich ablösen lassen',
@@ -605,7 +449,7 @@ export const lesson: Lesson = {
       explanationRu: 'Перерывы и подмена — действенные меры борьбы со стрессом. Работать в одиночку или быстрее «для отвлечения» лишь усиливает стресс.',
     },
     {
-      id: 123,
+      id: 130,
       question: 'Welche der folgenden Symptome sind üblicherweise anzutreffende negative Stressreaktionen?',
       options: {
         a: 'Zittern, Schwitzen',
@@ -620,7 +464,7 @@ export const lesson: Lesson = {
       explanationRu: 'Дрожь и потливость — типичные негативные стрессовые реакции. Повышение концентрации и эйфория — скорее позитивные эффекты, которые при реальном стрессе на вызове возникают редко.',
     },
     {
-      id: 124,
+      id: 131,
       question: 'Was ist Stress?',
       options: {
         a: 'Eine Reaktion des Körpers',
@@ -635,7 +479,7 @@ export const lesson: Lesson = {
       explanationRu: 'Стресс — это реакция организма на чрезмерные нагрузки, ни пища, ни вещество. На вызове он возникает из-за нехватки времени, ответственности и опасности.',
     },
     {
-      id: 125,
+      id: 132,
       question: 'Was hat der Truppführer beim Vorgehen des Trupps zu beachten?',
       options: {
         a: 'Ständig auf mögliche Gefahrensituationen achten',
@@ -650,7 +494,7 @@ export const lesson: Lesson = {
       explanationRu: 'Командир звена обязан постоянно следить за возможными опасностями — это его главная ответственность. Визуальный контакт с руководителем не всегда возможен, и командир звена безусловно несёт ответственность.',
     },
     {
-      id: 126,
+      id: 133,
       question: 'Welcher Sicherheitsabstand muss mindestens zu spannungsführenden Anlagen mit einer Spannung von 380 kV eingehalten werden?',
       options: {
         a: '5 m',
@@ -665,7 +509,7 @@ export const lesson: Lesson = {
       explanationRu: 'При 380 кВ (высокое напряжение) безопасная дистанция — минимум 5 метров. 1 метр действует только для низкого напряжения (до 1.000 В).',
     },
     {
-      id: 127,
+      id: 134,
       question: 'Was ist der Trümmerschatten?',
       options: {
         a: 'Ein durch Einsturz bedrohter Bereich, nur im Innern eines Gebäudes',
@@ -680,7 +524,7 @@ export const lesson: Lesson = {
       explanationRu: 'Тень обломков — зона, которой угрожает обрушение, как внутри, так и снаружи здания (поэтому не «только внутри»). Это не просто «труднообозримая зона», а реально опасная.',
     },
     {
-      id: 128,
+      id: 135,
       question: 'Welche Schutzmaßnahmen beachten sie als Truppführer bei der Gefahr durch Elektrizität?',
       options: {
         a: 'Die Einhaltung erforderlicher Mindestabstände',

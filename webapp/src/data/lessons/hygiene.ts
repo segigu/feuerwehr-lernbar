@@ -156,178 +156,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 1,
-      question: 'Was entsteht bei vollständiger Verbrennung?',
-      options: {
-        a: 'Kohlenstoffmonoxid (CO)',
-        b: 'Kohlenstoffdioxid (CO₂)',
-        c: 'Blausäure (HCN)',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Bei vollständiger Verbrennung entsteht Kohlenstoffdioxid (CO₂). Kohlenstoffmonoxid (CO) hingegen entsteht bei unvollständiger Verbrennung.',
-      explanationRu: 'При полном сгорании образуется углекислый газ (CO₂). Угарный газ (CO), напротив, образуется при неполном сгорании.',
-    },
-    {
-      id: 2,
-      question: 'Welches Gas ist leichter als Luft — CO oder CO₂?',
-      options: {
-        a: 'CO₂',
-        b: 'CO',
-        c: 'Beide sind schwerer als Luft',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Kohlenstoffmonoxid (CO) ist leichter als Luft und steigt nach oben. CO₂ dagegen ist ca. 1,5-mal schwerer als Luft und sammelt sich am Boden.',
-      explanationRu: 'Угарный газ (CO) легче воздуха и поднимается вверх. CO₂ же примерно в 1,5 раза тяжелее воздуха и скапливается у пола.',
-    },
-    {
-      id: 3,
-      question: 'Warum soll man sich an der Einsatzstelle mit kaltem Wasser waschen?',
-      options: {
-        a: 'Kaltes Wasser löst Ruß besser',
-        b: 'Die Hautporen bleiben geschlossen und nehmen weniger Schadstoffe auf',
-        c: 'Warmes Wasser ist an der Einsatzstelle nicht verfügbar',
-      },
-      correct: 'b',
-      topic: 'Einsatzhygiene',
-      sectionId: 'einsatzhygiene',
-      explanation: 'Bei kaltem Wasser bleiben die Hautporen geschlossen, sodass weniger Schadstoffe über die Haut aufgenommen werden. Warmes Wasser würde die Poren öffnen und die Schadstoffaufnahme fördern.',
-      explanationRu: 'При мытье холодной водой поры кожи остаются закрытыми, и через кожу впитывается меньше вредных веществ. Тёплая вода раскрыла бы поры и усилила проникновение токсинов.',
-    },
-    {
-      id: 4,
-      question: 'Was ist die häufigste Todesursache bei Bränden?',
-      options: {
-        a: 'Verbrennung durch Flammen',
-        b: 'Einstürzende Gebäudeteile',
-        c: 'Rauchgasintoxikation (Rauchgasvergiftung)',
-      },
-      correct: 'c',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Der Großteil der Brandtoten stirbt nicht durch Flammen, sondern durch Rauchgasintoxikation. Bereits wenige Atemzüge in dichtem Brandrauch können zur Bewusstlosigkeit führen.',
-      explanationRu: 'Большинство погибших на пожарах умирает не от огня, а от отравления продуктами горения. Уже несколько вдохов в густом дыму могут привести к потере сознания.',
-    },
-    {
-      id: 5,
-      question: 'Wie lange nach "Feuer aus" sollte Atemschutz bei Aufräumarbeiten getragen werden?',
-      options: {
-        a: '15 Minuten',
-        b: '1 bis 2 Stunden',
-        c: 'Atemschutz ist nach "Feuer aus" nicht mehr nötig',
-      },
-      correct: 'b',
-      topic: 'Einsatzhygiene',
-      sectionId: 'einsatzhygiene',
-      explanation: 'Atemschutz muss auch bei Aufräumarbeiten 1 bis 2 Stunden nach „Feuer aus" getragen werden, da die Brandstelle noch lange gefährliche Stoffe ausgast.',
-      explanationRu: 'Средства защиты дыхания нужно носить и при уборочных работах ещё 1–2 часа после ликвидации пожара, так как очаг ещё долго выделяет опасные вещества.',
-    },
-    {
-      id: 6,
-      question: 'Ab welcher Konzentration ist Kohlenstoffmonoxid (CO) tödlich?',
-      options: {
-        a: 'Ab 0,05 Vol%',
-        b: 'Ab 0,5 Vol%',
-        c: 'Ab 5 Vol%',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Bereits ab 0,5 Vol% CO in der Atemluft ist die Konzentration tödlich. CO bindet sich 200- bis 300-mal stärker an Hämoglobin als Sauerstoff und blockiert so den Sauerstofftransport.',
-      explanationRu: 'Уже при концентрации 0,5 об.% CO во вдыхаемом воздухе наступает смерть. CO связывается с гемоглобином в 200–300 раз сильнее кислорода, блокируя транспорт кислорода.',
-    },
-    {
-      id: 9,
-      question: 'Welche Schutzhandschuhe müssen beim Umgang mit Verletzten getragen werden?',
-      options: {
-        a: 'Feuerwehrhandschuhe reichen aus',
-        b: 'Infektionsschutzhandschuhe',
-        c: 'Chemikalienschutzhandschuhe',
-      },
-      correct: 'b',
-      topic: 'Einsatzhygiene',
-      sectionId: 'einsatzfaehigkeit',
-      explanation: 'Beim Umgang mit Verletzten sind Infektionsschutzhandschuhe zu tragen, da Blut und Körperflüssigkeiten Krankheitserreger enthalten können. Normale Feuerwehrhandschuhe sind nicht flüssigkeitsdicht.',
-      explanationRu: 'При работе с пострадавшими необходимо надевать перчатки для защиты от инфекций, так как кровь и биологические жидкости могут содержать возбудители заболеваний. Обычные пожарные перчатки не являются влагонепроницаемыми.',
-    },
-    {
-      id: 10,
-      question: 'Was versteht man unter einem Flash Over?',
-      options: {
-        a: 'Das plötzliche Erlöschen eines Brandes',
-        b: 'Die schlagartige Entzündung brennbarer Gase im Rauch',
-        c: 'Das Einschalten der Warnblinkanlage am Einsatzfahrzeug',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Ein Flash Over (Durchzündung) entsteht, wenn sich die brennbaren Gase im Brandrauch schlagartig entzünden. Das ist eine der größten Gefahren für Einsatzkräfte im Innenangriff.',
-      explanationRu: 'Flash Over (объёмная вспышка) — это мгновенное воспламенение горючих газов в дыму. Это одна из главных опасностей для пожарных при тушении внутри здания.',
-    },
-    {
-      id: 12,
-      question: 'Was bedeutet "Schwarz-Weiß-Trennung" im Feuerwehrhaus?',
-      options: {
-        a: 'Trennung von Einsatzkleidung und Zivilkleidung',
-        b: 'Trennung von verschmutztem Bereich und sauberem Bereich',
-        c: 'Farbliche Kennzeichnung der Fahrzeuge',
-      },
-      correct: 'b',
-      topic: 'Einsatzhygiene',
-      sectionId: 'einsatzhygiene',
-      explanation: 'Schwarz-Weiß-Trennung bedeutet die räumliche Trennung von verschmutztem Bereich (Umkleide, Waschbereich) und sauberem Bereich (Aufenthaltsräume, Büros). So wird die Verschleppung von Schadstoffen verhindert.',
-      explanationRu: '«Чёрно-белое» разделение означает пространственное разделение грязной зоны (раздевалка, мойка) и чистой зоны (помещения отдыха, кабинеты). Это предотвращает перенос вредных веществ.',
-    },
-    {
-      id: 13,
-      question: 'Woraus besteht Brandrauch?',
-      options: {
-        a: 'Nur aus Gasen (CO und CO₂)',
-        b: 'Aus Feststoffen (Ruß, Asche), Flüssigkeiten (Wasserdampf) und Gasen (CO, CO₂)',
-        c: 'Nur aus Ruß und Wasserdampf',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'Brandrauch ist ein Gemisch aus allen drei Aggregatzuständen: Feststoffe (Ruß, Asche), Flüssigkeiten (Wasserdampf) und Gase (CO, CO₂ und weitere).',
-      explanationRu: 'Дым при пожаре — это смесь веществ во всех трёх агрегатных состояниях: твёрдые (сажа, зола), жидкие (водяной пар) и газы (CO, CO₂ и другие).',
-    },
-    {
-      id: 14,
-      question: 'Warum duscht man nach dem Einsatz zuerst kalt?',
-      options: {
-        a: 'Um den Kreislauf anzuregen',
-        b: 'Damit die Hautporen geschlossen bleiben und weniger Schadstoffe aufgenommen werden',
-        c: 'Weil warmes Wasser im Feuerwehrhaus erst später verfügbar ist',
-      },
-      correct: 'b',
-      topic: 'Einsatzhygiene',
-      sectionId: 'einsatzhygiene',
-      explanation: 'Zuerst kalt duschen hält die Hautporen geschlossen, sodass weniger Schadstoffe über die Haut aufgenommen werden. Erst danach warm duschen zur gründlichen Reinigung.',
-      explanationRu: 'Сначала холодный душ — поры остаются закрытыми, и через кожу впитывается меньше вредных веществ. Только потом тёплый душ для тщательной очистки.',
-    },
-    {
-      id: 15,
-      question: 'Wie wirkt Kohlenstoffmonoxid (CO) auf den Körper?',
-      options: {
-        a: 'Es reizt die Schleimhäute und verursacht Husten',
-        b: 'Es blockiert den Sauerstofftransport im Blut und wirkt auf das Nervensystem',
-        c: 'Es verursacht Hautverbrennungen',
-      },
-      correct: 'b',
-      topic: 'Brandrauch',
-      sectionId: 'brandrauch',
-      explanation: 'CO bindet sich 200- bis 300-mal stärker an das Hämoglobin im Blut als Sauerstoff und blockiert so den Sauerstofftransport. Außerdem wirkt es auf Blut und Nerven. Es ist geruchlos, deshalb bemerkt man die Vergiftung nicht.',
-      explanationRu: 'CO связывается с гемоглобином крови в 200–300 раз сильнее кислорода, блокируя транспорт кислорода. Кроме того, он воздействует на кровь и нервную систему. Он не имеет запаха, поэтому отравление проходит незаметно.',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 101,
+      id: 94,
       question: 'Wer kann eine Abweichung von der persönlichen Schutzausrüstung anordnen?',
       options: {
         a: 'Der Truppführer',
@@ -342,7 +172,7 @@ export const lesson: Lesson = {
       explanationRu: 'Отклонение от средств индивидуальной защиты может приказать только руководитель подразделения. Ни командир звена, ни отдельные пожарные не вправе принимать это решение самостоятельно.',
     },
     {
-      id: 109,
+      id: 102,
       question: 'Welche Einsatzgrundsätze gelten u. a. an der Einsatzstelle bezüglich der Einsatzhygiene?',
       options: {
         a: 'Wird erst durch den Einheitsführer bestimmt',
@@ -357,7 +187,7 @@ export const lesson: Lesson = {
       explanationRu: 'В опасной зоне запрещено есть, пить и курить. Приём пищи разрешён только после грубой очистки и за пределами зоны выпадения сажи. Гигиенические меры начинаются уже на месте, а не только в депо.',
     },
     {
-      id: 110,
+      id: 103,
       question: 'Welche Hygienemaßnahme ist beim Umgang mit Verletzten zu beachten?',
       options: {
         a: 'Es ist ausreichend, nach dem Einsatz sich gründlich die Hände zu waschen',
@@ -372,7 +202,7 @@ export const lesson: Lesson = {
       explanationRu: 'При работе с пострадавшими необходимо надевать перчатки для защиты от инфекций. Кровь и биологические жидкости могут содержать возбудители заболеваний. Обычные пожарные перчатки не влагонепроницаемы и не обеспечивают достаточной защиты.',
     },
     {
-      id: 111,
+      id: 104,
       question: 'Ein Feuerwehrangehöriger nimmt unter Medikamenteneinfluss an einem Einsatz teil. Welche Folgen kann dies haben?',
       options: {
         a: 'Da die Krankheitssymptome ausgeschaltet sind, ist mit keinerlei Folgen zu rechnen',
@@ -387,7 +217,7 @@ export const lesson: Lesson = {
       explanationRu: 'Лекарства подавляют симптомы, но организм остаётся ослабленным. Высокая физическая нагрузка на выезде может привести к опасной перегрузке — вплоть до коллапса или потери сознания.',
     },
     {
-      id: 112,
+      id: 105,
       question: 'Nach einem Feuerwehreinsatz ist Ihre Einsatzkleidung stark verschmutzt. Wie verhalten Sie sich vor dem Abrücken?',
       options: {
         a: 'Es ist nichts besonderes zu beachten, lediglich die Fenster der Mannschaftskabine öffnen',
@@ -402,7 +232,7 @@ export const lesson: Lesson = {
       explanationRu: 'Сильно загрязнённую одежду упаковывают в мешок и не перевозят в кабине экипажа. Иначе вредные вещества распространятся по салону и подвергнут опасности весь расчёт.',
     },
     {
-      id: 113,
+      id: 106,
       question: 'Sie rücken nach einem Feuerwehreinsatz im Gerätehaus ein, wie verhalten Sie sich richtig?',
       options: {
         a: 'Nach dem Einrücken ist die Verpflegung zu organisieren',
@@ -417,7 +247,7 @@ export const lesson: Lesson = {
       explanationRu: 'В пожарном депо действует «чёрно-белое» разделение: в помещения отдыха и бытовые комнаты нельзя входить в грязной боевой одежде. Грязная зона (раздевалка) пространственно отделена от чистой (помещения отдыха).',
     },
     {
-      id: 114,
+      id: 107,
       question: 'Welche Faktoren können die persönliche Einsatzfähigkeit negativ beeinflussen?',
       options: {
         a: 'Ausreichend Schlaf',

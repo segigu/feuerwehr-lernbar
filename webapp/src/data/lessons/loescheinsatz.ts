@@ -467,7 +467,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'text',
-          de: 'Bei einem <strong>Feststoffbrand</strong> gilt der Grundsatz: Das Feuer wird <strong>von vorne nach hinten</strong> bekämpft. Das bedeutet, der Trupp arbeitet sich systematisch vom Brandanfang (der Seite, die ihm am nächsten ist) nach hinten durch. So wird verhindert, dass das Feuer hinter dem Trupp wieder aufflammt. Ein <strong>brennender Palettenstapel</strong> oder ein Freiflächen-Brand wird aus <strong>größerer Entfernung mit Vollstrahl</strong> bekämpft — der Vollstrahl hat eine höhere Reichweite und mehr Aufprallkraft, was bei solchen kompakten Bränden im Freien effektiver ist als Sprühstrahl.',
+          de: 'Bei einem <strong>Feststoffbrand</strong> gilt der Grundsatz: Das Feuer wird <strong>von vorne nach hinten</strong> bekämpft. Das bedeutet, der Trupp arbeitet sich systematisch vom Brandanfang (der Seite, die ihm am nächsten ist) nach hinten durch. So wird verhindert, dass das Feuer hinter dem Trupp wieder aufflammt. Ein <strong>brennender Palettenstapel</strong> im Freien wird mit <strong>Sprühstrahl</strong> bekämpft, wobei man sich <strong>ständig um das Brandobjekt bewegt</strong> und <strong>stets außerhalb des Brandrauches</strong> bleibt. Der Sprühstrahl bietet dabei besseren Schutz vor Wärmestrahlung.',
           ru: 'При <strong>пожаре твёрдых веществ</strong> действует принцип: огонь тушат <strong>спереди назад</strong>. Это значит, что звено систематически продвигается от начала пожара (ближайшей стороны) вглубь. Так предотвращается повторное возгорание за спиной звена. <strong>Горящий штабель паллет</strong> или пожар на открытой площадке тушат <strong>с большого расстояния сплошной струёй</strong> — сплошная струя имеет большую дальность и силу удара, что при компактных пожарах на открытом воздухе эффективнее, чем распылённая струя.',
         },
         {
@@ -507,8 +507,8 @@ export const lesson: Lesson = {
         },
         {
           type: 'key',
-          de: 'Feststoffbrand: von vorne nach hinten. Palettenstapel: Vollstrahl aus Entfernung. Dachstuhl: Knotenpunkte zuerst. Zimmerbrand: nicht blind von außen in Fenster spritzen! Brennende Person: Löschdecke auffalten, einwickeln, andrücken.',
-          ru: 'Твёрдые вещества: спереди назад. Штабель паллет: сплошная струя с расстояния. Чердак: узловые соединения в первую очередь. Комната: не лить снаружи в окна! Горящий человек: накидку развернуть, обернуть, прижать.',
+          de: 'Feststoffbrand: von vorne nach hinten. Palettenstapel im Freien: Sprühstrahl, um das Objekt bewegen, außerhalb des Rauches bleiben. Dachstuhl: Knotenpunkte zuerst. Zimmerbrand: nicht blind von außen in Fenster spritzen! Brennende Person: Löschdecke auffalten, einwickeln, andrücken.',
+          ru: 'Твёрдые вещества: спереди назад. Штабель паллет на воздухе: распылённой струёй, двигаясь вокруг, оставаясь вне дыма. Чердак: узловые соединения в первую очередь. Комната: не лить снаружи в окна! Горящий человек: накидку развернуть, обернуть, прижать.',
         },
       ],
     },
@@ -562,200 +562,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 1,
-      question: 'Aus wie vielen Personen besteht eine Löschgruppe gemäß FwDV 3?',
-      options: { a: '6 Personen (1/5)', b: '9 Personen (1/8)', c: '3 Personen (1/2)' },
-      correct: 'b',
-      topic: 'Taktische Einheiten',
-      sectionId: 'taktische-einheiten',
-      explanation: 'Die Gruppe hat die Stärke 1/8, also 9 Personen: Gruppenführer (Einheitsführer), Maschinist, Angriffstrupp (2), Wassertrupp (2) und Schlauchtrupp (2). Die Staffel hat 1/5 (6 Personen).',
-      explanationRu: 'Группа имеет численность 1/8, то есть 9 человек: командир, машинист, звено атаки (2), водяное звено (2) и рукавное звено (2). Штаффель — 1/5 (6 человек).',
-    },
-    {
-      id: 2,
-      question: 'Welcher Trupp fehlt bei der Staffel im Vergleich zur Gruppe?',
-      options: { a: 'Angriffstrupp', b: 'Wassertrupp', c: 'Schlauchtrupp' },
-      correct: 'c',
-      topic: 'Taktische Einheiten',
-      sectionId: 'taktische-einheiten',
-      explanation: 'Bei der Staffel fehlt der Schlauchtrupp. Die Staffel besteht aus Staffelführer, Maschinist, Angriffstrupp und Wassertrupp. Aufgaben des Schlauchtrupps übernimmt teilweise der Wassertrupp.',
-      explanationRu: 'В штаффеле нет рукавного звена. Штаффель состоит из командира, машиниста, звена атаки и водяного звена. Часть задач рукавного звена берёт на себя водяное звено.',
-    },
-    {
-      id: 3,
-      question: 'Was versteht man unter einem Flashover?',
-      options: {
-        a: 'Eine Explosion durch Gasaustritt',
-        b: 'Die schlagartige Durchzündung aller brennbaren Materialien im Raum',
-        c: 'Das Erlöschen eines Feuers durch Sauerstoffmangel',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Beim Flashover entzünden sich alle brennbaren Materialien im Raum nahezu gleichzeitig. Die Temperaturen steigen auf über 1.000 °C. Dem Flashover geht der Rollover (Rauchgasdurchzündung) voraus.',
-      explanationRu: 'При флешовере все горючие материалы в помещении воспламеняются практически одновременно. Температура поднимается выше 1.000 °C. Флешоверу предшествует роллвер (воспламенение дымовых газов).',
-    },
-    {
-      id: 4,
-      question: 'Was ist die Besonderheit eines Backdrafts?',
-      options: {
-        a: 'Er entsteht durch zu viel Wasser',
-        b: 'Er entsteht bei Sauerstoffmangel — beim Öffnen kommt es zur schlagartigen Durchzündung',
-        c: 'Er entsteht nur bei Gasbränden',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Ein Backdraft entsteht, wenn ein Brand in einem geschlossenen Raum unter Sauerstoffmangel glimmt. Beim Öffnen von Tür oder Fenster strömt Sauerstoff ein und es kommt zur explosionsartigen Durchzündung der heißen Gase.',
-      explanationRu: 'Бэкдрафт возникает, когда пожар тлеет в закрытом помещении при недостатке кислорода. При открытии двери или окна поступает кислород и происходит взрывообразное воспламенение горячих газов.',
-    },
-    {
-      id: 5,
-      question: 'Welche Feuerwiderstandsdauer hat ein feuerbeständiges Bauteil?',
-      options: { a: '30 Minuten (F 30)', b: '60 Minuten (F 60)', c: '90 Minuten (F 90)' },
-      correct: 'c',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Feuerbeständig = F 90 = mindestens 90 Minuten. Feuerhemmend = F 30 = 30 Minuten. Hochfeuerhemmend = F 60 = 60 Minuten. Diese Klassen geben an, wie lange ein Bauteil einem Brand standhält.',
-      explanationRu: 'Огнестойкий = F 90 = минимум 90 минут. Огнезадерживающий = F 30 = 30 минут. Высоко-огнезадерживающий = F 60 = 60 минут. Эти классы показывают, как долго элемент выдерживает пожар.',
-    },
-    {
-      id: 6,
-      question: 'Wie wird eine brennende Person gelöscht?',
-      options: {
-        a: 'Mit Vollstrahl aus kurzer Entfernung',
-        b: 'Löschdecke auffalten, Person einwickeln und andrücken',
-        c: 'Mit Sprühstrahl von oben',
-      },
-      correct: 'b',
-      topic: 'Löschtaktik',
-      sectionId: 'loeschtaktik',
-      explanation: 'Die Löschdecke wird aufgefaltet, um die brennende Person gewickelt und angedrückt. Dadurch wird dem Feuer der Sauerstoff entzogen. Die Person darf nicht laufen, da Bewegung die Flammen anfacht.',
-      explanationRu: 'Огнезащитную накидку разворачивают, оборачивают вокруг горящего человека и прижимают. Это перекрывает доступ кислорода. Человек не должен бежать — движение раздувает пламя.',
-    },
-    {
-      id: 7,
-      question: 'Warum darf bei einem Zimmerbrand nicht blind von außen in Fenster gespritzt werden?',
-      options: {
-        a: 'Weil das Wasser den Boden beschädigt',
-        b: 'Weil ein Trupp im Innenangriff gefährdet werden könnte',
-        c: 'Weil das Feuer dadurch stärker wird',
-      },
-      correct: 'b',
-      topic: 'Löschtaktik',
-      sectionId: 'loeschtaktik',
-      explanation: 'Im Inneren könnte ein Trupp im Innenangriff arbeiten. Der Wasserstrahl von außen würde heißen Dampf erzeugen und auf den Trupp treiben — das ist lebensgefährlich.',
-      explanationRu: 'Внутри может работать звено на внутренней атаке. Струя воды снаружи создаст горячий пар и направит его на звено — это смертельно опасно.',
-    },
-    {
-      id: 8,
-      question: 'Was ist die Schwachstelle bei Holzkonstruktionen im Brandfall?',
-      options: {
-        a: 'Die Dachziegel',
-        b: 'Die Knotenpunkte (Verbindungsstellen)',
-        c: 'Die Dachrinne',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Knotenpunkte sind die Verbindungsstellen zwischen Balken und Trägern in einer Holzkonstruktion. Wenn diese versagen, stürzt die gesamte Konstruktion zusammen. Deshalb werden sie beim Dachstuhlbrand zuerst bekämpft.',
-      explanationRu: 'Узловые соединения — места стыков балок и перекладин в деревянной конструкции. Если они разрушатся, вся конструкция обрушится. Поэтому при пожаре на чердаке их тушат в первую очередь.',
-    },
-    {
-      id: 9,
-      question: 'Was bedeutet „abhängige Löschwasserversorgung"?',
-      options: {
-        a: 'Wasserversorgung aus offenen Gewässern',
-        b: 'Wasserversorgung aus dem öffentlichen Wassernetz (Hydranten)',
-        c: 'Wasserversorgung aus unterirdischen Behältern',
-      },
-      correct: 'b',
-      topic: 'Wasserversorgung',
-      sectionId: 'loeschwasserversorgung',
-      explanation: 'Abhängige Versorgung nutzt das öffentliche Wassernetz über Hydranten (Unter- und Überflur). Unabhängige Versorgung nutzt natürliche Gewässer, Löschwasserteiche oder unterirdische Behälter.',
-      explanationRu: 'Зависимое водоснабжение использует городской водопровод через гидранты (подземные и надземные). Независимое — открытые водоёмы, пожарные пруды или подземные резервуары.',
-    },
-    {
-      id: 10,
-      question: 'Wie tief muss der Saugkorb mindestens unter der Wasseroberfläche liegen?',
-      options: { a: '10 cm', b: '30 cm', c: '50 cm' },
-      correct: 'b',
-      topic: 'Wasserversorgung',
-      sectionId: 'loeschwasserversorgung',
-      explanation: 'Der Saugkorb muss mindestens 30 cm unter der Wasseroberfläche liegen, damit keine Luft angesaugt wird. Liegt er zu nah an der Oberfläche, bildet sich ein Wasserwirbel und Luft gelangt in die Pumpe.',
-      explanationRu: 'Всасывающая корзина должна находиться минимум на 30 см ниже поверхности воды, чтобы не подсасывался воздух. Если она слишком близко к поверхности, образуется водоворот и воздух попадает в насос.',
-    },
-    {
-      id: 11,
-      question: 'Warum verliert Stahl im Brandfall seine Tragfähigkeit, obwohl er nicht brennt?',
-      options: {
-        a: 'Weil Stahl schmilzt',
-        b: 'Weil sich Stahl bei Hitze verformt und seine Festigkeit verliert',
-        c: 'Weil Stahl durch Wasser korrodiert',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Stahl brennt zwar nicht, verliert aber schon nach wenigen Minuten im Feuer seine Tragfähigkeit. Er verformt sich bei hohen Temperaturen und kann einstürzen — das ist eine oft unterschätzte Gefahr.',
-      explanationRu: 'Сталь не горит, но уже через несколько минут в огне теряет несущую способность. При высоких температурах она деформируется и может обрушиться — это часто недооценённая опасность.',
-    },
-    {
-      id: 12,
-      question: 'Was passiert nach dem Rollover, wenn der Brand weiter fortschreitet?',
-      options: {
-        a: 'Das Feuer erlischt von selbst',
-        b: 'Es kommt zum Flashover',
-        c: 'Es kommt zum Backdraft',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Der Rollover (Rauchgasdurchzündung unter der Decke) ist das Warnsignal für den bevorstehenden Flashover. Beim Flashover zünden alle brennbaren Materialien im Raum nahezu gleichzeitig durch.',
-      explanationRu: 'Роллвер (воспламенение дымовых газов под потолком) — предупреждающий сигнал приближающегося флешовера. При флешовере все горючие материалы в помещении воспламеняются практически одновременно.',
-    },
-    {
-      id: 13,
-      question: 'Was bedeutet „hochfeuerhemmend" bei der Feuerwiderstandsdauer?',
-      options: { a: 'Mindestens 30 Minuten', b: 'Mindestens 60 Minuten', c: 'Mindestens 90 Minuten' },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Hochfeuerhemmend entspricht der Klasse F 60 — das Bauteil hält mindestens 60 Minuten stand. Feuerhemmend = F 30 (30 Min.), feuerbeständig = F 90 (90 Min.).',
-      explanationRu: 'Высоко-огнезадерживающий соответствует классу F 60 — элемент выдерживает минимум 60 минут. Огнезадерживающий = F 30 (30 мин.), огнестойкий = F 90 (90 мин.).',
-    },
-    {
-      id: 14,
-      question: 'Welche Phasen durchläuft ein Brand in der richtigen Reihenfolge?',
-      options: {
-        a: 'Flashover → Entstehung → Entwicklung',
-        b: 'Entstehung → Entwicklung → Rollover → Flashover',
-        c: 'Entwicklung → Entstehung → Backdraft',
-      },
-      correct: 'b',
-      topic: 'Brandentwicklung',
-      sectionId: 'brandentwicklung',
-      explanation: 'Die korrekte Reihenfolge ist: Entstehungsphase → Entwicklungsphase → Rollover (Rauchgasdurchzündung) → Flashover (Vollbrand). Der Backdraft ist eine Sondersituation bei Sauerstoffmangel.',
-      explanationRu: 'Правильная последовательность: фаза возникновения → фаза развития → роллвер (воспламенение дымовых газов) → флешовер (полное горение). Бэкдрафт — особая ситуация при недостатке кислорода.',
-    },
-    {
-      id: 15,
-      question: 'Wie heißen die zwei Arten der Löschwasserversorgung?',
-      options: {
-        a: 'Abhängige und unabhängige Versorgung',
-        b: 'Direkte und indirekte Versorgung',
-        c: 'Primäre und sekundäre Versorgung',
-      },
-      correct: 'a',
-      topic: 'Wasserversorgung',
-      sectionId: 'loeschwasserversorgung',
-      explanation: 'Abhängige Versorgung nutzt das öffentliche Wassernetz (Hydranten), unabhängige Versorgung nutzt natürliche Gewässer, Löschwasserteiche oder unterirdische Behälter.',
-      explanationRu: 'Зависимое водоснабжение использует городской водопровод (гидранты), независимое — открытые водоёмы, пожарные пруды или подземные резервуары.',
-    },
-    // Catalog questions (id 101-127)
-    {
-      id: 101,
+      id: 136,
       question: 'Welcher Trupp stellt in der Regel die Wasserversorgung zwischen Löschfahrzeug und Wasserentnahme her?',
       options: {
         a: 'Wassertrupp',
@@ -770,7 +578,7 @@ export const lesson: Lesson = {
       explanationRu: 'Водяное звено отвечает за водоснабжение. Оно устанавливает соединение между местом забора воды и пожарным автомобилем, пока звено атаки устанавливает разветвление и выдвигается к очагу.',
     },
     {
-      id: 102,
+      id: 137,
       question: 'Mit welcher Ausrüstung geht der Angriffstrupp bei einem Brandeinsatz (Außenangriff) im Regelfall vor?',
       options: {
         a: 'Pulverlöscher',
@@ -785,7 +593,7 @@ export const lesson: Lesson = {
       explanationRu: 'Звено атаки берёт ствол, держатель рукава и осветительное устройство. Ствол — для тушения, держатель — для крепления линии, осветитель — для видимости в темноте или дыму.',
     },
     {
-      id: 103,
+      id: 138,
       question: 'Wo wird am Verteiler das 2. C-Rohr angeschlossen (in Fließrichtung des Wassers betrachtet)?',
       options: {
         a: 'links',
@@ -800,8 +608,8 @@ export const lesson: Lesson = {
       explanationRu: 'Согласно FwDV 3, по направлению потока воды 1-й ствол C подключается слева, а 2-й ствол C — справа на разветвлении. Средний отвод предназначен для специальных стволов.',
     },
     {
-      id: 104,
-      question: 'Nach dem Kommando „Gefahr - Alle sofort zurück!" sammeln sich die Einsatzkräfte…',
+      id: 139,
+      question: 'Nach dem Kommando „Gefahr - Alle sofort zurück!“ sammeln sich die Einsatzkräfte…',
       options: {
         a: 'am Verteiler',
         b: 'bei der Einsatzleitung',
@@ -815,7 +623,7 @@ export const lesson: Lesson = {
       explanationRu: 'По этой команде все собираются у пожарного автомобиля — там проводится перекличка. Не у разветвления или штаба, а у машины как центрального пункта сбора.',
     },
     {
-      id: 105,
+      id: 140,
       question: 'Welche Angaben sind auf dem Hinweisschild zu einem Unterflurhydranten enthalten?',
       options: {
         a: 'Betriebsdruck und Wasserlieferung',
@@ -830,7 +638,7 @@ export const lesson: Lesson = {
       explanationRu: 'Указательный знак показывает положение гидранта (расстояние и направление) и диаметр водопровода. Так можно быстро найти гидрант и оценить доступное количество воды.',
     },
     {
-      id: 106,
+      id: 141,
       question: 'Wer kuppelt bei einer Gruppe, bei der Wasserentnahme aus offenen Gewässern, die Saugleitung?',
       options: {
         a: 'Angriffstrupp, der Wassertrupp unterstützt',
@@ -845,7 +653,7 @@ export const lesson: Lesson = {
       explanationRu: 'Водяное звено собирает всасывающую линию, рукавное звено ему помогает. Водяное звено отвечает за водоснабжение, рукавное — помогает при сборке тяжёлых всасывающих рукавов.',
     },
     {
-      id: 107,
+      id: 142,
       question: 'In welcher Reihenfolge wird die Wasserversorgung bei Löschfahrzeugen mit Löschwasserbehälter (z. B. LF 20) verlegt?',
       options: {
         a: 'Zuerst von der Wasserentnahmestelle zum Löschfahrzeug und danach zum Verteiler',
@@ -860,7 +668,7 @@ export const lesson: Lesson = {
       explanationRu: 'Сначала прокладывается линия B от машины к разветвлению. Так звено атаки может сразу начать тушение водой из бака, пока параллельно строится внешнее водоснабжение.',
     },
     {
-      id: 108,
+      id: 143,
       question: 'Der Gruppenführer verlangt, dass Sie seinen Befehl wiederholen. Warum?',
       options: {
         a: 'Zeitersparnis',
@@ -875,7 +683,7 @@ export const lesson: Lesson = {
       explanationRu: 'Повторение приказа служит не экономии времени и не этикету, а безопасности: руководитель должен знать, что его приказ правильно понят. Недоразумения на выезде могут стоить жизни.',
     },
     {
-      id: 109,
+      id: 144,
       question: 'Welcher Trupp setzt im Brandeinsatz den Verteiler?',
       options: {
         a: 'Wassertrupp',
@@ -890,7 +698,7 @@ export const lesson: Lesson = {
       explanationRu: 'Разветвление устанавливает звено атаки. Однако точное место определяет не звено атаки, а руководитель подразделения в приказе.',
     },
     {
-      id: 110,
+      id: 145,
       question: 'Welchen Vorteil hat die festgelegte Sitzordnung im Löschgruppenfahrzeug?',
       options: {
         a: 'Keinen',
@@ -905,23 +713,23 @@ export const lesson: Lesson = {
       explanationRu: 'Рассадка имеет тактический смысл: каждый сидит на своём месте и может во время выезда подготовиться к своей функции. Каждый знает, какое оборудование брать и какую задачу выполнять.',
     },
     {
-      id: 111,
-      question: 'Eine angetretene Gruppe erhält den Einsatzbefehl: „Wasserentnahmestelle der Überflurhydrant - Verteiler neben Hauseingang - zum Einsatz fertig!". Welche Aufgaben haben Sie als Angriffstruppführer?',
+      id: 146,
+      question: 'Eine angetretene Gruppe erhält den Einsatzbefehl: „Wasserentnahmestelle der Überflurhydrant - Verteiler neben Hauseingang - zum Einsatz fertig!”. Welche Aufgaben haben Sie als Angriffstruppführer?',
       options: {
         a: 'Ausrüsten und bis zum Hauseingang vorgehen',
         b: 'Verteiler und C-Schläuche zur befohlenen Stelle bringen',
         c: 'B-Schlauchleitung zum Verteiler vorlegen',
       },
       image: null,
-      correct: 'c',
+      correct: 'b',
       topic: 'Fragenkatalog',
       sectionId: 'einsatzbefehl',
-      explanation: 'Bei „zum Einsatz fertig" verlegt der Angriffstruppführer die B-Schlauchleitung vom Fahrzeug zum Verteiler. Die B-Leitung zum Verteiler ist die Hauptaufgabe des Angriffstrupps bei der Bereitstellung.',
-      explanationRu: 'При команде «zum Einsatz fertig» командир звена атаки прокладывает рукавную линию B от автомобиля к разветвлению. Прокладка линии B к разветвлению — основная задача звена атаки при подготовке.',
+      explanation: 'Bei „zum Einsatz fertig" bringt der Angriffstruppführer den Verteiler und die C-Schläuche zur befohlenen Stelle. Das ist die Hauptaufgabe des Angriffstrupps bei diesem Einsatzbefehl.',
+      explanationRu: 'При команде «zum Einsatz fertig» командир звена атаки доставляет разветвление и рукава C к указанному месту. Это основная задача звена атаки при данном приказе.',
     },
     {
-      id: 112,
-      question: 'Welche Maßnahmen führt der Trupp aus auf den Befehl „...trupp mit C-Rohr zur/zum ... über ... vor!"?',
+      id: 147,
+      question: 'Welche Maßnahmen führt der Trupp aus auf den Befehl „...trupp mit C-Rohr zur/zum ... über ... vor!”?',
       options: {
         a: 'C-Schlauchleitung wird an einem der drei Abgänge des Verteilers angeschlossen',
         b: 'Schnellangriffseinrichtung des Löschfahrzeuges wird vorgenommen',
@@ -935,7 +743,7 @@ export const lesson: Lesson = {
       explanationRu: 'По этой команде рукавная линия C подключается к одному из отводов разветвления. Линия всегда идёт через разветвление, а не напрямую от насоса. Разветвление — центральный узел водоснабжения.',
     },
     {
-      id: 113,
+      id: 148,
       question: 'Wer verlegt im Regelfall bei der Staffel im Löscheinsatz die B-Schlauchleitung zum Verteiler?',
       options: {
         a: 'Angriffstrupp',
@@ -950,7 +758,7 @@ export const lesson: Lesson = {
       explanationRu: 'В штаффеле водяное звено прокладывает линию B к разветвлению, потому что рукавного звена нет. В группе прокладка линии B распределяется между звеньями.',
     },
     {
-      id: 114,
+      id: 149,
       question: 'Wie verhalten Sie sich als Truppführer beim Erkennen einer Eigengefährdung des Trupps?',
       options: {
         a: 'Der Trupp geht geschlossen zurück, Rückmeldung an den Einheitsführer',
@@ -965,7 +773,7 @@ export const lesson: Lesson = {
       explanationRu: 'При угрозе звено отступает вместе — никогда поодиночке. Затем немедленный доклад руководителю. Ждать нельзя, одиночное отступление подвергает опасности напарника.',
     },
     {
-      id: 115,
+      id: 150,
       question: 'Wer bestimmt bei einer Wasserentnahme aus offenem Gewässer die Anzahl der Saugschläuche?',
       options: {
         a: 'Der Wassertruppführer',
@@ -973,14 +781,14 @@ export const lesson: Lesson = {
         c: 'Der Schlauchtruppführer',
       },
       image: null,
-      correct: 'b',
+      correct: 'a',
       topic: 'Fragenkatalog',
       sectionId: 'loeschwasserversorgung',
-      explanation: 'Die Anzahl der Saugschläuche bestimmt der Einheitsführer (Gruppenführer/Staffelführer), nicht der Wassertruppführer. Der Einheitsführer überblickt die Gesamtlage und entscheidet über die benötigte Sauglänge.',
-      explanationRu: 'Количество всасывающих рукавов определяет руководитель подразделения, а не командир водяного звена. Руководитель видит общую обстановку и решает, какая длина всасывания необходима.',
+      explanation: 'Die Anzahl der Saugschläuche bestimmt der Wassertruppführer. Er beurteilt vor Ort die Entfernung zum Gewässer und legt fest, wie viele Saugschläuche benötigt werden.',
+      explanationRu: 'Количество всасывающих рукавов определяет командир водяного звена. Он на месте оценивает расстояние до водоёма и определяет, сколько всасывающих рукавов необходимо.',
     },
     {
-      id: 116,
+      id: 151,
       question: 'Welche Aufgabe hat der Angriffstrupp bei der Vornahme des Verteilers?',
       options: {
         a: 'Er setzt den Verteiler; die genaue Lage wird durch den Einheitsführer vorgegeben',
@@ -995,8 +803,8 @@ export const lesson: Lesson = {
       explanationRu: 'Звено атаки устанавливает разветвление, но точную позицию определяет руководитель. Звено атаки не решает самостоятельно, куда поставить разветвление — это решение руководителя.',
     },
     {
-      id: 117,
-      question: 'Welchen Einsatz hat der Einheitsführer gewählt, wenn sein Befehl wie folgt lautet: „Wasserentnahme der Überflurhydrant, Verteiler 5 m neben die Eingangstür, zum Einsatz fertig!"?',
+      id: 152,
+      question: 'Welchen Einsatz hat der Einheitsführer gewählt, wenn sein Befehl wie folgt lautet: „Wasserentnahme der Überflurhydrant, Verteiler 5 m neben die Eingangstür, zum Einsatz fertig!”?',
       options: {
         a: 'Einen Einsatz mit Bereitstellung',
         b: 'Einen Einsatz ohne Bereitstellung',
@@ -1010,7 +818,7 @@ export const lesson: Lesson = {
       explanationRu: 'Команда «zum Einsatz fertig!» означает операцию с подготовкой (Bereitstellung). Слово «vor» в приказе означало бы операцию без подготовки.',
     },
     {
-      id: 118,
+      id: 153,
       question: 'Dürfen sie eigenverantwortlich während der Löscharbeiten das Mundstück ihres BM-Strahlrohres abschrauben?',
       options: {
         a: 'Nein, der dadurch erhöhte Wasserdurchfluss muss vorher mit dem Einheitsführer abgesprochen werden',
@@ -1018,14 +826,14 @@ export const lesson: Lesson = {
         c: 'Liegt im Ermessen des Trupps',
       },
       image: null,
-      correct: 'b',
+      correct: 'a',
       topic: 'Fragenkatalog',
       sectionId: 'loeschtaktik',
-      explanation: 'Ja, das Mundstück darf eigenverantwortlich abgeschraubt werden, wenn die Einsatzsituation es erfordert. Der Trupp muss vor Ort selbstständig auf veränderte Lagen reagieren können.',
-      explanationRu: 'Да, наконечник можно отвинтить самостоятельно, если этого требует обстановка на месте. Звено должно уметь самостоятельно реагировать на изменение ситуации.',
+      explanation: 'Nein, das Mundstück darf nicht eigenverantwortlich abgeschraubt werden. Der dadurch erhöhte Wasserdurchfluss muss vorher mit dem Einheitsführer abgesprochen werden.',
+      explanationRu: 'Нет, наконечник нельзя отвинчивать самостоятельно. Увеличенный расход воды необходимо предварительно согласовать с руководителем подразделения.',
     },
     {
-      id: 119,
+      id: 154,
       question: 'Wie erkennen sie, dass der Einheitsführer einen Einsatz ohne Bereitstellung durchführen will?',
       options: {
         a: 'Durch das Wort „vor”',
@@ -1040,7 +848,7 @@ export const lesson: Lesson = {
       explanationRu: 'Слово «vor» в приказе — признак операции без подготовки. Указание места забора воды или позиции разветвления входит в любой приказ, независимо от формы операции.',
     },
     {
-      id: 120,
+      id: 155,
       question: 'Die Schlauchreserve bei einem Angriff mit einem Strahlrohr muss berücksichtigt werden...',
       options: {
         a: 'damit der vorgebende Trupp eine notwendige Beweglichkeit und Reichweite erhält',
@@ -1055,22 +863,22 @@ export const lesson: Lesson = {
       explanationRu: 'Запас рукава обеспечивает звену подвижность и дальность. Без запаса звено было бы привязано к одной точке и не смогло бы двигаться или продвигаться вглубь здания.',
     },
     {
-      id: 121,
-      question: 'Als Angriffstrupp bekommen sie den Einsatzbefehl einen brennenden Palettenstapel abzulöschen. Welche Löschtaktik wenden sie an?',
+      id: 156,
+      question: 'Als Angriffstrupp bekommen sie den Einsatzbefehl einen brennenden Palettenstapel im Freien abzulöschen. Welche Löschtaktik wenden sie an?',
       options: {
-        a: 'Mit Sprühstrahl, um das Brandobjekt bewegend',
-        b: 'Aus größerer Entfernung mit Vollstrahl',
+        a: 'Mit Sprühstrahl, um das Brandobjekt, stets außerhalb des Brandrauches, bewegen',
+        b: 'Aus der Deckung mit einem Wasserwerfer',
         c: 'Mit Sprühstrahl, von einem festen Punkt aus',
       },
       image: null,
-      correct: 'b',
+      correct: 'a',
       topic: 'Fragenkatalog',
       sectionId: 'loeschtaktik',
-      explanation: 'Ein brennender Palettenstapel wird aus größerer Entfernung mit Vollstrahl bekämpft. Der Vollstrahl hat eine höhere Reichweite und mehr Aufprallkraft — bei kompakten Bränden im Freien ist das effektiver als Sprühstrahl.',
-      explanationRu: 'Горящий штабель паллет тушат с большого расстояния сплошной струёй. Сплошная струя имеет большую дальность и силу удара — при компактных пожарах на открытом воздухе это эффективнее распылённой струи.',
+      explanation: 'Ein brennender Palettenstapel im Freien wird mit Sprühstrahl bekämpft, wobei man sich ständig um das Brandobjekt bewegt und außerhalb des Brandrauches bleibt. Sprühstrahl bietet besseren Schutz vor Wärmestrahlung als Vollstrahl.',
+      explanationRu: 'Горящий штабель паллет на открытом воздухе тушат распылённой струёй, двигаясь вокруг объекта и оставаясь вне зоны дыма. Распылённая струя лучше защищает от теплового излучения.',
     },
     {
-      id: 122,
+      id: 157,
       question: 'Die Schläuche für Sonderrohre werden am Verteiler (in Fließrichtung)...',
       options: {
         a: 'in der Mitte angeschlossen',
@@ -1085,7 +893,7 @@ export const lesson: Lesson = {
       explanationRu: 'Специальные стволы (например, пенные или поворотные) подключаются к среднему отводу разветвления. Боковые отводы зарезервированы для 1-го и 2-го ствола C.',
     },
     {
-      id: 123,
+      id: 158,
       question: 'An welchen Abgang am Verteiler wird das erste Rohr angeschlossen?',
       options: {
         a: 'Am linken Abgang',
@@ -1100,7 +908,7 @@ export const lesson: Lesson = {
       explanationRu: 'Первый ствол подключается к левому отводу разветвления (по направлению потока воды). Специальные стволы — посередине.',
     },
     {
-      id: 124,
+      id: 159,
       question: 'Welche Aussage zur Löschtaktik bei einem Feststoffbrand ist richtig?',
       options: {
         a: 'Feuer muss von vorne nach hinten bekämpft werden',
@@ -1115,8 +923,8 @@ export const lesson: Lesson = {
       explanationRu: 'При пожаре твёрдых веществ огонь тушат спереди назад. Звено систематически продвигается от ближайшей точки вглубь, чтобы огонь за спиной не разгорелся снова.',
     },
     {
-      id: 125,
-      question: 'Der Einheitsführer befiehlt: „Wasserentnahmestelle der Überflurhydrant am Bürgersteig, Verteiler zur Gartentür, zum Einsatz fertig!". Sie sind Angriffstruppführer, wie platzieren sie den Verteiler?',
+      id: 160,
+      question: 'Der Einheitsführer befiehlt: „Wasserentnahmestelle der Überflurhydrant am Bürgersteig, Verteiler zur Gartentür, zum Einsatz fertig!”. Sie sind Angriffstruppführer, wie platzieren sie den Verteiler?',
       options: {
         a: 'Seitlich versetzt, damit der Zugang zum Gebäude nicht behindert wird',
         b: 'Direkt in die offene Gartentür',
@@ -1130,8 +938,8 @@ export const lesson: Lesson = {
       explanationRu: 'Разветвление всегда ставят со смещением в сторону, чтобы доступ к зданию оставался свободным. Прямо в двери или сразу за ней оно перекрыло бы проход звеньям.',
     },
     {
-      id: 126,
-      question: 'Gemäß FwDV 3 „Einheiten im Löscheinsatz" unterscheidet man die Einsatzformen...',
+      id: 161,
+      question: 'Gemäß FwDV 3 „Einheiten im Löscheinsatz” unterscheidet man die Einsatzformen...',
       options: {
         a: 'Einsatz mit Bereitstellung und ohne Bereitstellung',
         b: 'Einsätze neben- und hintereinander',
@@ -1145,7 +953,7 @@ export const lesson: Lesson = {
       explanationRu: 'FwDV 3 различает две формы: операция с подготовкой (звенья сначала ждут) и без подготовки (звенья немедленно выдвигаются). Признак — слово «vor» в приказе.',
     },
     {
-      id: 127,
+      id: 162,
       question: 'Der Strahlrohrführer öffnet das Strahlrohr zur Brandbekämpfung...',
       options: {
         a: 'unter Beachtung von Weisungen des Truppführers',

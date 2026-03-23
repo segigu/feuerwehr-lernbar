@@ -225,52 +225,8 @@ export const lesson: Lesson = {
     },
   ],
   questions: [
-    // Custom questions (id 1-15)
     {
-      id: 7,
-      question: 'Was gehört NICHT zu den sichtbaren Schockanzeichen?',
-      options: {
-        a: 'Fahle Blässe',
-        b: 'Hoher Blutdruck',
-        c: 'Kalter Schweiß',
-      },
-      correct: 'b',
-      topic: 'Erste Hilfe',
-      sectionId: 'verletzungen',
-      explanation: 'Die sichtbaren Schockanzeichen sind fahle Blässe, Frieren und kalter Schweiß. Im Schock sinkt der Blutdruck — ein hoher Blutdruck ist kein Schockzeichen.',
-      explanationRu: 'Видимые признаки шока — мертвенная бледность, озноб и холодный пот. При шоке давление падает — высокое давление не является признаком шока.',
-    },
-    {
-      id: 8,
-      question: 'Warum soll man Verletzte nach einem Verkehrsunfall nicht sofort aus dem Fahrzeug holen?',
-      options: {
-        a: 'Weil der Rettungsdienst die Kosten übernimmt',
-        b: 'Weil unsachgemäße Rettung Wirbelsäulenverletzungen verschlimmern kann',
-        c: 'Weil die Polizei erst den Unfallort dokumentieren muss',
-      },
-      correct: 'b',
-      topic: 'Erste Hilfe',
-      sectionId: 'verletzungen',
-      explanation: 'Unsachgemäße Rettung kann bestehende Verletzungen — besonders der Wirbelsäule — massiv verschlimmern. Daher sollen Verletzte im Fahrzeug verbleiben, bis der Rettungsdienst die Lage beurteilt hat.',
-      explanationRu: 'Неквалифицированное извлечение может резко ухудшить имеющиеся травмы — особенно позвоночника. Поэтому пострадавшие должны оставаться в машине, пока скорая не оценит ситуацию.',
-    },
-    {
-      id: 11,
-      question: 'Wie wird bei der Ersten Hilfe die Atmung kontrolliert?',
-      options: {
-        a: 'Blutdruck messen und Puls zählen',
-        b: 'Kopf überstrecken, Kinn anheben und max. 10 Sekunden hören, sehen und fühlen',
-        c: 'Brustkorb mit beiden Händen zusammendrücken',
-      },
-      correct: 'b',
-      topic: 'Erste Hilfe',
-      sectionId: 'erste-hilfe-grundlagen',
-      explanation: 'Die Atemkontrolle erfolgt durch Überstrecken des Kopfes, Anheben des Kinns und maximal 10 Sekunden lang Hören (Atemgeräusche), Sehen (Brustkorbbewegung) und Fühlen (Luftstrom an der Wange).',
-      explanationRu: 'Контроль дыхания выполняется запрокидыванием головы, подъёмом подбородка и в течение максимум 10 секунд — слушать (звуки дыхания), смотреть (движение грудной клетки) и ощущать (поток воздуха на щеке).',
-    },
-    // Catalog questions (id 101+)
-    {
-      id: 102,
+      id: 95,
       question: 'Welche Lagerung für eine bewusstlose Person ist richtig?',
       options: {
         a: 'Kopf tief lagern',
@@ -285,7 +241,7 @@ export const lesson: Lesson = {
       explanationRu: 'Устойчивое боковое положение — правильная укладка для потерявших сознание, которые ещё дышат. Оно сохраняет проходимость дыхательных путей и позволяет жидкостям вытекать изо рта, а не попадать в лёгкие.',
     },
     {
-      id: 103,
+      id: 96,
       question: 'Welche Aussage zu verletzten Personen, die noch im Fahrzeug sitzen, ist richtig?',
       options: {
         a: 'Verletzte müssen immer schnellstmöglich aus dem Fahrzeug geholt werden',
@@ -300,7 +256,7 @@ export const lesson: Lesson = {
       explanationRu: 'Если нет непосредственной угрозы (пожар, потеря сознания), пострадавших оставляют в машине — неквалифицированное извлечение может резко усугубить травмы позвоночника. Бригада скорой помощи оценивает ситуацию и проводит профессиональную эвакуацию.',
     },
     {
-      id: 104,
+      id: 97,
       question: 'Was gehört zur Überprüfung der lebenswichtigen Körperfunktionen?',
       options: {
         a: 'Ich sorge mit Rettungsdecke oder Krankenhausdecke für Wärmeerhalt',
@@ -315,7 +271,7 @@ export const lesson: Lesson = {
       explanationRu: 'Проверка витальных функций следует определённой последовательности: громко окликнуть, встряхнуть за плечи, проверить ротовую полость и определить дыхание. Другие варианты — это меры оказания помощи, а не проверки витальных функций.',
     },
     {
-      id: 105,
+      id: 98,
       question: 'Wie betreue ich als Ersthelfer (Feuerwehrdienstleistender) eine verletzte Person?',
       options: {
         a: 'Das ist nicht Aufgabe der Feuerwehr',
@@ -330,7 +286,7 @@ export const lesson: Lesson = {
       explanationRu: 'Первый помощник оказывает первую помощь, говорит пострадавшему, что он рядом, сообщает о вызванной скорой, подбадривает и слушает. Психологическая поддержка не менее важна, чем техническая помощь.',
     },
     {
-      id: 106,
+      id: 99,
       question: 'Wie erkenne ich die sichtbaren Schockanzeichen?',
       options: {
         a: 'Schneller und gut tastbarer Puls',
@@ -345,7 +301,7 @@ export const lesson: Lesson = {
       explanationRu: 'Видимые признаки шока — мертвенная бледность, озноб и холодный пот на лбу. Измерение давления — диагностическая мера, а не видимый признак; хорошо прощупываемый пульс скорее говорит против шока.',
     },
     {
-      id: 107,
+      id: 100,
       question: 'Was unternehmen Sie bei einer starken Blutung (Schnittwunde)?',
       options: {
         a: 'Abbinden der Blutung, z. B. am Arm',
@@ -360,7 +316,7 @@ export const lesson: Lesson = {
       explanationRu: 'При сильных кровотечениях накладывают давящую повязку. Перетягивание конечности сегодня рекомендуется только в экстремальных ситуациях, так как может привести к повреждению тканей. Скорую помощь нужно вызывать в любом случае.',
     },
     {
-      id: 108,
+      id: 101,
       question: 'Wie gehen Sie beim Vorfinden einer bewusstlosen Person vor?',
       options: {
         a: 'Den Verletzten in die stabile Seitenlage bringen',

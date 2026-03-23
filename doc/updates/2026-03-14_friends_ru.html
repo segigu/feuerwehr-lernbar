@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лекции в боте!</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #1d1d1f;
+    line-height: 1.7;
+    padding: 32px 16px;
+    min-height: 100vh;
+  }
+
+  .card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .header .emoji {
+    font-size: 48px;
+    margin-bottom: 8px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1f;
+  }
+
+  .header p {
+    font-size: 16px;
+    color: #86868b;
+    margin-top: 4px;
+  }
+
+  .content {
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+
+  .content p {
+    margin-bottom: 14px;
+  }
+
+  .bot-link {
+    display: block;
+    text-align: center;
+    background: #0088cc;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .bot-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,136,204,0.3);
+  }
+
+  .bot-link .tg-icon {
+    margin-right: 8px;
+  }
+
+  .secret-box {
+    background: #f5f5f7;
+    border-radius: 14px;
+    padding: 24px;
+    margin: 24px 0;
+    position: relative;
+    border: 2px dashed #d2d2d7;
+  }
+
+  .secret-box .label {
+    display: inline-block;
+    background: #ff3b30;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  .secret-box h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .secret-box p {
+    font-size: 16px;
+    color: #424245;
+  }
+
+  .tap-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 28px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .sign {
+    text-align: right;
+    font-size: 16px;
+    color: #86868b;
+    margin-top: 28px;
+  }
+
+  .sign-name {
+    font-weight: 600;
+    color: #1d1d1f;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="emoji">🚒</div>
+    <h1>Все лекции теперь в боте!</h1>
+    <p>Feuerwehr Lernbar</p>
+  </div>
+
+  <div class="content">
+    <p>Привет!</p>
+    <p>Все 12 тем, которые я раньше отдельно скидывал — теперь доступны прямо в боте. Там же можно сразу пройти квиз по каждой теме. Больше не нужно лазить по файлам — всё в одном месте.</p>
+  </div>
+
+  <a class="bot-link" href="https://t.me/feuerwehr_lernbar_bot">
+    <span class="tg-icon">✈️</span> Открыть бот в Telegram
+  </a>
+
+  <div class="secret-box">
+    <span class="label">Секретная фишка</span>
+    <h3>Русский язык 🇷🇺</h3>
+    <p>Нажми <strong>7 раз</strong> в любое место на любом экране — и весь интерфейс переключится на русский.</p>
+    <div class="tap-demo">👆👆👆👆👆👆👆</div>
+  </div>
+
+  <div class="sign">
+    — <span class="sign-name">Сергей</span>
+  </div>
+</div>
+
+</body>
+</html>

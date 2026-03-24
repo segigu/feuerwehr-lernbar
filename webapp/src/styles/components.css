@@ -187,6 +187,73 @@
 }
 
 /* ============================================
+   INSTALL BANNER
+   ============================================ */
+
+.install-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.install-banner-close {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-base);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-full);
+}
+
+.install-banner-close:active {
+  background: var(--color-border);
+}
+
+.install-banner-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.install-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.install-banner-title {
+  font-size: var(--font-base);
+  font-weight: var(--weight-semibold);
+}
+
+.install-banner-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.install-step {
+  font-size: var(--font-base);
+  color: var(--color-text-secondary);
+}
+
+.install-icon-share {
+  font-family: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+}
+
+/* ============================================
    TOPIC SELECT
    ============================================ */
 

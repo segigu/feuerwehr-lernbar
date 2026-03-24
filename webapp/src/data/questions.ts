@@ -31,8 +31,15 @@ export const questions: Question[] = catalog.questions;
 export const topics: string[] = catalog.meta.topics;
 export const meta = catalog.meta;
 
-export function getQuestionsByTopic(topic: string): Question[] {
-  return questions.filter(q => q.topic === topic);
+export function getQuestionsByTopic(topic: string, shuffle = true): Question[] {
+  const filtered = questions.filter(q => q.topic === topic);
+  if (!shuffle) return filtered;
+  const arr = [...filtered];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 export function getTopicCounts(): Map<string, number> {

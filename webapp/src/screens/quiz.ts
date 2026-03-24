@@ -12,9 +12,10 @@ import {
   getAutoAdvance,
   setAutoAdvancePref,
   clearSavedProgress,
+  clearTopicProgress,
   createSession,
 } from '../state/quiz-state';
-import { questions, getRandomExamQuestions } from '../data/questions';
+import { questions, getRandomExamQuestions, getQuestionsByTopic } from '../data/questions';
 import { getLessonById, getLessonByTopic } from '../data/lessons';
 import { getLanguage } from '../state/app-state';
 import { createQuestionCard } from '../components/question-card';
@@ -40,6 +41,8 @@ export function renderQuiz(container: HTMLElement): () => void {
   function exitQuiz(): void {
     if (isLesson && session!.lessonId) {
       navigate('lesson-detail', { lessonId: session!.lessonId });
+    } else if (session!.mode === 'topic') {
+      navigate('topic-select');
     } else {
       navigate('home');
     }
@@ -93,6 +96,18 @@ export function renderQuiz(container: HTMLElement): () => void {
       }
     });
     navControls.appendChild(resetBtn);
+  } else if (session.mode === 'topic' && session.topicName) {
+    const topicName = session.topicName;
+    const resetBtn = h('button', { className: 'quiz-reset-btn' }, 'Neu starten');
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Fortschritt zurücksetzen und neu starten?')) {
+        clearTopicProgress(topicName);
+        const topicQuestions = getQuestionsByTopic(topicName);
+        createSession('topic', topicQuestions, { topicName });
+        navigate('quiz');
+      }
+    });
+    navControls.appendChild(resetBtn);
   }
 
   navCenter.appendChild(navControls);
@@ -136,7 +151,9 @@ export function renderQuiz(container: HTMLElement): () => void {
       const delay = isTraining ? 2200 : 1500;
       if (isLast) {
         setTimeout(() => {
-          clearSavedProgress();
+          if (session!.mode === 'all') {
+            clearSavedProgress();
+          }
           navigate('results');
         }, delay + 100);
       } else {

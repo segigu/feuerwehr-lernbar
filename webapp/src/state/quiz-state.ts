@@ -16,13 +16,17 @@ interface SavedProgress {
 }
 
 export function saveProgress(): void {
-  if (!session || (session.mode !== 'all')) return;
+  if (!session) return;
   const data: SavedProgress = {
     questionIds: session.questions.map(q => q.id),
     currentIndex: session.currentIndex,
     answers: Object.fromEntries(session.answers),
   };
-  try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch {}
+  if (session.mode === 'all') {
+    try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(data)); } catch {}
+  } else if (session.mode === 'topic' && session.topicName) {
+    try { localStorage.setItem(`mta-progress-topic-${session.topicName}`, JSON.stringify(data)); } catch {}
+  }
 }
 
 export function loadSavedProgress(): SavedProgress | null {
@@ -39,6 +43,53 @@ export function hasSavedProgress(): boolean {
 
 export function clearSavedProgress(): void {
   try { localStorage.removeItem(PROGRESS_KEY); } catch {}
+}
+
+// ---- localStorage: per-topic progress ----
+
+export function loadTopicProgress(topicName: string): SavedProgress | null {
+  try {
+    const raw = localStorage.getItem(`mta-progress-topic-${topicName}`);
+    if (!raw) return null;
+    return JSON.parse(raw) as SavedProgress;
+  } catch { return null; }
+}
+
+export function clearTopicProgress(topicName: string): void {
+  try { localStorage.removeItem(`mta-progress-topic-${topicName}`); } catch {}
+}
+
+export function restoreTopicSession(topicName: string, topicQuestions: Question[]): QuizSession | null {
+  const saved = loadTopicProgress(topicName);
+  if (!saved) return null;
+
+  const questionsMap = new Map(topicQuestions.map(q => [q.id, q]));
+  const questions = saved.questionIds
+    .map(id => questionsMap.get(id))
+    .filter((q): q is Question => q !== undefined);
+
+  if (questions.length === 0) {
+    clearTopicProgress(topicName);
+    return null;
+  }
+
+  const answers = new Map<number, 'a' | 'b' | 'c'>();
+  for (const [k, v] of Object.entries(saved.answers)) {
+    answers.set(Number(k), v as 'a' | 'b' | 'c');
+  }
+
+  resetShuffleCache();
+  session = {
+    mode: 'topic',
+    topicName,
+    questions,
+    currentIndex: Math.min(saved.currentIndex, questions.length - 1),
+    answers,
+    startTime: Date.now(),
+    timerEnabled: false,
+    timerSeconds: 0,
+  };
+  return session;
 }
 
 export function restoreSession(): QuizSession | null {

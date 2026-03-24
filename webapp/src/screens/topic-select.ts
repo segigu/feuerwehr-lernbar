@@ -1,6 +1,6 @@
 import { navigate } from '../app';
 import { topics, getQuestionsByTopic } from '../data/questions';
-import { createSession } from '../state/quiz-state';
+import { createSession, loadTopicProgress, restoreTopicSession } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
 import { h, createImg } from '../utils/dom';
 
@@ -44,11 +44,39 @@ export function renderTopicSelect(container: HTMLElement): () => void {
     }
 
     const topicName = h('span', { className: 'topic-name' }, topic);
-    const countBadge = h('span', { className: 'topic-count' }, `${count} Fragen`);
-    card.append(topicName, countBadge);
+
+    const saved = loadTopicProgress(topic);
+    let answered = 0, correct = 0, incorrect = 0;
+    if (saved) {
+      const qMap = new Map(topicQuestions.map(q => [q.id, q]));
+      for (const [idStr, ans] of Object.entries(saved.answers)) {
+        const q = qMap.get(Number(idStr));
+        if (q) {
+          answered++;
+          if (ans === q.correct) correct++;
+          else incorrect++;
+        }
+      }
+    }
+
+    const info = h('div', { className: 'topic-info' });
+    if (answered > 0) {
+      const progress = h('span', { className: 'topic-count' }, `${answered} / ${count}`);
+      const stats = h('span', { className: 'topic-stats' });
+      const correctSpan = h('span', { className: 'stat-correct' }, `${correct} ✓`);
+      const incorrectSpan = h('span', { className: 'stat-incorrect' }, `${incorrect} ✗`);
+      stats.append(correctSpan, incorrectSpan);
+      info.append(progress, stats);
+    } else {
+      info.appendChild(h('span', { className: 'topic-count' }, `${count} Fragen`));
+    }
+    card.append(topicName, info);
 
     card.addEventListener('click', () => {
-      createSession('topic', topicQuestions, { topicName: topic });
+      const restored = restoreTopicSession(topic, topicQuestions);
+      if (!restored) {
+        createSession('topic', topicQuestions, { topicName: topic });
+      }
       navigate('quiz');
     });
 

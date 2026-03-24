@@ -55,7 +55,9 @@ export function initTelegram(): void {
 }
 
 export function isDarkMode(): boolean {
-  return getWebApp()?.colorScheme === 'dark';
+  const webapp = getWebApp();
+  if (webapp) return webapp.colorScheme === 'dark';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
 export function showMainButton(text: string, onClick: () => void): () => void {

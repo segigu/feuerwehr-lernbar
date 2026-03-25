@@ -252,13 +252,14 @@
 }
 
 .install-sheet-close {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   color: var(--color-text-muted);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-full);
   flex-shrink: 0;
 }
@@ -310,6 +311,7 @@
   font-weight: var(--weight-medium);
   color: var(--color-text-muted);
   text-align: center;
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-md);
 }
 
@@ -884,6 +886,16 @@
 /* ============================================
    REVIEW SCREEN
    ============================================ */
+
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-header .screen-title {
+  margin-bottom: 0;
+}
 
 .review-filters {
   display: flex;

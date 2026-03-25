@@ -1,5 +1,5 @@
 import { navigate } from '../app';
-import { calculateResults } from '../state/quiz-state';
+import { calculateResults, getSession } from '../state/quiz-state';
 import { showBackButton, showMainButton } from '../utils/telegram';
 import { h, createImg } from '../utils/dom';
 
@@ -12,9 +12,24 @@ export function renderReview(container: HTMLElement): () => void {
     return () => {};
   }
 
+  const session = getSession();
+
+  function closeReview(): void {
+    if (session?.mode === 'topic') {
+      navigate('topic-select');
+    } else {
+      navigate('home');
+    }
+  }
+
   let currentFilter: Filter = 'all';
 
+  // Header with title and close button
+  const header = h('div', { className: 'review-header' });
   const title = h('h1', { className: 'screen-title' }, 'Antworten');
+  const closeBtn = h('button', { className: 'quiz-close-btn' }, '\u2715');
+  closeBtn.addEventListener('click', closeReview);
+  header.append(title, closeBtn);
 
   // Filter buttons
   const filters = h('div', { className: 'review-filters' });
@@ -30,15 +45,7 @@ export function renderReview(container: HTMLElement): () => void {
 
   const listContainer = h('div', { className: 'review-list' });
 
-  // Action buttons (visible in both Telegram and PWA)
-  const actions = h('div', { className: 'result-actions' });
-  const backBtn = h('button', { className: 'action-btn action-primary' }, 'Zur\u00FCck zu Ergebnissen');
-  backBtn.addEventListener('click', () => navigate('results'));
-  const doneBtn = h('button', { className: 'action-btn action-secondary' }, 'Fertig');
-  doneBtn.addEventListener('click', () => navigate('home'));
-  actions.append(backBtn, doneBtn);
-
-  container.append(title, filters, listContainer, actions);
+  container.append(header, filters, listContainer);
 
   function setFilter(filter: Filter): void {
     currentFilter = filter;

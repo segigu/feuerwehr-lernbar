@@ -4,7 +4,7 @@ import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } 
 import { getRandomExamQuestions } from '../data/questions';
 import { getLanguage } from '../state/app-state';
 import { h, createImg } from '../utils/dom';
-import { createInstallBanner } from '../components/install-banner';
+import { showInstallBanner } from '../components/install-banner';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -21,8 +21,7 @@ export function renderHome(container: HTMLElement): () => void {
   container.appendChild(header);
 
   // PWA install banner (mobile browsers only)
-  const installBanner = createInstallBanner();
-  if (installBanner) container.appendChild(installBanner);
+  const cleanupBanner = showInstallBanner();
 
   // ── Section 1: Unterricht ──────────────────────────────────
   container.appendChild(sectionLabel('Unterricht'));
@@ -131,7 +130,7 @@ export function renderHome(container: HTMLElement): () => void {
   footer.append(footerLine1, footerLine2, footerLine3);
   container.appendChild(footer);
 
-  return () => {};
+  return () => { cleanupBanner(); };
 }
 
 function sectionLabel(text: string): HTMLElement {

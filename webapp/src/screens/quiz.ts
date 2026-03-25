@@ -147,14 +147,14 @@ export function renderQuiz(container: HTMLElement): () => void {
       renderCurrentQuestion();
 
       if (isLast) {
-        const delay = autoAdvance ? (isTraining ? 2200 : 1500) : (isTraining ? 1200 : 800);
+        if (!autoAdvance) return;
+
+        const allAnswered = session!.answers.size === session!.questions.length;
+        if (!allAnswered) return;
+
+        const delay = isTraining ? 2200 : 1500;
         setTimeout(() => {
-          if (session!.mode === 'all') {
-            clearSavedProgress();
-          }
-          if (session!.mode === 'topic' && session!.topicName) {
-            clearTopicProgress(session!.topicName);
-          }
+          if (session!.mode === 'all') clearSavedProgress();
           navigate('results');
         }, delay);
         return;
@@ -269,8 +269,9 @@ export function renderQuiz(container: HTMLElement): () => void {
   function updateNavButtons(): void {
     prevBtn.disabled = session!.currentIndex === 0;
     const isLast = session!.currentIndex === session!.questions.length - 1;
+    const allAnswered = session!.answers.size === session!.questions.length;
     nextBtn.disabled = false;
-    nextBtn.textContent = isLast ? '\u2713' : '\u2192';
+    nextBtn.textContent = (isLast && allAnswered) ? '\u2713' : '\u2192';
   }
 
   prevBtn.addEventListener('click', () => {
@@ -283,8 +284,17 @@ export function renderQuiz(container: HTMLElement): () => void {
   nextBtn.addEventListener('click', () => {
     const isLast = session!.currentIndex === session!.questions.length - 1;
     if (isLast) {
+      const allAnswered = session!.answers.size === session!.questions.length;
+      if (!allAnswered) {
+        const unansweredIdx = session!.questions.findIndex(q => !session!.answers.has(q.id));
+        if (unansweredIdx !== -1) {
+          slideDirection = unansweredIdx < session!.currentIndex ? 'down' : 'up';
+          goToQuestion(unansweredIdx);
+          renderCurrentQuestion();
+        }
+        return;
+      }
       if (session!.mode === 'all') clearSavedProgress();
-      if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
       navigate('results');
       return;
     }

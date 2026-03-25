@@ -4,6 +4,7 @@ import { saveLessonQuizStats } from '../state/lesson-state';
 import { showBackButton } from '../utils/telegram';
 import { hapticSuccess, hapticError } from '../utils/telegram';
 import { h } from '../utils/dom';
+import { playWaterFountain } from '../utils/water-fountain';
 
 export function renderResults(container: HTMLElement): () => void {
   const session = getSession();
@@ -32,6 +33,12 @@ export function renderResults(container: HTMLElement): () => void {
       wrong: results.incorrect,
       wrongIds,
     });
+  }
+
+  // Water fountain celebration
+  let cleanupFountain: (() => void) | null = null;
+  if (results.passed) {
+    cleanupFountain = playWaterFountain();
   }
 
   // Score circle
@@ -108,5 +115,6 @@ export function renderResults(container: HTMLElement): () => void {
 
   return () => {
     cleanupBack();
+    cleanupFountain?.();
   };
 }

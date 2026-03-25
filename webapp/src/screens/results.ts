@@ -5,6 +5,7 @@ import { showBackButton } from '../utils/telegram';
 import { hapticSuccess, hapticError } from '../utils/telegram';
 import { h } from '../utils/dom';
 import { playWaterFountain } from '../utils/water-fountain';
+import { playFireEffect } from '../utils/fire-effect';
 
 export function renderResults(container: HTMLElement): () => void {
   const session = getSession();
@@ -35,10 +36,12 @@ export function renderResults(container: HTMLElement): () => void {
     });
   }
 
-  // Water fountain celebration
-  let cleanupFountain: (() => void) | null = null;
+  // Celebration / failure effects
+  let cleanupEffect: (() => void) | null = null;
   if (results.passed) {
-    cleanupFountain = playWaterFountain();
+    cleanupEffect = playWaterFountain();
+  } else {
+    cleanupEffect = playFireEffect();
   }
 
   // Score circle
@@ -115,6 +118,6 @@ export function renderResults(container: HTMLElement): () => void {
 
   return () => {
     cleanupBack();
-    cleanupFountain?.();
+    cleanupEffect?.();
   };
 }

@@ -9,7 +9,7 @@ function isStandalone(): boolean {
 }
 
 function isTelegram(): boolean {
-  return !!window.Telegram?.WebApp;
+  return !!window.Telegram?.WebApp?.initData;
 }
 
 function getOS(): 'ios' | 'android' | 'other' {

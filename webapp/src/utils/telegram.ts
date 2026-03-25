@@ -7,6 +7,7 @@ declare global {
 }
 
 interface TelegramWebApp {
+  initData: string;
   ready(): void;
   expand(): void;
   close(): void;

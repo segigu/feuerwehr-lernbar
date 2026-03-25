@@ -83,7 +83,9 @@ export function renderResults(container: HTMLElement): () => void {
   reviewBtn.addEventListener('click', () => navigate('review'));
 
   const retryBtn = h('button', { className: 'action-btn action-secondary' }, 'Neuer Versuch');
-  retryBtn.addEventListener('click', () => navigate('home'));
+  retryBtn.addEventListener('click', () => {
+    navigate(session.mode === 'topic' ? 'topic-select' : 'home');
+  });
 
   actions.append(reviewBtn, retryBtn);
 

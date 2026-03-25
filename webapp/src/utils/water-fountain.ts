@@ -10,9 +10,9 @@ interface Particle {
   hue: number;
 }
 
-const MAX_PARTICLES = 400;
-const GRAVITY = 0.15;
-const DRAG = 0.995;
+const MAX_PARTICLES = 800;
+const GRAVITY = 0.12;
+const DRAG = 0.997;
 
 export function playWaterFountain(): () => void {
   const dpr = window.devicePixelRatio || 1;
@@ -41,14 +41,14 @@ export function playWaterFountain(): () => void {
   function emit(count: number): void {
     for (let i = 0; i < count && particles.length < MAX_PARTICLES; i++) {
       particles.push({
-        x: w / 2 + (Math.random() - 0.5) * 20,
+        x: w / 2 + (Math.random() - 0.5) * 30,
         y: h,
-        vx: (Math.random() - 0.5) * 8,
-        vy: -(8 + Math.random() * 6),
-        radius: 2 + Math.random() * 4,
+        vx: (Math.random() - 0.5) * 12,
+        vy: -(12 + Math.random() * 10),
+        radius: 2 + Math.random() * 5,
         alpha: 0.6 + Math.random() * 0.4,
         life: 1,
-        decay: 0.004 + Math.random() * 0.006,
+        decay: 0.003 + Math.random() * 0.005,
         hue: 195 + Math.random() * 20,
       });
     }
@@ -110,13 +110,13 @@ export function playWaterFountain(): () => void {
     if (stopped) return;
     frame++;
 
-    // Phase 1: Burst (0-30 frames)
-    if (frame <= 30) {
-      emit(15 + Math.floor(Math.random() * 5));
+    // Phase 1: Burst (0-45 frames)
+    if (frame <= 45) {
+      emit(25 + Math.floor(Math.random() * 10));
     }
-    // Phase 2: Spray (30-90 frames), tapering off
-    else if (frame <= 90) {
-      const rate = Math.max(0, 8 - Math.floor((frame - 30) / 8));
+    // Phase 2: Spray (45-120 frames), tapering off
+    else if (frame <= 120) {
+      const rate = Math.max(0, 12 - Math.floor((frame - 45) / 7));
       emit(rate);
     }
     // Phase 3: Settle — no new particles
@@ -124,7 +124,7 @@ export function playWaterFountain(): () => void {
     update();
     draw();
 
-    if (particles.length === 0 && frame > 90) {
+    if (particles.length === 0 && frame > 120) {
       cleanup();
       return;
     }

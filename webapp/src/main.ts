@@ -3,6 +3,7 @@ import './styles/global.css';
 import './styles/components.css';
 
 import { initTelegram, applyTheme } from './utils/telegram';
+import { initWakeLock } from './utils/wake-lock';
 import { initApp } from './app';
 
 initTelegram();
@@ -12,3 +13,5 @@ const root = document.getElementById('app');
 if (root) {
   initApp(root);
 }
+
+initWakeLock();

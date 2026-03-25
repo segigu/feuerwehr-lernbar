@@ -260,8 +260,7 @@ export function calculateResults(): QuizResults | null {
   const unanswered = details.filter(d => d.selected === null).length;
   const total = session.questions.length;
   const percentage = Math.round((correct / total) * 100);
-  const passThreshold = session.mode === 'exam' ? 0.5 : 0;
-  const passed = correct / total >= passThreshold;
+  const passed = correct / total >= 0.5;
 
   return {
     total,

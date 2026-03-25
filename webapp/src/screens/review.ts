@@ -30,7 +30,15 @@ export function renderReview(container: HTMLElement): () => void {
 
   const listContainer = h('div', { className: 'review-list' });
 
-  container.append(title, filters, listContainer);
+  // Action buttons (visible in both Telegram and PWA)
+  const actions = h('div', { className: 'result-actions' });
+  const backBtn = h('button', { className: 'action-btn action-primary' }, 'Zur\u00FCck zu Ergebnissen');
+  backBtn.addEventListener('click', () => navigate('results'));
+  const doneBtn = h('button', { className: 'action-btn action-secondary' }, 'Fertig');
+  doneBtn.addEventListener('click', () => navigate('home'));
+  actions.append(backBtn, doneBtn);
+
+  container.append(title, filters, listContainer, actions);
 
   function setFilter(filter: Filter): void {
     currentFilter = filter;

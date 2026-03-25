@@ -146,24 +146,29 @@ export function renderQuiz(container: HTMLElement): () => void {
       slideDirection = null;
       renderCurrentQuestion();
 
-      if (!autoAdvance) return;
-
-      const delay = isTraining ? 2200 : 1500;
       if (isLast) {
+        const delay = autoAdvance ? (isTraining ? 2200 : 1500) : (isTraining ? 1200 : 800);
         setTimeout(() => {
           if (session!.mode === 'all') {
             clearSavedProgress();
           }
+          if (session!.mode === 'topic' && session!.topicName) {
+            clearTopicProgress(session!.topicName);
+          }
           navigate('results');
-        }, delay + 100);
-      } else {
-        setTimeout(() => {
-          slideDirection = 'up';
-          nextQuestion();
-          saveProgress();
-          renderCurrentQuestion();
         }, delay);
+        return;
       }
+
+      if (!autoAdvance) return;
+
+      const delay = isTraining ? 2200 : 1500;
+      setTimeout(() => {
+        slideDirection = 'up';
+        nextQuestion();
+        saveProgress();
+        renderCurrentQuestion();
+      }, delay);
     }, isTraining);
     questionSlot.appendChild(card);
 
@@ -263,7 +268,9 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   function updateNavButtons(): void {
     prevBtn.disabled = session!.currentIndex === 0;
-    nextBtn.disabled = session!.currentIndex === session!.questions.length - 1;
+    const isLast = session!.currentIndex === session!.questions.length - 1;
+    nextBtn.disabled = false;
+    nextBtn.textContent = isLast ? '\u2713' : '\u2192';
   }
 
   prevBtn.addEventListener('click', () => {
@@ -274,6 +281,13 @@ export function renderQuiz(container: HTMLElement): () => void {
   });
 
   nextBtn.addEventListener('click', () => {
+    const isLast = session!.currentIndex === session!.questions.length - 1;
+    if (isLast) {
+      if (session!.mode === 'all') clearSavedProgress();
+      if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
+      navigate('results');
+      return;
+    }
     slideDirection = 'up';
     if (nextQuestion()) {
       saveProgress();

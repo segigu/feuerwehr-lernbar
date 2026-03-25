@@ -639,13 +639,18 @@
 }
 
 @keyframes nav-pulse {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.45); }
-  100% { transform: scale(1); }
+  0%   { transform: scale(1); color: var(--color-text); }
+  8%   { transform: scale(1.45); color: var(--color-primary); }
+  20%  { transform: scale(1); color: var(--color-primary); }
+  28%  { transform: scale(1.45); color: #e74c3c; }
+  40%  { transform: scale(1); color: #e74c3c; }
+  48%  { transform: scale(1.4); color: var(--color-primary); }
+  60%  { transform: scale(1); color: var(--color-primary); }
+  100% { transform: scale(1); color: var(--color-text); }
 }
 
 .nav-arrow.pulse {
-  animation: nav-pulse 500ms ease-out;
+  animation: nav-pulse 1.6s ease-out;
 }
 
 .quiz-nav-dots {

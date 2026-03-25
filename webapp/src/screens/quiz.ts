@@ -146,10 +146,12 @@ export function renderQuiz(container: HTMLElement): () => void {
       slideDirection = null;
       renderCurrentQuestion();
 
-      // Pulse the next button to draw attention
-      nextBtn.classList.remove('pulse');
-      void nextBtn.offsetHeight;
-      nextBtn.classList.add('pulse');
+      // Pulse the next button after a delay to draw attention
+      setTimeout(() => {
+        nextBtn.classList.remove('pulse');
+        void nextBtn.offsetHeight;
+        nextBtn.classList.add('pulse');
+      }, 1000);
 
       if (isLast) {
         if (!autoAdvance) return;

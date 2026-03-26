@@ -13,7 +13,7 @@ export default defineConfig({
   },
   plugins: [
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       workbox: {
         globPatterns: ['**/*.{js,css,html}', 'icons/*.png'],
         navigateFallback: 'index.html',

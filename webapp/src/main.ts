@@ -4,6 +4,7 @@ import './styles/components.css';
 
 import { initTelegram, applyTheme } from './utils/telegram';
 import { initWakeLock } from './utils/wake-lock';
+import { initPWAUpdate } from './utils/pwa-update';
 import { initApp } from './app';
 
 initTelegram();
@@ -15,3 +16,4 @@ if (root) {
 }
 
 initWakeLock();
+initPWAUpdate();

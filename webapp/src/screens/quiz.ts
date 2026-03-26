@@ -151,6 +151,9 @@ export function renderQuiz(container: HTMLElement): () => void {
         nextBtn.classList.remove('pulse');
         void nextBtn.offsetHeight;
         nextBtn.classList.add('pulse');
+        nextBtn.addEventListener('animationend', () => {
+          nextBtn.classList.remove('pulse');
+        }, { once: true });
       }, 1000);
 
       if (isLast) {

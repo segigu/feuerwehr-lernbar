@@ -55,10 +55,6 @@
   transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.05);
 }
 
-.home-icon-threshold .home-icon {
-  filter: drop-shadow(0 0 8px rgba(255, 40, 40, 0.6));
-}
-
 .home-icon-siren::before {
   background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.3) 50%, transparent 70%);
   animation: siren-left 0.3s linear infinite;

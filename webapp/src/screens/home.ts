@@ -13,7 +13,7 @@ function isStandalone(): boolean {
     || (navigator as any).standalone === true;
 }
 
-function setupSirenGesture(iconWrap: HTMLElement): () => void {
+function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => void {
   const THRESHOLD = 120;
   const MAX_PULL = 180;
   const SCALE_AT_THRESHOLD = 1.6;
@@ -26,7 +26,7 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
   let thresholdReached = false;
 
   function onTouchStart(e: TouchEvent) {
-    if (window.scrollY > 0 || sirenActive) return;
+    if (window.scrollY > 5 || sirenActive) return;
     startY = e.touches[0].clientY;
     pulling = false;
     thresholdReached = false;
@@ -45,6 +45,7 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
     if (!pulling) {
       pulling = true;
       iconWrap.classList.remove('home-icon-snap-back');
+      screenEl.classList.remove('home-icon-snap-back');
     }
 
     e.preventDefault();
@@ -56,14 +57,13 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
       : 0;
     const scale = 1 + (SCALE_AT_THRESHOLD - 1) * progress + 0.1 * overProgress;
     iconWrap.style.transform = `scale(${scale})`;
+    screenEl.style.transform = `translateY(${clamped * 0.4}px)`;
 
     if (progress >= 1 && !thresholdReached) {
       thresholdReached = true;
-      iconWrap.classList.add('home-icon-threshold');
       if (navigator.vibrate) navigator.vibrate(20);
     } else if (progress < 1 && thresholdReached) {
       thresholdReached = false;
-      iconWrap.classList.remove('home-icon-threshold');
     }
   }
 
@@ -82,10 +82,11 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
   function activateSiren() {
     sirenActive = true;
     thresholdReached = false;
-    iconWrap.classList.remove('home-icon-threshold');
 
     iconWrap.classList.add('home-icon-snap-back');
     iconWrap.style.transform = 'scale(1)';
+    screenEl.classList.add('home-icon-snap-back');
+    screenEl.style.transform = '';
 
     iconWrap.classList.remove('home-icon-animated');
     iconWrap.classList.add('home-icon-siren');
@@ -101,24 +102,28 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
     iconWrap.classList.remove('home-icon-siren', 'home-icon-snap-back');
     iconWrap.classList.add('home-icon-animated');
     iconWrap.style.transform = '';
+    screenEl.classList.remove('home-icon-snap-back');
+    screenEl.style.transform = '';
   }
 
   function snapBack() {
     thresholdReached = false;
-    iconWrap.classList.remove('home-icon-threshold');
     iconWrap.classList.add('home-icon-snap-back');
     iconWrap.style.transform = 'scale(1)';
-    iconWrap.addEventListener('transitionend', () => {
+    screenEl.classList.add('home-icon-snap-back');
+    screenEl.style.transform = '';
+    screenEl.addEventListener('transitionend', () => {
       iconWrap.classList.remove('home-icon-snap-back');
       iconWrap.style.transform = '';
+      screenEl.classList.remove('home-icon-snap-back');
     }, { once: true });
   }
 
   function resetVisuals() {
     pulling = false;
     thresholdReached = false;
-    iconWrap.classList.remove('home-icon-threshold');
     iconWrap.style.transform = '';
+    screenEl.style.transform = '';
   }
 
   document.addEventListener('touchstart', onTouchStart, { passive: true });
@@ -131,9 +136,11 @@ function setupSirenGesture(iconWrap: HTMLElement): () => void {
     document.removeEventListener('touchend', onTouchEnd);
     if (sirenTimer) {
       clearTimeout(sirenTimer);
-      iconWrap.classList.remove('home-icon-siren', 'home-icon-threshold', 'home-icon-snap-back');
+      iconWrap.classList.remove('home-icon-siren', 'home-icon-snap-back');
       iconWrap.classList.add('home-icon-animated');
       iconWrap.style.transform = '';
+      screenEl.classList.remove('home-icon-snap-back');
+      screenEl.style.transform = '';
     }
   };
 }
@@ -153,7 +160,7 @@ export function renderHome(container: HTMLElement): () => void {
   // Pull-down siren gesture (PWA standalone only)
   let cleanupSiren: (() => void) | null = null;
   if (isStandalone()) {
-    cleanupSiren = setupSirenGesture(iconWrap);
+    cleanupSiren = setupSirenGesture(iconWrap, container);
   }
 
   // PWA install banner (mobile browsers only)

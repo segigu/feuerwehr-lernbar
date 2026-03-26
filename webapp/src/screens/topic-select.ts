@@ -29,11 +29,15 @@ export function renderTopicSelect(container: HTMLElement): () => void {
   const title = h('h1', { className: 'screen-title' }, 'Thema w\u00E4hlen');
   container.appendChild(title);
 
+  // Accumulate totals across all topics
+  let totalQuestions = 0, totalAnswered = 0, totalCorrect = 0, totalIncorrect = 0;
+
   const grid = h('div', { className: 'topic-grid' });
 
   for (const topic of topics) {
     const topicQuestions = getQuestionsByTopic(topic);
     const count = topicQuestions.length;
+    totalQuestions += count;
 
     const card = h('button', { className: 'topic-card' });
 
@@ -58,6 +62,9 @@ export function renderTopicSelect(container: HTMLElement): () => void {
         }
       }
     }
+    totalAnswered += answered;
+    totalCorrect += correct;
+    totalIncorrect += incorrect;
 
     const info = h('div', { className: 'topic-info' });
     if (answered > 0) {
@@ -81,6 +88,17 @@ export function renderTopicSelect(container: HTMLElement): () => void {
     });
 
     grid.appendChild(card);
+  }
+
+  // Summary stats under the title
+  if (totalAnswered > 0) {
+    const summary = h('div', { className: 'topic-summary' });
+    summary.append(
+      h('span', { className: 'topic-summary-progress' }, `${totalAnswered} / ${totalQuestions}`),
+      h('span', { className: 'stat-correct' }, `${totalCorrect} ✓`),
+      h('span', { className: 'stat-incorrect' }, `${totalIncorrect} ✗`),
+    );
+    container.appendChild(summary);
   }
 
   container.appendChild(grid);

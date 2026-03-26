@@ -376,6 +376,18 @@
   gap: 8px;
 }
 
+.topic-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--font-base);
+  margin-bottom: var(--space-md);
+}
+
+.topic-summary-progress {
+  color: var(--color-text-muted);
+}
+
 .stat-correct {
   color: var(--color-correct);
 }
@@ -405,22 +417,26 @@
 }
 
 /* Slide animations */
-@keyframes slide-in-up {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+@keyframes slide-in-left {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
-@keyframes slide-in-down {
-  from { transform: translateY(-40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+@keyframes slide-in-right {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
-.quiz-question-slot.slide-up > .question-card {
-  animation: slide-in-up 250ms ease-out both;
+.quiz-question-slot.slide-left > .question-card {
+  animation: slide-in-left 250ms ease-out both;
 }
 
-.quiz-question-slot.slide-down > .question-card {
-  animation: slide-in-down 250ms ease-out both;
+.quiz-question-slot.slide-right > .question-card {
+  animation: slide-in-right 250ms ease-out both;
+}
+
+.quiz-question-slot {
+  touch-action: pan-y;
 }
 
 .quiz-close-btn {
@@ -621,21 +637,28 @@
 }
 
 .nav-arrow {
-  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
   color: var(--color-text);
-  padding: var(--space-xs);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition: background var(--transition-fast), transform var(--transition-fast), opacity var(--transition-fast);
   line-height: 1;
 }
 
 .nav-arrow:active:not(:disabled) {
-  color: var(--color-text);
-  transform: scale(0.9);
+  transform: scale(0.92);
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .nav-arrow:disabled {
-  opacity: 0.15;
+  opacity: 0.25;
 }
 
 @keyframes nav-pulse {

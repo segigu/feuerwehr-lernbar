@@ -722,26 +722,27 @@
 }
 
 @keyframes nav-pulse {
-  0%   { transform: scale(1); color: #fff; background-position: 0% 50%; }
-  15%  { transform: scale(1.25); }
+  0%   { transform: scale(1); color: #fff; background-position: 0% 50%; box-shadow: 0 0 12px rgba(139, 92, 246, 0.5); }
+  15%  { transform: scale(1.25); box-shadow: 0 0 20px rgba(236, 72, 153, 0.6); }
   30%  { transform: scale(1); }
-  45%  { transform: scale(1.2); }
+  45%  { transform: scale(1.2); box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
   60%  { transform: scale(1); }
-  100% { transform: scale(1); color: #fff; background-position: 100% 50%; }
+  100% { transform: scale(1); color: #fff; background-position: 100% 50%; box-shadow: 0 0 12px rgba(139, 92, 246, 0.4); }
 }
 
 .nav-arrow.pulse {
   animation: nav-pulse 1.8s ease-in-out;
   background: linear-gradient(
     135deg,
-    var(--color-primary) 0%,
-    #e74c3c 25%,
-    #ff6b6b 50%,
-    #e74c3c 75%,
-    var(--color-primary) 100%
+    #8b5cf6,
+    #ec4899,
+    #f97316,
+    #eab308,
+    #22c55e,
+    #3b82f6,
+    #8b5cf6
   );
-  background-size: 300% 300%;
-  box-shadow: 0 0 16px rgba(200, 16, 46, 0.4);
+  background-size: 400% 400%;
 }
 
 .quiz-nav-dots {

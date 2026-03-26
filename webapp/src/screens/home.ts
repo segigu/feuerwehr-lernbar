@@ -61,9 +61,13 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
 
     if (progress >= 1 && !thresholdReached) {
       thresholdReached = true;
+      iconWrap.classList.remove('home-icon-animated');
+      iconWrap.classList.add('home-icon-siren');
       if (navigator.vibrate) navigator.vibrate(20);
     } else if (progress < 1 && thresholdReached) {
       thresholdReached = false;
+      iconWrap.classList.remove('home-icon-siren');
+      iconWrap.classList.add('home-icon-animated');
     }
   }
 
@@ -87,9 +91,6 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
     iconWrap.style.transform = 'scale(1)';
     screenEl.classList.add('home-icon-snap-back');
     screenEl.style.transform = '';
-
-    iconWrap.classList.remove('home-icon-animated');
-    iconWrap.classList.add('home-icon-siren');
 
     if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
 

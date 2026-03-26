@@ -56,17 +56,19 @@
 }
 
 .home-icon-siren::before {
-  background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.3) 50%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.5) 40%, transparent 75%);
   animation: siren-left 0.3s linear infinite;
-  width: 28%;
-  height: 24%;
+  width: 40%;
+  height: 35%;
+  filter: blur(2px);
 }
 
 .home-icon-siren::after {
-  background: radial-gradient(ellipse, rgba(255, 40, 40, 1) 0%, rgba(255, 40, 40, 0.3) 50%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(255, 40, 40, 1) 0%, rgba(255, 40, 40, 0.5) 40%, transparent 75%);
   animation: siren-right 0.3s linear infinite;
-  width: 28%;
-  height: 24%;
+  width: 40%;
+  height: 35%;
+  filter: blur(2px);
 }
 
 .home-title {

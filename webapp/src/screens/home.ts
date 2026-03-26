@@ -8,37 +8,22 @@ import { showInstallBanner } from '../components/install-banner';
 
 const BASE = import.meta.env.BASE_URL;
 
-function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => void {
-  const THRESHOLD = 120;
-  const MAX_PULL = 180;
-  const SCALE_AT_THRESHOLD = 1.6;
+function setupSirenGesture(header: HTMLElement, iconWrap: HTMLElement): () => void {
+  const THRESHOLD = 100;
+  const MAX_PULL = 150;
+  const MAX_SCALE = 1.6;
   const SIREN_DURATION = 3500;
-  const SNAP_MS = 350;
 
-  let startX = 0;
   let startY = 0;
   let pulling = false;
   let sirenActive = false;
-  let sirenTimer: number | null = null;
-  let snapTimer: number | null = null;
   let thresholdReached = false;
 
-  function clearVisuals() {
-    iconWrap.classList.remove('home-icon-snap-back', 'home-icon-siren');
-    iconWrap.style.transform = '';
-    screenEl.classList.remove('home-icon-snap-back');
-    screenEl.style.transform = '';
-  }
+  // CSS touch-action: none on header blocks browser scroll/refresh on this element
+  header.style.touchAction = 'none';
 
   function onTouchStart(e: TouchEvent) {
     if (sirenActive) return;
-
-    // Clean up any leftover snap-back animation
-    if (snapTimer) { clearTimeout(snapTimer); snapTimer = null; clearVisuals(); }
-
-    if (document.documentElement.scrollTop > 5 && document.body.scrollTop > 5) return;
-
-    startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     pulling = false;
     thresholdReached = false;
@@ -46,26 +31,14 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
 
   function onTouchMove(e: TouchEvent) {
     if (startY === 0 || sirenActive) return;
-
     const dy = e.touches[0].clientY - startY;
-    const adx = Math.abs(e.touches[0].clientX - startX);
+    if (dy <= 0) return;
 
-    if (!pulling) {
-      if (dy < 8 && adx < 8) return;
-      if (adx > dy || dy <= 0) { startY = 0; return; }
-      pulling = true;
-    }
-
-    e.preventDefault();
-
-    const clamped = Math.min(Math.max(dy, 0), MAX_PULL);
-    const progress = Math.min(clamped / THRESHOLD, 1);
-    const overProgress = clamped > THRESHOLD
-      ? (clamped - THRESHOLD) / (MAX_PULL - THRESHOLD)
-      : 0;
-    const scale = 1 + (SCALE_AT_THRESHOLD - 1) * progress + 0.1 * overProgress;
+    pulling = true;
+    const clamped = Math.min(dy, MAX_PULL);
+    const progress = clamped / THRESHOLD;
+    const scale = 1 + (MAX_SCALE - 1) * Math.min(progress, 1.2);
     iconWrap.style.transform = `scale(${scale})`;
-    screenEl.style.transform = `translateY(${clamped * 0.4}px)`;
 
     if (progress >= 1 && !thresholdReached) {
       thresholdReached = true;
@@ -78,44 +51,44 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
   }
 
   function onTouchEnd() {
-    if (!pulling) { startY = 0; return; }
+    if (!pulling) return;
     pulling = false;
     startY = 0;
 
-    // Animate snap-back
-    iconWrap.classList.add('home-icon-snap-back');
+    // Snap back
+    iconWrap.style.transition = 'transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.05)';
     iconWrap.style.transform = 'scale(1)';
-    screenEl.classList.add('home-icon-snap-back');
-    screenEl.style.transform = '';
 
     if (thresholdReached) {
       thresholdReached = false;
       sirenActive = true;
       if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
-      sirenTimer = window.setTimeout(() => {
+      setTimeout(() => {
         sirenActive = false;
-        sirenTimer = null;
-        clearVisuals();
+        iconWrap.classList.remove('home-icon-siren');
+        iconWrap.style.transition = '';
+        iconWrap.style.transform = '';
       }, SIREN_DURATION);
     } else {
-      snapTimer = window.setTimeout(() => {
-        snapTimer = null;
-        clearVisuals();
-      }, SNAP_MS);
+      setTimeout(() => {
+        iconWrap.style.transition = '';
+        iconWrap.style.transform = '';
+      }, 350);
     }
   }
 
-  document.addEventListener('touchstart', onTouchStart, { passive: true });
-  document.addEventListener('touchmove', onTouchMove, { passive: false });
-  document.addEventListener('touchend', onTouchEnd, { passive: true });
+  header.addEventListener('touchstart', onTouchStart, { passive: true });
+  header.addEventListener('touchmove', onTouchMove, { passive: false });
+  header.addEventListener('touchend', onTouchEnd, { passive: true });
 
   return () => {
-    document.removeEventListener('touchstart', onTouchStart);
-    document.removeEventListener('touchmove', onTouchMove);
-    document.removeEventListener('touchend', onTouchEnd);
-    if (sirenTimer) clearTimeout(sirenTimer);
-    if (snapTimer) clearTimeout(snapTimer);
-    clearVisuals();
+    header.removeEventListener('touchstart', onTouchStart);
+    header.removeEventListener('touchmove', onTouchMove);
+    header.removeEventListener('touchend', onTouchEnd);
+    header.style.touchAction = '';
+    iconWrap.classList.remove('home-icon-siren');
+    iconWrap.style.transition = '';
+    iconWrap.style.transform = '';
   };
 }
 
@@ -132,7 +105,7 @@ export function renderHome(container: HTMLElement): () => void {
   container.appendChild(header);
 
   // Pull-down siren gesture
-  const cleanupSiren = setupSirenGesture(iconWrap, container);
+  const cleanupSiren = setupSirenGesture(header, iconWrap);
 
   // PWA install banner (mobile browsers only)
   const cleanupBanner = showInstallBanner();

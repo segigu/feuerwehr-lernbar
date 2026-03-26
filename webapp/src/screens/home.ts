@@ -16,14 +16,19 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
 
   let startY = 0;
   let pulling = false;
+  let locked = false;       // true = committed to pull gesture (not scroll)
   let sirenActive = false;
   let sirenTimer: ReturnType<typeof setTimeout> | null = null;
   let thresholdReached = false;
 
+  // Block native pull-to-refresh / overscroll bounce
+  document.body.style.overscrollBehaviorY = 'none';
+
   function onTouchStart(e: TouchEvent) {
-    if (window.scrollY > 5 || sirenActive) return;
+    if (sirenActive) return;
     startY = e.touches[0].clientY;
     pulling = false;
+    locked = false;
     thresholdReached = false;
   }
 
@@ -31,21 +36,24 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
     if (startY === 0 || sirenActive) return;
 
     const dy = e.touches[0].clientY - startY;
+    const dx = Math.abs(e.touches[0].clientX - startY);
 
-    if (dy < 10) {
-      if (pulling) resetVisuals();
-      return;
-    }
-
-    if (!pulling) {
+    // First significant move — decide: pull or scroll?
+    if (!locked && !pulling) {
+      if (dy < 15) return;                       // not enough movement yet
+      if (dx > dy) { startY = 0; return; }       // horizontal — ignore
+      if (window.scrollY > 5) { startY = 0; return; } // not at top — let browser scroll
+      locked = true;
       pulling = true;
       iconWrap.classList.remove('home-icon-snap-back');
       screenEl.classList.remove('home-icon-snap-back');
     }
 
+    if (!pulling) return;
+
     e.preventDefault();
 
-    const clamped = Math.min(dy, MAX_PULL);
+    const clamped = Math.min(Math.max(dy, 0), MAX_PULL);
     const progress = Math.min(clamped / THRESHOLD, 1);
     const overProgress = clamped > THRESHOLD
       ? (clamped - THRESHOLD) / (MAX_PULL - THRESHOLD)
@@ -69,6 +77,7 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
   function onTouchEnd() {
     if (!pulling) { startY = 0; return; }
     pulling = false;
+    locked = false;
     startY = 0;
 
     if (thresholdReached) {
@@ -115,13 +124,6 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
     }, { once: true });
   }
 
-  function resetVisuals() {
-    pulling = false;
-    thresholdReached = false;
-    iconWrap.style.transform = '';
-    screenEl.style.transform = '';
-  }
-
   document.addEventListener('touchstart', onTouchStart, { passive: true });
   document.addEventListener('touchmove', onTouchMove, { passive: false });
   document.addEventListener('touchend', onTouchEnd, { passive: true });
@@ -130,6 +132,7 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
     document.removeEventListener('touchstart', onTouchStart);
     document.removeEventListener('touchmove', onTouchMove);
     document.removeEventListener('touchend', onTouchEnd);
+    document.body.style.overscrollBehaviorY = '';
     if (sirenTimer) {
       clearTimeout(sirenTimer);
       iconWrap.classList.remove('home-icon-siren', 'home-icon-snap-back');

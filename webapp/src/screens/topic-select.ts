@@ -1,6 +1,6 @@
 import { navigate } from '../app';
 import { topics, getQuestionsByTopic } from '../data/questions';
-import { createSession, loadTopicProgress, restoreTopicSession, loadTopicWrongIds, clearTopicWrongIds } from '../state/quiz-state';
+import { createSession, loadTopicProgress, restoreTopicSession, clearTopicProgress, loadTopicWrongIds, clearTopicWrongIds } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
 import { showChoiceSheet } from '../components/choice-sheet';
 import { h, createImg } from '../utils/dom';
@@ -86,11 +86,17 @@ export function renderTopicSelect(container: HTMLElement): () => void {
     card.append(topicName, info);
 
     card.addEventListener('click', () => {
-      // 1. Check for in-progress session
+      // 1. Check for saved progress (in-progress or completed)
       const restored = restoreTopicSession(topic, topicQuestions);
       if (restored) {
-        navigate('quiz');
-        return;
+        const allAnswered = restored.answers.size === restored.questions.length;
+        if (!allAnswered) {
+          // In-progress — resume
+          navigate('quiz');
+          return;
+        }
+        // Completed — clear progress, check for wrong IDs
+        clearTopicProgress(topic);
       }
 
       // 2. Check for wrong IDs from previous completion
@@ -125,7 +131,7 @@ export function renderTopicSelect(container: HTMLElement): () => void {
         return;
       }
 
-      // 3. No progress, no wrong IDs — fresh start
+      // 3. No wrong IDs — fresh start
       createSession('topic', topicQuestions, { topicName: topic });
       navigate('quiz');
     });

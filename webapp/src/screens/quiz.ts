@@ -162,7 +162,6 @@ export function renderQuiz(container: HTMLElement): () => void {
         const delay = isTraining ? 2200 : 1500;
         setTimeout(() => {
           if (session!.mode === 'all') clearSavedProgress();
-          if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
           navigate('results');
         }, delay);
         return;
@@ -303,7 +302,6 @@ export function renderQuiz(container: HTMLElement): () => void {
         return;
       }
       if (session!.mode === 'all') clearSavedProgress();
-      if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
       navigate('results');
       return;
     }

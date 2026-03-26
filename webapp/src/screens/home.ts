@@ -14,36 +14,41 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
   const SCALE_AT_THRESHOLD = 1.6;
   const SIREN_DURATION = 3500;
 
+  let startX = 0;
   let startY = 0;
   let pulling = false;
-  let locked = false;       // true = committed to pull gesture (not scroll)
+  let decided = false;
   let sirenActive = false;
   let sirenTimer: ReturnType<typeof setTimeout> | null = null;
   let thresholdReached = false;
 
-  // Block native pull-to-refresh / overscroll bounce
-  document.body.style.overscrollBehaviorY = 'none';
-
   function onTouchStart(e: TouchEvent) {
     if (sirenActive) return;
+    // Record start position; check scrollY here while it's stable
+    if (window.scrollY > 5) { startY = 0; return; }
+    startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     pulling = false;
-    locked = false;
+    decided = false;
     thresholdReached = false;
   }
 
   function onTouchMove(e: TouchEvent) {
     if (startY === 0 || sirenActive) return;
 
-    const dy = e.touches[0].clientY - startY;
-    const dx = Math.abs(e.touches[0].clientX - startY);
+    const curX = e.touches[0].clientX;
+    const curY = e.touches[0].clientY;
+    const dy = curY - startY;
+    const adx = Math.abs(curX - startX);
 
     // First significant move — decide: pull or scroll?
-    if (!locked && !pulling) {
-      if (dy < 15) return;                       // not enough movement yet
-      if (dx > dy) { startY = 0; return; }       // horizontal — ignore
-      if (window.scrollY > 5) { startY = 0; return; } // not at top — let browser scroll
-      locked = true;
+    if (!decided) {
+      if (dy < 8 && adx < 8) return;           // too small to decide
+      if (adx > dy || dy <= 0) {                // horizontal or upward — not a pull
+        startY = 0;
+        return;
+      }
+      decided = true;
       pulling = true;
       iconWrap.classList.remove('home-icon-snap-back');
       screenEl.classList.remove('home-icon-snap-back');
@@ -77,7 +82,7 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
   function onTouchEnd() {
     if (!pulling) { startY = 0; return; }
     pulling = false;
-    locked = false;
+    decided = false;
     startY = 0;
 
     if (thresholdReached) {
@@ -132,7 +137,6 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
     document.removeEventListener('touchstart', onTouchStart);
     document.removeEventListener('touchmove', onTouchMove);
     document.removeEventListener('touchend', onTouchEnd);
-    document.body.style.overscrollBehaviorY = '';
     if (sirenTimer) {
       clearTimeout(sirenTimer);
       iconWrap.classList.remove('home-icon-siren', 'home-icon-snap-back');

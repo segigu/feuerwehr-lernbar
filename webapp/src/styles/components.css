@@ -23,8 +23,9 @@
   will-change: transform;
 }
 
-.home-icon-animated::before,
-.home-icon-animated::after {
+/* Pseudo-element base — always present, invisible by default */
+.home-icon-wrap::before,
+.home-icon-wrap::after {
   content: '';
   position: absolute;
   top: 12%;
@@ -35,32 +36,24 @@
   pointer-events: none;
 }
 
-.home-icon-animated::before {
+.home-icon-wrap::before {
   left: 20%;
   background: radial-gradient(ellipse, rgba(30, 120, 255, 0.85) 0%, transparent 70%);
-  animation: flash-left 10s ease-in-out infinite;
 }
 
-.home-icon-animated::after {
+.home-icon-wrap::after {
   left: 44%;
   background: radial-gradient(ellipse, rgba(255, 40, 40, 0.9) 0%, transparent 70%);
-  animation: flash-right 10s ease-in-out infinite;
 }
 
-.home-icon-flash {
-  display: none;
-}
-
-.home-icon-snap-back {
-  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.05);
-}
-
+/* Siren mode — fast bright flashing */
 .home-icon-siren::before {
   background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.5) 40%, transparent 75%);
   animation: siren-left 0.3s linear infinite;
   width: 40%;
   height: 35%;
   filter: blur(2px);
+  opacity: 1;
 }
 
 .home-icon-siren::after {
@@ -69,6 +62,11 @@
   width: 40%;
   height: 35%;
   filter: blur(2px);
+  opacity: 1;
+}
+
+.home-icon-flash {
+  display: none;
 }
 
 .home-title {

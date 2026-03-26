@@ -43,7 +43,7 @@
 
 .home-icon-wrap::after {
   left: 44%;
-  background: radial-gradient(ellipse, rgba(255, 40, 40, 0.9) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(30, 120, 255, 0.85) 0%, transparent 70%);
 }
 
 /* Siren mode — fast bright flashing */
@@ -57,7 +57,7 @@
 }
 
 .home-icon-siren::after {
-  background: radial-gradient(ellipse, rgba(255, 40, 40, 1) 0%, rgba(255, 40, 40, 0.5) 40%, transparent 75%);
+  background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.5) 40%, transparent 75%);
   animation: siren-right 0.3s linear infinite;
   width: 40%;
   height: 35%;

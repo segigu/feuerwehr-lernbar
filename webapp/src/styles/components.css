@@ -720,25 +720,23 @@
 }
 
 @keyframes nav-pulse {
-  0%   { transform: scale(1); color: #fff; background-position: 0% 50%; box-shadow: 0 0 12px rgba(139, 92, 246, 0.5); }
-  15%  { transform: scale(1.25); box-shadow: 0 0 20px rgba(236, 72, 153, 0.6); }
+  0%   { transform: scale(1); color: #fff; background-position: 0% 50%; box-shadow: 0 0 12px rgba(220, 38, 38, 0.5); }
+  15%  { transform: scale(1.25); box-shadow: 0 0 20px rgba(234, 179, 8, 0.6); }
   30%  { transform: scale(1); }
-  45%  { transform: scale(1.2); box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
+  45%  { transform: scale(1.2); box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); }
   60%  { transform: scale(1); }
-  100% { transform: scale(1); color: #fff; background-position: 100% 50%; box-shadow: 0 0 12px rgba(139, 92, 246, 0.4); }
+  100% { transform: scale(1); color: #fff; background-position: 100% 50%; box-shadow: 0 0 12px rgba(234, 179, 8, 0.4); }
 }
 
 .nav-arrow.pulse {
   animation: nav-pulse 1.8s ease-in-out;
   background: linear-gradient(
     135deg,
-    #8b5cf6,
-    #ec4899,
+    #dc2626,
     #f97316,
     #eab308,
-    #22c55e,
-    #3b82f6,
-    #8b5cf6
+    #f97316,
+    #dc2626
   );
   background-size: 400% 400%;
 }

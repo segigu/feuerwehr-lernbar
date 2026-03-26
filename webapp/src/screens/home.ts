@@ -8,11 +8,6 @@ import { showInstallBanner } from '../components/install-banner';
 
 const BASE = import.meta.env.BASE_URL;
 
-function isStandalone(): boolean {
-  return window.matchMedia('(display-mode: standalone)').matches
-    || (navigator as any).standalone === true;
-}
-
 function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => void {
   const THRESHOLD = 120;
   const MAX_PULL = 180;
@@ -158,11 +153,8 @@ export function renderHome(container: HTMLElement): () => void {
   header.append(iconWrap, title);
   container.appendChild(header);
 
-  // Pull-down siren gesture (PWA standalone only)
-  let cleanupSiren: (() => void) | null = null;
-  if (isStandalone()) {
-    cleanupSiren = setupSirenGesture(iconWrap, container);
-  }
+  // Pull-down siren gesture
+  const cleanupSiren = setupSirenGesture(iconWrap, container);
 
   // PWA install banner (mobile browsers only)
   const cleanupBanner = showInstallBanner();
@@ -310,7 +302,7 @@ export function renderHome(container: HTMLElement): () => void {
   footer.append(footerLine1, footerLine2, footerLine3);
   container.appendChild(footer);
 
-  return () => { cleanupBanner(); cleanupSiren?.(); };
+  return () => { cleanupBanner(); cleanupSiren(); };
 }
 
 function sectionLabel(text: string): HTMLElement {

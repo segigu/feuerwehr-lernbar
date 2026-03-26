@@ -1,20 +1,27 @@
-let wakeLock: WakeLockSentinel | null = null;
+let sentinel: WakeLockSentinel | null = null;
+let videoEl: HTMLVideoElement | null = null;
+let videoStarted = false;
 
-// --- Standard Wake Lock API ---
+// --- Native Wake Lock API ---
 
-async function requestWakeLock(): Promise<void> {
-  if (!('wakeLock' in navigator)) return;
+async function acquireNativeWakeLock(): Promise<void> {
+  if (!('wakeLock' in navigator) || sentinel !== null) return;
   try {
-    wakeLock = await navigator.wakeLock.request('screen');
-    wakeLock.addEventListener('release', () => { wakeLock = null; });
+    sentinel = await navigator.wakeLock.request('screen');
+    sentinel.addEventListener('release', () => {
+      sentinel = null;
+      if (document.visibilityState === 'visible') {
+        acquireNativeWakeLock();
+      }
+    });
   } catch {
-    // Ignore — browser denied or feature unavailable
+    sentinel = null;
   }
 }
 
-// --- Video-based fallback for iOS PWA ---
-// iOS in standalone mode may not support the Wake Lock API.
-// Playing a tiny silent video in a loop keeps the screen awake.
+// --- Video-based fallback ---
+// Playing a tiny silent video in a loop keeps the screen awake
+// on platforms where the native API is missing or broken (iOS, Telegram WebView).
 
 // Minimal 1-second silent MP4 (base64, ~1KB)
 const SILENT_MP4 =
@@ -47,59 +54,71 @@ const SILENT_MP4 =
   'AAAAAgAAAAEAAAAcc3RzegAAAAAAAAAAAAAAAgAAABcAAAAEAAAAFHN0Y28AAAAAAAAABAAAAB' +
   'sAAALyAAAC+QAAA3A=';
 
-let videoEl: HTMLVideoElement | null = null;
-
-function isIOS(): boolean {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-}
-
-function createVideoWakeLock(): void {
+function createVideoElement(): void {
   if (videoEl) return;
   videoEl = document.createElement('video');
   videoEl.setAttribute('playsinline', '');
   videoEl.setAttribute('loop', '');
   videoEl.muted = true;
   videoEl.src = SILENT_MP4;
-  videoEl.style.cssText = 'position:fixed;top:-1px;left:-1px;width:1px;height:1px;opacity:0.01;pointer-events:none';
+  videoEl.style.cssText =
+    'position:fixed;top:-1px;left:-1px;width:1px;height:1px;opacity:0.01;pointer-events:none';
   document.body.appendChild(videoEl);
 }
 
-function playVideoWakeLock(): void {
-  if (!videoEl) createVideoWakeLock();
-  videoEl?.play().catch(() => {});
+function playVideo(): void {
+  if (!videoEl) createVideoElement();
+  videoEl!.play().catch(() => {});
+  videoStarted = true;
 }
 
-// --- Init ---
+// --- Interaction handler (persistent, NOT once) ---
 
-function useVideoFallback(): boolean {
-  // Use video fallback on iOS or when Wake Lock API is unavailable
-  return isIOS() || !('wakeLock' in navigator);
+function onInteraction(): void {
+  if (!videoStarted) {
+    playVideo();
+  } else if (videoEl && videoEl.paused) {
+    videoEl.play().catch(() => {});
+  }
 }
+
+// --- Visibility change: re-acquire everything ---
+
+function onVisibilityChange(): void {
+  if (document.visibilityState !== 'visible') return;
+  acquireNativeWakeLock();
+  if (videoStarted && videoEl) {
+    videoEl.play().catch(() => {});
+  }
+}
+
+// --- Health check: belt and suspenders ---
+
+function checkHealth(): void {
+  if (document.visibilityState !== 'visible') return;
+
+  if ('wakeLock' in navigator && sentinel === null) {
+    acquireNativeWakeLock();
+  }
+
+  if (videoStarted && videoEl && videoEl.paused) {
+    videoEl.play().catch(() => {});
+  }
+}
+
+// --- Public API ---
 
 export function initWakeLock(): void {
-  if (useVideoFallback()) {
-    // iOS requires a user gesture to start video playback.
-    // Start on first touch, then keep alive on visibility change.
-    const startVideo = (): void => {
-      playVideoWakeLock();
-      document.removeEventListener('touchstart', startVideo);
-      document.removeEventListener('click', startVideo);
-    };
-    document.addEventListener('touchstart', startVideo, { once: true });
-    document.addEventListener('click', startVideo, { once: true });
+  // Strategy 1: native Wake Lock API (may silently fail in Telegram WebView)
+  acquireNativeWakeLock();
 
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') {
-        playVideoWakeLock();
-      }
-    });
-  } else {
-    requestWakeLock();
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') {
-        requestWakeLock();
-      }
-    });
-  }
+  // Strategy 2: video fallback (needs user gesture to start, then kept alive)
+  document.addEventListener('touchstart', onInteraction, { passive: true });
+  document.addEventListener('click', onInteraction);
+
+  // Re-acquire both on visibility change
+  document.addEventListener('visibilitychange', onVisibilityChange);
+
+  // Periodic health check
+  setInterval(checkHealth, 30_000);
 }

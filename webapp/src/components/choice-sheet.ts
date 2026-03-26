@@ -20,27 +20,32 @@ export function showChoiceSheet(options: {
   actions.append(primaryBtn, secondaryBtn);
   sheet.append(handle, title, actions);
 
-  function dismiss() {
+  function dismiss(immediate = false) {
     backdrop.classList.remove('visible');
     sheet.classList.remove('visible');
     document.body.style.overflow = '';
-    setTimeout(() => {
+    if (immediate) {
       backdrop.remove();
       sheet.remove();
-    }, 300);
+    } else {
+      setTimeout(() => {
+        backdrop.remove();
+        sheet.remove();
+      }, 300);
+    }
   }
 
   primaryBtn.addEventListener('click', () => {
-    dismiss();
+    dismiss(true);
     options.primary.onClick();
   });
 
   secondaryBtn.addEventListener('click', () => {
-    dismiss();
+    dismiss(true);
     options.secondary.onClick();
   });
 
-  backdrop.addEventListener('click', dismiss);
+  backdrop.addEventListener('click', () => dismiss());
 
   document.body.appendChild(backdrop);
   document.body.appendChild(sheet);

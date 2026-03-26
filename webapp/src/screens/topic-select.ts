@@ -1,7 +1,8 @@
 import { navigate } from '../app';
 import { topics, getQuestionsByTopic } from '../data/questions';
-import { createSession, loadTopicProgress, restoreTopicSession } from '../state/quiz-state';
+import { createSession, loadTopicProgress, restoreTopicSession, loadTopicWrongIds, clearTopicWrongIds } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
+import { showChoiceSheet } from '../components/choice-sheet';
 import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
@@ -66,6 +67,8 @@ export function renderTopicSelect(container: HTMLElement): () => void {
     totalCorrect += correct;
     totalIncorrect += incorrect;
 
+    const wrongIds = loadTopicWrongIds(topic);
+
     const info = h('div', { className: 'topic-info' });
     if (answered > 0) {
       const progress = h('span', { className: 'topic-count' }, `${answered} / ${count}`);
@@ -74,16 +77,56 @@ export function renderTopicSelect(container: HTMLElement): () => void {
       const incorrectSpan = h('span', { className: 'stat-incorrect' }, `${incorrect} ✗`);
       stats.append(correctSpan, incorrectSpan);
       info.append(progress, stats);
+    } else if (wrongIds.length > 0) {
+      const errBadge = h('span', { className: 'topic-count stat-incorrect' }, `${wrongIds.length} Fehler`);
+      info.appendChild(errBadge);
     } else {
       info.appendChild(h('span', { className: 'topic-count' }, `${count} Fragen`));
     }
     card.append(topicName, info);
 
     card.addEventListener('click', () => {
+      // 1. Check for in-progress session
       const restored = restoreTopicSession(topic, topicQuestions);
-      if (!restored) {
-        createSession('topic', topicQuestions, { topicName: topic });
+      if (restored) {
+        navigate('quiz');
+        return;
       }
+
+      // 2. Check for wrong IDs from previous completion
+      const savedWrong = loadTopicWrongIds(topic);
+      if (savedWrong.length > 0) {
+        const qMap = new Map(topicQuestions.map(q => [q.id, q]));
+        showChoiceSheet({
+          title: 'Quiz starten',
+          primary: {
+            label: `Fehler wiederholen (${savedWrong.length})`,
+            onClick: () => {
+              const retryQuestions = savedWrong
+                .map(id => qMap.get(id))
+                .filter((q): q is NonNullable<typeof q> => q !== undefined);
+              for (let i = retryQuestions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [retryQuestions[i], retryQuestions[j]] = [retryQuestions[j], retryQuestions[i]];
+              }
+              createSession('topic', retryQuestions, { topicName: topic });
+              navigate('quiz');
+            },
+          },
+          secondary: {
+            label: 'Alle Fragen neu starten',
+            onClick: () => {
+              clearTopicWrongIds(topic);
+              createSession('topic', topicQuestions, { topicName: topic });
+              navigate('quiz');
+            },
+          },
+        });
+        return;
+      }
+
+      // 3. No progress, no wrong IDs — fresh start
+      createSession('topic', topicQuestions, { topicName: topic });
       navigate('quiz');
     });
 

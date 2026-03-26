@@ -32,7 +32,7 @@ export function renderQuiz(container: HTMLElement): () => void {
 
   let timerInterval: ReturnType<typeof setInterval> | null = null;
   let cleanupBackBtn: (() => void) | null = null;
-  let slideDirection: 'up' | 'down' | null = null;
+  let slideDirection: 'left' | 'right' | null = null;
   let autoAdvance = getAutoAdvance();
 
   // Lesson-aware exit
@@ -116,11 +116,11 @@ export function renderQuiz(container: HTMLElement): () => void {
   container.append(topBar, questionSlot, navRow);
 
   function applySlideAnimation(): void {
-    questionSlot.classList.remove('slide-up', 'slide-down');
+    questionSlot.classList.remove('slide-left', 'slide-right');
     if (slideDirection) {
       // Force reflow to restart animation
       void questionSlot.offsetHeight;
-      questionSlot.classList.add(slideDirection === 'up' ? 'slide-up' : 'slide-down');
+      questionSlot.classList.add(slideDirection === 'left' ? 'slide-left' : 'slide-right');
     }
     slideDirection = null;
   }
@@ -162,6 +162,7 @@ export function renderQuiz(container: HTMLElement): () => void {
         const delay = isTraining ? 2200 : 1500;
         setTimeout(() => {
           if (session!.mode === 'all') clearSavedProgress();
+          if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
           navigate('results');
         }, delay);
         return;
@@ -171,7 +172,7 @@ export function renderQuiz(container: HTMLElement): () => void {
 
       const delay = isTraining ? 2200 : 1500;
       setTimeout(() => {
-        slideDirection = 'up';
+        slideDirection = 'left';
         nextQuestion();
         saveProgress();
         renderCurrentQuestion();
@@ -263,7 +264,7 @@ export function renderQuiz(container: HTMLElement): () => void {
       dot.addEventListener('click', () => {
         const currentIdx = session!.currentIndex;
         if (i === currentIdx) return;
-        slideDirection = i > currentIdx ? 'up' : 'down';
+        slideDirection = i > currentIdx ? 'left' : 'right';
         goToQuestion(i);
         saveProgress();
         renderCurrentQuestion();
@@ -282,7 +283,7 @@ export function renderQuiz(container: HTMLElement): () => void {
   }
 
   prevBtn.addEventListener('click', () => {
-    slideDirection = 'down';
+    slideDirection = 'right';
     prevQuestion();
     saveProgress();
     renderCurrentQuestion();
@@ -295,22 +296,50 @@ export function renderQuiz(container: HTMLElement): () => void {
       if (!allAnswered) {
         const unansweredIdx = session!.questions.findIndex(q => !session!.answers.has(q.id));
         if (unansweredIdx !== -1) {
-          slideDirection = unansweredIdx < session!.currentIndex ? 'down' : 'up';
+          slideDirection = unansweredIdx < session!.currentIndex ? 'right' : 'left';
           goToQuestion(unansweredIdx);
           renderCurrentQuestion();
         }
         return;
       }
       if (session!.mode === 'all') clearSavedProgress();
+      if (session!.mode === 'topic' && session!.topicName) clearTopicProgress(session!.topicName);
       navigate('results');
       return;
     }
-    slideDirection = 'up';
+    slideDirection = 'left';
     if (nextQuestion()) {
       saveProgress();
       renderCurrentQuestion();
     }
   });
+
+  // Swipe navigation
+  let touchStartX = 0;
+  let touchStartY = 0;
+  const SWIPE_THRESHOLD = 50;
+
+  questionSlot.addEventListener('touchstart', (e: TouchEvent) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  questionSlot.addEventListener('touchend', (e: TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+
+    // Ignore if vertical swipe is dominant
+    if (Math.abs(dy) > Math.abs(dx)) return;
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return;
+
+    if (dx < 0) {
+      // Swipe left → next
+      nextBtn.click();
+    } else {
+      // Swipe right → previous
+      prevBtn.click();
+    }
+  }, { passive: true });
 
   // Timer
   if (session.timerEnabled) {

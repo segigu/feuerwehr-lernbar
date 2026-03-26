@@ -1,12 +1,142 @@
 import { navigate } from '../app';
 import { questions } from '../data/questions';
-import { createSession, loadSavedProgress, clearSavedProgress, restoreSession } from '../state/quiz-state';
+import { createSession, loadSavedProgress, clearSavedProgress, restoreSession, loadWrongIds, clearWrongIds } from '../state/quiz-state';
 import { getRandomExamQuestions } from '../data/questions';
 import { getLanguage } from '../state/app-state';
 import { h, createImg } from '../utils/dom';
 import { showInstallBanner } from '../components/install-banner';
 
 const BASE = import.meta.env.BASE_URL;
+
+function isStandalone(): boolean {
+  return window.matchMedia('(display-mode: standalone)').matches
+    || (navigator as any).standalone === true;
+}
+
+function setupSirenGesture(iconWrap: HTMLElement): () => void {
+  const THRESHOLD = 120;
+  const MAX_PULL = 180;
+  const SCALE_AT_THRESHOLD = 1.6;
+  const SIREN_DURATION = 3500;
+
+  let startY = 0;
+  let pulling = false;
+  let sirenActive = false;
+  let sirenTimer: ReturnType<typeof setTimeout> | null = null;
+  let thresholdReached = false;
+
+  function onTouchStart(e: TouchEvent) {
+    if (window.scrollY > 0 || sirenActive) return;
+    startY = e.touches[0].clientY;
+    pulling = false;
+    thresholdReached = false;
+  }
+
+  function onTouchMove(e: TouchEvent) {
+    if (startY === 0 || sirenActive) return;
+
+    const dy = e.touches[0].clientY - startY;
+
+    if (dy < 10) {
+      if (pulling) resetVisuals();
+      return;
+    }
+
+    if (!pulling) {
+      pulling = true;
+      iconWrap.classList.remove('home-icon-snap-back');
+    }
+
+    e.preventDefault();
+
+    const clamped = Math.min(dy, MAX_PULL);
+    const progress = Math.min(clamped / THRESHOLD, 1);
+    const overProgress = clamped > THRESHOLD
+      ? (clamped - THRESHOLD) / (MAX_PULL - THRESHOLD)
+      : 0;
+    const scale = 1 + (SCALE_AT_THRESHOLD - 1) * progress + 0.1 * overProgress;
+    iconWrap.style.transform = `scale(${scale})`;
+
+    if (progress >= 1 && !thresholdReached) {
+      thresholdReached = true;
+      iconWrap.classList.add('home-icon-threshold');
+      if (navigator.vibrate) navigator.vibrate(20);
+    } else if (progress < 1 && thresholdReached) {
+      thresholdReached = false;
+      iconWrap.classList.remove('home-icon-threshold');
+    }
+  }
+
+  function onTouchEnd() {
+    if (!pulling) { startY = 0; return; }
+    pulling = false;
+    startY = 0;
+
+    if (thresholdReached) {
+      activateSiren();
+    } else {
+      snapBack();
+    }
+  }
+
+  function activateSiren() {
+    sirenActive = true;
+    thresholdReached = false;
+    iconWrap.classList.remove('home-icon-threshold');
+
+    iconWrap.classList.add('home-icon-snap-back');
+    iconWrap.style.transform = 'scale(1)';
+
+    iconWrap.classList.remove('home-icon-animated');
+    iconWrap.classList.add('home-icon-siren');
+
+    if (navigator.vibrate) navigator.vibrate([30, 50, 30]);
+
+    sirenTimer = setTimeout(deactivateSiren, SIREN_DURATION);
+  }
+
+  function deactivateSiren() {
+    sirenActive = false;
+    sirenTimer = null;
+    iconWrap.classList.remove('home-icon-siren', 'home-icon-snap-back');
+    iconWrap.classList.add('home-icon-animated');
+    iconWrap.style.transform = '';
+  }
+
+  function snapBack() {
+    thresholdReached = false;
+    iconWrap.classList.remove('home-icon-threshold');
+    iconWrap.classList.add('home-icon-snap-back');
+    iconWrap.style.transform = 'scale(1)';
+    iconWrap.addEventListener('transitionend', () => {
+      iconWrap.classList.remove('home-icon-snap-back');
+      iconWrap.style.transform = '';
+    }, { once: true });
+  }
+
+  function resetVisuals() {
+    pulling = false;
+    thresholdReached = false;
+    iconWrap.classList.remove('home-icon-threshold');
+    iconWrap.style.transform = '';
+  }
+
+  document.addEventListener('touchstart', onTouchStart, { passive: true });
+  document.addEventListener('touchmove', onTouchMove, { passive: false });
+  document.addEventListener('touchend', onTouchEnd, { passive: true });
+
+  return () => {
+    document.removeEventListener('touchstart', onTouchStart);
+    document.removeEventListener('touchmove', onTouchMove);
+    document.removeEventListener('touchend', onTouchEnd);
+    if (sirenTimer) {
+      clearTimeout(sirenTimer);
+      iconWrap.classList.remove('home-icon-siren', 'home-icon-threshold', 'home-icon-snap-back');
+      iconWrap.classList.add('home-icon-animated');
+      iconWrap.style.transform = '';
+    }
+  };
+}
 
 export function renderHome(container: HTMLElement): () => void {
   const header = h('div', { className: 'home-header' });
@@ -19,6 +149,12 @@ export function renderHome(container: HTMLElement): () => void {
 
   header.append(iconWrap, title);
   container.appendChild(header);
+
+  // Pull-down siren gesture (PWA standalone only)
+  let cleanupSiren: (() => void) | null = null;
+  if (isStandalone()) {
+    cleanupSiren = setupSirenGesture(iconWrap);
+  }
 
   // PWA install banner (mobile browsers only)
   const cleanupBanner = showInstallBanner();
@@ -57,11 +193,13 @@ export function renderHome(container: HTMLElement): () => void {
     () => { navigate('topic-select'); }
   );
 
-  // Card: All questions — check for saved progress
+  // Card: All questions — check for saved progress or wrong IDs
   const saved = loadSavedProgress();
+  const wrongIds = saved ? [] : loadWrongIds();
   let cardAll: HTMLElement;
 
   if (saved) {
+    // State 1: In-progress session — resume / restart
     const answered = Object.keys(saved.answers).length;
     const cardEl = h('div', { className: 'home-card-wrap' });
 
@@ -86,7 +224,41 @@ export function renderHome(container: HTMLElement): () => void {
 
     cardEl.append(resumeBtn, resetBtn);
     cardAll = cardEl;
+  } else if (wrongIds.length > 0) {
+    // State 2: Completed with errors — retry wrong / start fresh
+    const cardEl = h('div', { className: 'home-card-wrap' });
+
+    const retryCard = createCard(
+      `${BASE}images/Alle Fragen.png`,
+      'Alle Fragen',
+      `${wrongIds.length} Fehler zum Wiederholen`,
+      'Falsche Fragen nochmal üben',
+      () => {
+        const qMap = new Map(questions.map(q => [q.id, q]));
+        const retryQuestions = wrongIds
+          .map(id => qMap.get(id))
+          .filter((q): q is NonNullable<typeof q> => q !== undefined);
+        for (let i = retryQuestions.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [retryQuestions[i], retryQuestions[j]] = [retryQuestions[j], retryQuestions[i]];
+        }
+        createSession('all', retryQuestions);
+        navigate('quiz');
+      }
+    );
+
+    const resetBtn = h('button', { className: 'home-card-reset' }, 'Neu starten');
+    resetBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      clearWrongIds();
+      createSession('all', getRandomExamQuestions(questions.length));
+      navigate('quiz');
+    });
+
+    cardEl.append(retryCard, resetBtn);
+    cardAll = cardEl;
   } else {
+    // State 3: No state — fresh start
     cardAll = createCard(
       `${BASE}images/Alle Fragen.png`,
       'Alle Fragen',
@@ -130,7 +302,7 @@ export function renderHome(container: HTMLElement): () => void {
   footer.append(footerLine1, footerLine2, footerLine3);
   container.appendChild(footer);
 
-  return () => { cleanupBanner(); };
+  return () => { cleanupBanner(); cleanupSiren?.(); };
 }
 
 function sectionLabel(text: string): HTMLElement {

@@ -1,5 +1,5 @@
 import { navigate } from '../app';
-import { getSession, calculateResults } from '../state/quiz-state';
+import { getSession, calculateResults, createSession, saveWrongIds, saveTopicWrongIds } from '../state/quiz-state';
 import { saveLessonQuizStats } from '../state/lesson-state';
 import { showBackButton } from '../utils/telegram';
 import { hapticSuccess, hapticError } from '../utils/telegram';
@@ -24,16 +24,22 @@ export function renderResults(container: HTMLElement): () => void {
     }
   }
 
-  // Save lesson quiz stats
+  // Compute wrong question IDs (incorrect + unanswered)
+  const wrongQuestionIds = results.details
+    .filter(d => !d.isCorrect)
+    .map(d => d.question.id);
+
+  // Save wrong IDs for retry feature (not for exam mode)
   if (session.mode === 'lesson' && session.lessonId) {
-    const wrongIds = results.details
-      .filter(d => !d.isCorrect && d.selected !== null)
-      .map(d => d.question.id);
     saveLessonQuizStats(session.lessonId, {
       correct: results.correct,
-      wrong: results.incorrect,
-      wrongIds,
+      wrong: results.incorrect + results.unanswered,
+      wrongIds: wrongQuestionIds,
     });
+  } else if (session.mode === 'all') {
+    saveWrongIds(wrongQuestionIds);
+  } else if (session.mode === 'topic' && session.topicName) {
+    saveTopicWrongIds(session.topicName, wrongQuestionIds);
   }
 
   // Celebration / failure effects
@@ -89,7 +95,32 @@ export function renderResults(container: HTMLElement): () => void {
   // Action buttons
   const actions = h('div', { className: 'result-actions' });
 
-  const reviewBtn = h('button', { className: 'action-btn action-primary' }, 'Antworten ansehen');
+  // "Fehler wiederholen" button (not for exam, only when there are errors)
+  const hasErrors = wrongQuestionIds.length > 0 && session.mode !== 'exam';
+
+  if (hasErrors) {
+    const retryWrongBtn = h('button', { className: 'action-btn action-primary' },
+      `Fehler wiederholen (${wrongQuestionIds.length})`);
+    retryWrongBtn.addEventListener('click', () => {
+      const wrongQuestions = results.details
+        .filter(d => !d.isCorrect)
+        .map(d => d.question);
+      for (let i = wrongQuestions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongQuestions[i], wrongQuestions[j]] = [wrongQuestions[j], wrongQuestions[i]];
+      }
+      createSession(session.mode, wrongQuestions, {
+        topicName: session.topicName,
+        lessonId: session.lessonId,
+      });
+      navigate('quiz');
+    });
+    actions.appendChild(retryWrongBtn);
+  }
+
+  const reviewBtn = h('button', {
+    className: `action-btn ${hasErrors ? 'action-secondary' : 'action-primary'}`
+  }, 'Antworten ansehen');
   reviewBtn.addEventListener('click', () => navigate('review'));
 
   const retryBtn = h('button', { className: 'action-btn action-secondary' }, 'Neuer Versuch');

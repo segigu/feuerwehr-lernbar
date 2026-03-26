@@ -20,6 +20,7 @@
   width: 120px;
   height: 120px;
   margin: 0 auto;
+  will-change: transform;
 }
 
 .home-icon-animated::before,
@@ -48,6 +49,28 @@
 
 .home-icon-flash {
   display: none;
+}
+
+.home-icon-snap-back {
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.05);
+}
+
+.home-icon-threshold .home-icon {
+  filter: drop-shadow(0 0 8px rgba(255, 40, 40, 0.6));
+}
+
+.home-icon-siren::before {
+  background: radial-gradient(ellipse, rgba(30, 120, 255, 1) 0%, rgba(30, 120, 255, 0.3) 50%, transparent 70%);
+  animation: siren-left 0.3s linear infinite;
+  width: 28%;
+  height: 24%;
+}
+
+.home-icon-siren::after {
+  background: radial-gradient(ellipse, rgba(255, 40, 40, 1) 0%, rgba(255, 40, 40, 0.3) 50%, transparent 70%);
+  animation: siren-right 0.3s linear infinite;
+  width: 28%;
+  height: 24%;
 }
 
 .home-title {
@@ -317,6 +340,43 @@
 
 .install-sheet-dismiss:active {
   background: var(--color-border);
+}
+
+/* ============================================
+   CHOICE SHEET (retry dialog)
+   ============================================ */
+
+.choice-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  padding: var(--space-sm) var(--space-lg) var(--space-xl);
+  padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.choice-sheet.visible {
+  transform: translateY(0);
+}
+
+.choice-sheet-title {
+  font-size: var(--font-xl);
+  font-weight: var(--weight-bold);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.choice-sheet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 /* ============================================
@@ -625,7 +685,7 @@
   padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
   flex-shrink: 0;
   margin: 0 12px calc(32px + env(safe-area-inset-bottom, 0px));
-  border-radius: 24px;
+  border-radius: 100px;
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
@@ -641,7 +701,7 @@
   height: 44px;
   font-size: 20px;
   color: var(--color-text);
-  background: var(--color-primary-light);
+  background: var(--color-background);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -662,18 +722,26 @@
 }
 
 @keyframes nav-pulse {
-  0%   { transform: scale(1); color: var(--color-text); }
-  8%   { transform: scale(1.45); color: var(--color-primary); }
-  20%  { transform: scale(1); color: var(--color-primary); }
-  28%  { transform: scale(1.45); color: #e74c3c; }
-  40%  { transform: scale(1); color: #e74c3c; }
-  48%  { transform: scale(1.4); color: var(--color-primary); }
-  60%  { transform: scale(1); color: var(--color-primary); }
-  100% { transform: scale(1); color: var(--color-text); }
+  0%   { transform: scale(1); color: #fff; background-position: 0% 50%; }
+  15%  { transform: scale(1.25); }
+  30%  { transform: scale(1); }
+  45%  { transform: scale(1.2); }
+  60%  { transform: scale(1); }
+  100% { transform: scale(1); color: #fff; background-position: 100% 50%; }
 }
 
 .nav-arrow.pulse {
-  animation: nav-pulse 1.6s ease-out;
+  animation: nav-pulse 1.8s ease-in-out;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    #e74c3c 25%,
+    #ff6b6b 50%,
+    #e74c3c 75%,
+    var(--color-primary) 100%
+  );
+  background-size: 300% 300%;
+  box-shadow: 0 0 16px rgba(200, 16, 46, 0.4);
 }
 
 .quiz-nav-dots {
@@ -885,6 +953,20 @@
   36.5% { opacity: 0; }
   39.5% { opacity: 0.8; }
   42.5%, 100% { opacity: 0; }
+}
+
+@keyframes siren-left {
+  0%   { opacity: 1; }
+  49%  { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes siren-right {
+  0%   { opacity: 0; }
+  49%  { opacity: 0; }
+  50%  { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 .stat-correct .stat-value { color: var(--color-correct); }

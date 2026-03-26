@@ -59,6 +59,49 @@ export function clearTopicProgress(topicName: string): void {
   try { localStorage.removeItem(`mta-progress-topic-${topicName}`); } catch {}
 }
 
+// ---- localStorage: wrong question IDs (for retry feature) ----
+
+const WRONG_ALL_KEY = 'mta-wrong-all';
+
+export function saveWrongIds(wrongIds: number[]): void {
+  try {
+    if (wrongIds.length === 0) { localStorage.removeItem(WRONG_ALL_KEY); }
+    else { localStorage.setItem(WRONG_ALL_KEY, JSON.stringify(wrongIds)); }
+  } catch {}
+}
+
+export function loadWrongIds(): number[] {
+  try {
+    const raw = localStorage.getItem(WRONG_ALL_KEY);
+    if (!raw) return [];
+    return JSON.parse(raw) as number[];
+  } catch { return []; }
+}
+
+export function clearWrongIds(): void {
+  try { localStorage.removeItem(WRONG_ALL_KEY); } catch {}
+}
+
+export function saveTopicWrongIds(topicName: string, wrongIds: number[]): void {
+  const k = `mta-wrong-topic-${topicName}`;
+  try {
+    if (wrongIds.length === 0) { localStorage.removeItem(k); }
+    else { localStorage.setItem(k, JSON.stringify(wrongIds)); }
+  } catch {}
+}
+
+export function loadTopicWrongIds(topicName: string): number[] {
+  try {
+    const raw = localStorage.getItem(`mta-wrong-topic-${topicName}`);
+    if (!raw) return [];
+    return JSON.parse(raw) as number[];
+  } catch { return []; }
+}
+
+export function clearTopicWrongIds(topicName: string): void {
+  try { localStorage.removeItem(`mta-wrong-topic-${topicName}`); } catch {}
+}
+
 export function restoreTopicSession(topicName: string, topicQuestions: Question[]): QuizSession | null {
   const saved = loadTopicProgress(topicName);
   if (!saved) return null;

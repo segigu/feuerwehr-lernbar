@@ -4,6 +4,7 @@ import { getLessonLearnProgress, getLessonQuizStats, getLessonVocabStats, resetL
 import { getLanguage } from '../state/app-state';
 import { createSession } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
+import { showChoiceSheet } from '../components/choice-sheet';
 import { h, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
@@ -108,6 +109,46 @@ export function renderLessonDetail(container: HTMLElement): () => void {
       quizBadge,
       'Wissen überprüfen',
       () => {
+        // Check for wrong IDs from previous quiz
+        if (quizStats && quizStats.wrongIds.length > 0) {
+          const allQuestions = getLessonQuestions(lesson);
+          const wrongSet = new Set(quizStats.wrongIds);
+          showChoiceSheet({
+            title: 'Quiz starten',
+            primary: {
+              label: `Fehler wiederholen (${quizStats.wrongIds.length})`,
+              onClick: () => {
+                const retryQuestions = allQuestions.filter(q => wrongSet.has(q.id));
+                for (let i = retryQuestions.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [retryQuestions[i], retryQuestions[j]] = [retryQuestions[j], retryQuestions[i]];
+                }
+                createSession('lesson', retryQuestions, {
+                  lessonId: lesson.id,
+                  topicName: lesson.title,
+                });
+                navigate('quiz');
+              },
+            },
+            secondary: {
+              label: 'Alle Fragen neu starten',
+              onClick: () => {
+                const questions = getLessonQuestions(lesson);
+                for (let i = questions.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [questions[i], questions[j]] = [questions[j], questions[i]];
+                }
+                createSession('lesson', questions, {
+                  lessonId: lesson.id,
+                  topicName: lesson.title,
+                });
+                navigate('quiz');
+              },
+            },
+          });
+          return;
+        }
+
         const questions = getLessonQuestions(lesson);
         // Shuffle
         for (let i = questions.length - 1; i > 0; i--) {

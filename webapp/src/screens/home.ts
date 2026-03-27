@@ -131,20 +131,19 @@ export function renderHome(container: HTMLElement): () => void {
   // Pull-down siren gesture
   const cleanupSiren = setupSirenGesture(iconWrap, container);
 
-  // Secret cheat sheet gesture: tap bottom-left, then double-tap top-right
+  // Secret cheat sheet gesture: tap top-left, then double-tap top-right
   const CORNER = 80;
   let gestureStep: 'idle' | 'step1' | 'step2' = 'idle';
   let gestureTime = 0;
 
   function onCornerClick(e: MouseEvent): void {
     const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const inBottomLeft = e.clientX < CORNER && e.clientY > vh - CORNER;
+    const inTopLeft = e.clientX < CORNER && e.clientY < CORNER;
     const inTopRight = e.clientX > vw - CORNER && e.clientY < CORNER;
     const now = Date.now();
 
     if (gestureStep === 'idle') {
-      if (inBottomLeft) { gestureStep = 'step1'; gestureTime = now; }
+      if (inTopLeft) { gestureStep = 'step1'; gestureTime = now; }
     } else if (gestureStep === 'step1') {
       if (inTopRight && now - gestureTime < 2000) { gestureStep = 'step2'; gestureTime = now; }
       else { gestureStep = 'idle'; }

@@ -8,11 +8,8 @@ export function showCheatSheet(): void {
   const backdrop = h('div', { className: 'cheat-backdrop' });
   const sheet = h('div', { className: 'cheat-sheet' });
 
-  // Header
-  const header = h('div', { className: 'cheat-sheet-header' });
-  const titleEl = h('span', { className: 'cheat-sheet-title' }, 'Spickzettel');
+  // Close button (top-right)
   const closeBtn = h('button', { className: 'cheat-sheet-close' }, '\u2715');
-  header.append(titleEl, closeBtn);
 
   // Results (scrollable middle)
   const results = h('div', { className: 'cheat-sheet-results' });
@@ -29,7 +26,7 @@ export function showCheatSheet(): void {
   }) as unknown as HTMLInputElement;
   searchBar.appendChild(input);
 
-  sheet.append(header, results, searchBar);
+  sheet.append(closeBtn, results, searchBar);
 
   function createCard(q: Question): HTMLElement {
     const card = h('div', { className: 'cheat-card' });

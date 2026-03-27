@@ -1903,22 +1903,10 @@ ul.block-list {
   transform: translateY(0);
 }
 
-.cheat-sheet-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-sm) var(--space-md);
-  flex-shrink: 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.cheat-sheet-title {
-  font-size: var(--font-base);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text-muted);
-}
-
 .cheat-sheet-close {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
   width: 36px;
   height: 36px;
   display: flex;
@@ -1927,6 +1915,7 @@ ul.block-list {
   font-size: var(--font-lg);
   color: var(--color-text-muted);
   border-radius: var(--radius-full);
+  z-index: 1;
   transition: background var(--transition-fast);
 }
 
@@ -1944,9 +1933,7 @@ ul.block-list {
 .cheat-sheet-search-bar {
   flex-shrink: 0;
   padding: var(--space-sm) var(--space-md);
-  padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom));
-  border-top: 1px solid var(--color-border);
-  background: var(--color-surface);
+  padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
 }
 
 .cheat-sheet-input {

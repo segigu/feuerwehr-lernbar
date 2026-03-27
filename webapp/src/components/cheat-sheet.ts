@@ -30,12 +30,11 @@ export function showCheatSheet(): void {
 
   function createCard(q: Question): HTMLElement {
     const card = h('div', { className: 'cheat-card' });
-    const topic = h('span', { className: 'cheat-card-topic' }, q.topic);
     const question = h('p', { className: 'cheat-card-question' }, q.question);
     const letter = h('span', { className: 'cheat-card-letter' }, q.correct.toUpperCase());
     const text = h('span', null, q.options[q.correct]);
     const answer = h('div', { className: 'cheat-card-answer' }, letter, text);
-    card.append(topic, question, answer);
+    card.append(question, answer);
     return card;
   }
 

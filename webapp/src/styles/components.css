@@ -1892,7 +1892,7 @@ ul.block-list {
   position: fixed;
   inset: 0;
   z-index: 1002;
-  background: var(--color-background);
+  background: var(--color-surface);
   display: flex;
   flex-direction: column;
   transform: translateY(100%);
@@ -1907,12 +1907,12 @@ ul.block-list {
   position: absolute;
   top: var(--space-sm);
   right: var(--space-sm);
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   color: var(--color-text-muted);
   border-radius: var(--radius-full);
   z-index: 1;
@@ -1932,7 +1932,7 @@ ul.block-list {
 
 .cheat-sheet-search-bar {
   flex-shrink: 0;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) var(--space-xl);
   padding-bottom: calc(var(--space-md) + env(safe-area-inset-bottom));
 }
 
@@ -1951,7 +1951,7 @@ ul.block-list {
 }
 
 .cheat-sheet-input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-border-strong);
 }
 
 .cheat-sheet-input::placeholder {
@@ -1980,19 +1980,11 @@ ul.block-list {
   border: 1px solid var(--color-border);
 }
 
-.cheat-card-topic {
-  font-size: var(--font-xs);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
 .cheat-card-question {
   font-size: var(--font-base);
   font-weight: var(--weight-medium);
   line-height: 1.4;
-  margin: var(--space-xs) 0 var(--space-sm);
+  margin: 0 0 var(--space-sm);
 }
 
 .cheat-card-answer {

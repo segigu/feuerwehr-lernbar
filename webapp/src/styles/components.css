@@ -1905,7 +1905,7 @@ ul.block-list {
 
 .cheat-sheet-close {
   position: absolute;
-  top: var(--space-sm);
+  top: calc(var(--space-sm) + env(safe-area-inset-top));
   right: var(--space-sm);
   width: 44px;
   height: 44px;
@@ -1928,6 +1928,7 @@ ul.block-list {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0 var(--space-md);
+  padding-top: env(safe-area-inset-top);
 }
 
 .cheat-sheet-search-bar {

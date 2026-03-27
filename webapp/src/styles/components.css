@@ -2000,16 +2000,3 @@ ul.block-list {
   line-height: 1.4;
 }
 
-.cheat-card-letter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  background: var(--color-correct);
-  color: #fff;
-  border-radius: var(--radius-full);
-  font-size: var(--font-xs);
-  font-weight: var(--weight-bold);
-  flex-shrink: 0;
-}

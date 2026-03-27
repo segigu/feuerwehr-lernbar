@@ -62,15 +62,9 @@ export function showCheatSheet(): void {
   // Filter on input
   input.addEventListener('input', () => renderResults(input.value));
 
-  // Theme color: white while cheat sheet is open
-  const themeMeta = document.querySelector('meta[name="theme-color"]');
-  const origThemeColor = themeMeta?.getAttribute('content') ?? '';
-  if (themeMeta) themeMeta.setAttribute('content', '#FFFFFF');
-
   // Dismiss
   function dismiss(): void {
     input.blur();
-    if (themeMeta) themeMeta.setAttribute('content', origThemeColor);
     backdrop.classList.remove('visible');
     sheet.classList.remove('visible');
     document.body.style.overflow = '';

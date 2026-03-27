@@ -1890,11 +1890,15 @@ ul.block-list {
 
 .cheat-sheet {
   position: fixed;
-  inset: 0;
+  top: 54px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1002;
   background: var(--color-surface);
   display: flex;
   flex-direction: column;
+  border-radius: 16px 16px 0 0;
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.05);
 }
@@ -1905,7 +1909,7 @@ ul.block-list {
 
 .cheat-sheet-close {
   position: absolute;
-  top: calc(var(--space-sm) + env(safe-area-inset-top));
+  top: var(--space-sm);
   right: var(--space-sm);
   width: 44px;
   height: 44px;
@@ -1928,7 +1932,6 @@ ul.block-list {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0 var(--space-md);
-  padding-top: env(safe-area-inset-top);
 }
 
 .cheat-sheet-search-bar {

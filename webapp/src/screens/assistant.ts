@@ -309,6 +309,7 @@ export function renderAssistant(container: HTMLElement): () => void {
     let streamSources: Source[] = [];
     let streamRefusal = false;
     let streamDone = false;
+    let finalized = false;
 
     function startRevealLoop() {
       function revealNext() {
@@ -345,6 +346,9 @@ export function renderAssistant(container: HTMLElement): () => void {
     }
 
     function finishReveal() {
+      if (finalized) return;
+      finalized = true;
+
       if (flushTimer) {
         clearTimeout(flushTimer);
         flushTimer = undefined;

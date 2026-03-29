@@ -87,7 +87,9 @@ async function searchContext(question: string, env: Env): Promise<{ prompt: stri
     .filter(r => {
       // Skip overview entries where lesson = section (link to main screen)
       if (r.chunk.lessonTitle === r.chunk.sectionTitle) return false;
-      const key = `${r.chunk.lessonTitle}::${r.chunk.sectionTitle}`;
+      // Skip entries without proper IDs (catalog questions)
+      if (!r.chunk.lessonId || !r.chunk.sectionId) return false;
+      const key = `${r.chunk.lessonId}::${r.chunk.sectionId}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;

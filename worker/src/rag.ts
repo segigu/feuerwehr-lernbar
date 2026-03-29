@@ -2,6 +2,8 @@ import type { Env, SearchResult, AskResponse } from './types';
 import { buildPrompt, buildRefusalResponse } from './prompt';
 
 const SIMILARITY_THRESHOLD = 0.35;
+const RELATIVE_THRESHOLD = 0.75; // result must score ≥ 75% of best match
+const SCORE_GAP = 0.10;          // drop results after a ≥0.10 score gap
 const TOP_K = 5;
 const MAX_TOKENS = 800;
 
@@ -48,9 +50,22 @@ async function searchContext(question: string, env: Env): Promise<{ prompt: stri
     returnMetadata: 'all',
   });
 
-  const matches = vectorResults.matches.filter(m => m.score >= SIMILARITY_THRESHOLD);
+  const aboveThreshold = vectorResults.matches.filter(m => m.score >= SIMILARITY_THRESHOLD);
 
-  if (matches.length === 0) return null;
+  if (aboveThreshold.length === 0) return null;
+
+  // Relative threshold: drop results far weaker than the best match
+  const bestScore = aboveThreshold[0].score;
+  const minRelative = bestScore * RELATIVE_THRESHOLD;
+  let matches = aboveThreshold.filter(m => m.score >= minRelative);
+
+  // Score gap: cut off where there's a sharp drop between consecutive results
+  for (let i = 1; i < matches.length; i++) {
+    if (matches[i - 1].score - matches[i].score >= SCORE_GAP) {
+      matches = matches.slice(0, i);
+      break;
+    }
+  }
 
   const searchResults: SearchResult[] = matches.map(m => ({
     chunk: {

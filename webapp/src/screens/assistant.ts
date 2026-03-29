@@ -163,7 +163,9 @@ export function renderAssistant(container: HTMLElement): () => void {
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      handleSend();
+      if (!(mediaRecorder && mediaRecorder.state === 'recording')) {
+        handleSend();
+      }
     }
   });
 
@@ -445,7 +447,7 @@ export function renderAssistant(container: HTMLElement): () => void {
 
   async function handleSend() {
     const question = input.value.trim();
-    if (!question || isLoading) return;
+    if (!question || isLoading || (mediaRecorder && mediaRecorder.state === 'recording')) return;
 
     input.value = '';
     input.style.height = 'auto';
@@ -492,6 +494,7 @@ export function renderAssistant(container: HTMLElement): () => void {
       mediaRecorder.onstop = async () => {
         stream.getTracks().forEach(t => t.stop());
         micBtn.classList.remove('recording');
+        sendBtn.classList.remove('recording');
         micBtn.classList.add('transcribing');
         micBtn.innerHTML = SPINNER_ICON;
 
@@ -509,6 +512,7 @@ export function renderAssistant(container: HTMLElement): () => void {
       mediaRecorder.start();
       micBtn.classList.add('recording');
       micBtn.innerHTML = STOP_ICON;
+      sendBtn.classList.add('recording');
     } catch {
       addMessage({
         role: 'assistant',

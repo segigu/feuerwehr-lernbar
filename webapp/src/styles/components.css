@@ -2175,7 +2175,8 @@ ul.block-list {
   opacity: 0.7;
 }
 
-.assistant-send-btn.loading {
+.assistant-send-btn.loading,
+.assistant-send-btn.recording {
   opacity: 0.5;
   pointer-events: none;
 }

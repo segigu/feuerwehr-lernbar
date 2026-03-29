@@ -2044,8 +2044,7 @@ ul.block-list {
   display: flex;
   align-items: flex-end;
   gap: var(--space-sm);
-  padding: 8px 12px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  padding: 12px;
   flex-shrink: 0;
 }
 

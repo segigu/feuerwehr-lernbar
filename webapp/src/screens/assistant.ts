@@ -31,10 +31,10 @@ const REFUSAL_MARKERS = [
 ];
 
 const GENERAL_WELCOMES = [
-  'Servus, Kamerad! Ich bin dein Lernassistent — quasi der Hydrant des Wissens. Immer unter Druck, aber wenns drauf ankommt, spritz ich los! 💦 Was willst wissen?',
+  'Servus, Kamerad! Ich bin dein KI-Ausbilder — quasi der Hydrant des Wissens. Immer unter Druck, aber wenns drauf ankommt, spritz ich los! 💦 Was willst wissen?',
   'Grüß Gott! Ich weiß alles, was im MTA-Lehrmaterial steht. Und nur des. Bin halt wie a fränkischer Beamter — streng nach Vorschrift! Was is dei Frage?',
-  'Hallo! Ich bin dei KI-Kamerad für die MTA-Prüfung. Frag mich was — von Brandklassen bis Atemschutz, ich hab alles im Kopf. Und im Gegensatz zum Gruppenführer hab ich unendlich Geduld! 😄',
-  'Moin! Also eigentlich: Servus! Bin der Lernassistent und kenn das MTA-Lehrmaterial auswendig. Frag mich was — ich bin schneller als die Drehleiter auf\'m Parkplatz!',
+  'Hallo! Ich bin dei KI-Ausbilder für die MTA-Prüfung. Frag mich was — von Brandklassen bis Atemschutz, ich hab alles im Kopf. Und im Gegensatz zum Gruppenführer hab ich unendlich Geduld! 😄',
+  'Moin! Also eigentlich: Servus! Bin dein KI-Ausbilder und kenn das MTA-Lehrmaterial auswendig. Frag mich was — ich bin schneller als die Drehleiter auf\'m Parkplatz!',
   'Willkommen! Ich bin wie a guter Kamerad: immer da, wenn\'s brennt. Nur dass bei mir nix brennt, sondern gelernt wird. Also — schieß los!',
 ];
 
@@ -106,7 +106,7 @@ export function renderAssistant(container: HTMLElement): () => void {
   // Header — title left, close button right
   const header = h('div', { className: 'assistant-header' });
   const headerLeft = h('div', { className: 'assistant-header-left' });
-  const title = h('h1', { className: 'assistant-title' }, 'Lernassistent');
+  const title = h('h1', { className: 'assistant-title' }, 'KI-Ausbilder');
   const subtitle = h('p', { className: 'assistant-subtitle' }, 'Fragen zum MTA-Lehrmaterial');
   headerLeft.append(title, subtitle);
 
@@ -353,7 +353,7 @@ export function renderAssistant(container: HTMLElement): () => void {
 
       if (!res.ok || !res.body) {
         typingDots.remove();
-        addMessage({ role: 'assistant', text: 'Entschuldigung, der Lernassistent ist gerade nicht erreichbar. Versuche es später nochmal.' });
+        addMessage({ role: 'assistant', text: 'Entschuldigung, der KI-Ausbilder ist gerade nicht erreichbar. Versuche es später nochmal.' });
         return;
       }
 
@@ -439,7 +439,7 @@ export function renderAssistant(container: HTMLElement): () => void {
     if (!QA_WORKER_URL) {
       addMessage({
         role: 'assistant',
-        text: 'Der Lernassistent ist noch nicht konfiguriert. Bitte setze VITE_QA_WORKER_URL in der Umgebung.',
+        text: 'Der KI-Ausbilder ist noch nicht konfiguriert. Bitte setze VITE_QA_WORKER_URL in der Umgebung.',
       });
       return;
     }

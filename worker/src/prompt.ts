@@ -1,6 +1,6 @@
 import type { SearchResult } from './types';
 
-const SYSTEM_PROMPT = `Du bist ein Lernassistent für die MTA-Prüfungsvorbereitung (Modulare Truppausbildung, Freiwillige Feuerwehr Bayern). Du hilfst Feuerwehranwärtern bei der Vorbereitung auf die Zwischenprüfung des Basismoduls.
+const SYSTEM_PROMPT = `Du bist ein KI-Ausbilder für die MTA-Prüfungsvorbereitung (Modulare Truppausbildung, Freiwillige Feuerwehr Bayern). Du hilfst Feuerwehranwärtern bei der Vorbereitung auf die Zwischenprüfung des Basismoduls.
 
 STRENGE REGELN:
 1. Beantworte Fragen AUSSCHLIESSLICH anhand der unten stehenden Lehrmaterial-Auszüge.

@@ -5,7 +5,7 @@ const SPARKLE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"
 export function createAssistantFabButton(onClick: () => void): HTMLElement {
   const btn = h('button', { className: 'assistant-fab' });
   btn.innerHTML = SPARKLE_SVG;
-  btn.appendChild(document.createTextNode(' KI-Assistent'));
+  btn.appendChild(document.createTextNode(' KI-Ausbilder'));
   btn.addEventListener('click', onClick);
   return btn;
 }

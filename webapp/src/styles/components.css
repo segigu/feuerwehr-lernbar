@@ -1895,6 +1895,8 @@ ul.block-list {
   flex-direction: column;
   height: 100dvh;
   overflow: hidden;
+  margin: calc(-1 * var(--space-md));
+  margin-bottom: -100px;
 }
 
 .assistant-header {

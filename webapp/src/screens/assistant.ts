@@ -13,6 +13,8 @@ interface Message {
 export function renderAssistant(container: HTMLElement): () => void {
   const messages: Message[] = [];
   let isLoading = false;
+  let mediaRecorder: MediaRecorder | null = null;
+  let audioChunks: Blob[] = [];
 
   // Header
   const header = h('div', { className: 'assistant-header' });
@@ -38,9 +40,10 @@ export function renderAssistant(container: HTMLElement): () => void {
     placeholder: 'Deine Frage...',
     rows: '1',
   }) as HTMLTextAreaElement;
+  const micBtn = h('button', { className: 'assistant-mic-btn' }, '🎤');
   const sendBtn = h('button', { className: 'assistant-send-btn' }, '➤');
 
-  inputArea.append(input, sendBtn);
+  inputArea.append(input, micBtn, sendBtn);
   container.appendChild(inputArea);
 
   // Auto-resize textarea
@@ -58,6 +61,115 @@ export function renderAssistant(container: HTMLElement): () => void {
   });
 
   sendBtn.addEventListener('click', handleSend);
+  micBtn.addEventListener('click', handleMic);
+
+  async function handleMic() {
+    if (isLoading) return;
+
+    // If already recording — stop
+    if (mediaRecorder && mediaRecorder.state === 'recording') {
+      mediaRecorder.stop();
+      return;
+    }
+
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      audioChunks = [];
+
+      const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus')
+        ? 'audio/webm;codecs=opus'
+        : 'audio/webm';
+      mediaRecorder = new MediaRecorder(stream, { mimeType });
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) audioChunks.push(e.data);
+      };
+
+      mediaRecorder.onstop = async () => {
+        stream.getTracks().forEach(t => t.stop());
+        micBtn.classList.remove('recording');
+
+        const blob = new Blob(audioChunks, { type: mimeType });
+        audioChunks = [];
+
+        if (blob.size === 0) return;
+
+        await handleVoice(blob);
+      };
+
+      mediaRecorder.start();
+      micBtn.classList.add('recording');
+    } catch {
+      addMessage({
+        role: 'assistant',
+        text: 'Mikrofon-Zugriff nicht möglich. Bitte erlaube den Zugriff in den Browser-Einstellungen.',
+      });
+    }
+  }
+
+  async function handleVoice(blob: Blob) {
+    if (!QA_WORKER_URL) return;
+
+    isLoading = true;
+    sendBtn.classList.add('loading');
+    micBtn.classList.add('loading');
+
+    const typingEl = h('div', { className: 'assistant-typing' }, 'Transkribiere...');
+    messagesArea.appendChild(typingEl);
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+
+    try {
+      // 1. Transcribe
+      const transcribeRes = await fetch(`${QA_WORKER_URL}/api/transcribe`, {
+        method: 'POST',
+        body: blob,
+      });
+
+      if (!transcribeRes.ok) {
+        typingEl.remove();
+        addMessage({ role: 'assistant', text: 'Transkription fehlgeschlagen. Versuche es nochmal.' });
+        return;
+      }
+
+      const { text, translatedText } = (await transcribeRes.json()) as { text: string; translatedText: string };
+
+      typingEl.remove();
+
+      // 2. Show transcription
+      addMessage({ role: 'user', text });
+      if (translatedText !== text) {
+        addMessage({ role: 'user', text: `🇩🇪 ${translatedText}` });
+      }
+
+      // 3. Ask RAG
+      const ragTyping = h('div', { className: 'assistant-typing' }, 'Denke nach...');
+      messagesArea.appendChild(ragTyping);
+      messagesArea.scrollTop = messagesArea.scrollHeight;
+
+      const askRes = await fetch(`${QA_WORKER_URL}/api/ask`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: translatedText }),
+      });
+
+      ragTyping.remove();
+
+      if (!askRes.ok) {
+        addMessage({ role: 'assistant', text: 'Entschuldigung, der Lernassistent ist gerade nicht erreichbar.' });
+        return;
+      }
+
+      const data = (await askRes.json()) as { answer: string; sources: { lesson: string; section: string }[] };
+      addMessage({ role: 'assistant', text: data.answer, sources: data.sources });
+    } catch {
+      typingEl.remove();
+      addMessage({ role: 'assistant', text: 'Entschuldigung, es ist ein Fehler aufgetreten.' });
+    } finally {
+      isLoading = false;
+      sendBtn.classList.remove('loading');
+      micBtn.classList.remove('loading');
+    }
+  }
 
   async function handleSend() {
     const question = input.value.trim();

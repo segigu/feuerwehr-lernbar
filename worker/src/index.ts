@@ -1,5 +1,6 @@
-import type { Env, AskRequest, AskResponse } from './types';
+import type { Env, AskRequest, AskResponse, TranscribeResponse } from './types';
 import { ask } from './rag';
+import { transcribe } from './transcribe';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -47,6 +48,19 @@ export default {
       } catch (e) {
         const message = e instanceof Error ? e.message : 'Internal error';
         return json({ error: message }, 500);
+      }
+    }
+
+    // Transcription endpoint
+    if (url.pathname === '/api/transcribe' && request.method === 'POST') {
+      try {
+        const audioBuffer = await request.arrayBuffer();
+        const result: TranscribeResponse = await transcribe(audioBuffer, env);
+        return json(result);
+      } catch (e) {
+        const message = e instanceof Error ? e.message : 'Transcription failed';
+        const status = message.includes('too large') || message.includes('Empty') ? 400 : 500;
+        return json({ error: message }, status);
       }
     }
 

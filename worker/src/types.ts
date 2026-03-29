@@ -26,3 +26,8 @@ export interface AskResponse {
   answer: string;
   sources: { lesson: string; section: string }[];
 }
+
+export interface TranscribeResponse {
+  text: string;
+  translatedText: string;
+}

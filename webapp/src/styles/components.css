@@ -2017,3 +2017,39 @@ ul.block-list {
   pointer-events: none;
 }
 
+.assistant-mic-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-surface-elevated, #f0f0f0);
+  color: var(--color-text);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.assistant-mic-btn:active {
+  transform: scale(0.93);
+}
+
+.assistant-mic-btn.recording {
+  background: #e53935;
+  color: #fff;
+  animation: mic-pulse 1s ease-in-out infinite;
+}
+
+.assistant-mic-btn.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes mic-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.8; }
+}
+

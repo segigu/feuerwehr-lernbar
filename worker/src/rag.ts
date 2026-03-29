@@ -12,6 +12,26 @@ interface Source {
   sectionId: string;
 }
 
+const LLM_REFUSAL_MARKERS = [
+  'ich mach nur MTA',
+  'nur über MTA-Themen',
+  'nur MTA-Prüfung',
+  'nur MTA-Stoff',
+  'zurück zum Lehrmaterial',
+  'zum Metzger gehst',
+  'ned amol der Hydrant',
+  'kann nur Fragen zum MTA',
+  'nicht mit der Feuerwehrausbildung',
+  'nur Fragen zur MTA',
+  'nur über MTA',
+  'kann dir nur',
+  'nicht im Lehrmaterial',
+];
+
+function isLlmRefusal(text: string): boolean {
+  return LLM_REFUSAL_MARKERS.some(m => text.includes(m));
+}
+
 function sseEvent(data: Record<string, unknown>): string {
   return `data: ${JSON.stringify(data)}\n\n`;
 }
@@ -81,6 +101,10 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
     },
   ) as { response: string };
 
+  if (isLlmRefusal(response.response)) {
+    return { answer: buildRefusalResponse(), sources: [], isRefusal: true };
+  }
+
   return { answer: response.response, sources: ctx.sources };
 }
 
@@ -149,11 +173,20 @@ export async function askStream(question: string, env: Env): Promise<ReadableStr
           }
         }
 
-        controller.enqueue(encoder.encode(sseEvent({
-          type: 'done',
-          content: fullContent,
-          sources,
-        })));
+        if (isLlmRefusal(fullContent)) {
+          controller.enqueue(encoder.encode(sseEvent({
+            type: 'done',
+            content: buildRefusalResponse(),
+            sources: [],
+            isRefusal: true,
+          })));
+        } else {
+          controller.enqueue(encoder.encode(sseEvent({
+            type: 'done',
+            content: fullContent,
+            sources,
+          })));
+        }
       } catch (err) {
         const message = err instanceof Error ? err.message : 'Streaming error';
         controller.enqueue(encoder.encode(sseEvent({

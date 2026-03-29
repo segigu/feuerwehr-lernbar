@@ -1,9 +1,9 @@
 import type { Env, SearchResult, AskResponse } from './types';
 import { buildPrompt, buildRefusalResponse } from './prompt';
 
-const SIMILARITY_THRESHOLD = 0.35;
-const RELATIVE_THRESHOLD = 0.75; // result must score ≥ 75% of best match
-const SCORE_GAP = 0.10;          // drop results after a ≥0.10 score gap
+const SIMILARITY_THRESHOLD = 0.40;
+const RELATIVE_THRESHOLD = 0.82; // result must score ≥ 82% of best match
+const SCORE_GAP = 0.07;          // drop results after a ≥0.07 score gap
 const TOP_K = 5;
 const MAX_TOKENS = 800;
 
@@ -85,6 +85,8 @@ async function searchContext(question: string, env: Env): Promise<{ prompt: stri
   const seen = new Set<string>();
   const sources = searchResults
     .filter(r => {
+      // Skip overview entries where lesson = section (link to main screen)
+      if (r.chunk.lessonTitle === r.chunk.sectionTitle) return false;
       const key = `${r.chunk.lessonTitle}::${r.chunk.sectionTitle}`;
       if (seen.has(key)) return false;
       seen.add(key);

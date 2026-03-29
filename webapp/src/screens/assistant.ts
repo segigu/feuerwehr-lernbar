@@ -13,13 +13,18 @@ const REFUSAL_MARKERS = [
   'kann nur Fragen zum MTA',
   'steht leider nicht im Lehrmaterial',
   'nicht mit der Feuerwehrausbildung',
-  // Hardcoded funny refusals
+  // Hardcoded funny refusals (off-topic)
   'Frag mich lieber was',
   'Frag mich was zu',
   'Frag lieber was',
   'Frag was zum',
   'MTA-Frage her',
   'nur für die MTA',
+  // Hardcoded no-context refusals
+  'nix Passendes im Lehrmaterial',
+  'im Lehrmaterial ned aufspüren',
+  'find ich grad nix im Material',
+  'Lehrmaterial schweigt sich dazu aus',
   // LLM-generated refusal patterns
   'ich mach nur MTA',
   'nur über MTA-Themen',
@@ -28,6 +33,7 @@ const REFUSAL_MARKERS = [
   'zurück zum Lehrmaterial',
   'zum Metzger gehst',
   'ned amol der Hydrant',
+  'nichts Passendes im Lehrmaterial',
 ];
 
 const GENERAL_WELCOMES = [

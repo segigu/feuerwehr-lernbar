@@ -1,8 +1,8 @@
 import type { Env, SearchResult, AskResponse } from './types';
-import { buildPrompt, buildRefusalResponse } from './prompt';
+import { buildPrompt, buildRefusalResponse, buildNoContextResponse } from './prompt';
 
-const SIMILARITY_THRESHOLD = 0.40;
-const RELATIVE_THRESHOLD = 0.82; // result must score ≥ 82% of best match
+const SIMILARITY_THRESHOLD = 0.32;
+const RELATIVE_THRESHOLD = 0.78; // result must score ≥ 78% of best match
 const SCORE_GAP = 0.07;          // drop results after a ≥0.07 score gap
 const TOP_K = 5;
 const MAX_TOKENS = 800;
@@ -106,7 +106,7 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
   const ctx = await searchContext(question, env);
 
   if (!ctx) {
-    return { answer: buildRefusalResponse(), sources: [], isRefusal: true };
+    return { answer: buildNoContextResponse(), sources: [], isRefusal: true };
   }
 
   const response = await env.AI.run(
@@ -135,7 +135,7 @@ export async function askStream(question: string, env: Env): Promise<ReadableStr
       start(controller) {
         controller.enqueue(encoder.encode(sseEvent({
           type: 'done',
-          content: buildRefusalResponse(),
+          content: buildNoContextResponse(),
           sources: [],
           isRefusal: true,
         })));

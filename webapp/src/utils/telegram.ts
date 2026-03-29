@@ -96,6 +96,10 @@ export function hideBackButton(): void {
   getWebApp()?.BackButton.hide();
 }
 
+export function closeMiniApp(): void {
+  getWebApp()?.close();
+}
+
 export function hapticSelection(): void {
   getWebApp()?.HapticFeedback.selectionChanged();
 }

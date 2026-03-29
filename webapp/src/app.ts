@@ -30,6 +30,7 @@ export interface NavigationParams {
   vocabDirection?: 'de-ru' | 'ru-de' | 'mix';
   sectionId?: string;
   fromQuiz?: boolean;
+  fromDeepLink?: boolean;
 }
 
 type CleanupFn = () => void;
@@ -67,7 +68,7 @@ export function initApp(root: HTMLElement): void {
   const deepSectionId = urlParams.get('section');
 
   if (deepLessonId) {
-    navigate('learn', { lessonId: deepLessonId, sectionId: deepSectionId ?? undefined });
+    navigate('learn', { lessonId: deepLessonId, sectionId: deepSectionId ?? undefined, fromDeepLink: true });
   } else {
     navigate('home');
   }

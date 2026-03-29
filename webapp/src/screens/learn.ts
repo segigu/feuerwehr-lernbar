@@ -3,7 +3,7 @@ import { getLessonById } from '../data/lessons';
 import type { Block } from '../data/lessons';
 import { getLessonLearnProgress, markSectionComplete } from '../state/lesson-state';
 import { getLanguage } from '../state/app-state';
-import { showBackButton } from '../utils/telegram';
+import { showBackButton, closeMiniApp } from '../utils/telegram';
 import { h, clear, createImg } from '../utils/dom';
 
 const BASE = import.meta.env.BASE_URL;
@@ -28,11 +28,22 @@ export function renderLearn(container: HTMLElement): () => void {
   }
 
   const fromQuiz = params?.fromQuiz === true;
-  const goBack = () => fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
+  const fromDeepLink = params?.fromDeepLink === true;
 
-  const backLink = h('button', { className: 'back-link' }, fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
-  backLink.addEventListener('click', goBack);
-  container.appendChild(backLink);
+  if (fromDeepLink) {
+    const closeLink = h('button', { className: 'back-link' }, '\u2190 Zur\u00FCck zum Chat');
+    closeLink.addEventListener('click', closeMiniApp);
+    container.appendChild(closeLink);
+
+    const toLessonLink = h('button', { className: 'back-link' }, '\u2192 Zur Lektion: ' + lesson.title);
+    toLessonLink.addEventListener('click', () => navigate('lesson-detail', { lessonId: lesson.id }));
+    container.appendChild(toLessonLink);
+  } else {
+    const goBack = () => fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
+    const backLink = h('button', { className: 'back-link' }, fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
+    backLink.addEventListener('click', goBack);
+    container.appendChild(backLink);
+  }
 
   // Section chips
   const chipsRow = h('div', { className: 'section-chips' });
@@ -151,7 +162,8 @@ export function renderLearn(container: HTMLElement): () => void {
   renderChips();
   renderSection();
 
-  const cleanupBack = showBackButton(goBack);
+  const backAction = fromDeepLink ? closeMiniApp : (fromQuiz ? () => navigate('quiz') : () => navigate('lesson-detail', { lessonId: lesson.id }));
+  const cleanupBack = showBackButton(backAction);
   return () => { cleanupBack(); };
 }
 

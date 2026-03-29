@@ -5,6 +5,12 @@ import { showBackButton } from '../utils/telegram';
 const QA_WORKER_URL = import.meta.env.VITE_QA_WORKER_URL as string | undefined;
 const WORD_DELAY = 60;
 
+const REFUSAL_MARKERS = [
+  'kann nur Fragen zum MTA',
+  'steht leider nicht im Lehrmaterial',
+  'nicht mit der Feuerwehrausbildung',
+];
+
 interface Source {
   lesson: string;
   section: string;
@@ -25,11 +31,18 @@ export function renderAssistant(container: HTMLElement): () => void {
   let mediaRecorder: MediaRecorder | null = null;
   let audioChunks: Blob[] = [];
 
-  // Header
+  // Header — title left, close button right
   const header = h('div', { className: 'assistant-header' });
+  const headerLeft = h('div', { className: 'assistant-header-left' });
   const title = h('h1', { className: 'assistant-title' }, 'Lernassistent');
-  const subtitle = h('p', { className: 'assistant-subtitle' }, 'Stelle Fragen zum MTA-Lehrmaterial');
-  header.append(title, subtitle);
+  const subtitle = h('p', { className: 'assistant-subtitle' }, 'Fragen zum MTA-Lehrmaterial');
+  headerLeft.append(title, subtitle);
+
+  const closeBtn = h('button', { className: 'assistant-close-btn' });
+  closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  closeBtn.addEventListener('click', () => navigate('home'));
+
+  header.append(headerLeft, closeBtn);
   container.appendChild(header);
 
   // Messages area
@@ -41,11 +54,8 @@ export function renderAssistant(container: HTMLElement): () => void {
     messagesArea.classList.toggle('scrolled', messagesArea.scrollTop > 0);
   });
 
-  // Welcome message
-  addMessage({
-    role: 'assistant',
-    text: 'Hallo! Ich bin dein Lernassistent für die MTA-Prüfungsvorbereitung. Stelle mir eine Frage zum Lehrmaterial — z.B. "Was sind die Pflichtaufgaben der Feuerwehr?" oder "Welche Brandklassen gibt es?"',
-  });
+  // Welcome message — typed word-by-word
+  typeLocalMessage('Hallo! Ich bin dein Lernassistent für die MTA-Prüfungsvorbereitung. Stelle mir eine Frage zum Lehrmaterial — z.B. "Was sind die Pflichtaufgaben der Feuerwehr?" oder "Welche Brandklassen gibt es?"');
 
   // Input area
   const inputArea = h('div', { className: 'assistant-input-area' });
@@ -104,12 +114,64 @@ export function renderAssistant(container: HTMLElement): () => void {
     micBtn.classList.toggle('loading', loading);
   }
 
+  function isRefusal(text: string): boolean {
+    return REFUSAL_MARKERS.some(m => text.includes(m));
+  }
+
+  function dedupSources(sources: Source[]): Source[] {
+    const seen = new Set<string>();
+    return sources.filter(s => {
+      const key = `${s.lessonId}::${s.sectionId}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function appendSources(bubble: HTMLElement, sources: Source[]) {
+    const srcEl = h('div', { className: 'assistant-sources' });
+    sources.forEach((s, i) => {
+      const btn = h('button', { className: 'assistant-source-tag' });
+      btn.textContent = `${s.lesson} — ${s.section}`;
+      btn.style.animationDelay = `${i * 0.1}s`;
+      btn.addEventListener('click', () => {
+        navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId, fromAssistant: true });
+      });
+      srcEl.appendChild(btn);
+    });
+    bubble.appendChild(srcEl);
+  }
+
+  // Type a local message word-by-word (no API)
+  function typeLocalMessage(text: string) {
+    const bubble = h('div', { className: 'assistant-bubble assistant-bubble-assistant' });
+    const textEl = h('div', { className: 'assistant-bubble-text' });
+    bubble.appendChild(textEl);
+    messagesArea.appendChild(bubble);
+
+    const words = text.split(/(\s+)/);
+    let revealed = '';
+    let idx = 0;
+
+    function revealNext() {
+      if (idx >= words.length) {
+        messages.push({ role: 'assistant', text });
+        return;
+      }
+      revealed += words[idx];
+      idx++;
+      textEl.innerHTML = renderMarkdown(revealed);
+      scrollToBottom();
+      flushTimer = setTimeout(revealNext, WORD_DELAY);
+    }
+    flushTimer = setTimeout(revealNext, 300); // small initial delay
+  }
+
   async function streamAnswer(question: string): Promise<void> {
     const typingDots = createTypingDots();
     messagesArea.appendChild(typingDots);
     scrollToBottom();
 
-    // Create empty assistant bubble for streaming
     const bubble = h('div', { className: 'assistant-bubble assistant-bubble-assistant' });
     const textEl = h('div', { className: 'assistant-bubble-text' });
     bubble.appendChild(textEl);
@@ -120,7 +182,6 @@ export function renderAssistant(container: HTMLElement): () => void {
     let streamSources: Source[] = [];
     let streamDone = false;
 
-    // Word-by-word reveal loop
     function startRevealLoop() {
       function revealNext() {
         if (revealedContent.length >= receivedContent.length) {
@@ -135,7 +196,6 @@ export function renderAssistant(container: HTMLElement): () => void {
           bubbleInserted = true;
         }
 
-        // Find next word boundary
         const remaining = receivedContent.slice(revealedContent.length);
         const wordMatch = remaining.match(/^\s*\S+/);
         if (wordMatch) {
@@ -170,20 +230,13 @@ export function renderAssistant(container: HTMLElement): () => void {
 
       textEl.innerHTML = renderMarkdown(receivedContent);
 
-      if (streamSources.length > 0) {
-        const srcEl = h('div', { className: 'assistant-sources' });
-        for (const s of streamSources) {
-          const btn = h('button', { className: 'assistant-source-tag' });
-          btn.textContent = `${s.lesson} — ${s.section}`;
-          btn.addEventListener('click', () => {
-            navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId });
-          });
-          srcEl.appendChild(btn);
-        }
-        bubble.appendChild(srcEl);
+      // Only show sources if not a refusal and sources exist
+      const finalSources = isRefusal(receivedContent) ? [] : dedupSources(streamSources);
+      if (finalSources.length > 0) {
+        appendSources(bubble, finalSources);
       }
 
-      messages.push({ role: 'assistant', text: receivedContent, sources: streamSources });
+      messages.push({ role: 'assistant', text: receivedContent, sources: finalSources });
       scrollToBottom();
     }
 
@@ -243,7 +296,6 @@ export function renderAssistant(container: HTMLElement): () => void {
 
       streamDone = true;
 
-      // Wait for reveal to finish if still running
       await new Promise<void>(resolve => {
         function checkDone() {
           if (revealedContent.length >= receivedContent.length) {
@@ -360,7 +412,6 @@ export function renderAssistant(container: HTMLElement): () => void {
 
       const { translatedText } = (await transcribeRes.json()) as { text: string; translatedText: string };
 
-      // Insert translated text into input field instead of auto-sending
       input.value = translatedText;
       input.style.height = 'auto';
       input.style.height = Math.min(input.scrollHeight, 160) + 'px';
@@ -389,16 +440,7 @@ export function renderAssistant(container: HTMLElement): () => void {
     bubble.appendChild(textEl);
 
     if (msg.sources && msg.sources.length > 0) {
-      const srcEl = h('div', { className: 'assistant-sources' });
-      for (const s of msg.sources) {
-        const btn = h('button', { className: 'assistant-source-tag' });
-        btn.textContent = `${s.lesson} — ${s.section}`;
-        btn.addEventListener('click', () => {
-          navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId });
-        });
-        srcEl.appendChild(btn);
-      }
-      bubble.appendChild(srcEl);
+      appendSources(bubble, msg.sources);
     }
 
     messagesArea.appendChild(bubble);
@@ -436,7 +478,6 @@ function renderMarkdown(text: string): string {
     const trimmed = p.trim();
     if (!trimmed) return '';
 
-    // Check if paragraph is a list
     const lines = trimmed.split('\n');
     const isUnordered = lines.every(l => /^[\-\*]\s/.test(l.trim()));
     const isOrdered = lines.every(l => /^\d+\.\s/.test(l.trim()));
@@ -451,7 +492,6 @@ function renderMarkdown(text: string): string {
       return `<ol>${items}</ol>`;
     }
 
-    // Regular paragraph — convert single newlines to <br>
     return `<p>${trimmed.replace(/\n/g, '<br>')}</p>`;
   }).join('');
 

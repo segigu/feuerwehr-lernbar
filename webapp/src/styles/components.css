@@ -1901,22 +1901,48 @@ ul.block-list {
 }
 
 .assistant-header {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-md) var(--space-md) var(--space-sm);
   flex-shrink: 0;
 }
 
+.assistant-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .assistant-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin: 0;
   color: var(--color-text);
 }
 
 .assistant-subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 2px 0 0;
+}
+
+.assistant-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
   color: var(--color-text-secondary);
-  margin: var(--space-xs) 0 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition-fast);
+}
+
+.assistant-close-btn:active {
+  background: var(--color-border);
 }
 
 .assistant-messages {
@@ -1999,20 +2025,23 @@ ul.block-list {
 .assistant-sources {
   margin-top: var(--space-sm);
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
+  flex-direction: column;
+  gap: var(--space-sm);
 }
 
 .assistant-source-tag {
+  display: block;
   font-size: 0.875rem;
   background: var(--color-background);
   color: var(--color-text-secondary);
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   cursor: pointer;
   font-family: inherit;
   line-height: 1.3;
+  text-align: left;
+  animation: assistant-slide-in 0.3s ease-out both;
   transition: background 0.15s, border-color 0.15s;
 }
 

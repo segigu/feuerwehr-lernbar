@@ -28,9 +28,10 @@ export function renderLearn(container: HTMLElement): () => void {
   }
 
   const fromQuiz = params?.fromQuiz === true;
-  const goBack = () => fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
+  const fromAssistant = params?.fromAssistant === true;
+  const goBack = () => fromAssistant ? navigate('assistant') : fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
 
-  const backLink = h('button', { className: 'back-link' }, fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
+  const backLink = h('button', { className: 'back-link' }, fromAssistant ? '\u2190 Zurück zum Chat' : fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
   backLink.addEventListener('click', goBack);
   container.appendChild(backLink);
 

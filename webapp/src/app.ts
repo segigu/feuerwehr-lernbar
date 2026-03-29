@@ -30,6 +30,7 @@ export interface NavigationParams {
   vocabDirection?: 'de-ru' | 'ru-de' | 'mix';
   sectionId?: string;
   fromQuiz?: boolean;
+  fromAssistant?: boolean;
 }
 
 type CleanupFn = () => void;

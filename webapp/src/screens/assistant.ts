@@ -212,9 +212,20 @@ export function renderAssistant(container: HTMLElement): () => void {
 
     const overlay = h('div', { className: 'assistant-lesson-overlay' });
 
+    const header = h('div', { className: 'assistant-overlay-header' });
+
     const backBtn = h('button', { className: 'back-link' }, '\u2190 Zurück zum Chat');
     backBtn.addEventListener('click', () => overlay.remove());
-    overlay.appendChild(backBtn);
+    header.appendChild(backBtn);
+
+    const openBtn = h('button', { className: 'assistant-open-lesson-btn' }, 'Zur Lektion →');
+    openBtn.addEventListener('click', () => {
+      overlay.remove();
+      navigate('learn', { lessonId, sectionId });
+    });
+    header.appendChild(openBtn);
+
+    overlay.appendChild(header);
 
     const sectionTitle = h('h2', { className: 'learn-section-title' }, section.title);
     overlay.appendChild(sectionTitle);

@@ -2094,6 +2094,23 @@ ul.block-list {
   animation: assistant-slide-in 0.2s ease-out;
 }
 
+.assistant-overlay-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+}
+
+.assistant-open-lesson-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-base);
+  font-weight: 600;
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+}
+
 /* Input area */
 .assistant-input-area {
   display: flex;

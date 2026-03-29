@@ -2046,8 +2046,8 @@ ul.block-list {
 .assistant-source-tag {
   display: block;
   font-size: 0.875rem;
-  background: var(--color-primary-light);
-  color: var(--color-primary);
+  background: none;
+  color: var(--color-text);
   padding: 10px 14px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-primary);
@@ -2101,14 +2101,19 @@ ul.block-list {
   margin-bottom: var(--space-sm);
 }
 
+.assistant-overlay-header .back-link {
+  margin-bottom: 0;
+}
+
 .assistant-open-lesson-btn {
   background: none;
-  border: none;
-  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
   font-size: var(--font-base);
   font-weight: 600;
   cursor: pointer;
-  padding: var(--space-xs) 0;
+  padding: var(--space-xs) var(--space-md);
 }
 
 /* Input area */

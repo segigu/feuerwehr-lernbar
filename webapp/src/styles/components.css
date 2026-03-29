@@ -1908,6 +1908,8 @@ ul.block-list {
   overflow: hidden;
   background: var(--color-background);
   z-index: 10;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .assistant-header {

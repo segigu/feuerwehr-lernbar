@@ -2160,3 +2160,46 @@ ul.block-list {
   pointer-events: none;
 }
 
+/* ============================================
+   ASSISTANT FAB (floating button)
+   ============================================ */
+
+.assistant-fab-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--space-sm);
+}
+
+.assistant-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  font-size: var(--font-sm);
+  font-weight: var(--weight-semibold);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.assistant-fab svg {
+  flex-shrink: 0;
+}
+
+.assistant-fab:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px rgba(239, 68, 68, 0.3);
+}
+
+@media (hover: hover) {
+  .assistant-fab:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  }
+}
+

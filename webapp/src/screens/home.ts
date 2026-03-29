@@ -5,6 +5,7 @@ import { getRandomExamQuestions } from '../data/questions';
 import { getLanguage } from '../state/app-state';
 import { h, createImg } from '../utils/dom';
 import { showInstallBanner } from '../components/install-banner';
+import { createAssistantFab } from '../components/assistant-fab';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -116,6 +117,8 @@ function setupSirenGesture(iconWrap: HTMLElement, screenEl: HTMLElement): () => 
 }
 
 export function renderHome(container: HTMLElement): () => void {
+  container.appendChild(createAssistantFab(() => navigate('assistant')));
+
   const header = h('div', { className: 'home-header' });
 
   const iconWrap = h('div', { className: 'home-icon-wrap' });

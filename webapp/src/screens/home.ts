@@ -263,6 +263,20 @@ export function renderHome(container: HTMLElement): () => void {
   cardsFragen.append(cardTopic, cardAll, cardExam);
   container.appendChild(cardsFragen);
 
+  // ── Section 3: Lernassistent ─────────────────────────────
+  container.appendChild(sectionLabel('Lernassistent'));
+
+  const cardsAssistent = h('div', { className: 'home-cards' });
+  const cardAssistent = createCard(
+    `${BASE}images/Fahrzeugkunde.png`,
+    'Frag den Assistenten',
+    'KI-gestützte Antworten',
+    'Fragen zum Lehrmaterial stellen',
+    () => { navigate('assistant'); }
+  );
+  cardsAssistent.appendChild(cardAssistent);
+  container.appendChild(cardsAssistent);
+
   // Source attribution
   const footer = h('div', { className: 'home-footer' });
   const footerLine1 = h('span', {}, 'Quelle: Fragenkatalog Basis 15.2');

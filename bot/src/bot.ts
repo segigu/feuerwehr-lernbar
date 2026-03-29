@@ -13,6 +13,8 @@ if (!webAppUrl) {
   process.exit(1);
 }
 
+const qaWorkerUrl = process.env.QA_WORKER_URL ?? '';
+
 const bot = new Bot(token);
 
 bot.command('start', async (ctx) => {
@@ -33,6 +35,41 @@ bot.command('start', async (ctx) => {
     { reply_markup: keyboard }
   );
 });
+
+// Q&A: answer text messages using the RAG worker
+if (qaWorkerUrl) {
+  bot.on('message:text', async (ctx) => {
+    const question = ctx.message.text.trim();
+    if (!question || question.startsWith('/')) return;
+
+    await ctx.replyWithChatAction('typing');
+
+    try {
+      const res = await fetch(`${qaWorkerUrl}/api/ask`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question }),
+      });
+
+      if (!res.ok) {
+        await ctx.reply('Entschuldigung, der Lernassistent ist gerade nicht erreichbar. Versuche es später nochmal.');
+        return;
+      }
+
+      const data = (await res.json()) as { answer: string; sources: { lesson: string; section: string }[] };
+
+      let reply = data.answer;
+      if (data.sources.length > 0) {
+        const srcList = data.sources.map(s => `• ${s.lesson} — ${s.section}`).join('\n');
+        reply += `\n\n📚 <b>Quellen:</b>\n${srcList}`;
+      }
+
+      await ctx.reply(reply, { parse_mode: 'HTML' });
+    } catch {
+      await ctx.reply('Entschuldigung, es ist ein Fehler aufgetreten. Versuche es später nochmal.');
+    }
+  });
+}
 
 bot.catch((err) => {
   console.error('Bot error:', err);

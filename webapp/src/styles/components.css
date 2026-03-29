@@ -2208,6 +2208,18 @@ ul.block-list {
   pointer-events: none;
 }
 
+.assistant-mic-btn.transcribing {
+  pointer-events: none;
+}
+
+@keyframes mic-spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.assistant-mic-btn.transcribing svg {
+  animation: mic-spinner-rotate 0.8s linear infinite;
+}
+
 /* ============================================
    ASSISTANT FAB (floating button)
    ============================================ */

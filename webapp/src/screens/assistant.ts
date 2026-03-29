@@ -103,6 +103,10 @@ export function renderAssistant(container: HTMLElement): () => void {
   let mediaRecorder: MediaRecorder | null = null;
   let audioChunks: Blob[] = [];
 
+  const MIC_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
+  const STOP_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
+  const SPINNER_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2a10 10 0 0 1 10 10"/></svg>';
+
   // Header — title left, close button right
   const header = h('div', { className: 'assistant-header' });
   const headerLeft = h('div', { className: 'assistant-header-left' });
@@ -133,7 +137,7 @@ export function renderAssistant(container: HTMLElement): () => void {
   const inputArea = h('div', { className: 'assistant-input-area' });
 
   const micBtn = h('button', { className: 'assistant-mic-btn' });
-  micBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
+  micBtn.innerHTML = MIC_ICON;
 
   const inputWrap = h('div', { className: 'assistant-input-wrap' });
   const input = h('textarea', {
@@ -488,16 +492,23 @@ export function renderAssistant(container: HTMLElement): () => void {
       mediaRecorder.onstop = async () => {
         stream.getTracks().forEach(t => t.stop());
         micBtn.classList.remove('recording');
+        micBtn.classList.add('transcribing');
+        micBtn.innerHTML = SPINNER_ICON;
 
         const blob = new Blob(audioChunks, { type: mimeType });
         audioChunks = [];
 
-        if (blob.size === 0) return;
+        if (blob.size === 0) {
+          micBtn.classList.remove('transcribing');
+          micBtn.innerHTML = MIC_ICON;
+          return;
+        }
         await handleVoice(blob);
       };
 
       mediaRecorder.start();
       micBtn.classList.add('recording');
+      micBtn.innerHTML = STOP_ICON;
     } catch {
       addMessage({
         role: 'assistant',
@@ -511,17 +522,11 @@ export function renderAssistant(container: HTMLElement): () => void {
 
     setLoadingState(true);
 
-    const typingDots = createTypingDots();
-    messagesArea.appendChild(typingDots);
-    scrollToBottom();
-
     try {
       const transcribeRes = await fetch(`${QA_WORKER_URL}/api/transcribe`, {
         method: 'POST',
         body: blob,
       });
-
-      typingDots.remove();
 
       if (!transcribeRes.ok) {
         addMessage({ role: 'assistant', text: 'Transkription fehlgeschlagen. Versuche es nochmal.' });
@@ -535,10 +540,11 @@ export function renderAssistant(container: HTMLElement): () => void {
       input.style.height = Math.min(input.scrollHeight, 160) + 'px';
       input.focus();
     } catch {
-      typingDots.remove();
       addMessage({ role: 'assistant', text: 'Entschuldigung, es ist ein Fehler aufgetreten.' });
     } finally {
       setLoadingState(false);
+      micBtn.classList.remove('transcribing');
+      micBtn.innerHTML = MIC_ICON;
     }
   }
 

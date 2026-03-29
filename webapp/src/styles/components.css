@@ -2078,6 +2078,17 @@ ul.block-list {
   animation: assistant-dot-bounce 1.4s ease-in-out infinite;
 }
 
+/* Lesson overlay */
+.assistant-lesson-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--color-background);
+  overflow-y: auto;
+  padding: var(--space-md);
+  animation: assistant-slide-in 0.2s ease-out;
+}
+
 /* Input area */
 .assistant-input-area {
   display: flex;

@@ -1,6 +1,9 @@
 import { navigate } from '../app';
 import { h } from '../utils/dom';
 import { showBackButton } from '../utils/telegram';
+import { getLessonById } from '../data/lessons';
+import { renderBlock } from './learn';
+import { getLanguage } from '../state/app-state';
 
 const QA_WORKER_URL = import.meta.env.VITE_QA_WORKER_URL as string | undefined;
 const WORD_DELAY = 60;
@@ -128,15 +131,46 @@ export function renderAssistant(container: HTMLElement): () => void {
     });
   }
 
+  function openLessonOverlay(lessonId: string, sectionId: string) {
+    const lesson = getLessonById(lessonId);
+    if (!lesson) return;
+
+    const section = lesson.sections.find(s => s.id === sectionId);
+    if (!section) return;
+
+    const lang = getLanguage();
+
+    const overlay = h('div', { className: 'assistant-lesson-overlay' });
+
+    const backBtn = h('button', { className: 'back-link' }, '\u2190 Zurück zum Chat');
+    backBtn.addEventListener('click', () => overlay.remove());
+    overlay.appendChild(backBtn);
+
+    const sectionTitle = h('h2', { className: 'learn-section-title' }, section.title);
+    overlay.appendChild(sectionTitle);
+
+    if (lang === 'de+ru' && section.titleRu) {
+      overlay.appendChild(h('p', { className: 'learn-section-title-ru' }, section.titleRu));
+    }
+
+    for (const block of section.blocks) {
+      overlay.appendChild(renderBlock(block, lang));
+    }
+
+    document.body.appendChild(overlay);
+  }
+
   function appendSources(bubble: HTMLElement, sources: Source[]) {
+    // Filter out sources with empty IDs
+    const valid = sources.filter(s => s.lessonId && s.sectionId);
+    if (valid.length === 0) return;
+
     const srcEl = h('div', { className: 'assistant-sources' });
-    sources.forEach((s, i) => {
+    valid.forEach((s, i) => {
       const btn = h('button', { className: 'assistant-source-tag' });
       btn.textContent = `${s.lesson} — ${s.section}`;
       btn.style.animationDelay = `${i * 0.1}s`;
-      btn.addEventListener('click', () => {
-        navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId, fromAssistant: true });
-      });
+      btn.addEventListener('click', () => openLessonOverlay(s.lessonId, s.sectionId));
       srcEl.appendChild(btn);
     });
     bubble.appendChild(srcEl);

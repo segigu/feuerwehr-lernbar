@@ -193,7 +193,8 @@ export function renderAssistant(container: HTMLElement): () => void {
   function dedupSources(sources: Source[]): Source[] {
     const seen = new Set<string>();
     return sources.filter(s => {
-      const key = `${s.lessonId}::${s.sectionId}`;
+      // Dedup by display text to avoid visually identical buttons
+      const key = `${s.lesson}::${s.section}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;

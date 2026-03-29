@@ -3,7 +3,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   root: '.',
-  base: '/feuerwehr-lernbar/',
+  base: '/',
   build: {
     outDir: 'dist',
     target: 'es2020',
@@ -35,8 +35,8 @@ export default defineConfig({
         theme_color: '#C8102E',
         background_color: '#F4F5F7',
         display: 'standalone',
-        scope: '/feuerwehr-lernbar/',
-        start_url: '/feuerwehr-lernbar/',
+        scope: '/',
+        start_url: '/',
         icons: [
           {
             src: 'icons/icon-192.png',

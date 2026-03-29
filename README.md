@@ -104,7 +104,7 @@ Die App öffnet sich unter `http://localhost:5173`. Alle Funktionen sind auch oh
 
 ```env
 BOT_TOKEN=dein_bot_token
-WEB_APP_URL=https://segigu.github.io/feuerwehr-lernbar/
+WEB_APP_URL=https://mta.ehrter.com/
 ```
 
 2. Bot starten:

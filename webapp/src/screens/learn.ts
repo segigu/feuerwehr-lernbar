@@ -30,15 +30,7 @@ export function renderLearn(container: HTMLElement): () => void {
   const fromQuiz = params?.fromQuiz === true;
   const fromDeepLink = params?.fromDeepLink === true;
 
-  if (fromDeepLink) {
-    const closeLink = h('button', { className: 'back-link' }, '\u2190 Zur\u00FCck zum Chat');
-    closeLink.addEventListener('click', closeMiniApp);
-    container.appendChild(closeLink);
-
-    const toLessonLink = h('button', { className: 'back-link' }, '\u2192 Zur Lektion: ' + lesson.title);
-    toLessonLink.addEventListener('click', () => navigate('lesson-detail', { lessonId: lesson.id }));
-    container.appendChild(toLessonLink);
-  } else {
+  if (!fromDeepLink) {
     const goBack = () => fromQuiz ? navigate('quiz') : navigate('lesson-detail', { lessonId: lesson.id });
     const backLink = h('button', { className: 'back-link' }, fromQuiz ? '\u2190 Zur\u00FCck zum Quiz' : '\u2190 ' + lesson.title);
     backLink.addEventListener('click', goBack);

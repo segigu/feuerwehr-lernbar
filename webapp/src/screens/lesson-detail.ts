@@ -6,7 +6,7 @@ import { createSession } from '../state/quiz-state';
 import { showBackButton } from '../utils/telegram';
 import { showChoiceSheet } from '../components/choice-sheet';
 import { h, createImg } from '../utils/dom';
-import { createAssistantFab } from '../components/assistant-fab';
+import { createAssistantFabButton } from '../components/assistant-fab';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -42,11 +42,11 @@ export function renderLessonDetail(container: HTMLElement): () => void {
   const lang = getLanguage();
   const vocab = extractVocab(lesson);
 
+  const topRow = h('div', { className: 'lesson-detail-top-row' });
   const backLink = h('button', { className: 'back-link' }, '\u2190 Unterricht');
   backLink.addEventListener('click', () => navigate('lessons'));
-  container.appendChild(backLink);
-
-  container.appendChild(createAssistantFab(() => navigate('assistant')));
+  topRow.append(backLink, createAssistantFabButton(() => navigate('assistant')));
+  container.appendChild(topRow);
 
   // Header with lesson image
   const header = h('div', { className: 'home-header' });

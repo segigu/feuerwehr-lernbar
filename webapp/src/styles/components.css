@@ -1343,6 +1343,16 @@
   transition: color var(--transition-fast);
 }
 
+.lesson-detail-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lesson-detail-top-row .back-link {
+  margin-bottom: 0;
+}
+
 .back-link:active {
   color: var(--color-text);
 }

@@ -9,16 +9,25 @@ const QA_WORKER_URL = import.meta.env.VITE_QA_WORKER_URL as string | undefined;
 const WORD_DELAY = 60;
 
 const REFUSAL_MARKERS = [
+  // Legacy
   'kann nur Fragen zum MTA',
   'steht leider nicht im Lehrmaterial',
   'nicht mit der Feuerwehrausbildung',
+  // Hardcoded funny refusals
   'Frag mich lieber was',
   'Frag mich was zu',
   'Frag lieber was',
   'Frag was zum',
   'MTA-Frage her',
   'nur für die MTA',
+  // LLM-generated refusal patterns
+  'ich mach nur MTA',
+  'nur über MTA-Themen',
   'nur MTA-Prüfung',
+  'nur MTA-Stoff',
+  'zurück zum Lehrmaterial',
+  'zum Metzger gehst',
+  'ned amol der Hydrant',
 ];
 
 const GENERAL_WELCOMES = [

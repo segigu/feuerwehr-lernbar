@@ -1,4 +1,4 @@
-import { navigate } from '../app';
+import { navigate, getNavigationParams } from '../app';
 import { h } from '../utils/dom';
 import { showBackButton } from '../utils/telegram';
 import { getLessonById } from '../data/lessons';
@@ -12,7 +12,67 @@ const REFUSAL_MARKERS = [
   'kann nur Fragen zum MTA',
   'steht leider nicht im Lehrmaterial',
   'nicht mit der Feuerwehrausbildung',
+  'Frag mich lieber was',
+  'Frag mich was zu',
+  'Frag lieber was',
+  'Frag was zum',
+  'MTA-Frage her',
+  'nur für die MTA',
+  'nur MTA-Prüfung',
 ];
+
+const GENERAL_WELCOMES = [
+  'Servus, Kamerad! Ich bin dein Lernassistent — quasi der Hydrant des Wissens. Immer unter Druck, aber wenns drauf ankommt, spritz ich los! 💦 Was willst wissen?',
+  'Grüß Gott! Ich weiß alles, was im MTA-Lehrmaterial steht. Und nur des. Bin halt wie a fränkischer Beamter — streng nach Vorschrift! Was is dei Frage?',
+  'Hallo! Ich bin dei KI-Kamerad für die MTA-Prüfung. Frag mich was — von Brandklassen bis Atemschutz, ich hab alles im Kopf. Und im Gegensatz zum Gruppenführer hab ich unendlich Geduld! 😄',
+  'Moin! Also eigentlich: Servus! Bin der Lernassistent und kenn das MTA-Lehrmaterial auswendig. Frag mich was — ich bin schneller als die Drehleiter auf\'m Parkplatz!',
+  'Willkommen! Ich bin wie a guter Kamerad: immer da, wenn\'s brennt. Nur dass bei mir nix brennt, sondern gelernt wird. Also — schieß los!',
+];
+
+const LESSON_WELCOMES: Record<string, string> = {
+  'rechtsgrundlagen':
+    'Ah, Rechtsgrundlagen! Da lernst, warum die Feuerwehr eigentlich losfahren muss — und warum der Nachbar ned einfach selbst löschen darf. 📜 Frag mich!',
+  'brennen-loeschen':
+    'Brennen und Löschen — des Herzstück! Endlich lernst, warum Wasser auf\'s Fettfeuer a schlechte Idee is. Frag mich was! 🔥',
+  'fahrzeugkunde':
+    'Fahrzeugkunde! Endlich erfährst, warum des rote Auto so viele Knöpfe hat. Und nein — keiner davon is für die Sitzheizung. 🚒 Was willst wissen?',
+  'persoenliche-ausruestung':
+    'Persönliche Ausrüstung — also alles, was dich davor schützt, dass der Einsatz weh tut. Helm, Handschuhe, Stiefel... Fashion Week bei der Feuerwehr! 👨‍🚒 Frag mich!',
+  'schlaeuche-armaturen':
+    'Schläuche und Armaturen — klingt trocken, is aber buchstäblich des Gegenteil! 💦 Frag mich, bevor du B-Schlauch und C-Schlauch verwechselst.',
+  'hilfeleistungsgeraete':
+    'Hilfeleistungsgeräte — Spreizer, Schere, Hebekissen... des is wie Werkzeugkasten, nur dramatischer. Frag mich was dazu!',
+  'rettungsgeraete':
+    'Rettungsgeräte! Leitern, Leinen, Knoten — wenn der Stricklehrer wüsst, wofür du des mal brauchst! 🪢 Frag mich!',
+  'belastungen':
+    'Belastungen im Einsatz — ja, die Prüfungsvorbereitung zählt auch als Belastung. Aber da kann ich helfen! Was willst wissen?',
+  'verhalten-einsatz':
+    'Verhalten im Einsatz — also: ned wild rumrennen, sondern schön nach Vorschrift. Wie beim Brotzeitmachen, nur mit mehr Adrenalin. Frag mich! 🍞',
+  'hygiene':
+    'Hygiene bei der Feuerwehr — ja, auch nach\'m Einsatz muss mer sich waschen. Und ned nur die Hände! Was willst dazu wissen?',
+  'verhalten-gefahr':
+    'Verhalten bei Gefahr — Spoiler: Weglaufen is manchmal die richtige Antwort! Aber wann genau, des klären wir hier. Frag mich! ⚠️',
+  'loescheinsatz':
+    'Löscheinsatz nach FwDV 3 — des is der Moment, für den du alles andere gelernt hast. Quasi die Hauptrolle im Film! 🎬 Was willst wissen?',
+  'absturzsicherung':
+    'Absturzsicherung — damit du oben bleibst, wo du hingehörst. Schwerkraft is kein Kamerad! Frag mich was dazu.',
+  'hilfeleistungseinsatz':
+    'Hilfeleistungseinsatz — wenn\'s ned brennt, aber trotzdem jemand Hilfe braucht. Quasi die Feuerwehr ohne Feuer. Frag mich! 🚗',
+  'abc-gefahrstoffe':
+    'ABC-Gefahrstoffe — des is, wo\'s richtig spannend wird. Und mit spannend mein ich: Abstand halten! ☢️ Was willst wissen?',
+  'erste-hilfe':
+    'Erste Hilfe — weil der Rettungsdienst manchmal im Stau steht. Und dann bist du dran! 🏥 Frag mich was dazu.',
+  'sprechfunk':
+    'Sprechfunk — "kommen" heißt hier ned, dass jemand zu dir kommt. Sondern dass du reden darfst. Verwirrend? Frag mich! 📻',
+};
+
+function getWelcomeMessage(): string {
+  const params = getNavigationParams();
+  if (params?.lessonId && LESSON_WELCOMES[params.lessonId]) {
+    return LESSON_WELCOMES[params.lessonId];
+  }
+  return GENERAL_WELCOMES[Math.floor(Math.random() * GENERAL_WELCOMES.length)];
+}
 
 interface Source {
   lesson: string;
@@ -58,7 +118,7 @@ export function renderAssistant(container: HTMLElement): () => void {
   });
 
   // Welcome message — typed word-by-word
-  typeLocalMessage('Hallo! Ich bin dein Lernassistent für die MTA-Prüfungsvorbereitung. Stelle mir eine Frage zum Lehrmaterial — z.B. "Was sind die Pflichtaufgaben der Feuerwehr?" oder "Welche Brandklassen gibt es?"');
+  typeLocalMessage(getWelcomeMessage());
 
   // Input area
   const inputArea = h('div', { className: 'assistant-input-area' });
@@ -214,6 +274,7 @@ export function renderAssistant(container: HTMLElement): () => void {
     let revealedContent = '';
     let bubbleInserted = false;
     let streamSources: Source[] = [];
+    let streamRefusal = false;
     let streamDone = false;
 
     function startRevealLoop() {
@@ -265,7 +326,7 @@ export function renderAssistant(container: HTMLElement): () => void {
       textEl.innerHTML = renderMarkdown(receivedContent);
 
       // Only show sources if not a refusal and sources exist
-      const finalSources = isRefusal(receivedContent) ? [] : dedupSources(streamSources);
+      const finalSources = (streamRefusal || isRefusal(receivedContent)) ? [] : dedupSources(streamSources);
       if (finalSources.length > 0) {
         appendSources(bubble, finalSources);
       }
@@ -309,6 +370,7 @@ export function renderAssistant(container: HTMLElement): () => void {
               type: string;
               content?: string;
               sources?: Source[];
+              isRefusal?: boolean;
             };
 
             if (event.type === 'token' && event.content) {
@@ -316,6 +378,7 @@ export function renderAssistant(container: HTMLElement): () => void {
             } else if (event.type === 'done') {
               receivedContent = event.content || receivedContent;
               streamSources = event.sources || [];
+              if (event.isRefusal) streamRefusal = true;
             } else if (event.type === 'error') {
               streamDone = true;
               if (flushTimer) { clearTimeout(flushTimer); flushTimer = undefined; }

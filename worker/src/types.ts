@@ -25,6 +25,7 @@ export interface AskRequest {
 export interface AskResponse {
   answer: string;
   sources: { lesson: string; section: string; lessonId: string; sectionId: string }[];
+  isRefusal?: boolean;
 }
 
 export interface TranscribeResponse {

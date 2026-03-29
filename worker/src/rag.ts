@@ -69,7 +69,7 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
   const ctx = await searchContext(question, env);
 
   if (!ctx) {
-    return { answer: buildRefusalResponse(), sources: [] };
+    return { answer: buildRefusalResponse(), sources: [], isRefusal: true };
   }
 
   const response = await env.AI.run(
@@ -96,6 +96,7 @@ export async function askStream(question: string, env: Env): Promise<ReadableStr
           type: 'done',
           content: buildRefusalResponse(),
           sources: [],
+          isRefusal: true,
         })));
         controller.close();
       },

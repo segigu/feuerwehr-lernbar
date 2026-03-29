@@ -45,7 +45,7 @@ export function renderLessonDetail(container: HTMLElement): () => void {
   const topRow = h('div', { className: 'lesson-detail-top-row' });
   const backLink = h('button', { className: 'back-link' }, '\u2190 Unterricht');
   backLink.addEventListener('click', () => navigate('lessons'));
-  topRow.append(backLink, createAssistantFabButton(() => navigate('assistant')));
+  topRow.append(backLink, createAssistantFabButton(() => navigate('assistant', { lessonId: lesson.id })));
   container.appendChild(topRow);
 
   // Header with lesson image

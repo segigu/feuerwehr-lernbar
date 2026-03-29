@@ -1,5 +1,5 @@
 import type { Env, AskRequest, AskResponse, TranscribeResponse } from './types';
-import { ask } from './rag';
+import { ask, askStream } from './rag';
 import { transcribe } from './transcribe';
 
 const CORS_HEADERS = {
@@ -45,6 +45,35 @@ export default {
 
         const result: AskResponse = await ask(question, env);
         return json(result);
+      } catch (e) {
+        const message = e instanceof Error ? e.message : 'Internal error';
+        return json({ error: message }, 500);
+      }
+    }
+
+    // Streaming Q&A endpoint
+    if (url.pathname === '/api/ask-stream' && request.method === 'POST') {
+      try {
+        const body = (await request.json()) as AskRequest;
+        const question = body.question?.trim();
+
+        if (!question) {
+          return json({ error: 'question is required' }, 400);
+        }
+
+        if (question.length > 500) {
+          return json({ error: 'question too long (max 500 chars)' }, 400);
+        }
+
+        const stream = await askStream(question, env);
+        return new Response(stream, {
+          headers: {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            Connection: 'keep-alive',
+            ...CORS_HEADERS,
+          },
+        });
       } catch (e) {
         const message = e instanceof Error ? e.message : 'Internal error';
         return json({ error: message }, 500);

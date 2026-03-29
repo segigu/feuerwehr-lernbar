@@ -24,7 +24,7 @@ export interface AskRequest {
 
 export interface AskResponse {
   answer: string;
-  sources: { lesson: string; section: string }[];
+  sources: { lesson: string; section: string; lessonId: string; sectionId: string }[];
 }
 
 export interface TranscribeResponse {

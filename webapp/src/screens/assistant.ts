@@ -7,7 +7,7 @@ const QA_WORKER_URL = import.meta.env.VITE_QA_WORKER_URL as string | undefined;
 interface Message {
   role: 'user' | 'assistant';
   text: string;
-  sources?: { lesson: string; section: string }[];
+  sources?: { lesson: string; section: string; lessonId: string; sectionId: string }[];
 }
 
 export function renderAssistant(container: HTMLElement): () => void {
@@ -159,7 +159,7 @@ export function renderAssistant(container: HTMLElement): () => void {
         return;
       }
 
-      const data = (await askRes.json()) as { answer: string; sources: { lesson: string; section: string }[] };
+      const data = (await askRes.json()) as { answer: string; sources: { lesson: string; section: string; lessonId: string; sectionId: string }[] };
       addMessage({ role: 'assistant', text: data.answer, sources: data.sources });
     } catch {
       typingEl.remove();
@@ -215,7 +215,7 @@ export function renderAssistant(container: HTMLElement): () => void {
 
       const data = (await res.json()) as {
         answer: string;
-        sources: { lesson: string; section: string }[];
+        sources: { lesson: string; section: string; lessonId: string; sectionId: string }[];
       };
 
       addMessage({
@@ -248,9 +248,14 @@ export function renderAssistant(container: HTMLElement): () => void {
 
     if (msg.sources && msg.sources.length > 0) {
       const srcEl = h('div', { className: 'assistant-sources' });
-      srcEl.innerHTML = msg.sources
-        .map(s => `<span class="assistant-source-tag">${escapeHtml(s.lesson)} — ${escapeHtml(s.section)}</span>`)
-        .join('');
+      for (const s of msg.sources) {
+        const btn = h('button', { className: 'assistant-source-tag' });
+        btn.textContent = `${s.lesson} — ${s.section}`;
+        btn.addEventListener('click', () => {
+          navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId });
+        });
+        srcEl.appendChild(btn);
+      }
       bubble.appendChild(srcEl);
     }
 

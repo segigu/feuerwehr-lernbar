@@ -3,33 +3,35 @@ import { buildPrompt, buildRefusalResponse } from './prompt';
 
 const SIMILARITY_THRESHOLD = 0.35;
 const TOP_K = 5;
-const MAX_TOKENS = 400;
+const MAX_TOKENS = 800;
 
-export async function ask(question: string, env: Env): Promise<AskResponse> {
-  // 1. Embed the question
+interface Source {
+  lesson: string;
+  section: string;
+  lessonId: string;
+  sectionId: string;
+}
+
+function sseEvent(data: Record<string, unknown>): string {
+  return `data: ${JSON.stringify(data)}\n\n`;
+}
+
+async function searchContext(question: string, env: Env): Promise<{ prompt: string; sources: Source[] } | null> {
   const embeddingResponse = await env.AI.run(
     '@cf/baai/bge-m3' as Parameters<Ai['run']>[0],
     { text: [question] },
   ) as { data: number[][] };
   const queryVector = embeddingResponse.data[0];
 
-  // 2. Search Vectorize for relevant chunks
   const vectorResults = await env.VECTORIZE.query(queryVector, {
     topK: TOP_K,
     returnMetadata: 'all',
   });
 
-  // 3. Check similarity threshold
   const matches = vectorResults.matches.filter(m => m.score >= SIMILARITY_THRESHOLD);
 
-  if (matches.length === 0) {
-    return {
-      answer: buildRefusalResponse(),
-      sources: [],
-    };
-  }
+  if (matches.length === 0) return null;
 
-  // 4. Build search results with chunk metadata
   const searchResults: SearchResult[] = matches.map(m => ({
     chunk: {
       id: m.id,
@@ -43,19 +45,8 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
     score: m.score,
   }));
 
-  // 5. Build grounded prompt and generate answer
   const prompt = buildPrompt(question, searchResults);
 
-  const response = await env.AI.run(
-    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
-    {
-      messages: [{ role: 'user', content: prompt }],
-      max_tokens: MAX_TOKENS,
-      temperature: 0,
-    },
-  ) as { response: string };
-
-  // 6. Extract unique sources
   const seen = new Set<string>();
   const sources = searchResults
     .filter(r => {
@@ -67,10 +58,110 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
     .map(r => ({
       lesson: r.chunk.lessonTitle,
       section: r.chunk.sectionTitle,
+      lessonId: r.chunk.lessonId,
+      sectionId: r.chunk.sectionId,
     }));
 
-  return {
-    answer: response.response,
-    sources,
-  };
+  return { prompt, sources };
+}
+
+export async function ask(question: string, env: Env): Promise<AskResponse> {
+  const ctx = await searchContext(question, env);
+
+  if (!ctx) {
+    return { answer: buildRefusalResponse(), sources: [] };
+  }
+
+  const response = await env.AI.run(
+    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
+    {
+      messages: [{ role: 'user', content: ctx.prompt }],
+      max_tokens: MAX_TOKENS,
+      temperature: 0,
+    },
+  ) as { response: string };
+
+  return { answer: response.response, sources: ctx.sources };
+}
+
+export async function askStream(question: string, env: Env): Promise<ReadableStream> {
+  const encoder = new TextEncoder();
+
+  const ctx = await searchContext(question, env);
+
+  if (!ctx) {
+    return new ReadableStream({
+      start(controller) {
+        controller.enqueue(encoder.encode(sseEvent({
+          type: 'done',
+          content: buildRefusalResponse(),
+          sources: [],
+        })));
+        controller.close();
+      },
+    });
+  }
+
+  const aiStream = await env.AI.run(
+    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
+    {
+      messages: [{ role: 'user', content: ctx.prompt }],
+      max_tokens: MAX_TOKENS,
+      temperature: 0,
+      stream: true,
+    },
+  ) as ReadableStream;
+
+  const sources = ctx.sources;
+
+  return new ReadableStream({
+    async start(controller) {
+      const reader = aiStream.getReader();
+      const decoder = new TextDecoder();
+      let fullContent = '';
+      let buffer = '';
+
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          buffer += decoder.decode(value, { stream: true });
+          const parts = buffer.split('\n');
+          buffer = parts.pop()!;
+
+          for (const line of parts) {
+            const trimmed = line.trim();
+            if (!trimmed.startsWith('data: ')) continue;
+            const payload = trimmed.slice(6);
+            if (payload === '[DONE]') continue;
+            try {
+              const parsed = JSON.parse(payload) as { response?: string };
+              if (parsed.response) {
+                fullContent += parsed.response;
+                controller.enqueue(encoder.encode(sseEvent({
+                  type: 'token',
+                  content: parsed.response,
+                })));
+              }
+            } catch { /* skip malformed */ }
+          }
+        }
+
+        controller.enqueue(encoder.encode(sseEvent({
+          type: 'done',
+          content: fullContent,
+          sources,
+        })));
+      } catch (err) {
+        const message = err instanceof Error ? err.message : 'Streaming error';
+        controller.enqueue(encoder.encode(sseEvent({
+          type: 'error',
+          content: message,
+        })));
+      } finally {
+        controller.close();
+      }
+    },
+  });
 }

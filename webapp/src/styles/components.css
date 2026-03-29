@@ -1931,9 +1931,6 @@ ul.block-list {
 }
 
 .assistant-bubble {
-  max-width: 85%;
-  padding: 10px var(--space-md);
-  border-radius: var(--radius-sm);
   word-wrap: break-word;
   line-height: 1.5;
   font-size: 1rem;
@@ -1941,18 +1938,19 @@ ul.block-list {
 }
 
 .assistant-bubble-user {
+  max-width: 85%;
   align-self: flex-end;
   background: var(--color-primary);
   color: #fff;
+  padding: 10px var(--space-md);
+  border-radius: var(--radius-sm);
   border-bottom-right-radius: var(--space-xs);
 }
 
 .assistant-bubble-assistant {
-  align-self: flex-start;
-  background: var(--color-surface);
+  align-self: stretch;
   color: var(--color-text);
-  border: 1px solid var(--color-border);
-  border-bottom-left-radius: var(--space-xs);
+  padding: 0;
 }
 
 /* Markdown content styling */
@@ -2044,8 +2042,7 @@ ul.block-list {
   align-items: flex-end;
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-md);
-  padding-bottom: max(var(--space-md), env(safe-area-inset-bottom));
-  border-top: 1px solid var(--color-border);
+  padding-bottom: calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
   background: var(--color-surface);
   flex-shrink: 0;
 }

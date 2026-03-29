@@ -3,7 +3,7 @@ import { h } from '../utils/dom';
 import { showBackButton } from '../utils/telegram';
 
 const QA_WORKER_URL = import.meta.env.VITE_QA_WORKER_URL as string | undefined;
-const FLUSH_INTERVAL = 80;
+const WORD_DELAY = 60;
 
 interface Source {
   lesson: string;
@@ -50,7 +50,8 @@ export function renderAssistant(container: HTMLElement): () => void {
   // Input area
   const inputArea = h('div', { className: 'assistant-input-area' });
 
-  const micBtn = h('button', { className: 'assistant-mic-btn' }, '🎤');
+  const micBtn = h('button', { className: 'assistant-mic-btn' });
+  micBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
 
   const inputWrap = h('div', { className: 'assistant-input-wrap' });
   const input = h('textarea', {
@@ -113,15 +114,53 @@ export function renderAssistant(container: HTMLElement): () => void {
     const textEl = h('div', { className: 'assistant-bubble-text' });
     bubble.appendChild(textEl);
 
-    let fullContent = '';
-    let pendingContent = '';
+    let receivedContent = '';
+    let revealedContent = '';
     let bubbleInserted = false;
     let streamSources: Source[] = [];
+    let streamDone = false;
 
-    function flushTokens() {
-      if (!pendingContent) return;
-      fullContent += pendingContent;
-      pendingContent = '';
+    // Word-by-word reveal loop
+    function startRevealLoop() {
+      function revealNext() {
+        if (revealedContent.length >= receivedContent.length) {
+          if (streamDone) return;
+          flushTimer = setTimeout(revealNext, WORD_DELAY);
+          return;
+        }
+
+        if (!bubbleInserted) {
+          typingDots.remove();
+          messagesArea.appendChild(bubble);
+          bubbleInserted = true;
+        }
+
+        // Find next word boundary
+        const remaining = receivedContent.slice(revealedContent.length);
+        const wordMatch = remaining.match(/^\s*\S+/);
+        if (wordMatch) {
+          revealedContent += wordMatch[0];
+        } else {
+          revealedContent = receivedContent;
+        }
+
+        textEl.innerHTML = renderMarkdown(revealedContent);
+        scrollToBottom();
+
+        if (revealedContent.length < receivedContent.length || !streamDone) {
+          flushTimer = setTimeout(revealNext, WORD_DELAY);
+        } else {
+          finishReveal();
+        }
+      }
+      flushTimer = setTimeout(revealNext, WORD_DELAY);
+    }
+
+    function finishReveal() {
+      if (flushTimer) {
+        clearTimeout(flushTimer);
+        flushTimer = undefined;
+      }
 
       if (!bubbleInserted) {
         typingDots.remove();
@@ -129,7 +168,22 @@ export function renderAssistant(container: HTMLElement): () => void {
         bubbleInserted = true;
       }
 
-      textEl.innerHTML = renderMarkdown(fullContent);
+      textEl.innerHTML = renderMarkdown(receivedContent);
+
+      if (streamSources.length > 0) {
+        const srcEl = h('div', { className: 'assistant-sources' });
+        for (const s of streamSources) {
+          const btn = h('button', { className: 'assistant-source-tag' });
+          btn.textContent = `${s.lesson} — ${s.section}`;
+          btn.addEventListener('click', () => {
+            navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId });
+          });
+          srcEl.appendChild(btn);
+        }
+        bubble.appendChild(srcEl);
+      }
+
+      messages.push({ role: 'assistant', text: receivedContent, sources: streamSources });
       scrollToBottom();
     }
 
@@ -145,6 +199,8 @@ export function renderAssistant(container: HTMLElement): () => void {
         addMessage({ role: 'assistant', text: 'Entschuldigung, der Lernassistent ist gerade nicht erreichbar. Versuche es später nochmal.' });
         return;
       }
+
+      startRevealLoop();
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -169,26 +225,13 @@ export function renderAssistant(container: HTMLElement): () => void {
             };
 
             if (event.type === 'token' && event.content) {
-              pendingContent += event.content;
-              if (!flushTimer) {
-                flushTimer = setTimeout(() => {
-                  flushTimer = undefined;
-                  flushTokens();
-                }, FLUSH_INTERVAL);
-              }
+              receivedContent += event.content;
             } else if (event.type === 'done') {
-              if (flushTimer) {
-                clearTimeout(flushTimer);
-                flushTimer = undefined;
-              }
-              fullContent = event.content || fullContent;
+              receivedContent = event.content || receivedContent;
               streamSources = event.sources || [];
-              pendingContent = '';
             } else if (event.type === 'error') {
-              if (flushTimer) {
-                clearTimeout(flushTimer);
-                flushTimer = undefined;
-              }
+              streamDone = true;
+              if (flushTimer) { clearTimeout(flushTimer); flushTimer = undefined; }
               typingDots.remove();
               if (bubbleInserted) bubble.remove();
               addMessage({ role: 'assistant', text: event.content || 'Ein Fehler ist aufgetreten.' });
@@ -198,40 +241,28 @@ export function renderAssistant(container: HTMLElement): () => void {
         }
       }
 
-      // Final flush
-      if (flushTimer) {
-        clearTimeout(flushTimer);
-        flushTimer = undefined;
-      }
+      streamDone = true;
 
-      if (!bubbleInserted) {
-        typingDots.remove();
-        messagesArea.appendChild(bubble);
-      }
-
-      textEl.innerHTML = renderMarkdown(fullContent);
-
-      // Add sources
-      if (streamSources.length > 0) {
-        const srcEl = h('div', { className: 'assistant-sources' });
-        for (const s of streamSources) {
-          const btn = h('button', { className: 'assistant-source-tag' });
-          btn.textContent = `${s.lesson} — ${s.section}`;
-          btn.addEventListener('click', () => {
-            navigate('learn', { lessonId: s.lessonId, sectionId: s.sectionId });
-          });
-          srcEl.appendChild(btn);
+      // Wait for reveal to finish if still running
+      await new Promise<void>(resolve => {
+        function checkDone() {
+          if (revealedContent.length >= receivedContent.length) {
+            finishReveal();
+            resolve();
+          } else {
+            setTimeout(checkDone, WORD_DELAY);
+          }
         }
-        bubble.appendChild(srcEl);
-      }
-
-      messages.push({ role: 'assistant', text: fullContent, sources: streamSources });
-      scrollToBottom();
+        if (revealedContent.length >= receivedContent.length) {
+          finishReveal();
+          resolve();
+        } else {
+          checkDone();
+        }
+      });
     } catch {
-      if (flushTimer) {
-        clearTimeout(flushTimer);
-        flushTimer = undefined;
-      }
+      streamDone = true;
+      if (flushTimer) { clearTimeout(flushTimer); flushTimer = undefined; }
       typingDots.remove();
       if (bubbleInserted) bubble.remove();
       addMessage({ role: 'assistant', text: 'Entschuldigung, es ist ein Fehler aufgetreten. Versuche es später nochmal.' });
@@ -320,22 +351,20 @@ export function renderAssistant(container: HTMLElement): () => void {
         body: blob,
       });
 
+      typingDots.remove();
+
       if (!transcribeRes.ok) {
-        typingDots.remove();
         addMessage({ role: 'assistant', text: 'Transkription fehlgeschlagen. Versuche es nochmal.' });
         return;
       }
 
-      const { text, translatedText } = (await transcribeRes.json()) as { text: string; translatedText: string };
+      const { translatedText } = (await transcribeRes.json()) as { text: string; translatedText: string };
 
-      typingDots.remove();
-
-      addMessage({ role: 'user', text });
-      if (translatedText !== text) {
-        addMessage({ role: 'user', text: `🇩🇪 ${translatedText}` });
-      }
-
-      await streamAnswer(translatedText);
+      // Insert translated text into input field instead of auto-sending
+      input.value = translatedText;
+      input.style.height = 'auto';
+      input.style.height = Math.min(input.scrollHeight, 160) + 'px';
+      input.focus();
     } catch {
       typingDots.remove();
       addMessage({ role: 'assistant', text: 'Entschuldigung, es ist ein Fehler aufgetreten.' });

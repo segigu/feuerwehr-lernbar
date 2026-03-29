@@ -19,16 +19,26 @@ const bot = new Bot(token);
 
 interface QAResponse {
   answer: string;
-  sources: { lesson: string; section: string }[];
+  sources: { lesson: string; section: string; lessonId: string; sectionId: string }[];
+  isRefusal?: boolean;
 }
 
-function formatAnswer(data: QAResponse): string {
-  let reply = data.answer;
-  if (data.sources.length > 0) {
-    const srcList = data.sources.map(s => `• ${s.lesson} — ${s.section}`).join('\n');
-    reply += `\n\n📚 <b>Quellen:</b>\n${srcList}`;
+function buildReply(data: QAResponse): { text: string; keyboard?: InlineKeyboard } {
+  const text = data.answer;
+
+  if (data.sources.length === 0) {
+    return { text };
   }
-  return reply;
+
+  const keyboard = new InlineKeyboard();
+  for (const s of data.sources) {
+    const url = new URL(webAppUrl);
+    url.searchParams.set('lesson', s.lessonId);
+    url.searchParams.set('section', s.sectionId);
+    keyboard.webApp(`📖 ${s.lesson} — ${s.section}`, url.toString()).row();
+  }
+
+  return { text, keyboard };
 }
 
 async function askWorker(question: string): Promise<QAResponse> {
@@ -70,7 +80,8 @@ if (qaWorkerUrl) {
 
     try {
       const data = await askWorker(question);
-      await ctx.reply(formatAnswer(data), { parse_mode: 'HTML' });
+      const { text, keyboard } = buildReply(data);
+      await ctx.reply(text, { parse_mode: 'HTML', ...(keyboard ? { reply_markup: keyboard } : {}) });
     } catch {
       await ctx.reply('Entschuldigung, es ist ein Fehler aufgetreten. Versuche es später nochmal.');
     }
@@ -120,7 +131,8 @@ if (qaWorkerUrl) {
       // 4. Answer via RAG
       await ctx.replyWithChatAction('typing');
       const data = await askWorker(translatedText);
-      await ctx.reply(formatAnswer(data), { parse_mode: 'HTML' });
+      const { text: answerText, keyboard } = buildReply(data);
+      await ctx.reply(answerText, { parse_mode: 'HTML', ...(keyboard ? { reply_markup: keyboard } : {}) });
     } catch {
       await ctx.reply('Entschuldigung, es ist ein Fehler aufgetreten. Versuche es später nochmal.');
     }

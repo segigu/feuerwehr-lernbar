@@ -61,7 +61,16 @@ export function initApp(root: HTMLElement): void {
     }
   });
 
-  navigate('home');
+  // Deep-link: ?lesson=X&section=Y opens lesson directly
+  const urlParams = new URLSearchParams(window.location.search);
+  const deepLessonId = urlParams.get('lesson');
+  const deepSectionId = urlParams.get('section');
+
+  if (deepLessonId) {
+    navigate('learn', { lessonId: deepLessonId, sectionId: deepSectionId ?? undefined });
+  } else {
+    navigate('home');
+  }
 }
 
 export function navigate(screen: Screen, params?: NavigationParams): void {

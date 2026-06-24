@@ -1,8 +1,8 @@
 # MTA Prüfungstrainer
 
-Telegram Mini App zur Vorbereitung auf die **Zwischenprüfung des Basismoduls** (MTA) der Freiwilligen Feuerwehr in Bayern.
+Progressive Web App (PWA) zur Vorbereitung auf die **Zwischenprüfung des Basismoduls** (MTA) der Freiwilligen Feuerwehr in Bayern.
 
-**[Bot starten: @feuerwehr_lernbar_bot](https://t.me/feuerwehr_lernbar_bot)**
+> **Hinweis:** Der Telegram-Bot (`bot/`) ist aus Datenschutzgründen **deaktiviert**. Die App läuft eigenständig als PWA über GitHub Pages; alle Funktionen inkl. KI-Ausbilder und Sprachfragen sind direkt im Browser verfügbar. Der Bot-Code bleibt im Repository erhalten, wird aber nicht mehr betrieben.
 
 ## Funktionen
 

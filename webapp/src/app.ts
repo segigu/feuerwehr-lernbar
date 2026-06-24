@@ -8,6 +8,7 @@ import { renderLessonDetail } from './screens/lesson-detail';
 import { renderLearn } from './screens/learn';
 import { renderVocab } from './screens/vocab';
 import { renderAssistant } from './screens/assistant';
+import { renderLegal } from './screens/legal';
 import { hideMainButton, hideBackButton } from './utils/telegram';
 import { toggleLanguage } from './state/app-state';
 import { showToast } from './utils/toast';
@@ -23,7 +24,8 @@ export type Screen =
   | 'lesson-detail'
   | 'learn'
   | 'vocab'
-  | 'assistant';
+  | 'assistant'
+  | 'legal';
 
 export interface NavigationParams {
   lessonId?: string;
@@ -125,6 +127,9 @@ export function navigate(screen: Screen, params?: NavigationParams): void {
       break;
     case 'assistant':
       currentCleanup = renderAssistant(screenEl);
+      break;
+    case 'legal':
+      currentCleanup = renderLegal(screenEl);
       break;
   }
 }

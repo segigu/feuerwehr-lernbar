@@ -276,7 +276,9 @@ export function renderHome(container: HTMLElement): () => void {
     className: 'home-footer-link',
   }, 'Staatliche Feuerwehrschule Würzburg');
   const footerLine3 = h('span', {}, 'Kein offizielles Angebot der SFS');
-  footer.append(footerLine1, footerLine2, footerLine3);
+  const footerLegal = h('button', { className: 'home-footer-link home-footer-legal' }, 'Datenschutz & Impressum');
+  footerLegal.addEventListener('click', () => navigate('legal'));
+  footer.append(footerLine1, footerLine2, footerLine3, footerLegal);
   container.appendChild(footer);
 
   return () => { cleanupBanner(); cleanupSiren(); };

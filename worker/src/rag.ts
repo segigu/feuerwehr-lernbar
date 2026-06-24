@@ -112,7 +112,7 @@ export async function ask(question: string, env: Env): Promise<AskResponse> {
   }
 
   const response = await env.AI.run(
-    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
+    '@cf/meta/llama-3.1-8b-instruct-fast' as Parameters<Ai['run']>[0],
     {
       messages: [{ role: 'user', content: ctx.prompt }],
       max_tokens: MAX_TOKENS,
@@ -147,7 +147,7 @@ export async function askStream(question: string, env: Env): Promise<ReadableStr
   }
 
   const aiStream = await env.AI.run(
-    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
+    '@cf/meta/llama-3.1-8b-instruct-fast' as Parameters<Ai['run']>[0],
     {
       messages: [{ role: 'user', content: ctx.prompt }],
       max_tokens: MAX_TOKENS,

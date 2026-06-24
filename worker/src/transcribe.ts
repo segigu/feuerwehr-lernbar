@@ -28,7 +28,7 @@ export async function transcribe(
 
   // 2. Translate to German via Llama
   const translationResult = await env.AI.run(
-    '@cf/meta/llama-3.1-8b-instruct' as Parameters<Ai['run']>[0],
+    '@cf/meta/llama-3.1-8b-instruct-fast' as Parameters<Ai['run']>[0],
     {
       messages: [{
         role: 'user',

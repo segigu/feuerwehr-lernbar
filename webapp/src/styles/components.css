@@ -2339,3 +2339,10 @@ ul.block-list {
   border-radius: var(--radius-md);
 }
 
+.legal-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  word-break: break-word;
+}
+

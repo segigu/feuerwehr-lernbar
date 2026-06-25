@@ -28,6 +28,10 @@ function ul(...items: (string | Node)[]): HTMLElement {
   return list;
 }
 
+function a(text: string, href: string): HTMLElement {
+  return h('a', { className: 'legal-link', href, target: '_blank', rel: 'noopener' }, text);
+}
+
 export function renderLegal(container: HTMLElement): () => void {
   const backLink = h('button', { className: 'back-link' }, '← Zurück');
   backLink.addEventListener('click', () => navigate('home'));
@@ -58,6 +62,7 @@ export function renderLegal(container: HTMLElement): () => void {
     '3. Hosting (GitHub Pages)',
     p('Die App wird über GitHub Pages (GitHub, Inc., USA) bereitgestellt. Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Server-Logdaten, insbesondere die IP-Adresse, Datum und Uhrzeit des Zugriffs sowie Browser- und Geräteangaben (User-Agent).'),
     p('Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren und stabilen Betrieb). Eine Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-US Data Privacy Framework.'),
+    p('Auftragsverarbeitung: ', a('GitHub Data Protection Agreement', 'https://github.com/customer-terms/github-data-protection-agreement')),
   ));
 
   content.appendChild(section(
@@ -70,6 +75,7 @@ export function renderLegal(container: HTMLElement): () => void {
     '5. KI-Ausbilder (Frage-Antwort-Funktion)',
     p('Wenn du den KI-Ausbilder nutzt, wird deine eingegebene Frage an Cloudflare Workers AI (Cloudflare, Inc.) übermittelt, dort verarbeitet und beantwortet. Die Frage wird ausschließlich zur Erzeugung der Antwort verwendet, nicht dauerhaft gespeichert und nicht zum Training von KI-Modellen genutzt.'),
     p('Cloudflare ist dabei als Auftragsverarbeiter tätig. Es kann zu einer Übermittlung in die USA kommen (Standardvertragsklauseln / Data Privacy Framework). Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung deiner Lernfragen).'),
+    p('Auftragsverarbeitung: ', a('Cloudflare Customer DPA', 'https://www.cloudflare.com/cloudflare-customer-dpa/')),
   ));
 
   content.appendChild(section(
